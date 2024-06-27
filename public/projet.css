@@ -1,0 +1,657 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  code {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  /*Accueil_1*/
+  
+  
+  
+  
+  
+  .soustitreaAccueil {
+    color:white;
+    font-weight: lighter;
+    font-family: sans-serif;
+    position: absolute; top : 375px; left: 340px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 5px;
+  }
+  
+  .ligneVerticale {
+    width: 1px;
+    height: 60px; 
+    background-color: white;
+    position: absolute; top : 470px; left: 640px;
+  }
+  
+
+  
+
+  
+  .boutonEn:hover {
+    background-color: rgba(182, 182, 182, 90%);
+  }
+  
+  /*Accueil_2*/
+  
+  .presentDomaine {
+    background-color: #F9F4EE;
+    height: 500px;
+    width: 100%;
+  }
+  
+  .titreDomaine {
+    color : #422914;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative; top : 50px; left: 500px;
+  }
+  
+  .ligneHorizontale {
+    width: 60px;
+    height: 15px; 
+    background-color: #C4AA84;
+    position: relative; top : 70px; left: 600px;
+  }
+  
+  
+  .textDomaine {
+    color: black;
+    text-align: justify;
+    font-size: 15px;
+  }
+  
+  .textDomaineContainer { 
+    max-width: 350px;
+    margin-left: 215px; margin-top: 150px;
+    /*position: relative; top : 150px; left: 100px;*/
+  }
+  
+  .engagement {
+    color: #536D37;
+    font-weight: bold;
+    position: relative; top : -200px; left: 740px;
+    font-size: 20px;
+  }
+  
+  .textEngagement {
+    font-size: 15px;
+    color: black;
+    text-align: justify;
+    /*position: relative; top: -18px; left: 640px;*/
+  }
+  
+  .textEngagementContainer { 
+    max-width: 350px;
+    margin-left: 650px; margin-top: -200px;
+  }
+  
+  /*Accueil_3*/
+  
+  .parallax {
+    height: 100vh;
+    width: 100%;
+    background-image: url("C:\Users\ninar\OneDrive\Bureau\developpementweb\REACT\projetprofessionnel\projetprofessionnel\public\images\imageparallax.png"); 
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+  }
+  
+  
+  
+  /*Accueil_4*/
+  .presentCabane {
+    background-color: #536D37;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .titreCabane {
+    color : white;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative; top : 50px; left: 350px;
+  }
+  
+  .cabaneItem  {
+    display:grid; 
+    grid-template-columns: 210px 210px;
+    column-gap: 200px;
+    row-gap: 15px;
+    position: relative; top : 85px; 
+    margin-left: 300px;
+  }
+  
+  .item  {
+    height: 210px; width: 240px;
+  }
+  
+  
+  
+  
+  /*Accueil_5*/
+  
+  .planDomaine {
+    background-color: #F9F4EE;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .planText {
+    color : #422914;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative; top : 50px; left: 450px;
+  }
+  
+  .plancabane img {
+    height: 550px;
+    width: 800px;
+    position: relative; top : 30px; left: 220px;
+  }
+  
+ 
+  
+  /*Menu*/
+  .backgroundMenu {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #536D37;
+  }
+  
+  .logoMenu img{
+      width: 250px;
+      height: 250px;
+      position: absolute;
+      left: 100px;
+  }
+  
+  .listMenu a {
+    display: flex;
+    flex-direction: column;
+    line-height: 55px;
+    color: white ;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    left:90px; top: 200px;
+  }
+  
+  .boutonEnMenu {
+    background-color: rgba(182, 182, 182, 65%);
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 3px;
+    width:50px; 
+    letter-spacing: 3px;
+    font-size: 12px;
+    position: relative; top : 228px; left: 90px;
+  }
+  
+  .boutonEnMenu:hover {
+    background-color: rgba(182, 182, 182, 90%);
+  }
+  
+  .facebook {
+    background-color: rgba(182, 182, 182, 65%);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 3px;
+    width:50px; 
+    font-size: 15px;
+    position: relative; top : 229px; left: 100px;
+  }
+  
+  .facebook:hover {
+    background-color: rgba(182, 182, 182, 90%);
+  }
+  
+  .instagram {
+    background-color: rgba(182, 182, 182, 65%);
+    color: white;
+    padding: 11px;
+    border: none;
+    border-radius: 3px;
+    width:50px; 
+    letter-spacing: 3px;
+    
+    position: relative; top : 230px; left:110px;
+  }
+  
+  .instagram i {font-size: 18px;
+    margin-left: 3px;
+  }
+  
+  .instagram:hover {
+    background-color: rgba(182, 182, 182, 90%);
+  }
+  
+  .cabaneMenu img{
+    width: 700px;
+    height: 100vh;
+    position: relative; bottom: 0; top: 0;
+    position: fixed;
+    right: 0;
+  }
+  
+  .boutonFermer {
+    background-color: rgba(182, 182, 182, 65%);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    width:50px; 
+    letter-spacing: 3px;
+    font-size :18px;
+    position: absolute; top : 30px; left: 25px;
+  }
+  
+  .boutonFermer:hover {
+    background-color: rgba(182, 182, 182, 90%);
+  }
+  
+  /*MentionsLegales*/
+  
+  .backgroundMl {
+    width: 100%;
+    height: 100vh;
+    background-color: #536D37;
+  }
+  
+  .backgroundMl2 {
+    background-color: #F9F4EE;
+    text-align: justify;
+    padding: 10px;
+  }
+  
+  .textMl2 {
+    margin-left: 100px;
+    margin-right: 100px ;  
+  }
+  
+  h3 {
+    color : #536D37;
+    font-weight: bold;
+  }
+  
+  .imagecgv img {
+      width: 530px;
+      height: 100vh;
+      position: relative; bottom: 0; top: 0;
+      left: 0;
+  }
+  
+  .containerMl {
+    position:absolute; left : 650px; top : 230px;
+  }
+  
+  .textMl {
+    color:white;
+    font-weight: bold;
+    font-size: 60px;
+  }
+  
+  .ligneMl {
+    width: 70px;
+    height: 10px; 
+    background-color: #C4AA84;
+  }
+  
+  /*CGV*/
+  .textCgv {
+    color:white;
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  .containerCgv {
+    position:absolute; left : 650px; top : 220px;
+  }
+  
+  /*Confidentialité*/
+  .containerConf {
+    position:absolute; left : 620px; top : 240px;
+  }
+  
+  /*Faq*/
+  .imageFaq img {
+    width: 530px;
+    height: 100vh;
+    position: relative; bottom: 0; top: 0;
+    left: 0;
+    position : fixed;
+  }
+  
+  .faq {
+  position : absolute; 
+  }
+  
+  .question {
+    background-color: #536D37;
+    color: white;
+    font-weight: bold;
+    cursor:pointer;
+    border:none;
+    padding : 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .question i {
+    font-size: 16px;
+  }
+  
+  .reponse {
+    overflow : hidden;
+    padding : 0px 10px;
+    color : white;
+  }
+  
+  /*Plandusite*/
+  .containerPlan {
+    position:absolute; left : 650px; top : 100px;
+  }
+  .imagePlanSite img {
+    width: 530px;
+    height: 100vh;
+    position: relative; bottom: 0; top: 0;
+    left: 0;
+  }
+  
+  .PlanSiteListe{
+   margin-left : 680px;
+   margin-top: -415px;
+  }
+  
+  .PlanSiteListe a {
+    display: flex;
+    flex-direction: column;
+    color: white ;
+    text-decoration: none;
+    line-height: 40px;
+  }
+  
+  .parallax2 {
+    height: 100vh;
+    width: 100%;
+    background-image: url("C:\Users\ninar\OneDrive\Bureau\developpementweb\REACT\projetprofessionnel\projetprofessionnel\public\images\parallaxpds.jpg"); 
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+  }
+    
+  /*Contact&Accès*/
+  
+  .containerContact {
+    position:absolute; left : 660px; top : 240px;
+  }
+  
+  .textContact {
+    color:white;
+    font-weight: bold;
+    font-size: 55px;
+  }
+  
+  .ligneContact {
+    width: 70px;
+    height: 10px; 
+    background-color: #C4AA84;
+  }
+  
+  .formulaire {
+    background-color: #F9F4EE;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .formText {
+    color : #422914;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative; top : 50px; left: 430px;
+  }
+  
+  .ligneHorizontaleContact {
+    width: 80px;
+    height: 10px; 
+    background-color: #C4AA84;
+    position: relative; top : 65px; left: 570px;
+  }
+  
+  .form-container {
+    max-width: 700px; 
+    margin-top: 150px; 
+    margin-left: 260px; 
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .grid-container  input{
+   border :2px solid #422914;
+   border-radius: 4px;
+   height: 25px;
+   font-size: 14px;
+  }
+  
+  .message {
+    resize: none;
+    border :2px solid #422914;
+    border-radius: 4px;
+    margin-top: 15px;
+  }
+  
+  .options {
+    border :2px solid #422914;
+    border-radius: 4px;
+    width: 100%;
+    height: 30px;
+  }
+  
+  textarea::placeholder {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .boutonEnvoyer {
+    background-color: #422914;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 3px;
+    width:125px; 
+    letter-spacing: 3px;
+    font-size: 12px;
+    position: relative; top: 10px; left: 572px;
+  }
+  
+  .coordonnees {
+    background-color: #F9F4EE;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .titre-coordonnees {
+    margin-top: -490px;
+    margin-left: 620px;
+    color : #422914;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  .ligne-coordonnees {
+    width: 70px;
+    height: 10px; 
+    background-color: #C4AA84;
+    margin-left: 890px;
+    margin-top: 10px;
+  }
+  
+  .stitre-coordonees1 {
+    display: flex;
+    font-size: 18px;
+    flex-direction: column;
+    margin-left: 700px;
+    color : #422914;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-top: 100px;
+  }
+  
+  .stitre-coordonees1 > div {
+   margin-bottom: 50px;
+  }
+  
+  .stitre-coordonees2 {
+    font-size: 18px;
+    margin-left: 700px;
+    margin-top: -190px;
+  }
+  
+  .stitre-coordonees2 > div {
+    margin-bottom: 50px;
+   }
+  
+   
+  /* Reservation */
+  
+  .image-reservation1 img {
+    width: 640px;
+      height: 100vh;
+      position: relative; bottom: 0; top: 0;
+      left: 0;
+  }
+  
+  .text-reservation {
+    color:white;
+    font-weight: bold;
+    font-size: 50px;
+   margin-left: 740px;
+   margin-top: -350px;
+  }
+  
+  .ligne-reservation {
+    width: 70px;
+    height: 10px; 
+    background-color: #C4AA84;
+    margin-left: 740px;
+    margin-top: 10px;
+  }
+  
+  
+  .image-reservation2 {
+    background-color: black; 
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .image-reservation2 img {
+    height: 100vh;
+    width: 100%;
+    opacity: 0.5;
+  }
+  
+  .boutonEn-resa {
+    background-color: rgba(182, 182, 182, 0.65);
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 3px;
+    width:50px; 
+    letter-spacing: 3px;
+    font-size: 12px;
+    position: absolute; top : 30px; left: 1135px;
+    position: fixed;
+    z-index: 9999;
+  }
+  
+  .container-resa {
+    width: 700px;
+    height: 200px;
+    background-color: #536D37;
+    position: absolute;
+    top: 800px;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1;
+    border-radius: 5px;
+  }
+  
+   .choix-date {
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 20px;
+    position: relative; top : -5px; left : 30px;
+  }
+  
+  .bouton-resa {
+    border:none;
+    background-color:  #C4AA84;
+    border-radius: 5px;
+    height:35px;
+    width: 180px;
+   color: white;
+   font-weight: bold;
+   position: relative; top: 30px; left: 488px;
+  }
+  
+  .container-resa > select {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 20px;
+    position: relative; top : -5px; left : 40px;
+  }
+  
+  .enfants {
+    color :#C4AA84;
+    margin-left: 590px;
+    position: relative; top : -20px;
+    font-weight: bold;
+    font-size: 12.5px;
+  }
+  
+  .adultes {
+    color :#C4AA84;
+    margin-left: 492px;
+    position: relative; top : 10px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  
+  .depart {
+    color :#C4AA84;
+    margin-left: 258px;
+    position: relative; top : 25px;
+    font-weight: bold;
+    font-size: 13px;
+  }
+  
+  .arrivee {
+    color :#C4AA84;
+    margin-left: 30px;
+    position: relative; top : 42px;
+    font-weight: bold;
+    font-size: 13px;
+  }
