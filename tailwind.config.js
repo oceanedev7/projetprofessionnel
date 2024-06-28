@@ -17,6 +17,7 @@ export default {
             colors: {
                 "custom-beige": "#C4AA84",
                 "custom-vert": "#536D37",
+                "custom-marron": "#422914",
             },
         },
     },

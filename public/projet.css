@@ -10,50 +10,11 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   
-  /*Accueil_1*/
-  
-  
-  
-  
-  
-  .soustitreaAccueil {
-    color:white;
-    font-weight: lighter;
-    font-family: sans-serif;
-    position: absolute; top : 375px; left: 340px;
-    text-align: center;
-    font-size: 12px;
-    letter-spacing: 5px;
-  }
-  
   .ligneVerticale {
     width: 1px;
     height: 60px; 
     background-color: white;
     position: absolute; top : 470px; left: 640px;
-  }
-  
-
-  
-
-  
-  .boutonEn:hover {
-    background-color: rgba(182, 182, 182, 90%);
-  }
-  
-  /*Accueil_2*/
-  
-  .presentDomaine {
-    background-color: #F9F4EE;
-    height: 500px;
-    width: 100%;
-  }
-  
-  .titreDomaine {
-    color : #422914;
-    font-weight: bold;
-    font-size: 40px;
-    position: relative; top : 50px; left: 500px;
   }
   
   .ligneHorizontale {
@@ -64,94 +25,8 @@ body {
   }
   
   
-  .textDomaine {
-    color: black;
-    text-align: justify;
-    font-size: 15px;
-  }
-  
-  .textDomaineContainer { 
-    max-width: 350px;
-    margin-left: 215px; margin-top: 150px;
-    /*position: relative; top : 150px; left: 100px;*/
-  }
-  
-  .engagement {
-    color: #536D37;
-    font-weight: bold;
-    position: relative; top : -200px; left: 740px;
-    font-size: 20px;
-  }
-  
-  .textEngagement {
-    font-size: 15px;
-    color: black;
-    text-align: justify;
-    /*position: relative; top: -18px; left: 640px;*/
-  }
-  
-  .textEngagementContainer { 
-    max-width: 350px;
-    margin-left: 650px; margin-top: -200px;
-  }
-  
-  /*Accueil_3*/
-  
-  .parallax {
-    height: 100vh;
-    width: 100%;
-    background-image: url("C:\Users\ninar\OneDrive\Bureau\developpementweb\REACT\projetprofessionnel\projetprofessionnel\public\images\imageparallax.png"); 
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-  }
-  
-  
-  
-  /*Accueil_4*/
-  .presentCabane {
-    background-color: #536D37;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .titreCabane {
-    color : white;
-    font-weight: bold;
-    font-size: 40px;
-    position: relative; top : 50px; left: 350px;
-  }
-  
-  .cabaneItem  {
-    display:grid; 
-    grid-template-columns: 210px 210px;
-    column-gap: 200px;
-    row-gap: 15px;
-    position: relative; top : 85px; 
-    margin-left: 300px;
-  }
-  
-  .item  {
-    height: 210px; width: 240px;
-  }
-  
-  
-  
-  
   /*Accueil_5*/
   
-  .planDomaine {
-    background-color: #F9F4EE;
-    height: 100vh;
-    width: 100%;
-  }
-  
-  .planText {
-    color : #422914;
-    font-weight: bold;
-    font-size: 40px;
-    position: relative; top : 50px; left: 450px;
-  }
   
   .plancabane img {
     height: 550px;
@@ -161,13 +36,7 @@ body {
   
  
   
-  /*Menu*/
-  .backgroundMenu {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background-color: #536D37;
-  }
+
   
   .logoMenu img{
       width: 250px;

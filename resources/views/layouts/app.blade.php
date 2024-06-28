@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Tout Là-Haut')</title>
+    <title>Tout Là-Haut</title>
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -55,12 +55,12 @@
              <div class="flex flex-col ml-20 mt-16">
                 <div class="font-bold text-base mb-2">Suivez-nous</div> 
              <div class="flex flex-row">   
-                <div class=" w-8 h-8 bg-white bg-opacity-30 rounded-md text-white text-xl flex items-center justify-center mr-2">
+                <a class=" w-8 h-8 bg-white bg-opacity-30 rounded-md text-white text-xl flex items-center justify-center mr-2">
                     <i class="fa-brands fa-facebook-f"></i>
-                </div>
-                <div class=" w-8 h-8 bg-white bg-opacity-30 rounded-md text-white text-xl flex items-center justify-center ">
+                </a>
+                <a class=" w-8 h-8 bg-white bg-opacity-30 rounded-md text-white text-xl flex items-center justify-center ">
                     <i class="fa-brands fa-instagram "></i>
-                </div>
+                </a>
             </div>
         </div>
 
@@ -77,11 +77,11 @@
     
             {{-- Liens des informations obligatoires --}}
             <div class="text-sm text-white mt-8 space-x-28 mx-auto max-w-7xl flex justify-center">
-                <a href="Mentionslegales" >Mentions légales</a>
-                <a href="Cgv" >CGV</a>
-                <a href="Confidentialite" >Confidentialité</a>
-                <a href="Faq" >FAQ</a>
-                <a href="Plandusite">Plan du site</a>
+                <a href="" >Mentions légales</a>
+                <a href="" >CGV</a>
+                <a href="" >Confidentialité</a>
+                <a href="" >FAQ</a>
+                <a href="">Plan du site</a>
             </div>
         
     </footer>
