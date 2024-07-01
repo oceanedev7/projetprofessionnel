@@ -77,11 +77,11 @@
     
             {{-- Liens des informations obligatoires --}}
             <div class="text-sm text-white mt-8 space-x-28 mx-auto max-w-7xl flex justify-center">
-                <a href="" >Mentions légales</a>
-                <a href="" >CGV</a>
-                <a href="" >Confidentialité</a>
-                <a href="" >FAQ</a>
-                <a href="">Plan du site</a>
+                <a href="{{ route('mentionslegales') }}" >Mentions légales</a>
+                <a href="{{ route('cgv') }}" >CGV</a>
+                <a href="{{ route('confidentialite') }}" >Confidentialités</a>
+                <a href="{{ route('faq') }}" >FAQ</a>
+                <a href="{{ route('plandusite') }}">Plan du site</a>
             </div>
         
     </footer>
