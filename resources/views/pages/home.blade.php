@@ -16,7 +16,7 @@
     <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
     <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a> 
     <a class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> EN </a> 
-    <a class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>  
+    <a href="{{ route('reserver') }}" class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>  
 </div>
 @endsection
 
@@ -45,13 +45,11 @@
 
 <div style="background-color:#F9F4EE" class="w-full h-[500px] ">
 
-    <div class="flex justify-center">
+    <div class="flex flex-col justify-center items-center">
         <span class="font-bold text-custom-marron text-[40px] mt-8">LE DOMAINE</span>
+        <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
 
-    {{-- <div class="flex justify-center">
-        <hr class="border-r mt-10 border-black">
-    </div> --}}
 
     <div class="flex space-x-28 flex-row items-center justify-center space-y-16">
          <p class="w-96 text-justify text-left mb-6">  
@@ -80,14 +78,13 @@
 
 <div class="bg-custom-vert h-screen w-full"> 
 
-    <div class="flex justify-center">
+    <div class="flex flex-col justify-center items-center">
         <span class="font-bold text-white text-[40px] mt-8"> DÉCOUVREZ NOS CABANES </span>
+        <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
     </div>
 
-       {{-- <hr class="border-r h-60 mx-6 my-auto"> --}}
-
-        <div class="justify-items-center grid grid-cols-2 gap-y-6 ">
-            <a>
+        <div class="justify-items-center grid grid-cols-2 gap-y-6 relative top-12 ">
+            <a href="{{ route('cabane1') }}">
             <img class="h-[200px] w-[200px]" src="{{ Storage::url('images/nid.png') }}" alt="Cabane Nid douillet">
             </a>
             <a>
@@ -102,31 +99,21 @@
          </div>
 
       
-         
 </div>
 
 <div style="background-color:#F9F4EE" class="w-full h-screen"> 
 
-    <div class="flex justify-center">
+    <div class="flex flex-col items-center justify-center">
         <span class="font-bold text-custom-marron text-[40px] mt-8"> PLAN DU DOMAINE </span>
-    </div>
+        <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
 
-       {{-- <hr class="border-r h-60 mx-6 my-auto"> --}}
+    </div>
 
             <div class=" flex justify-center"> 
                 <img class="h-[550px] w-[800px]" src="{{ Storage::url('images/plandomaine.png') }}" alt="Plan du domaine">
             </div>
 
- </div>
-
-
-
-
-
-
-
-
-
+    </div>
 
 @endsection
 

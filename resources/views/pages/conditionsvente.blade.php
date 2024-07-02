@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
-
+<body>
 @section ('titre')
 
+<div class="flex flex-col ">
 <h1 class=" ml-32 mt-52 text-6xl text-white font-bold"> CONDITIONS <br/> GÉNÉRALES <br/> DE VENTE </h1>
-{{-- <hr class="border-t-12 border-gray-300 mt-4"> --}}
+<hr class="border-t-4 border-custom-beige w-32 relative top-6 left-32">
+</div>
 @endsection
 
-<body>
+
 
     @section('main')
 

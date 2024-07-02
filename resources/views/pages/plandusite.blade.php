@@ -15,13 +15,13 @@
 @section ('titre')
 
 <h1 class=" relative top-24 left-40 text-4xl text-white font-bold"> PLAN DU SITE </h1>
-{{-- <hr class="border-t-12 border-gray-300 mt-4"> --}}
+<hr class="border-t-4 border-custom-beige w-24 relative top-36 right-20">
 
-<div class="relative top-44 right-20 text-white flex flex-col space-y-4 text-base">
+<div class="relative top-44 right-32 text-white flex flex-col space-y-4 text-base">
     <a href="" >ACCUEIL</a>
     <a href="" >LES CABANES</a>
     <a href="" >PRESTATIONS ET SERVICES</a>
-    <a href="" >RÉSERVER</a>
+    <a href="{{ route('reserver') }}" >RÉSERVER</a>
     <a href="" >CONTACT & ACCES</a>
     <a href="{{ route('mentionslegales') }}" >MENTIONS LÉGALES</a>
     <a href="{{ route('cgv') }}" >CGV</a>

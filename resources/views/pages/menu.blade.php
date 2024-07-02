@@ -21,15 +21,15 @@
 
         <button class="absolute top-6 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> X </button> 
         
-        <a class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>
+        <a  href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>
         
     
     <div class=" absolute top-56 left-28 flex flex-col space-y-8 text-lg text-white font-bold">
-        <a href="">ACCUEIL</a>
-        <a href="">LES CABANES</a>
+        <a href="{{ route('accueil') }}">ACCUEIL</a>
+        <a href="{{ route('noscabanes') }}">LES CABANES</a>
         <a href="">PRESTATIONS ET SERVICES</a>
-        <a href="">RÉSERVER</a>
-        <a href="">CONTACT & ACCÈS</a>
+        <a href="{{ route('reserver') }}">RÉSERVER</a>
+        <a href="{{ route('contact') }}">CONTACT & ACCÈS</a>
     </div>
 
 
