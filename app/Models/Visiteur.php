@@ -14,4 +14,10 @@ class Visiteur extends Model
     {
         return $this->belongsTo(Newsletter::class);
     }
+
+
+    public function visiteurs()
+    {
+        return $this->hasMany(Formulaire::class);
+    }
 }

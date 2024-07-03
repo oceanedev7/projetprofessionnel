@@ -29,5 +29,9 @@ class Reservation extends Model
         return $this->belongsTo(Paiement::class);
     }
 
+    public function prestations()
+    {
+        return $this->hasMany(Prestation::class);
+    }
 
 }
