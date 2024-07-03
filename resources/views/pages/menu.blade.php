@@ -27,7 +27,7 @@
     <div class=" absolute top-56 left-28 flex flex-col space-y-8 text-lg text-white font-bold">
         <a href="{{ route('accueil') }}">ACCUEIL</a>
         <a href="{{ route('noscabanes') }}">LES CABANES</a>
-        <a href="">PRESTATIONS ET SERVICES</a>
+        <a href="{{ route('prestations') }}">PRESTATIONS ET SERVICES</a>
         <a href="{{ route('reserver') }}">RÉSERVER</a>
         <a href="{{ route('contact') }}">CONTACT & ACCÈS</a>
     </div>

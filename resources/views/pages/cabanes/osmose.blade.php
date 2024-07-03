@@ -25,7 +25,7 @@
 
 <div style="background-color:#F9F4EE" class="h-screen w-full"> 
         
-    <img class="w-[550px] h-screen" src="{{ Storage::url('images/cabanenid.jpg') }}" alt="Cabane intérieur">
+    <img class="w-[500px] h-screen" src="{{ Storage::url('images/cabaneosmose.jpg') }}" alt="Cabane intérieur">
     
 </div>
 
@@ -160,30 +160,7 @@
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div> 
-
-
-
-
-
 
 
 

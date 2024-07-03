@@ -14,23 +14,23 @@ Route::get('/menu', function () {
 })->name('menu');
 
 Route::get('/mentionslegales', function () {
-    return view('pages.mentionslegales');
+    return view('pages.footer.mentionslegales');
 })->name('mentionslegales');
 
 Route::get('/conditionsgeneralesdevente', function () {
-    return view('pages.conditionsvente');
+    return view('pages.footer.conditionsvente');
 })->name('cgv');
 
 Route::get('/confidentialite', function () {
-    return view('pages.confidentialite');
+    return view('pages.footer.confidentialite');
 })->name('confidentialite');
 
 Route::get('/plandusite', function () {
-    return view('pages.plandusite');
+    return view('pages.footer.plandusite');
 })->name('plandusite');
 
 Route::get('/faq', function () {
-    return view('pages.faq');
+    return view('pages.footer.faq');
 })->name('faq');
 
 Route::get('/contact&acces', function () {
@@ -48,6 +48,24 @@ Route::get('/noscabanes', function () {
 Route::get('/cabaneniddouillet', function () {
     return view('pages.cabanes.niddouillet');
 })->name('cabane1');
+
+Route::get('/cabaneosmose', function () {
+    return view('pages.cabanes.osmose');
+})->name('cabane2');
+
+Route::get('/cabaneescapade', function () {
+    return view('pages.cabanes.escapade');
+})->name('cabane3');
+
+Route::get('/cabaneeden', function () {
+    return view('pages.cabanes.eden');
+})->name('cabane4');
+
+
+Route::get('/prestationsetservices', function () {
+    return view('pages.prestations');
+})->name('prestations');
+
 
 
 
