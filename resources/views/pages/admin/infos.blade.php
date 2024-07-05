@@ -58,7 +58,7 @@
         <td>{{$cabane->nomCabane}} </td>
         <td> {{$cabane->description}}</td>
         <td> {{$cabane->capacite}} </td>
-        <td> {{$cabane->prix}}</td>
+        <td> {{$cabane->prix}} €</td>
         <td> {{$cabane->disponibilite}}</td>
         <td><a href="{{ route('editerCabane', $cabane->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
         <td><a href="{{ route('supprimerCabane', $cabane->id) }}"><i class="fa-solid fa-trash"></i></a></td>
@@ -77,8 +77,8 @@
             <option value="{{ $cabane->id }}">{{ $cabane->nomCabane }}</option>
         @endforeach  
     </select>
-    <input placeholder="Ajoutez un équipement" name="nomEquipement" required>
-    <input placeholder="Ajoutez une catégorie" name="categorie" required>
+    <input placeholder="Ajoutez un équipement" name="nomEquipement" required/>
+    <input placeholder="Ajoutez une catégorie" name="categorie" required/>
     <button>Ajouter</button>
 </form>
 
@@ -106,16 +106,64 @@
 </table>
 
 
+<h1 class="font-bold">Informations prestations</h1>
+
+<form method="post" action="{{ route('ajouterPrestation') }}"> 
+    @csrf
+
+    <select name="categorie" required>
+        <option value="">---</option>
+        <option value="restauration">Restauration</option>
+        <option value="spa">Spa</option>
+      </select>
+
+      <select name="type" required>
+        <option value="">---</option>
+        <option value="dejeuner">Déjeuner</option>
+        <option value="diner">Dîner</option> 
+        <option value="massageoriental">Massage oriental</option>
+        <option value="leshiatsu">Le Shiatsu</option>
+        <option value="massagesuedois">Massage suédois</option>
+        <option value="massagecalifornien">Massage Californien</option>
+        <option value="massagecraniofacial">Le massage cranio facial</option>
+        <option value="massageprenatal">Massage prénatal</option>
+      </select>
+
+      <input placeholder="Ajoutez une durée" name="duree" />
+      <input placeholder="Ajoutez un prix" name="prix" required />
+
+      <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
+      <button>Ajouter</button>
+
+</form>
 
 
-
-
-
-
-{{-- <h1> Informations prestations</h1>  --}}
-
-
-
+ <table class="border-collapse border border-slate-400">
+        <thead>
+            <tr>
+                <th>Catégorie</th>
+                <th>Type</th>
+                <th>Durée</th>
+                <th>Prix</th>
+                <th>Description</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($prestations as $prestation)
+                <tr>
+                    <td>{{ $prestation->categorie}}</td>
+                    <td>{{ $prestation->type}}</td>
+                    <td>{{ $prestation->duree}} min</td>
+                    <td>{{ $prestation->prix}}</td>
+                    <td>{{ $prestation->description}}</td>
+                    <td><a href="{{ route('editerPrestation', $prestation->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
+                    <td><a href="{{ route('supprimerPrestation', $prestation->id) }}"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
 
 
 

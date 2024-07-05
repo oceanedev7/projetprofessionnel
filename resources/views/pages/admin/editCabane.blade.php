@@ -34,19 +34,6 @@
     </form>
 
 
-{{-- 
-    <form method="post" action="{{ route('modifierEquipement') }}">
-        @csrf
-        <select name="cabane_id" required>
-            @foreach ($cabanes as $cabane)
-                <option value="{{ $cabane->id }}">{{ $cabane->nomCabane }}</option>
-            @endforeach  
-        </select>
-        <input value="{{$equipement->nomEquipement}}" placeholder="Ajoutez un équipement" name="nomEquipement" required>
-        <input value="{{$equipement->categorie}}" placeholder="Ajoutez une catégorie" name="categorie" required>
-        <button>Modifier</button>
-    </form>
-     --}}
 
 </body>
 </html>

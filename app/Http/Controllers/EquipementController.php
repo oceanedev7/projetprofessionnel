@@ -26,6 +26,7 @@ class EquipementController extends Controller
             'nomEquipement' => 'required|string',
             'categorie' => 'required|string',
             'cabane_id'=>'required|exists:cabanes,id', 
+            
         ]);
 
         Equipement::create($request->all()); 

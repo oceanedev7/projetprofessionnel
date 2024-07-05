@@ -15,6 +15,7 @@ class Prestation extends Model
     'duree',
     'prix',
     'description',
+    'reservation_id'
     ];
 
 

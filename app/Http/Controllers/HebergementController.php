@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Cabane;
 use App\Models\Equipement;
+use App\Models\Prestation;
 use Illuminate\Http\Request;
 
 class HebergementController extends Controller
@@ -14,8 +15,10 @@ class HebergementController extends Controller
     {
         $afficherCabanes = Cabane::all();
         $afficherEquipements = Equipement::with('cabane')->get();
+        $afficherPrestations = Prestation::all();
+
     return view(
-        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements]
+        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements, 'prestations'=>$afficherPrestations]
     );}
 
     /**

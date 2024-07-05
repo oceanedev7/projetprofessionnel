@@ -4,6 +4,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\HebergementController;
+use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\MapController;
 
 use Illuminate\Support\Facades\Route;
@@ -84,6 +85,12 @@ Route::post('/infos/equipements', [EquipementController::class, 'create'])->name
 Route::get('/infos/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');
 Route::get('/infos/equipements/edit/{id}', [EquipementController::class,'edit'])->name('editerEquipement');
 Route::post('/infos/equipements/update/{id}', [EquipementController::class,'update'])->name('modifierEquipement');
+
+Route::post('/infos/prestations', [PrestationController::class, 'create'])->name('ajouterPrestation');
+Route::get('/infos/prestations/delete/{id}', [PrestationController::class, 'destroy'])->name('supprimerPrestation');
+Route::get('/infos/prestations/edit/{id}', [PrestationController::class,'edit'])->name('editerPrestation');
+Route::post('/infos/prestations/update/{id}', [PrestationController::class,'update'])->name('modifierPrestation');
+
 
 
 Route::get('/dashboard', function () {
