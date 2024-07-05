@@ -38,8 +38,8 @@
 <button>Ajouter </button>
 </form>
 
-<table class="border-collapse border border-slate-400" >
-    <thead>
+ <table class="" >
+    <thead class="">
       <tr>
         <th >Nom</th>
         <th>Description</th>
@@ -69,21 +69,20 @@
 
 
   <h1 class="font-bold">Informations équipements</h1>
-{{-- <form method="post" action="{{ route('ajouterEquipement') }}">
+
+<form method="post" action="{{ route('ajouterEquipement') }}">
     @csrf
-    
     <select name="cabane_id" required>
-        <option value="">Choisissez une cabane...</option>
         @foreach ($cabanes as $cabane)
             <option value="{{ $cabane->id }}">{{ $cabane->nomCabane }}</option>
-        @endforeach
+        @endforeach  
     </select>
-    <input placeholder="Ajoutez un équipement" name="nomEquipement" type="text" required>
-    <input placeholder="Ajoutez une catégorie" name="categorie" type="text" required>
-    <button type="submit">Ajouter</button>
-</form> --}}
+    <input placeholder="Ajoutez un équipement" name="nomEquipement" required>
+    <input placeholder="Ajoutez une catégorie" name="categorie" required>
+    <button>Ajouter</button>
+</form>
 
-{{-- <table class="border-collapse border border-slate-400">
+<table class="border-collapse border border-slate-400">
     <thead>
         <tr>
             <th>Cabane</th>
@@ -92,23 +91,19 @@
             <th>Modifier</th>
             <th>Supprimer</th>
         </tr>
-    </thead>--}}
+    </thead>
     <tbody>
-        @foreach ($equipements as $equipement)
+        @foreach($equipements as $equipement)
             <tr>
-                {{-- <td>{{ $equipement->cabane->nomCabane }}</td> --}}
+                <td>{{$equipement->cabane->nomCabane}}</td>
                 <td>{{ $equipement->nomEquipement }}</td>
                 <td>{{ $equipement->categorie }}</td>
-                <td><a href=""><i class="fa-solid fa-pencil"></i></a></td>
+                <td><a href="{{ route('editerEquipement', $equipement->id ) }}"><i class="fa-solid fa-pencil"></i></a></td>
+                <td><a href="{{ route('supprimerEquipement', $equipement->id) }}"><i class="fa-solid fa-trash"></i></a></td>
             </tr>
         @endforeach
-    </tbody> 
-    {{--
-</table> --}}
-
-
-
-
+    </tbody>
+</table>
 
 
 

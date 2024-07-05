@@ -12,6 +12,7 @@ class Equipement extends Model
     protected $fillable = [
        'nomEquipement',
         'categorie',
+        'cabane_id',
      ];
 
      

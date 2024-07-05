@@ -10,70 +10,86 @@ use Illuminate\Http\Request;
 class EquipementController extends Controller
 {
     /**
-     * Filtrer les equipements par cabanes
+     * 
      */
     public function index()
     {
-        $equipements = Equipement::with('cabane')->get();
-    dd($equipements); // Vérifiez que cette ligne affiche les données attendues
-
-    return view('pages.admin.infos', ['equipements' => $equipements]);
+       //
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Ajouter un nouvel équipement
      */
-    // public function create(Request $request)
-    // {
-    //     $request->validate([
-    //         'nomEquipement' => 'required|string',
-    //         'categorie' => 'required|string',
-    //         'cabane_id', 
-    //     ]);
-
-    //     Equipement::create($request->all()); 
-
-    //     return redirect("/infos/cabanes");}
-    
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    
-        public function store(Request $request)
-        {
-           //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'nomEquipement' => 'required|string',
+            'categorie' => 'required|string',
+            'cabane_id'=>'required|exists:cabanes,id', 
+        ]);
+
+        Equipement::create($request->all()); 
+
+        return redirect("/infos/cabanes");
     }
+    
+
+    // /**
+    //  * Store a newly created resource in storage.
+    //  */
+    
+    //     public function store(Request $request)
+    //     {
+    //        //
+    // }
+
+    // /**
+    //  * Display the specified resource.
+    //  */
+    // public function show(string $id)
+    // {
+    //     //
+    // }
 
     /**
-     * Show the form for editing the specified resource.
+     * Modifier une ou plusieurs informations
      */
     public function edit(string $id)
     {
-        //
+        $equipement=Equipement::findOrFail($id); 
+        $cabanes = Cabane::all();
+        // dd($equipement);
+        return view("pages.admin.editEquipement", compact('equipement', 'cabanes'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Mettre à jour les informations
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData =  $request->validate(
+            [
+            'nomEquipement'=>'required|string',
+            'categorie'=>'required|string',
+            'cabane_id'=>'required|exists:cabanes,id',
+            
+            ]);
+            // dd($request->nomCabane);
+
+            $update=Equipement::findOrFail($id);           
+            $update->update($validatedData);
+    
+            return redirect("/infos/cabanes");
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Supprimer un equipement
      */
     public function destroy(string $id)
     {
-        //
+        $delete  = Equipement::findOrFail($id);
+        $delete->delete();
+
+        return redirect("/infos/cabanes");
     }
 }

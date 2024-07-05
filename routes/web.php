@@ -80,8 +80,10 @@ Route::get('/infos/cabanes/delete/{id}', [HebergementController::class, 'destroy
 Route::get('/infos/cabanes/edit/{id}', [HebergementController::class,'edit'])->name('editerCabane');
 Route::post('/infos/cabanes/update/{id}', [HebergementController::class,'update'])->name('modifierCabane');
 
-Route::get('/infos/equipements', [EquipementController::class, 'index'])->name('afficherEquipement');
-// Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
+Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
+Route::get('/infos/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');
+Route::get('/infos/equipements/edit/{id}', [EquipementController::class,'edit'])->name('editerEquipement');
+Route::post('/infos/equipements/update/{id}', [EquipementController::class,'update'])->name('modifierEquipement');
 
 
 Route::get('/dashboard', function () {

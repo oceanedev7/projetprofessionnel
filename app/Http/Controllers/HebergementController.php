@@ -13,10 +13,9 @@ class HebergementController extends Controller
     public function index()
     {
         $afficherCabanes = Cabane::all();
-        // $AfficherEquipements = Equipement::with('cabane')->get();
-        // dd($afficherCabane);
+        $afficherEquipements = Equipement::with('cabane')->get();
     return view(
-        'pages.admin.infos', ['cabanes'=>$afficherCabanes]
+        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements]
     );}
 
     /**
@@ -39,34 +38,7 @@ class HebergementController extends Controller
     return redirect("/infos/cabanes");
     }
 
-    // public function createEquipement(Request $request)
-    // {
-    //     $request->validate([
-    //         'nomEquipement' => 'required|string',
-    //         'categorie' => 'required|string',
-    //         'cabane_id', 
-    //     ]);
-
-    //     Equipement::create($request->all()); 
-
-    //     return redirect("/infos/cabanes");}
-
-    // /**
-    //  * Store a newly created resource in storage.
-    //  */
-    // public function store(Request $request)
-    // {
-    //     //
-    // }
-
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
-
+  
     /**
      * Modifier un ou plusieurs informations
      */
@@ -74,8 +46,7 @@ class HebergementController extends Controller
     {
         $cabane=Cabane::findOrFail($id); 
         // dd($edit);
-        return view("pages.admin.editCabane
-        ", compact('cabane'));
+        return view("pages.admin.editCabane", compact('cabane'));
     }
 
     /**
