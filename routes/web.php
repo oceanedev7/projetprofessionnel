@@ -1,6 +1,9 @@
 <?php
 
+
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\EquipementController;
+use App\Http\Controllers\HebergementController;
 use App\Http\Controllers\MapController;
 
 use Illuminate\Support\Facades\Route;
@@ -67,7 +70,18 @@ Route::get('/prestationsetservices', function () {
 })->name('prestations');
 
 
+Route::get('/admininfos', function () {
+    return view('pages.admin.infos');
+})->name('infos');
 
+Route::get('/infos/cabanes', [HebergementController::class, 'index'])->name('afficherCabane');
+Route::post('/infos/cabanes', [HebergementController::class, 'create'])->name('ajouterCabane');
+Route::get('/infos/cabanes/delete/{id}', [HebergementController::class, 'destroy'])->name('supprimerCabane');
+Route::get('/infos/cabanes/edit/{id}', [HebergementController::class,'edit'])->name('editerCabane');
+Route::post('/infos/cabanes/update/{id}', [HebergementController::class,'update'])->name('modifierCabane');
+
+Route::get('/infos/equipements', [EquipementController::class, 'index'])->name('afficherEquipement');
+// Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
 
 
 Route::get('/dashboard', function () {

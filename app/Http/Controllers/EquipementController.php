@@ -2,32 +2,47 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipement;
+use App\Models\Cabane;
+
 use Illuminate\Http\Request;
 
-class Hebergement extends Controller
+class EquipementController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Filtrer les equipements par cabanes
      */
     public function index()
     {
-        //
+        $equipements = Equipement::with('cabane')->get();
+    dd($equipements); // Vérifiez que cette ligne affiche les données attendues
+
+    return view('pages.admin.infos', ['equipements' => $equipements]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
+    // public function create(Request $request)
+    // {
+    //     $request->validate([
+    //         'nomEquipement' => 'required|string',
+    //         'categorie' => 'required|string',
+    //         'cabane_id', 
+    //     ]);
+
+    //     Equipement::create($request->all()); 
+
+    //     return redirect("/infos/cabanes");}
+    
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
-    {
-        //
+    
+        public function store(Request $request)
+        {
+           //
     }
 
     /**
