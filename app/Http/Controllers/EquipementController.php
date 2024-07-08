@@ -44,13 +44,6 @@ class EquipementController extends Controller
     //        //
     // }
 
-    // /**
-    //  * Display the specified resource.
-    //  */
-    // public function show(string $id)
-    // {
-    //     //
-    // }
 
     /**
      * Modifier une ou plusieurs informations
@@ -82,6 +75,7 @@ class EquipementController extends Controller
     
             return redirect("/infos/cabanes");
     }
+
 
     /**
      * Supprimer un equipement

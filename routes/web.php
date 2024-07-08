@@ -3,7 +3,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
-use App\Http\Controllers\HebergementController;
+use App\Http\Controllers\CabaneController;
 use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\MapController;
 
@@ -53,6 +53,7 @@ Route::get('/cabaneniddouillet', function () {
     return view('pages.cabanes.niddouillet');
 })->name('cabane1');
 
+
 Route::get('/cabaneosmose', function () {
     return view('pages.cabanes.osmose');
 })->name('cabane2');
@@ -75,11 +76,11 @@ Route::get('/admininfos', function () {
     return view('pages.admin.infos');
 })->name('infos');
 
-Route::get('/infos/cabanes', [HebergementController::class, 'index'])->name('afficherCabane');
-Route::post('/infos/cabanes', [HebergementController::class, 'create'])->name('ajouterCabane');
-Route::get('/infos/cabanes/delete/{id}', [HebergementController::class, 'destroy'])->name('supprimerCabane');
-Route::get('/infos/cabanes/edit/{id}', [HebergementController::class,'edit'])->name('editerCabane');
-Route::post('/infos/cabanes/update/{id}', [HebergementController::class,'update'])->name('modifierCabane');
+Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
+Route::post('/infos/cabanes', [CabaneController::class, 'create'])->name('ajouterCabane');
+Route::get('/infos/cabanes/delete/{id}', [CabaneController::class, 'destroy'])->name('supprimerCabane');
+Route::get('/infos/cabanes/edit/{id}', [CabaneController::class,'edit'])->name('editerCabane');
+Route::post('/infos/cabanes/update/{id}', [CabaneController::class,'updateTest'])->name('modifierCabane');
 
 Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
 Route::get('/infos/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');

@@ -23,10 +23,15 @@
 
 @section('main')
 
-<div style="background-color:#F9F4EE" class="h-screen w-full"> 
+<div style="background-color:#F9F4EE" class="h-screen w-full flex"> 
         
     <img class="w-[550px] h-screen" src="{{ Storage::url('images/cabanenid.jpg') }}" alt="Cabane intérieur">
-    
+
+    <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
+    <div class="text-4xl text-custom-marron font-bold mb-4 uppercase"> </div>
+    <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0"> </div>
+    <div class="mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0"></div>
+    </div>
 </div>
 
 

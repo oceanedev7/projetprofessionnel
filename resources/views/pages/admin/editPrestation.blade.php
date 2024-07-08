@@ -16,21 +16,23 @@
     @csrf
 
     <select name="categorie" required>
-        <option value="">{{$prestation->categorie}}</option>
-        <option value="restauration">Restauration</option>
-        <option value="spa">Spa</option>
-      </select>
+        
+      
+      <option value="{{$prestation->id}}">{{$prestation->categorie}}</option>
+      {{-- <option value="restauration">Restauration</option>
+!     <option value="spa">Spa</option>  --}}
+    </select>
 
       <select name="type" required>
         <option value="">{{$prestation->type}}</option>
-        <option value="dejeuner">Déjeuner</option>
+        {{-- <option value="dejeuner">Déjeuner</option>
         <option value="diner">Dîner</option> 
         <option value="massageoriental">Massage oriental</option>
         <option value="leshiatsu">Le Shiatsu</option>
         <option value="massagesuedois">Massage suédois</option>
         <option value="massagecalifornien">Massage Californien</option>
         <option value="massagecraniofacial">Le massage cranio facial</option>
-        <option value="massageprenatal">Massage prénatal</option>
+        <option value="massageprenatal">Massage prénatal</option> --}}
       </select>
 
       <input value="{{$prestation->duree}}" placeholder="Ajoutez une durée" name="duree" />

@@ -17,7 +17,7 @@
     <input name="description" value="{{$cabane->description}}" placeholder="Ajoutez une description..." class="border"  type="textarea"/>
     
     <select name="capacite" required>
-        <option value="{{$cabane->capacite}}"></option>
+        <option value="{{$cabane->capacite}}">{{$cabane->capacite}}</option>
         <option value="2">2 </option>
         <option value="4">4</option>
         <option value="6">6 </option>
@@ -26,7 +26,7 @@
     <input name="prix" value="{{$cabane->prix}}" placeholder="Ajoutez un prix..."/>
     
     <select name="disponibilite">
-        <option value="">{{$cabane->disponibilite}}</option>
+        <option value="{{$cabane->disponibilite}}">{{$cabane->disponibilite === 1 ? "Oui" : "Non"}}</option>
         <option value="1">Oui</option>
         <option value="0">Non</option>
       </select>

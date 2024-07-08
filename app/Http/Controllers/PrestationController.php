@@ -12,7 +12,7 @@ class PrestationController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
+    {      
         //
     }
 
@@ -55,14 +55,14 @@ class PrestationController extends Controller
      */
     public function edit(string $id)
     {
-        $prestation=Prestation::findOrFail($id); 
+        $prestation=Prestation::findOrFail($id);        
         return view("pages.admin.editPrestation", compact('prestation'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $validatedData =  $request->validate(
             [

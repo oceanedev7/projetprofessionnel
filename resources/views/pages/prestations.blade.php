@@ -85,13 +85,5 @@
 
     @endsection
 
-
-
-
-
-
-
-
-
 </body>
 </html>

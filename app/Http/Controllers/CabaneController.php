@@ -6,7 +6,7 @@ use App\Models\Equipement;
 use App\Models\Prestation;
 use Illuminate\Http\Request;
 
-class HebergementController extends Controller
+class CabaneController extends Controller
 {
     /**
      * Afficher les informations des cabanes
@@ -41,7 +41,9 @@ class HebergementController extends Controller
     return redirect("/infos/cabanes");
     }
 
-  
+
+
+
     /**
      * Modifier un ou plusieurs informations
      */
@@ -68,12 +70,40 @@ class HebergementController extends Controller
             'disponibilite'=>'required|boolean',
             ]);
             // dd($request->nomCabane);
+            dd($id);         
+
+            $update=Cabane::findOrFail($id);  
+            $update->update($validatedData);
+    
+            return redirect("/");
+    }
+
+        /**
+     * Mettre à jour les informations
+     */
+    public function updateTest(Request $request, $id)
+    {
+        $validatedData =  $request->validate(
+            [
+            'nomEquipement'=>'required|string',
+            'categorie'=>'required|string',
+            'cabane_id'=>'required|exists:cabanes,id',
+            'nomCabane'=>'required|string|min:3',
+            'description'=>'required|string',
+            'capacite'=>'required|integer',
+            'prix'=>'required|decimal:0',
+            'disponibilite'=>'required|boolean',
+            ]);
+            // dd($request->nomCabane);
 
             $update=Cabane::findOrFail($id);           
             $update->update($validatedData);
     
-            return redirect("/infos/cabanes/update");
+            // return redirect("/infos/cabanes");
+            return view('pages.admin.infos');
     }
+
+
 
     /**
      * Supprimer une cabane 

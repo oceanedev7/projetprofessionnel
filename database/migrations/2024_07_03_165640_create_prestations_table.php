@@ -13,16 +13,12 @@ return new class extends Migration
     {
         Schema::create('prestations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('reservation_id');
             $table->string('categorie');
             $table->string('type');
             $table->integer('duree')->nullable();
             $table->decimal('prix');
             $table->text('description');
             $table->timestamps();
-
-
-            $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade');
 
         });
     }
