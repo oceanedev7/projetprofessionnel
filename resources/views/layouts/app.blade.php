@@ -66,7 +66,7 @@
 
     
             {{-- Newsletter --}}
-            <form method="POST" action="" class="flex-1 flex flex-col items-center text-center ml-16 mt-16">               
+            <form method="post" action="{{ route('ajouterNewsletter') }}" class="flex-1 flex flex-col items-center text-center ml-16 mt-16">               
                  @csrf
                 <div class="font-bold text-base">Newsletter</div>
                 <hr style="background-color: #C4AA84" class="w-14 h-1 my-2">

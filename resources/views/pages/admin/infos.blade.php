@@ -114,9 +114,10 @@
 
     <livewire:dropdown />
 
+    <input placeholder="Ajoutez un type" name="type" />
       <input placeholder="Ajoutez une durée" name="duree" />
-      <input placeholder="Prix adulte" name="prix_adulte" required />
-      <input placeholder="Prix enfant" name="prix_enfant"  />
+      <input placeholder="Ajoutez un prix" name="prix" required />
+    
 
       <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
       <button>Ajouter</button>
@@ -138,10 +139,7 @@
         <tbody>
             @foreach($prestations as $prestation)
                 <tr>
-                   
-                    
-                    <td>{{$prestation->categorie->type }}</td>
-                    
+                    <td>{{$prestation->categorie }}</td>
                     <td>{{ $prestation->type}}</td>
                     <td>{{ $prestation->duree}} min</td>
                     <td>{{ $prestation->prix}}</td>

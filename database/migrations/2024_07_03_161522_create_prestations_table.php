@@ -16,11 +16,9 @@ return new class extends Migration
             $table->unsignedBigInteger('categorie_id');
             $table->string('type');
             $table->integer('duree')->nullable();
-            $table->decimal('prix_adulte');
-            $table->decimal('prix_enfant')->nullable();
+            $table->decimal('prix');
             $table->text('description');
             $table->timestamps();
-
 
             $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
 

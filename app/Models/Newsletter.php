@@ -10,8 +10,7 @@ class Newsletter extends Model
     use HasFactory;
 
     protected $fillable = [
-        'email',
-        
+        'email',  
       ];
 
       public function visiteurs()
