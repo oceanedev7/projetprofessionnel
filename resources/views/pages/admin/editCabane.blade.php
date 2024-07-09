@@ -10,29 +10,32 @@
 </head>
 <body>
     {{-- @dd($cabane->id) --}}
-    <form method="post" action="{{ route('modifierCabane', $cabane->id) }}">
+    <div >
+
+    <h1 > Modifier une cabane </h1>
+    <form  method="post" action="{{ route('modifierCabane', $cabane->id) }}">
         @csrf
         
     <input name="nomCabane" value="{{$cabane->nomCabane}}" placeholder="Ajoutez un nom de cabane..."/>
-    <input name="description" value="{{$cabane->description}}" placeholder="Ajoutez une description..." class="border"  type="textarea"/>
+
+    <input     name="description" value="{{$cabane->description}}" placeholder="Ajoutez une description..." class="border"  type="textarea"/>
     
     <select name="capacite" required>
-        <option value="{{$cabane->capacite}}">{{$cabane->capacite}}</option>
-        <option value="2">2 </option>
-        <option value="4">4</option>
-        <option value="6">6 </option>
+        <option value="2" {{$cabane->capacite === 2 ? 'selected' : ''}}>2 pers.</option>
+        <option value="4" {{$cabane->capacite  === 4 ? 'selected' : ''}}>4 pers.</option>
+        <option value="6" {{$cabane->capacite === 6 ? 'selected' : ''}}>6 pers.</option>
     </select>
 
     <input name="prix" value="{{$cabane->prix}}" placeholder="Ajoutez un prix..."/>
     
     <select name="disponibilite">
-        <option value="{{$cabane->disponibilite}}">{{$cabane->disponibilite === 1 ? "Oui" : "Non"}}</option>
-        <option value="1">Oui</option>
-        <option value="0">Non</option>
+        <option value="1" {{$cabane->disponibilite  === 1 ? "selected" : ""}}>Oui</option>
+        <option value="0" {{$cabane->disponibilite  === 0 ? "selected" : ""}}>Non</option>
+
       </select>
     <button>Modifier</button>
     </form>
-
+    </div>
 
 
 </body>

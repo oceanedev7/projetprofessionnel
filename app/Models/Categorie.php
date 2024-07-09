@@ -5,17 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Newsletter extends Model
+class Categorie extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'email',
-        
-      ];
+        'type',
+     ];
 
-      public function visiteurs()
-    {
-        return $this->hasMany(Visiteur::class);
-    }
+
+     public function prestations()
+     {
+         return $this->hasMany(Prestation::class);
+     }
+
+
 }

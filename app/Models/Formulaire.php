@@ -10,7 +10,11 @@ class Formulaire extends Model
     use HasFactory;
 
     protected $fillable = [
+        'prenom',
+        'nom',
+        'numeroTelephone',
         'email',
+        'message',
       ];
 
       public function visiteur()

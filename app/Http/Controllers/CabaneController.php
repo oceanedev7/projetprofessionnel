@@ -66,42 +66,39 @@ class CabaneController extends Controller
             'nomCabane'=>'required|string|min:3',
             'description'=>'required|string',
             'capacite'=>'required|integer',
-            'prix'=>'required|decimal:0',
+            'prix'=>'required|numeric',
             'disponibilite'=>'required|boolean',
             ]);
             // dd($request->nomCabane);
-            dd($id);         
+            // dd($id);         
 
             $update=Cabane::findOrFail($id);  
             $update->update($validatedData);
     
-            return redirect("/");
+            return redirect()->route('afficherCabane');
     }
 
         /**
      * Mettre à jour les informations
      */
-    public function updateTest(Request $request, $id)
-    {
-        $validatedData =  $request->validate(
-            [
-            'nomEquipement'=>'required|string',
-            'categorie'=>'required|string',
-            'cabane_id'=>'required|exists:cabanes,id',
-            'nomCabane'=>'required|string|min:3',
-            'description'=>'required|string',
-            'capacite'=>'required|integer',
-            'prix'=>'required|decimal:0',
-            'disponibilite'=>'required|boolean',
-            ]);
-            // dd($request->nomCabane);
+    // public function updateTest(Request $request, $id)
+    // {
+    //     $validatedData =  $request->validate(
+    //         [
+    //         'nomCabane'=>'required|string|min:3',
+    //         'description'=>'required|string',
+    //         'capacite'=>'required|integer',
+    //         'prix'=>'required|numeric',
+    //         'disponibilite'=>'required|boolean',
+    //         ]);
+    //         // dd($request->nomCabane);
 
-            $update=Cabane::findOrFail($id);           
-            $update->update($validatedData);
+    //         $update=Cabane::findOrFail($id);           
+    //         $update->update($validatedData);
     
-            // return redirect("/infos/cabanes");
-            return view('pages.admin.infos');
-    }
+    //         return redirect()->route('afficherCabane');
+    //         // return view('pages.admin.infos');
+    // }
 
 
 

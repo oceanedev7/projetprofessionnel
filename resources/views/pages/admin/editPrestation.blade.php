@@ -12,37 +12,31 @@
  
     <h1 class="font-bold">Informations prestations</h1>
 
-<form method="post" action="{{ route('modifierPrestation' , $prestation->id) }}"> 
-    @csrf
-
-    <select name="categorie" required>
-        
-      
-      <option value="{{$prestation->id}}">{{$prestation->categorie}}</option>
-      {{-- <option value="restauration">Restauration</option>
-!     <option value="spa">Spa</option>  --}}
-    </select>
-
-      <select name="type" required>
-        <option value="">{{$prestation->type}}</option>
-        {{-- <option value="dejeuner">Déjeuner</option>
-        <option value="diner">Dîner</option> 
-        <option value="massageoriental">Massage oriental</option>
-        <option value="leshiatsu">Le Shiatsu</option>
-        <option value="massagesuedois">Massage suédois</option>
-        <option value="massagecalifornien">Massage Californien</option>
-        <option value="massagecraniofacial">Le massage cranio facial</option>
-        <option value="massageprenatal">Massage prénatal</option> --}}
+    <form method="post" action="{{ route('modifierPrestation', $prestation->id) }}">
+      @csrf
+  
+      <select name="categorie" required>
+          <option value="Restauration" {{ $prestation->categorie === 'Restauration' ? 'selected' : '' }}>Restauration</option>
+          <option value="Spa" {{ $prestation->categorie === 'Spa' ? 'selected' : '' }}>Spa</option>
       </select>
-
-      <input value="{{$prestation->duree}}" placeholder="Ajoutez une durée" name="duree" />
-      <input value="{{$prestation->prix}}" placeholder="Ajoutez un prix" name="prix" required />
-
-      <textarea name="description" placeholder="Ajoutez une description..." required>{{$prestation->description}}</textarea>
-      <button>Ajouter</button>
-
-</form>
-    
-
+  
+      <select name="type" required>
+          <option value="dejeuner" {{ $prestation->type === 'dejeuner' ? 'selected' : '' }}>Déjeuner</option>
+          <option value="diner" {{ $prestation->type === 'diner' ? 'selected' : '' }}>Dîner</option>
+          <option value="Massage oriental" {{ $prestation->type === 'Massage oriental' ? 'selected' : '' }}>Massage oriental</option>
+          <option value="leshiatsu" {{ $prestation->type === 'leshiatsu' ? 'selected' : '' }}>Le Shiatsu</option>
+          <option value="massagesuedois" {{ $prestation->type === 'massagesuedois' ? 'selected' : '' }}>Massage suédois</option>
+          <option value="massagecalifornien" {{ $prestation->type === 'Massage Californien' ? 'selected' : '' }}>Massage californien</option>
+          <option value="massagecraniofacial" {{ $prestation->type === 'massagecraniofacial' ? 'selected' : '' }}>Le massage cranio facial</option>
+          <option value="massageprenatal" {{ $prestation->type === 'massageprenatal' ? 'selected' : '' }}>Massage prénatal</option>
+      </select>
+  
+      <input value="{{ $prestation->duree }}" placeholder="Ajoutez une durée" name="duree" />
+      <input value="{{ $prestation->prix }}" placeholder="Ajoutez un prix" name="prix" required />
+  
+      <textarea name="description" placeholder="Ajoutez une description..." required>{{ $prestation->description }}</textarea>
+      <button>Modifier</button>
+  </form>
+  
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/css/app.css','resources/js/app.js'])
     <title>Tout Là-Haut</title>
+    @livewireStyles
 </head>
 <body>
 
@@ -111,32 +112,16 @@
 <form method="post" action="{{ route('ajouterPrestation') }}"> 
     @csrf
 
-    <select name="categorie" required>
-        <option value="">---</option>
-        <option value="restauration">Restauration</option>
-        <option value="spa">Spa</option>
-      </select>
-
-      <select name="type" required>
-        <option value="">---</option>
-        <option value="dejeuner">Déjeuner</option>
-        <option value="diner">Dîner</option> 
-        <option value="massageoriental">Massage oriental</option>
-        <option value="leshiatsu">Le Shiatsu</option>
-        <option value="massagesuedois">Massage suédois</option>
-        <option value="massagecalifornien">Massage Californien</option>
-        <option value="massagecraniofacial">Le massage cranio facial</option>
-        <option value="massageprenatal">Massage prénatal</option>
-      </select>
+    <livewire:dropdown />
 
       <input placeholder="Ajoutez une durée" name="duree" />
-      <input placeholder="Ajoutez un prix" name="prix" required />
+      <input placeholder="Prix adulte" name="prix_adulte" required />
+      <input placeholder="Prix enfant" name="prix_enfant"  />
 
       <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
       <button>Ajouter</button>
 
 </form>
-
 
  <table class="border-collapse border border-slate-400">
         <thead>
@@ -153,7 +138,10 @@
         <tbody>
             @foreach($prestations as $prestation)
                 <tr>
-                    <td>{{ $prestation->categorie}}</td>
+                   
+                    
+                    <td>{{$prestation->categorie->type }}</td>
+                    
                     <td>{{ $prestation->type}}</td>
                     <td>{{ $prestation->duree}} min</td>
                     <td>{{ $prestation->prix}}</td>
@@ -168,10 +156,10 @@
 
 
 
+  
+   
 
 
-
-
-    
+    @livewireScripts
 </body>
 </html>

@@ -25,7 +25,7 @@ class PrestationController extends Controller
             'categorie'=> 'required|string',
             'type' => 'required|string',
             'duree'=> 'required|integer',
-            'prix'=> 'required|decimal:0',
+            'prix'=> 'required|numeric',
             'description' => 'required|string',
         ]);
 
@@ -69,14 +69,15 @@ class PrestationController extends Controller
             'categorie'=> 'required|string',
             'type' => 'required|string',
             'duree'=> 'required|integer',
-            'prix'=> 'required|decimal:0',
+            'prix_enfant'=> 'required|numeric',
+            'prix_adulte'=> 'required|numeric',
             'description' => 'required|string',
             ]);
 
             $update=Prestation::findOrFail($id);           
             $update->update($validatedData);
     
-            return redirect("/infos/cabanes");
+            return redirect()->route('afficherCabane');
     }
 
     /**

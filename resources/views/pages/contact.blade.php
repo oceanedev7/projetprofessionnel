@@ -32,7 +32,9 @@
 
 
         <div class="flex flex-col items-center p-6 min-h-screen">
-            <div class="w-full max-w-3xl mt-6">
+            
+                <form class="w-full max-w-3xl mt-2">
+                    @csrf
                 <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-6">
                     <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" placeholder="Prénom" />
                     <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" placeholder="Nom" />
@@ -42,12 +44,13 @@
                 <div class="flex flex-col items-center">
                     <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" placeholder="Message"></textarea>
                     <button class="bg-custom-marron text-white font-medium text-base px-6 py-2 rounded-md mt-4">ENVOYER</button>
+                </form>
                 </div>
-            </div>
+        
         </div>
+        
+        
 </div>
-
-
 
 
 <div style="background-color:#F9F4EE" class="w-full h-screen flex">

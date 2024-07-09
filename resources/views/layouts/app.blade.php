@@ -66,13 +66,16 @@
 
     
             {{-- Newsletter --}}
-            <div class="flex-1 flex flex-col items-center text-center ml-16 mt-16">
+            <form method="POST" action="" class="flex-1 flex flex-col items-center text-center ml-16 mt-16">               
+                 @csrf
                 <div class="font-bold text-base">Newsletter</div>
                 <hr style="background-color: #C4AA84" class="w-14 h-1 my-2">
                 <div class="mb-2 text-sm font-normal">Ne passez pas à côté de nos meilleures offres</div>
-                <input class=" bg-opacity-40 bg-white px-4 py-2  mb-4 border-none rounded-md h-8 w-72 text-center placeholder-white " placeholder="Adresse e-mail" />
+                <input type="email" name="email" class=" bg-opacity-40 bg-white px-4 py-2  mb-4 border-none rounded-md h-8 w-72 text-center placeholder-white " placeholder="Adresse e-mail" />
                 <button style="background-color: #C4AA84" class="text-white font-bold text-base px-6 py-1 rounded-md">S'inscrire</button>
-            </div>
+            </form>
+
+            
           
     
             {{-- Liens des informations obligatoires --}}

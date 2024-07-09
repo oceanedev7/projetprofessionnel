@@ -13,7 +13,8 @@ class Prestation extends Model
     'categorie',
     'type',
     'duree',
-    'prix',
+    'prix_enfant',
+    'prix_adulte',
     'description',
     ];
 
@@ -21,5 +22,11 @@ class Prestation extends Model
     public function reservation()
     {
         return $this->belongsTo(Reservation::class);
+    }
+
+
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
     }
 }

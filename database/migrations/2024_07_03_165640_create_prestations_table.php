@@ -13,12 +13,16 @@ return new class extends Migration
     {
         Schema::create('prestations', function (Blueprint $table) {
             $table->id();
-            $table->string('categorie');
+            $table->unsignedBigInteger('categorie_id');
             $table->string('type');
             $table->integer('duree')->nullable();
-            $table->decimal('prix');
+            $table->decimal('prix_adulte');
+            $table->decimal('prix_enfant')->nullable();
             $table->text('description');
             $table->timestamps();
+
+
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
 
         });
     }

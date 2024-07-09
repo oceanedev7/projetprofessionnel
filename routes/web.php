@@ -80,7 +80,7 @@ Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficher
 Route::post('/infos/cabanes', [CabaneController::class, 'create'])->name('ajouterCabane');
 Route::get('/infos/cabanes/delete/{id}', [CabaneController::class, 'destroy'])->name('supprimerCabane');
 Route::get('/infos/cabanes/edit/{id}', [CabaneController::class,'edit'])->name('editerCabane');
-Route::post('/infos/cabanes/update/{id}', [CabaneController::class,'updateTest'])->name('modifierCabane');
+Route::post('/infos/cabanes/update/{id}', [CabaneController::class,'update'])->name('modifierCabane');
 
 Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
 Route::get('/infos/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');
