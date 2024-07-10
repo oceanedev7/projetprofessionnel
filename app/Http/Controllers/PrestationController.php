@@ -21,8 +21,9 @@ class PrestationController extends Controller
      */
     public function create(Request $request)
     {
+     
         $request->validate([
-            'categorie'=> 'required|string',
+            'categorie_id'=>'required|exists:categories,id', 
             'type' => 'required|string',
             'duree'=> 'required|integer',
             'prix'=> 'required|numeric',
@@ -30,7 +31,6 @@ class PrestationController extends Controller
         ]);
 
        Prestation::create($request->all()); 
-
         return redirect("/infos/cabanes");
     }
 
@@ -66,12 +66,13 @@ class PrestationController extends Controller
     {
         $validatedData =  $request->validate(
             [
+            'categorie_id'=>'required|exists:categories,id', 
             'categorie'=> 'required|string',
             'type' => 'required|string',
             'duree'=> 'required|integer',
-            'prix_enfant'=> 'required|numeric',
-            'prix_adulte'=> 'required|numeric',
+            'prix'=> 'required|numeric',
             'description' => 'required|string',
+            
             ]);
 
             $update=Prestation::findOrFail($id);           

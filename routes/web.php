@@ -5,8 +5,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\CabaneController;
 use App\Http\Controllers\PrestationController;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\MapController;
-
+// use App\Models\Newsletter;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -76,6 +77,10 @@ Route::get('/admininfos', function () {
     return view('pages.admin.infos');
 })->name('infos');
 
+// Route::get('/newsletter/inscription', function () {
+//     return view('pages.admin.newsletter');
+// })->name('newsletter');
+
 Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
 Route::post('/infos/cabanes', [CabaneController::class, 'create'])->name('ajouterCabane');
 Route::get('/infos/cabanes/delete/{id}', [CabaneController::class, 'destroy'])->name('supprimerCabane');
@@ -91,6 +96,11 @@ Route::post('/infos/prestations', [PrestationController::class, 'create'])->name
 Route::get('/infos/prestations/delete/{id}', [PrestationController::class, 'destroy'])->name('supprimerPrestation');
 Route::get('/infos/prestations/edit/{id}', [PrestationController::class,'edit'])->name('editerPrestation');
 Route::post('/infos/prestations/update/{id}', [PrestationController::class,'update'])->name('modifierPrestation');
+
+
+Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');
+Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
+Route::post('/newsletter/inscription', [NewsletterController::class,'create'])->name('ajouterNewsletter');
 
 
 
