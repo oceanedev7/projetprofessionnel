@@ -1,11 +1,11 @@
-<div>
+{{-- <div>
    
       <select wire:model.live="selectedcategorie" name="categorie" required>
         <option value="">Sélectionner une catégorie</option>
         @foreach ($categories as $categorie)
             <option value="{{$categorie->id}}">{{$categorie->type}}</option>  
         @endforeach
-      </select>
+      </select> --}}
 
         {{-- @if(!is_null($selectedcategorie)) 
          <select wire:model="selectedprestation" name="type">
@@ -23,4 +23,4 @@
 
 
 
-</div>
+{{-- </div> --}}
