@@ -6,8 +6,9 @@ use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\CabaneController;
 use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\MapController;
-// use App\Models\Newsletter;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -77,9 +78,6 @@ Route::get('/admininfos', function () {
     return view('pages.admin.infos');
 })->name('infos');
 
-// Route::get('/newsletter/inscription', function () {
-//     return view('pages.admin.newsletter');
-// })->name('newsletter');
 
 Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
 Route::post('/infos/cabanes', [CabaneController::class, 'create'])->name('ajouterCabane');
@@ -101,6 +99,10 @@ Route::post('/infos/prestations/update/{id}', [PrestationController::class,'upda
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');
 Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
 Route::post('/newsletter/inscription', [NewsletterController::class,'create'])->name('ajouterNewsletter');
+
+Route::get('/formulaire', [FormulaireController::class,'index'])->name('afficherFormulaire');
+Route::post('/formulaire', [FormulaireController::class,'create'])->name('ajouterFormulaire');
+Route::get('/formulaire/delete/{id}', [FormulaireController::class,'destroy'])->name('supprimerFormulaire');
 
 
 

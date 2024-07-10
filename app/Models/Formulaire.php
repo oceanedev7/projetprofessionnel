@@ -10,6 +10,7 @@ class Formulaire extends Model
     use HasFactory;
 
     protected $fillable = [
+        'visiteur_id',
         'prenom',
         'nom',
         'numeroTelephone',
@@ -19,6 +20,6 @@ class Formulaire extends Model
 
       public function visiteur()
       {
-          return $this->belongsTo(Visiteur::class);
+          return $this->belongsTo(Visiteur::class, 'visiteur_id');
       }
 }
