@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('visiteurs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('newsletter_id');
+            $table->string('nom'); 
+            $table->string('prenom');
+            $table->unsignedBigInteger('newsletter_id')->nullable();
             $table->timestamps();
 
             $table->foreign('newsletter_id')->references('id')->on('newsletters')->onDelete('cascade');

@@ -31,7 +31,7 @@ class NewsletterController extends Controller
     //  dd($request);
 
        Newsletter::create($request->all()); 
-        return redirect()->route('accueil');
+        return redirect()->route('accueil')->with('success', 'Merci pour votre inscription !');
     }
 
     

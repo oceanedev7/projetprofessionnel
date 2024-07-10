@@ -9,14 +9,18 @@ class Visiteur extends Model
 {
     use HasFactory;
 
-   
+    protected $fillable = [
+        'nom', 
+        'prenom',
+    ];
+
     public function newsletter()
     {
         return $this->belongsTo(Newsletter::class);
     }
 
 
-    public function visiteurs()
+    public function formulaires()
     {
         return $this->hasMany(Formulaire::class);
     }

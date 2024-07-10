@@ -73,8 +73,14 @@
                 <div class="mb-2 text-sm font-normal">Ne passez pas à côté de nos meilleures offres</div>
                 <input type="email" name="email" class=" bg-opacity-40 bg-white px-4 py-2  mb-4 border-none rounded-md h-8 w-72 text-center placeholder-white " placeholder="Adresse e-mail" />
                 <button style="background-color: #C4AA84" class="text-white font-bold text-base px-6 py-1 rounded-md">S'inscrire</button>
+            @if (session('success'))
+            <div class="font-bold">
+                 {{ session('success') }}
+             </div>
+            @endif
             </form>
 
+            
             
           
     
