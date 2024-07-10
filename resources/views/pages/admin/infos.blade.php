@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @vite(['resources/css/app.css','resources/js/app.js'])
     <title>Tout Là-Haut</title>
-    @livewireStyles
+
 </head>
 <body>
 
@@ -112,52 +112,50 @@
 <form method="post" action="{{ route('ajouterPrestation') }}"> 
     @csrf
 
-    <livewire:dropdown />
+    <select name="categorie_id" required>
+        <option value="">Sélectionnez une catégorie</option>
+        @foreach($categories as $categorie)
+            <option value="{{ $categorie->id }}">{{ $categorie->type }}</option>
+        @endforeach
+    </select>
 
-    <input placeholder="Ajoutez un type" name="type" />
-      <input placeholder="Ajoutez une durée" name="duree" />
-      <input placeholder="Ajoutez un prix" name="prix" required />
-    
-
-      <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
-      <button>Ajouter</button>
-
+    <input placeholder="Ajoutez un type" name="type" required />
+    <input placeholder="Ajoutez une durée" name="duree" />
+    <input placeholder="Ajoutez un prix" name="prix" required />
+    <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
+    <button type="submit">Ajouter</button>
 </form>
 
- <table class="border-collapse border border-slate-400">
-        <thead>
+<table class="border-collapse border border-slate-400">
+    <thead>
+        <tr>
+            <th>Catégorie</th>
+            <th>Type</th>
+            <th>Durée</th>
+            <th>Prix</th>
+            <th>Description</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($prestations as $prestation)
             <tr>
-                <th>Catégorie</th>
-                <th>Type</th>
-                <th>Durée</th>
-                <th>Prix</th>
-                <th>Description</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
+                <td>{{ $prestation->categorie->type }}</td>
+                <td>{{ $prestation->type }}</td>
+                <td>{{ $prestation->duree }} min</td>
+                <td>{{ $prestation->prix }}</td>
+                <td>{{ $prestation->description }}</td>
+                <td><a href="{{ route('editerPrestation', $prestation->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
+                <td><a href="{{ route('supprimerPrestation', $prestation->id) }}"><i class="fa-solid fa-trash"></i></a></td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach($prestations as $prestation)
-                <tr>
-                    <td>{{$prestation->categorie }}</td>
-                    <td>{{ $prestation->type}}</td>
-                    <td>{{ $prestation->duree}} min</td>
-                    <td>{{ $prestation->prix}}</td>
-                    <td>{{ $prestation->description}}</td>
-                    <td><a href="{{ route('editerPrestation', $prestation->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
-                    <td><a href="{{ route('supprimerPrestation', $prestation->id) }}"><i class="fa-solid fa-trash"></i></a></td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+        @endforeach
+    </tbody>
+</table>
 
 
-
-
-  
    
 
 
-    @livewireScripts
 </body>
 </html>

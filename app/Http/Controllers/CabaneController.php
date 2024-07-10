@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Cabane;
 use App\Models\Equipement;
 use App\Models\Prestation;
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class CabaneController extends Controller
@@ -15,10 +16,11 @@ class CabaneController extends Controller
     {
         $afficherCabanes = Cabane::all();
         $afficherEquipements = Equipement::with('cabane')->get();
-        $afficherPrestations = Prestation::all();
+        $afficherPrestations = Prestation::with('categorie')->get();
+        $categories = Categorie::all();
 
     return view(
-        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements, 'prestations'=>$afficherPrestations]
+        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements, 'prestations'=>$afficherPrestations,  'categories' => $categories]
     );}
 
     /**

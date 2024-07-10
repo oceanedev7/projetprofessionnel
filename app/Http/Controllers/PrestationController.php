@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Prestation;
+use App\Models\Categorie;
+
 
 
 class PrestationController extends Controller
@@ -21,14 +23,16 @@ class PrestationController extends Controller
      */
     public function create(Request $request)
     {
-     
+// dd($request);
         $request->validate([
             'categorie_id'=>'required|exists:categories,id', 
             'type' => 'required|string',
-            'duree'=> 'required|integer',
+            'duree'=> 'nullable|integer',
             'prix'=> 'required|numeric',
             'description' => 'required|string',
         ]);
+    
+        
 
        Prestation::create($request->all()); 
         return redirect("/infos/cabanes");
@@ -55,8 +59,11 @@ class PrestationController extends Controller
      */
     public function edit(string $id)
     {
-        $prestation=Prestation::findOrFail($id);        
-        return view("pages.admin.editPrestation", compact('prestation'));
+        // dd($id);
+        $prestation=Prestation::findOrFail($id);  
+        $categories = Categorie::all();
+      
+        return view("pages.admin.editPrestation", compact('prestation', 'categories'));
     }
 
     /**
@@ -64,20 +71,21 @@ class PrestationController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd($request->all());
         $validatedData =  $request->validate(
             [
             'categorie_id'=>'required|exists:categories,id', 
-            'categorie'=> 'required|string',
             'type' => 'required|string',
             'duree'=> 'required|integer',
             'prix'=> 'required|numeric',
             'description' => 'required|string',
             
             ]);
+            
 
             $update=Prestation::findOrFail($id);           
             $update->update($validatedData);
-    
+            
             return redirect()->route('afficherCabane');
     }
 
