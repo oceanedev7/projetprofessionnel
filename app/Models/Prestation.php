@@ -13,7 +13,8 @@ class Prestation extends Model
         'categorie_id',
         'type',
         'duree',
-        'prix',
+        'prix_adulte',
+        'prix_enfant',
         'description',
         ];
     

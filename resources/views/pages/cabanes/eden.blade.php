@@ -23,10 +23,16 @@
 
 @section('main')
 
-<div style="background-color:#F9F4EE" class="h-screen w-full"> 
+<div style="background-color:#F9F4EE" class="h-screen w-full flex"> 
         
     <img class="w-[500px] h-screen" src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="Cabane intérieur">
     
+    <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
+        <div class="text-4xl text-custom-marron font-bold mb-4 uppercase"> CABANE {{$cabane->nomCabane}}</div>
+        <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0"> {{$cabane->description}}</div>
+        <div class="italic mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">À partir de {{$cabane->prix}} €</div>
+    
+</div>
 </div>
 
 
@@ -36,14 +42,37 @@
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
     
-    <div  class="flex flex-row justify-center items-center text-5xl space-x-20 text-custom-marron relative top-20"> 
-        <i class="fa-solid fa-person"></i>
-        <i class="fa-solid fa-hot-tub-person"></i>
-        <i class="fa-regular fa-snowflake"></i>
-        <i class="fa-solid fa-shower"></i>
-        <i class="fa-solid fa-toilet-portable"></i>
-        
+    <div class="flex flex-row justify-center items-center space-x-20 text-custom-marron relative top-20">
+        <div class="flex flex-col items-center space-y-2">
+            <i class="fa-solid fa-person text-5xl"></i>
+            <div class="text-base">2 pers.</div>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+            <i class="fa-solid fa-hot-tub-person text-5xl"></i>
+            <div class="text-base">Spa privatif</div>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+            <i class="fa-regular fa-snowflake text-5xl"></i>
+            <div class="text-base">Climatisation</div>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+            <i class="fa-solid fa-shower text-5xl"></i>
+            <div class="text-base">Douche et toilettes sèches</div>
+        </div>
+        <div class="flex flex-col items-center space-y-2">
+            <i class="fa-solid fa-toilet-portable text-5xl"></i>
+            <div class="text-base">Mini-frigo</div>
+        </div>
     </div>
+
+    <div class="flex flex-col mt-40">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 text-custom-marron">
+            @foreach($equipements as $equipement)
+                <div class="text-left">- {{ $equipement->nomEquipement }}</div>
+            @endforeach
+        </div>
+    </div>
+
 </div>
 
 
@@ -112,26 +141,26 @@
 
 
 <div id="indicators-carousel" class="relative top-28 left-60 max-w-screen-md" data-carousel="static">
-    <!-- Carousel wrapper -->
+
     <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-         <!-- Item 1 -->
+
         <div class="hidden" data-carousel-item="active">
             <img src="{{ Storage::url('images/caroussel1.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane chambre">
         </div>
-        <!-- Item 2 -->
+
         <div class="hidden " data-carousel-item>
             <img src="{{ Storage::url('images/caroussel2.png') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane terrasse">
         </div>
-        <!-- Item 3 -->
+
         <div class="hidden " data-carousel-item>
             <img src="{{ Storage::url('images/caroussel3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane salon">
         </div>
-        <!-- Item 4 -->
+
         <div class="hidden" data-carousel-item>
             <img src="{{ Storage::url('images/caroussel4.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane chambre étage">
         </div>
     </div>
-    <!-- Slider indicators -->
+
     <div class="absolute z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
         <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
@@ -139,8 +168,8 @@
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
         <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
     </div>
-    <!-- Slider controls -->
-     <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
         <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
             <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>

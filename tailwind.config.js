@@ -19,6 +19,7 @@ export default {
                 "custom-vert": "#536D37",
                 "custom-marron": "#422914",
             },
+            
         },
     },
 

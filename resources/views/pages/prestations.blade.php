@@ -49,13 +49,40 @@
     <div style="background-color:#F9F4EE" class=" h-screen w-full"> 
 
         <div class="flex flex-row justify-center space-x-60 relative top-16">
-        <div class="flex flex-col items-center max-w-lg	"> 
-            <img class="max-w-xs rounded" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Dejeuner">
-        </div>
+        
+            <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
+                <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
+                <div class="text-lg font-bold text-center mb-2">{{ $dejeuner->type }} </div>
+                <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
+                    <div class="text-lg mb-2 md:mb-0">
+                        <span class="font-semibold">Adulte:</span>
+                        <span>{{ $dejeuner->prix_adulte }} €</span>
+                    </div>
+                    <div class="text-lg">
+                        <span class="font-semibold">Enfant:</span>
+                        <span>{{ $dejeuner->prix_enfant }} €</span>
+                    </div>
+                </div>
+                <div class="text-center">{{ $dejeuner->description }}</div>
+            </div>
+            
+            
 
-        <div class="flex flex-col items-center max-w-lg	"> 
-            <img class="max-w-xs rounded" src="{{ Storage::url('images/diner.jpg') }}" alt="Diner">
-        </div>
+            <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
+                <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/diner.jpg') }}" alt="Déjeuner">
+                <div class="text-lg font-bold text-center mb-2">{{ $diner->type }} </div>
+                <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
+                    <div class="text-lg mb-2 md:mb-0">
+                        <span class="font-semibold">Adulte:</span>
+                        <span>{{ $diner->prix_adulte }} €</span>
+                    </div>
+                    <div class="text-lg">
+                        <span class="font-semibold">Enfant:</span>
+                        <span>{{ $diner->prix_enfant }} €</span>
+                    </div>
+                </div>
+                <div class="text-center">{{ $diner->description }}</div>
+            </div>
     
     </div>
     </div>
