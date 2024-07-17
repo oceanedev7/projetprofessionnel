@@ -52,7 +52,8 @@
         
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
-                <div class="text-lg font-bold text-center mb-2">{{ $dejeuner->type }} </div>
+              
+             <div class="text-lg font-bold text-center mb-2">{{ $dejeuner->type }}</div>
                 <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
                     <div class="text-lg mb-2 md:mb-0">
                         <span class="font-semibold">Adulte:</span>

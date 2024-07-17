@@ -11,7 +11,7 @@
 <body>
     
 
-    <h1> Liste d'inscription à la newsletter</h1>
+    <h1> Liste des messages via le formuaire de contact</h1>
 
     <table class="border-collapse border border-slate-400">
         <thead>
