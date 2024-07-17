@@ -121,7 +121,8 @@
 
     <input placeholder="Ajoutez un type" name="type" required />
     <input placeholder="Ajoutez une durée" name="duree" />
-    <input placeholder="Ajoutez un prix" name="prix" required />
+    <input placeholder="Ajoutez un prix adulte" name="prix_adulte" required />    
+    <input placeholder="Ajoutez un prix enfant" name="prix_enfant" />
     <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
     <button type="submit">Ajouter</button>
 </form>
@@ -132,7 +133,8 @@
             <th>Catégorie</th>
             <th>Type</th>
             <th>Durée</th>
-            <th>Prix</th>
+            <th>Prix Adulte</th>
+            <th>Prix Enfant</th>
             <th>Description</th>
             <th>Modifier</th>
             <th>Supprimer</th>
@@ -144,7 +146,8 @@
                 <td>{{ $prestation->categorie->type }}</td>
                 <td>{{ $prestation->type }}</td>
                 <td>{{ $prestation->duree }} min</td>
-                <td>{{ $prestation->prix }}</td>
+                <td>{{ $prestation->prix_adulte }}€</td>
+                <td>{{ $prestation->prix_enfant }}€</td>
                 <td>{{ $prestation->description }}</td>
                 <td><a href="{{ route('editerPrestation', $prestation->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
                 <td><a href="{{ route('supprimerPrestation', $prestation->id) }}"><i class="fa-solid fa-trash"></i></a></td>

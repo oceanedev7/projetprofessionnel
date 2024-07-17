@@ -7,6 +7,9 @@ use App\Http\Controllers\CabaneController;
 use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\FormulaireController;
+use App\Http\Controllers\CabaneViewController;
+use App\Http\Controllers\PrestationViewController;
+
 use App\Http\Controllers\MapController;
 
 use Illuminate\Support\Facades\Route;
@@ -51,27 +54,18 @@ Route::get('/noscabanes', function () {
     return view('pages.cabanes.noscabanes');
 })->name('noscabanes');
 
-Route::get('/cabaneniddouillet', function () {
-    return view('pages.cabanes.niddouillet');
-})->name('cabane1');
+
+Route::get('/cabaneniddouillet', [CabaneViewController::class, 'showCabaneNidDouillet'])->name('cabane1');
+Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->name('cabane2');
+Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3');
+Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4');
 
 
-Route::get('/cabaneosmose', function () {
-    return view('pages.cabanes.osmose');
-})->name('cabane2');
-
-Route::get('/cabaneescapade', function () {
-    return view('pages.cabanes.escapade');
-})->name('cabane3');
-
-Route::get('/cabaneeden', function () {
-    return view('pages.cabanes.eden');
-})->name('cabane4');
+Route::get('/prestationsetservices', [PrestationViewController::class, 'showPrestationDejeuner'])->name('prestation.dejeuner');
+Route::get('/prestation/diner', [PrestationViewController::class, 'showPrestationDiner'])->name('prestation.diner');
 
 
-Route::get('/prestationsetservices', function () {
-    return view('pages.prestations');
-})->name('prestations');
+
 
 
 Route::get('/admininfos', function () {

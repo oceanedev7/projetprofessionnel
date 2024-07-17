@@ -84,7 +84,7 @@
 
         <div class="justify-items-center grid grid-cols-2 gap-y-6 relative top-12">
 
-            <a href="{{ route('cabane1') }}" class="relative group block overflow-visible ml-32">
+            <a href="{{ route('cabane1')}}" class="relative group block overflow-visible ml-32">
         
                 <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/nid.png') }}" alt="Cabane Nid douillet">
                 <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
