@@ -60,7 +60,7 @@ Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->
 Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3');
 Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4');
 
-Route::get('/prestations', [PrestationViewController::class, 'showPrestationRestauration'])->name('prestations');
+Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations');
 
 
 
