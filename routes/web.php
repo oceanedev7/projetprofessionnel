@@ -65,9 +65,9 @@ Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])
 
 
 
-Route::get('/admininfos', function () {
-    return view('pages.admin.infos');
-})->name('infos');
+// Route::get('/admininfos', function () {
+//     return view('pages.admin.infos');
+// })->name('infos');
 
 
 Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');

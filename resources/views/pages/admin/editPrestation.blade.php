@@ -9,29 +9,58 @@
     <title>Tout Là-Haut</title>
 </head>
 <body>
- 
-    <h1 class="font-bold">Informations prestations</h1>
 
-    <form method="post" action="{{ route('modifierPrestation', $prestation->id) }}">
-        @csrf
+    <div class="bg-custom-vert min-h-screen relative min-h-screen flex items-center justify-center">
+        <a href="{{ route('afficherCabane') }}" class="absolute top-4 left-4 text-white underline hover:text-gray-300">← Revenir à la liste des prestations</a>
         
-        <select name="categorie_id" required>
-            @foreach($categories as $categorie)
-                <option value="{{ $categorie->id }}" {{ $prestation->categorie_id == $categorie->id ? 'selected' : '' }}>
-                    {{ $categorie->type }}
-                </option>
-            @endforeach
-        </select>
-    
-        <input name="type" value="{{ $prestation->type }}" required >
-    
-        <input value="{{ $prestation->duree }}" placeholder="Ajoutez une durée" name="duree" required />
-        <input value="{{ $prestation->prix }}" placeholder="Ajoutez un prix" name="prix" required />
-    
-        <textarea name="description" placeholder="Ajoutez une description..." required>{{ $prestation->description }}</textarea>
-        <button type="submit">Modifier</button>
-    </form>
-    
-  
+        <div class="bg-transparent p-8 w-full max-w-lg">
+            <h1 class="text-2xl font-bold mb-6 text-white text-center">Modifier une prestation</h1>
+            <form method="post" action="{{ route('modifierPrestation', $prestation->id) }}" class="space-y-6">
+                @csrf
+                
+                <div>
+                    <label for="categorie_id" class="block text-lg font-medium mb-2 text-white">Catégorie</label>
+                    <select id="categorie_id" name="categorie_id" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        @foreach($categories as $categorie)
+                            <option value="{{ $categorie->id }}" {{ $prestation->categorie_id == $categorie->id ? 'selected' : '' }}>
+                                {{ $categorie->type }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div>
+                    <label for="type" class="block text-lg font-medium mb-2 text-white">Type</label>
+                    <input id="type" name="type" value="{{ $prestation->type }}" placeholder="Ajoutez un type" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                </div>
+
+                <div>
+                    <label for="duree" class="block text-lg font-medium mb-2 text-white">Durée</label>
+                    <input id="duree" name="duree" value="{{ $prestation->duree }}" placeholder="Ajoutez une durée" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                </div>
+
+                <div>
+                    <label for="prix_adulte" class="block text-lg font-medium mb-2 text-white">Prix Adulte</label>
+                    <input id="prix_adulte" name="prix_adulte" value="{{ $prestation->prix_adulte }}" placeholder="Ajoutez un prix adulte" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                </div>
+
+                <div>
+                    <label for="prix_enfant" class="block text-lg font-medium mb-2 text-white">Prix Enfant</label>
+                    <input id="prix_enfant" name="prix_enfant" value="{{ $prestation->prix_enfant }}" placeholder="Ajoutez un prix enfant" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500"/>
+                </div>
+
+                <div>
+                    <label for="description" class="block text-lg font-medium mb-2 text-white">Description</label>
+                    <textarea id="description" name="description" placeholder="Ajoutez une description..." class="w-full p-4 border border-gray-300 rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-150 ease-in-out" rows="4" required>{{ $prestation->description }}</textarea>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="bg-custom-marron text-white px-6 py-3 rounded-md shadow-md">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </body>
+
+
 </html>

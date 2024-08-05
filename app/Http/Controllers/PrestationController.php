@@ -78,7 +78,8 @@ class PrestationController extends Controller
             'categorie_id'=>'required|exists:categories,id', 
             'type' => 'required|string',
             'duree'=> 'required|integer',
-            'prix'=> 'required|numeric',
+            'prix_adulte'=> 'required|numeric',
+            'prix_enfant' => 'nullable|numeric',
             'description' => 'required|string',
             
             ]);
