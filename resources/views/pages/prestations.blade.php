@@ -106,7 +106,9 @@
     </div>
 
     <div style="background-color:#F9F4EE" class=" h-screen w-full"> 
-        
+        {{-- @foreach ($massages as $massage )
+        <div class="text-center">{{ $massage->description }}</div>
+        @endforeach --}}
     
     </div>
 

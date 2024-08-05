@@ -34,13 +34,13 @@
                 <form method="post" action="{{ route('ajouterFormulaire') }}" class="w-full max-w-3xl">
                     @csrf
                 <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-6">
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="prenom" placeholder="Prénom" />
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="nom" placeholder="Nom" />
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="numeroTelephone"  placeholder="Numéro de téléphone" />
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="email" placeholder="Adresse e-mail" />
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="prenom" placeholder="Prénom" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="nom" placeholder="Nom" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="numeroTelephone"  placeholder="Numéro de téléphone" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="email" placeholder="Adresse e-mail" required/>
                 </div>
                 <div class="flex flex-col items-center">
-                    <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" name="message" placeholder="Message"></textarea>
+                    <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" name="message" placeholder="Message" required></textarea>
                     <button class="bg-custom-marron text-white font-medium text-base px-6 py-2 rounded-md mt-4">ENVOYER</button>
                 </form>
                 </div>

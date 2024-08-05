@@ -12,7 +12,7 @@
 <body>
 
     <nav>
-        <div class="fixed z-10 w-full"> 
+        <div class="fixed z-10 w-full "> 
             <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
             <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a> 
             <a class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> EN </a> 
@@ -21,7 +21,7 @@
     </nav>
 
     <header>
-        <div class="bg-custom-vert h-screen w-full" >
+        <div class="bg-custom-vert h-screen w-full relative " >
             <div class="flex flex-row"> 
                 <img class="w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Cabane intérieur">
                @yield('titre')

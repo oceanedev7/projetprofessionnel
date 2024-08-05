@@ -34,8 +34,8 @@
 
 
     <a class="flex items-center justify-center absolute bottom-8 left-28 bg-gray-400 bg-opacity-65  text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> EN </a> 
-    <a class="flex items-center justify-center absolute bottom-8 left-44 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-facebook-f"></i> </a> 
-    <a class="flex items-center justify-center absolute bottom-8 left-60 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-instagram"></i> </a> 
+    <a href="https://www.facebook.com" class="flex items-center justify-center absolute bottom-8 left-44 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-facebook-f"></i> </a> 
+    <a href="https://www.instagram.com"  class="flex items-center justify-center absolute bottom-8 left-60 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-instagram"></i> </a> 
 
  
 

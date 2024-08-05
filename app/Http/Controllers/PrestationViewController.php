@@ -18,4 +18,15 @@ class PrestationViewController extends Controller
             'diner' => $diner,
         ]);
     }
+
+
+
+    public function showPrestationMassage()
+    {
+        $massages = Prestation::with('categorie')->where('categorie_id' > 1);
+        // dd($massages);
+        return view('pages.prestations', [
+            'massages' => $massages,
+        ]);
+    }
 }
