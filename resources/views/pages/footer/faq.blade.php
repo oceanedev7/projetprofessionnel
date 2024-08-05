@@ -14,14 +14,12 @@
 
 <body>
 
+ @section ('titre')
 
-@section ('titre')
 
-<h1 class=" ml-52 mt-32 text-5xl text-white font-bold w-full "> Questions <br/> & Réponses </h1>
-
-        <div class="flex flex-col text-white text-justify relative top-60 >
-           
-            <div class="" id="accordion-flush" data-accordion="collapse" data-active-classes="bg-custom-vert dark:bg-gray-900 text-gray-900 text-custom-beige dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
+<div class="flex flex-col h-screen text-white text-justify relative   " >
+           <h1 class="  text-5xl text-white font-bold w-full "> Questions <br/> & Réponses </h1>
+            <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-custom-vert dark:bg-gray-900 text-gray-900 text-custom-beige dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
                 <h2 id="accordion-flush-heading-1">
                     <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-white dark:text-gray-400 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
                         <span class="text-lg">Quels types de cabanes proposez-vous ?</span>
@@ -154,8 +152,10 @@
                 </div>
             </div> 
          
-    @endsection
+    @endsection 
+     
 
+ 
 
 
 

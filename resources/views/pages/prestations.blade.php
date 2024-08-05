@@ -52,7 +52,8 @@
         
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
-                <div class="text-lg font-bold text-center mb-2">{{ $dejeuner->type }} </div>
+                @if(isset($dejeuner))
+             <div class="text-lg font-bold text-center mb-2">{{ $dejeuner->type }}</div>
                 <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
                     <div class="text-lg mb-2 md:mb-0">
                         <span class="font-semibold">Adulte:</span>
@@ -64,12 +65,14 @@
                     </div>
                 </div>
                 <div class="text-center">{{ $dejeuner->description }}</div>
+                @endif
             </div>
             
             
 
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/diner.jpg') }}" alt="Déjeuner">
+                @if(isset($diner))
                 <div class="text-lg font-bold text-center mb-2">{{ $diner->type }} </div>
                 <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
                     <div class="text-lg mb-2 md:mb-0">
@@ -82,6 +85,7 @@
                     </div>
                 </div>
                 <div class="text-center">{{ $diner->description }}</div>
+                @endif
             </div>
     
     </div>
@@ -104,10 +108,26 @@
         </div>
     </div>
 
-    <div style="background-color:#F9F4EE" class=" h-screen w-full"> 
-        
-    
+
+    <div style="background-color:#F9F4EE" class="h-screen w-full flex items-center">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 gap-x-14 gap-y-8"> 
+                @foreach ($massages as $massage)
+                    <div class="flex flex-col">
+                        <div class="flex items-center">
+                            <div class="font-bold text-custom-marron text-lg">{{ $massage->type }}</div>
+                            <hr class="h-1 w-2 bg-custom-marron mx-4"/>
+                            <div class="font-bold text-custom-marron text-lg">{{ $massage->duree }}min</div>
+                            <div class="font-bold text-custom-marron text-lg ml-auto">{{ $massage->prix_adulte }}€</div>
+                        </div>
+                        <div class="text-justify mt-2 text-sm w-full">{{ $massage->description }}</div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
+    
+    
 
 
     @endsection

@@ -9,156 +9,191 @@
     <title>Tout Là-Haut</title>
 
 </head>
-<body>
+<body class="bg-custom-vert">
 
+    <div class="container mx-auto p-8">
 
-<h1 class="font-bold">Informations cabanes</h1>
+        <h1 class="text-3xl font-bold mb-6 text-center text-white">Informations Cabanes</h1>
+        
+        <form method="post" action="{{ route('ajouterCabane') }}" class="bg-white p-8 rounded-xl shadow-lg mb-8">
+            @csrf
+            <div class="mb-4">
+                <label for="nomCabane" class="block text-lg font-medium mb-2 text-gray-700">Nom de la cabane</label>
+                <input id="nomCabane" name="nomCabane" placeholder="Ajoutez un nom de cabane..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-lg font-medium mb-2 text-gray-700">Description</label>
+                <textarea id="description" name="description" placeholder="Ajoutez une description..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+            </div>
+            <div class="mb-4">
+                <label for="capacite" class="block text-lg font-medium mb-2 text-gray-700">Capacité</label>
+                <select id="capacite" name="capacite" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <option value="">---</option>
+                    <option value="2">2 pers.</option>
+                    <option value="4">4 pers.</option>
+                    <option value="6">6 pers.</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="prix" class="block text-lg font-medium mb-2 text-gray-700">Prix</label>
+                <input id="prix" name="prix" placeholder="Ajoutez un prix..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="mb-4">
+                <label for="disponibilite" class="block text-lg font-medium mb-2 text-gray-700">Disponibilité</label>
+                <select id="disponibilite" name="disponibilite" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <option value="">---</option>
+                    <option value="1">Oui</option>
+                    <option value="0">Non</option>
+                </select>
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="bg-custom-marron text-white px-6 py-3 rounded-md shadow-md">Ajouter</button>
+            </div>        
+        </form>
 
-<form method="post" action="{{ route('ajouterCabane') }}">
-    @csrf
-    
-<input name="nomCabane" placeholder="Ajoutez un nom de cabane..." required/>
-<textarea name="description" placeholder="Ajoutez une description..." ></textarea>
+        <table class="min-w-full bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden mb-8">
+            <thead class="bg-gray-100 text-gray-600">
+                <tr>
+                    <th class="py-3 px-6 text-left">Nom</th>
+                    <th class="py-3 px-6 text-left">Description</th>
+                    <th class="py-3 px-6 text-left">Capacité</th>
+                    <th class="py-3 px-6 text-left">Prix base</th>
+                    <th class="py-3 px-6 text-left">Disponibilité</th>
+                    <th class="py-3 px-6 text-center">Modifier</th>
+                    <th class="py-3 px-6 text-center">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @foreach ($cabanes as $cabane)
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-4 px-6">{{$cabane->nomCabane}}</td>
+                    <td class="py-4 px-6">{{$cabane->description}}</td>
+                    <td class="py-4 px-6">{{$cabane->capacite}}</td>
+                    <td class="py-4 px-6">{{$cabane->prix}} €</td>
+                    <td class="py-4 px-6">{{$cabane->disponibilite ? 'Oui' : 'Non'}}</td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('editerCabane', $cabane->id) }}" class="text-blue-500 hover:text-blue-700 transition"><i class="fa-solid fa-pencil"></i></a></td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('supprimerCabane', $cabane->id) }}" class="text-red-500 hover:text-red-700 transition"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
-<select name="capacite" required>
-    <option value="">---</option>
-    <option value="2">2 pers.</option>
-    <option value="4">4 pers.</option>
-    <option value="6">6 pers.</option>
-  </select>
+        <h1 class="text-3xl font-bold mb-6 text-center text-white">Informations Équipements</h1>
 
-<input name="prix" placeholder="Ajoutez un prix..." required/>
+        <form method="post" action="{{ route('ajouterEquipement') }}" class="bg-white p-8 rounded-xl shadow-lg mb-8">
+            @csrf
+            <div class="mb-4">
+                <label for="cabane_id" class="block text-lg font-medium mb-2 text-gray-700">Cabane</label>
+                <select id="cabane_id" name="cabane_id" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    @foreach ($cabanes as $cabane)
+                        <option value="{{ $cabane->id }}">{{ $cabane->nomCabane }}</option>
+                    @endforeach  
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="nomEquipement" class="block text-lg font-medium mb-2 text-gray-700">Équipement</label>
+                <input id="nomEquipement" name="nomEquipement" placeholder="Ajoutez un équipement" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="mb-4">
+                <label for="categorie" class="block text-lg font-medium mb-2 text-gray-700">Catégorie</label>
+                <input id="categorie" name="categorie" placeholder="Ajoutez une catégorie" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="bg-custom-marron text-white px-6 py-3 rounded-md shadow-md">Ajouter</button>
+            </div>          
+        </form>
 
-<label >Disponibilité</label>
-<select name="disponibilite" required>
-    <option value="">---</option>
-    <option value="1">Oui</option>
-    <option value="0">Non</option>
-  </select>
+        <table class="min-w-full bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden mb-8">
+            <thead class="bg-gray-100 text-gray-600">
+                <tr>
+                    <th class="py-3 px-6 text-left">Cabane</th>
+                    <th class="py-3 px-6 text-left">Équipements</th>
+                    <th class="py-3 px-6 text-left">Catégorie</th>
+                    <th class="py-3 px-6 text-center">Modifier</th>
+                    <th class="py-3 px-6 text-center">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @foreach($equipements as $equipement)
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-4 px-6">{{ $equipement->cabane->nomCabane }}</td>
+                    <td class="py-4 px-6">{{ $equipement->nomEquipement }}</td>
+                    <td class="py-4 px-6">{{ $equipement->categorie }}</td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('editerEquipement', $equipement->id ) }}" class="text-blue-500 hover:text-blue-700 transition"><i class="fa-solid fa-pencil"></i></a></td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('supprimerEquipement', $equipement->id) }}" class="text-red-500 hover:text-red-700 transition"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
-<button>Ajouter </button>
-</form>
+        <h1 class="text-3xl font-bold mb-6 text-center text-white">Informations Prestations</h1>
 
- <table class="" >
-    <thead class="">
-      <tr>
-        <th >Nom</th>
-        <th>Description</th>
-        <th>Capacité</th>
-        <th>Prix base</th>
-        <th>Disponibilité</th>
-        <th>Modifier</th>
-        <th>Supprimer</th>
-      </tr>
-    </thead>
+        <form method="post" action="{{ route('ajouterPrestation') }}" class="bg-white p-8 rounded-xl shadow-lg mb-8">
+            @csrf
+            <div class="mb-4">
+                <label for="categorie_id" class="block text-lg font-medium mb-2 text-gray-700">Catégorie</label>
+                <select id="categorie_id" name="categorie_id" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <option value="">Sélectionnez une catégorie</option>
+                    @foreach($categories as $categorie)
+                        <option value="{{ $categorie->id }}">{{ $categorie->type }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="type" class="block text-lg font-medium mb-2 text-gray-700">Type</label>
+                <input id="type" name="type" placeholder="Ajoutez un type" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="mb-4">
+                <label for="duree" class="block text-lg font-medium mb-2 text-gray-700">Durée</label>
+                <input id="duree" name="duree" placeholder="Ajoutez une durée" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+            </div>
+            <div class="mb-4">
+                <label for="prix_adulte" class="block text-lg font-medium mb-2 text-gray-700">Prix Adulte</label>
+                <input id="prix_adulte" name="prix_adulte" placeholder="Ajoutez un prix adulte" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+            </div>
+            <div class="mb-4">
+                <label for="prix_enfant" class="block text-lg font-medium mb-2 text-gray-700">Prix Enfant</label>
+                <input id="prix_enfant" name="prix_enfant" placeholder="Ajoutez un prix enfant" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"/>
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-lg font-medium mb-2 text-gray-700">Description</label>
+                <textarea id="description" name="description" placeholder="Ajoutez une description..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+            </div>
+            <div class="flex justify-end">
+                <button type="submit" class="bg-custom-marron text-white px-6 py-3 rounded-md shadow-md">Ajouter</button>
+            </div>          
+        </form>
 
-@foreach ($cabanes as $cabane)
-{{-- @dd($cabane) --}}
-    <tbody>
-      <tr>
-        <td>{{$cabane->nomCabane}} </td>
-        <td> {{$cabane->description}}</td>
-        <td> {{$cabane->capacite}} </td>
-        <td> {{$cabane->prix}} €</td>
-        <td> {{$cabane->disponibilite}}</td>
-        <td><a href="{{ route('editerCabane', $cabane->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
-        <td><a href="{{ route('supprimerCabane', $cabane->id) }}"><i class="fa-solid fa-trash"></i></a></td>
-      </tr>
-    </tbody>
-    @endforeach
-  </table>
+        <table class="min-w-full bg-white border border-gray-300 rounded-xl shadow-lg overflow-hidden">
+            <thead class="bg-gray-100 text-gray-600">
+                <tr>
+                    <th class="py-3 px-6 text-left">Catégorie</th>
+                    <th class="py-3 px-6 text-left">Type</th>
+                    <th class="py-3 px-6 text-left">Durée</th>
+                    <th class="py-3 px-6 text-left">Prix Adulte</th>
+                    <th class="py-3 px-6 text-left">Prix Enfant</th>
+                    <th class="py-3 px-6 text-left">Description</th>
+                    <th class="py-3 px-6 text-center">Modifier</th>
+                    <th class="py-3 px-6 text-center">Supprimer</th>
+                </tr>
+            </thead>
+            <tbody class="text-gray-700">
+                @foreach($prestations as $prestation)
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="py-4 px-6">{{ $prestation->categorie->type }}</td>
+                    <td class="py-4 px-6">{{ $prestation->type }}</td>
+                    <td class="py-4 px-6">{{ $prestation->duree }} min</td>
+                    <td class="py-4 px-6">{{ $prestation->prix_adulte }}€</td>
+                    <td class="py-4 px-6">{{ $prestation->prix_enfant }}€</td>
+                    <td class="py-4 px-6">{{ $prestation->description }}</td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('editerPrestation', $prestation->id) }}" class="text-blue-500 hover:text-blue-700 transition"><i class="fa-solid fa-pencil"></i></a></td>
+                    <td class="py-4 px-6 text-center"><a href="{{ route('supprimerPrestation', $prestation->id) }}" class="text-red-500 hover:text-red-700 transition"><i class="fa-solid fa-trash"></i></a></td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
-
-  <h1 class="font-bold">Informations équipements</h1>
-
-<form method="post" action="{{ route('ajouterEquipement') }}">
-    @csrf
-    <select name="cabane_id" required>
-        @foreach ($cabanes as $cabane)
-            <option value="{{ $cabane->id }}">{{ $cabane->nomCabane }}</option>
-        @endforeach  
-    </select>
-    <input placeholder="Ajoutez un équipement" name="nomEquipement" required/>
-    <input placeholder="Ajoutez une catégorie" name="categorie" required/>
-    <button>Ajouter</button>
-</form>
-
-<table class="border-collapse border border-slate-400">
-    <thead>
-        <tr>
-            <th>Cabane</th>
-            <th>Équipements</th>
-            <th>Catégorie</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($equipements as $equipement)
-            <tr>
-                <td>{{$equipement->cabane->nomCabane}}</td>
-                <td>{{ $equipement->nomEquipement }}</td>
-                <td>{{ $equipement->categorie }}</td>
-                <td><a href="{{ route('editerEquipement', $equipement->id ) }}"><i class="fa-solid fa-pencil"></i></a></td>
-                <td><a href="{{ route('supprimerEquipement', $equipement->id) }}"><i class="fa-solid fa-trash"></i></a></td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
-
-
-<h1 class="font-bold">Informations prestations</h1>
-
-<form method="post" action="{{ route('ajouterPrestation') }}"> 
-    @csrf
-
-    <select name="categorie_id" required>
-        <option value="">Sélectionnez une catégorie</option>
-        @foreach($categories as $categorie)
-            <option value="{{ $categorie->id }}">{{ $categorie->type }}</option>
-        @endforeach
-    </select>
-
-    <input placeholder="Ajoutez un type" name="type" required />
-    <input placeholder="Ajoutez une durée" name="duree" />
-    <input placeholder="Ajoutez un prix adulte" name="prix_adulte" required />    
-    <input placeholder="Ajoutez un prix enfant" name="prix_enfant" />
-    <textarea name="description" placeholder="Ajoutez une description..." required></textarea>
-    <button type="submit">Ajouter</button>
-</form>
-
-<table class="border-collapse border border-slate-400">
-    <thead>
-        <tr>
-            <th>Catégorie</th>
-            <th>Type</th>
-            <th>Durée</th>
-            <th>Prix Adulte</th>
-            <th>Prix Enfant</th>
-            <th>Description</th>
-            <th>Modifier</th>
-            <th>Supprimer</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($prestations as $prestation)
-            <tr>
-                <td>{{ $prestation->categorie->type }}</td>
-                <td>{{ $prestation->type }}</td>
-                <td>{{ $prestation->duree }} min</td>
-                <td>{{ $prestation->prix_adulte }}€</td>
-                <td>{{ $prestation->prix_enfant }}€</td>
-                <td>{{ $prestation->description }}</td>
-                <td><a href="{{ route('editerPrestation', $prestation->id) }}"><i class="fa-solid fa-pencil"></i></a></td>
-                <td><a href="{{ route('supprimerPrestation', $prestation->id) }}"><i class="fa-solid fa-trash"></i></a></td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
-
-
-   
-
+    </div>
 
 </body>
 </html>

@@ -60,17 +60,14 @@ Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->
 Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3');
 Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4');
 
-
-Route::get('/prestationsetservices', [PrestationViewController::class, 'showPrestationDejeuner'])->name('prestation.dejeuner');
-Route::get('/prestation/diner', [PrestationViewController::class, 'showPrestationDiner'])->name('prestation.diner');
+Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations');
 
 
 
 
-
-Route::get('/admininfos', function () {
-    return view('pages.admin.infos');
-})->name('infos');
+// Route::get('/admininfos', function () {
+//     return view('pages.admin.infos');
+// })->name('infos');
 
 
 Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');

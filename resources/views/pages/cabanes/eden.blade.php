@@ -99,7 +99,7 @@
     <i class="fa-solid fa-spa text-custom-marron text-4xl"></i>
     <div class="font-bold text-custom-marron text-2xl"> Spa </div>
     <div class="mt-6 text-justify ">
-        Offrez-vous un moment de détente et de relaxation dans un cadre calme et accueillant.Notre centre de bien-être vous ouvre ses portes pour une expérience inoubliable. 
+        Offrez-vous un moment de détente et de relaxation dans un cadre calme et accueillant. Notre centre de bien-être vous ouvre ses portes pour une expérience inoubliable. 
         Notre Spa "Pleine Nature" est l'endroit idéal pour prendre soin de vous et recharger vos batteries.
         Faites une pause et accordez-vous le luxe d'un moment de pure détente au cœur de la nature. 
         Notre Spa "Pleine Nature" vous attend pour vous offrir un voyage sensoriel inoubliable et vous aider à retrouver l'harmonie du corps et de l'esprit

@@ -7,19 +7,28 @@ use App\Models\Prestation;
 
 class PrestationViewController extends Controller
 {
-    public function showPrestationDejeuner() {
-        $dejeuner = Prestation::with('categorie')->findOrFail(1);
-        $diner = Prestation::with('categorie')->findOrFail(2);
-        return view('pages.prestations', [
-            'dejeuner' => $dejeuner,
-            'diner' => $diner
-        ]);
+
+    public function showPrestations()
+    {
+        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
+    $diner = Prestation::with('categorie')->where('id', 2)->first();
+    $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
+
+    return view('pages.prestations', [
+        'dejeuner' => $dejeuner,
+        'diner' => $diner,
+        'massages' => $massages,
+    ]);
     }
 
-    public function showPrestationDiner() {
-        $diner = Prestation::with('categorie')->findOrFail(2);
-        return view('pages.prestations', [
-            'diner' => $diner
-        ]);
-    }
+
+
+//     public function showPrestationMassage()
+// {
+//     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
+//     // dd($massages);
+//     return view('pages.prestations', [
+//         'massages' => $massages,
+//     ]);
+// }
 }
