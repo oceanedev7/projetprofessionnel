@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
+use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\CabaneController;
 use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\NewsletterController;
@@ -16,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('pages.home');
-})->name('accueil');
+})->name('accueil')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/menu', function () {
     return view('pages.menu');
-})->name('menu');
+})->name('menu')->middleware(\App\Http\Middleware\Localisation::class);;
 
 Route::get('/mentionslegales', function () {
     return view('pages.footer.mentionslegales');
@@ -63,7 +64,7 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations');
 
 
-
+Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 // Route::get('/admininfos', function () {
 //     return view('pages.admin.infos');
