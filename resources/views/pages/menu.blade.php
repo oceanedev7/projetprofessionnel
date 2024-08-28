@@ -21,19 +21,19 @@
 
         <button class="absolute top-6 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> X </button> 
         
-        <a  href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>
+        <a  href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>
         
     
     <div class=" absolute top-56 left-28 flex flex-col space-y-8 text-lg text-white font-bold">
-        <a href="{{ route('accueil') }}">ACCUEIL</a>
-        <a href="{{ route('noscabanes') }}">LES CABANES</a>
-        <a href="{{ route('prestations') }}">PRESTATIONS ET SERVICES</a>
-        <a href="{{ route('reserver') }}">RÉSERVER</a>
-        <a href="{{ route('contact') }}">CONTACT & ACCÈS</a>
+        <a class="uppercase" href="{{ route('accueil') }}">{{ __('content.accueil') }}</a>
+        <a class="uppercase" href="{{ route('noscabanes') }}">{{ __('content.cabane') }}</a>
+        <a class="uppercase" href="{{ route('prestations') }}">{{ __('content.prestation') }}</a>
+        <a class="uppercase" href="{{ route('reserver') }}">{{ __('content.reserver') }}</a>
+        <a class="uppercase" href="{{ route('contact') }}">{{ __('content.acces') }}</a>
     </div>
 
 
-    <a class="flex items-center justify-center absolute bottom-8 left-28 bg-gray-400 bg-opacity-65  text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> EN </a> 
+    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" class="flex items-center justify-center absolute bottom-8 left-28 bg-gray-400 bg-opacity-65  text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base">  {{ App::getLocale() === 'en' ? 'FR' : 'EN' }} </a> 
     <a href="https://www.facebook.com" class="flex items-center justify-center absolute bottom-8 left-44 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-facebook-f"></i> </a> 
     <a href="https://www.instagram.com"  class="flex items-center justify-center absolute bottom-8 left-60 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-instagram"></i> </a> 
 
