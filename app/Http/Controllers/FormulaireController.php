@@ -17,7 +17,7 @@ class FormulaireController extends Controller
         $afficherFormulaire = Formulaire::with('visiteur')->get();
         // dd($afficherEmails);
     return view(
-        'pages.admin.formulairecontact', ['formulaires'=>$afficherFormulaire]);
+        'pages.admin.demandecontact', ['formulaires'=>$afficherFormulaire]);
     }
 
     /**

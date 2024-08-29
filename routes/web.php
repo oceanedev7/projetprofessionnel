@@ -53,7 +53,7 @@ Route::get('/réserver', function () {
 
 Route::get('/noscabanes', function () {
     return view('pages.cabanes.noscabanes');
-})->name('noscabanes');
+})->name('noscabanes')->middleware(\App\Http\Middleware\Localisation::class);
 
 
 Route::get('/cabaneniddouillet', [CabaneViewController::class, 'showCabaneNidDouillet'])->name('cabane1');

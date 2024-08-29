@@ -59,7 +59,35 @@ return [
     'text-spa' => '  Offrez-vous un instant au cœur de la nature pour vous détendre et vous relaxer dans un espace calme et chaleureux que vous séjournez ou non au domaine.
                 Le domaine Tout là-haut vous propose son centre de bien-être Pleine Nature !
                 Seul ou en couple venez profitez de soins de qualité pour un moment de qualité. Massages venant des 5 continents pour une parenthèse de bien-être et de ressourcement.',
-
-
+    'description_3' => 'Le massage Oriental se pratique sur la peau nue avec une huile tiède. C’est un réel soin corps et esprit, relaxant, enveloppant, tonique et cocooning. Il se fait des pieds à la tête, en suivant le tracé musculaire. Il alterne malaxages, pétrissages, lissages. Sentant sous ses mains expertes les nœuds et tensions musculaires, la praticienne insiste sur les zones douloureuses, en particulier au niveau du dos.',
+    'description_4' => 'Le Shiatsu soulage les douleurs articulaires et musculaires, les tensions, évacue le stress, la fatigue et procure du bien-être et de la relaxation. En agissant sur le système des méridiens d’acupuncture, le Shiatsu permet d’activer le système nerveux para-sympathique responsable de la récupération, de la relaxation et du bien-être. Il contribue à l’amélioration de la santé.',
+    'description_5' => 'Le massage suédois est un massage qui tonifie et relaxe les muscles. Il favorise aussi la circulation sanguine et lymphatique. Cette technique peut être pratiquée autant dans un but thérapeutique que de détente. Le massage suédois permet de détendre et relaxer le corps comme l’esprit. Particulièrement apaisant, il est apprécié pour sa capacité à diminuer les effets du stress sur le corps.',
+    'description_6' => 'Le massage californien convient aux personnes de tous les âges de même qu’aux femmes enceintes. Il est particulièrement indiqué aux personnes qui recherchent une diminution des effets du stress sur leur corps et celles qui souffrent de douleurs chroniques puisqu’il procure une profonde détente et un soulagement des douleurs musculo-articulaires.',
+    'description_7' => 'La réflexologie faciale et crânienne possède de nombreuses vertus. Avant tout réputée pour ses effets calmants et relaxants, elle procure une profonde sensation de détente physique et psychique. Au-delà de son action apaisante, elle soulage également certaines douleurs : diminue les douleurs dorsales et articulaires, calme les migraines, soulage les troubles digestifs, apaise les troubles pré-menstruels et liés à la ménopause, active la micro-circulation sanguine.',
+    'description_8' => 'C’est un massage thérapeutique spécialement conçu pour accompagner les femmes enceintes à partir du 4e mois de grossesse. Les bienfaits du massage prénatal sont nombreux. Il soulage les douleurs et les tensions musculaires ainsi que les crampes dans les jambes. Il permet également de favoriser le sommeil et la récupération de la femme enceinte, ainsi que la diminution des douleurs sciatiques. Il permet la détente des articulations supportant le poids, comme les chevilles, le bas du dos et le bassin.',
+    'type_3' => 'Massage oriental',
+    'type_4' => 'Le Shiatsu',
+    'type_5' => 'Massage suédois',
+    'type_6' => 'Massage californien',
+    'type_7' => 'Massage cranio-facial',
+    'type_8' => 'Massage prénatal',
     
+    //Footer 
+    'suivez-nous' => 'Suivez-nous',
+    'offre' => 'Ne passez pas à côté de nos meilleures offres',
+    'inscrire' => 'S\'inscrire',
+    'mention' => 'Mentions légales',
+    'plan-site' => 'Plan du site',
+    'data' => 'Confidentialités',
+    'cgv' => 'CGV',
+
+
+
+
+
+
+
+
 ];
+    
+

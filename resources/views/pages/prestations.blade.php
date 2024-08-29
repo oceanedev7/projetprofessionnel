@@ -113,12 +113,12 @@
                 @foreach ($massages as $massage)
                     <div class="flex flex-col">
                         <div class="flex items-center">
-                            <div class="font-bold text-custom-marron text-lg">{{ $massage->type }}</div>
+                            <div class="font-bold text-custom-marron text-lg">{{ __('content.type_' . $massage->id) }}</div>
                             <hr class="h-1 w-2 bg-custom-marron mx-4"/>
                             <div class="font-bold text-custom-marron text-lg">{{ $massage->duree }}min</div>
                             <div class="font-bold text-custom-marron text-lg ml-auto">{{ $massage->prix_adulte }}€</div>
                         </div>
-                        <div class="text-justify mt-2 text-sm w-full">{{ $massage->description }}</div>
+                        <div class="text-justify mt-2 text-sm w-full">   {{ __('content.description_' . $massage->id) }}</div>
                     </div>
                 @endforeach
             </div>
