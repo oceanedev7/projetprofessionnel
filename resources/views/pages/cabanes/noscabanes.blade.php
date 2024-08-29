@@ -13,8 +13,14 @@
     
     <div class="bg-custom-vert h-screen w-full"> 
 
+        <a href="{{ route('accueil') }}" class="bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 relative left-8 top-8 rounded"><i class="fa-solid fa-house text-white text-xl "></i></a>
+        <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+            class="absolute top-8 right-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+             {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+         </a>
+    
         <div class="flex flex-col justify-center items-center">
-            <span class="font-bold text-white text-[40px] mt-8"> DÉCOUVREZ NOS CABANES </span>
+            <span class="font-bold text-white text-[40px] uppercase"> {{ __('content.decouvrir') }}</span>
             <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
         </div>
     
@@ -25,8 +31,8 @@
                     <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/nid.png') }}" alt="Cabane Nid douillet">
                     <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
                         <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
-                            <h3 class="text-3xl font-bold">Cabane Nid Douillet </h3>
-                            <p class="text-lg font-normal">2 Pers. | 60m² | 8m de hauteur</p>
+                            <h3 class="text-3xl font-bold">{{ __('content.nid douillet') }}</h3>
+                            <p class="text-lg font-normal">2 {{ __('content.pax') }} | 60m² | 8m {{ __('content.hauteur') }}</p>
                         </div>
                     </div>
                 </a>
@@ -35,8 +41,8 @@
                     <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/osmose.png') }}" alt="Cabane Osmose">
                     <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
                         <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
-                            <h3 class="text-3xl font-bold">Cabane Osmose </h3>
-                            <p class="text-lg font-normal">2 Pers. | 60m² | 8m de hauteur</p>
+                            <h3 class="text-3xl font-bold">{{ __('content.osmose') }} </h3>
+                            <p class="text-lg font-normal">2 {{ __('content.pax') }} | 60m² | 8m {{ __('content.hauteur') }}</p>
                         </div>
                     </div>
                 </a>
@@ -45,8 +51,8 @@
                     <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/escapade.png') }}" alt="Cabane Escapade">
                     <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
                         <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
-                            <h3 class="text-3xl font-bold">Cabane Escapade </h3>
-                            <p class="text-lg font-normal">4 pers. | 85m² + îlot de 5m | 8m de hauteur</p>
+                            <h3 class="text-3xl font-bold">{{ __('content.escapade') }} </h3>
+                            <p class="text-lg font-normal">4 {{ __('content.pax') }}  | 85m² + {{ __('content.ilot') }} | 8m {{ __('content.hauteur') }}</p>
                         </div>
                     </div>
                 </a>
@@ -55,8 +61,8 @@
                     <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/eden.png') }}" alt="Cabane Eden">
                     <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
                         <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
-                            <h3 class="text-3xl font-bold">Cabane Eden </h3>
-                            <p class="text-lg font-normal">6 pers. | 110m² | 6m de hauteur</p>
+                            <h3 class="text-3xl font-bold">{{ __('content.eden') }} </h3>
+                            <p class="text-lg font-normal">6 {{ __('content.pax') }}  | 110m² | 6m {{ __('content.hauteur') }}</p>
                         </div>
                     </div>
                 </a>

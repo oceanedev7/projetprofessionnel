@@ -16,8 +16,8 @@
 
 @section ('titre')
 
-<h1 class=" ml-36 mt-60 text-6xl text-white font-bold">  CONTACT <br/> & ACCÈS </h1>
-<hr class="border-t-4 border-custom-beige w-24 mt-96 relative right-64">
+<h1 class=" ml-36 mt-60 text-6xl text-white font-bold uppercase">{!! nl2br(__('content.acces-contact')) !!}</h1>
+<hr class="border-t-4 border-custom-beige w-24 mt-96 absolute right-[450px]">
 @endsection
     
 
@@ -25,7 +25,7 @@
 
 <div style="background-color:#F9F4EE" class="w-full h-screen">
     <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-12"> CONTACTEZ-NOUS </span>
+        <span class="font-bold text-custom-marron text-[40px] mt-12 uppercase"> {{ __('content.contactez-nous') }} </span>
         <hr class="border-t-4 border-custom-beige w-24 mt-2 ">
     </div>
 
@@ -34,14 +34,14 @@
                 <form method="post" action="{{ route('ajouterFormulaire') }}" class="w-full max-w-3xl">
                     @csrf
                 <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-6">
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="prenom" placeholder="Prénom" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="nom" placeholder="Nom" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="numeroTelephone"  placeholder="Numéro de téléphone" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="email" placeholder="Adresse e-mail" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="prenom" placeholder="{{ __('content.prenom') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="nom" placeholder="{{ __('content.nom') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="numeroTelephone"  placeholder="{{ __('content.telephone') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="email" placeholder="{{ __('content.email') }}" required/>
                 </div>
                 <div class="flex flex-col items-center">
                     <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" name="message" placeholder="Message" required></textarea>
-                    <button class="bg-custom-marron text-white font-medium text-base px-6 py-2 rounded-md mt-4">ENVOYER</button>
+                    <button class="bg-custom-marron text-white font-medium text-base px-6 py-2 rounded-md mt-4 uppercase">{{ __('content.envoyer') }} </button>
                 </form>
                 </div>
 
@@ -64,21 +64,21 @@
     <div class="flex flex-col justify-center p-8">
         
         <div class="flex flex-col justify-center items-center">
-            <span class="font-bold text-custom-marron text-[40px] ml-28 mb-20 text-center leading-tight">ADRESSE ET <br/> COORDONNÉES</span>
+            <span class="font-bold text-custom-marron text-[40px] ml-28 mb-20 text-center leading-tight uppercase">{!! nl2br(__('content.coordonnees')) !!}</span>
             <hr class="border-t-4 border-custom-beige w-24 relative left-16 bottom-16">
         </div>
 
         <div class="text-xl ml-24 space-y-10"> 
             <div>
-                <span class="text-custom-marron font-bold">Adresse :</span> <br/>
+                <span class="text-custom-marron font-bold">{{ __('content.adresse-postale') }} :</span> <br/>
                 Route de Jolimont, 97226 Morne-Vert
             </div>
             <div>
-                <span class="text-custom-marron font-bold">Numéro de téléphone :</span> <br/>
+                <span class="text-custom-marron font-bold">{{ __('content.telephone') }} :</span> <br/>
                 0596 67 64 53
             </div>
             <div>
-                <span class="text-custom-marron font-bold">Adresse e-mail :</span> <br/>
+                <span class="text-custom-marron font-bold">{{ __('content.email') }} :</span> <br/>
                 contact@toutlahaut.org
             </div>
         </div>

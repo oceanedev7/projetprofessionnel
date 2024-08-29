@@ -39,7 +39,7 @@
     </div>
 
         <div class="absolute max-w-3xl top-72 text-white font-bold text-center text-2xl"> 
-           <div> {{ __('content.titre') }}  </div>              
+           <div> {{ __('content.titre') }} </div>              
         <div class="mt-2 text-white font-light text-center text-base tracking-widest"> 
             {{ __('content.sous-titre') }}  
         </div>
