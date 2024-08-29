@@ -29,7 +29,7 @@
         <a class="uppercase" href="{{ route('noscabanes') }}">{{ __('content.cabane') }}</a>
         <a class="uppercase" href="{{ route('prestations') }}">{{ __('content.prestation') }}</a>
         <a class="uppercase" href="{{ route('reserver') }}">{{ __('content.reserver') }}</a>
-        <a class="uppercase" href="{{ route('contact') }}">{{ __('content.acces') }}</a>
+        <a class="uppercase" href="{{ route('contact') }}">{{ __('content.acces-menu') }}</a>
     </div>
 
 

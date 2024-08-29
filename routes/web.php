@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/menu', function () {
     return view('pages.menu');
-})->name('menu')->middleware(\App\Http\Middleware\Localisation::class);;
+})->name('menu')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/mentionslegales', function () {
     return view('pages.footer.mentionslegales');
@@ -45,7 +45,7 @@ Route::get('/faq', function () {
 
 Route::get('/contact&acces', function () {
     return view('pages.contact');
-})->name('contact');
+})->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/réserver', function () {
     return view('pages.reserver');
@@ -61,7 +61,7 @@ Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->
 Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3');
 Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4');
 
-Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations');
+Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');

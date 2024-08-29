@@ -28,7 +28,38 @@ return [
     'accueil' =>  "Home",
     'cabane' =>  "The cabins",
     'prestation' =>  "Services and amenities",
-    'acces' =>  "Contact & Access",
+    'acces-menu' =>  "Contact & access",
+
+    //Contact
+    'acces-contact' =>  "Contact<br>& Access",
+    'contactez-nous' => 'Contact us',
+    'envoyer' => 'send',
+    'prenom' => 'Firstname',
+    'nom' => 'Lastname',
+    'telephone' => 'Phone number',
+    'email' => 'Email address',
+    'adresse-postale' => 'Postal address',
+    'coordonnees' => 'address and<br>contact details',
+
+    //Prestations et services
+    'restauration' => 'Catering',
+    'text-restauration' => 'The estate offers gourmet dining crafted with fresh, local, and seasonal ingredients. The chef combines Martinican tradition, local products, and originality to delight your taste buds. All our dishes are homemade to ensure undeniable authenticity, and our menus change each season.
+    Our delicacies can be enjoyed in the comfort of your cabins. Thanks to our Room Service, your meal baskets are hoisted up using a pulley system.',
+    'dejeuner_description' => 'It includes 2 starters to choose from, 3 main courses (meat, fish, and vegetarian), and 2 desserts to choose from. Please note that Terroir baskets must be reserved 48 hours in advance.',
+    'dejeuner_type' => 'Lunch - Terroir Basket (11 AM to 1:30 PM)',
+    'diner_description' => 'It includes 2 starters to choose from, 3 main courses (meat, fish, and vegetarian), and 2 desserts to choose from. Please note that Gourmand baskets should be reserved 48 hours in advance.', 
+    'diner_type' => 'Dinner - Gourmand Basket (7 PM to 9 PM)',
+    'adulte' => 'Adult',
+    'enfant' => 'Child',
+    'spa' => '"Pleine Nature" Spa',
+    'text-spa' => 'Treat yourself to a moment in the heart of nature to unwind and relax in a peaceful and welcoming space, whether you are staying at the estate or not. The estate Tout là-haut offers you its wellness center, Pleine Nature! Whether alone or with a partner, come enjoy high-quality treatments for a moment of relaxation and rejuvenation. Massages from the five continents provide a well-being experience and a chance to recharge.',
+
+
+
+
+
+
+    
 
 
 

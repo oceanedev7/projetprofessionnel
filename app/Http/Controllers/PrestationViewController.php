@@ -18,6 +18,11 @@ class PrestationViewController extends Controller
         'dejeuner' => $dejeuner,
         'diner' => $diner,
         'massages' => $massages,
+
+        'dejeunerDescription' => 'dejeuner_description',
+        'dejeunerType' => 'dejeuner_type',
+        'dinerDescription' => 'diner_description',
+        'dinerType' => 'diner_type',
     ]);
     }
 

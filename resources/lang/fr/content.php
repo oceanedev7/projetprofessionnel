@@ -30,9 +30,36 @@ return [
     'accueil' =>  "Accueil",
     'cabane' =>  "Les cabanes",
     'prestation' =>  "Prestations et services",
-    'acces' =>  "Contact & Accès",
+    'acces-menu' =>  "Contact & Accès",
 
-
+    //Contact
+    'acces-contact' =>  "Contact<br>& Accès",
+    'contactez-nous' => 'Contactez-nous',
+    'envoyer' => 'envoyer',
+    'prenom' => 'Prénom',
+    'nom' => 'Nom',
+    'telephone' => 'Numéro de téléphone',
+    'email' => 'Adresse e-mail',
+    'adresse-postale' => 'Adresse',
+    'coordonnees' => 'Adresse et<br>coordonnées',
     
+    //Prestations et services
+    'restauration' => 'Restauration',
+    'text-restauration'=>  'Le domaine vous propose une restauration gourmande élaborée avec des produits frais locaux et de saison. 
+    Le chef allie tradition martiniquaise, produits du terroir et originalité pour ravir vos papilles.
+    Tous nos plats sont faits maison pour garantir une authenticité indéniable et nos menus changent chaque saison.
+    Nos gourmandises se dégustent dans le confort de vos cabanes. Et grâce à notre Room Service, vos paniers repas sont hissés le long d\'une poulie.',
+    'dejeuner_description' => 'Il comporte 2 entrées au choix, 3 plats au choix (viande, poisson et végétarien) et 2 dessert au choix Il convient de réserver les paniers du Terroir 48h à l’avance',
+    'dejeuner_type' => 'Déjeuner - Panier du Terroir (11H à 13H30)',
+    'diner_description' =>  'Il comporte 2 entrées au choix, 3 plats au choix (viande, poisson et végétarien) et 2 dessert au choix Il convient de réserver les paniers Gourmands 48h à l’avance', 
+    'diner_type' => 'Dîner - Panier Gourmand (19H à 21H)',
+    'adulte' => 'Adulte',
+    'enfant' => 'Enfant',
+    'spa' => 'Spa "Pleine Nature"',
+    'text-spa' => '  Offrez-vous un instant au cœur de la nature pour vous détendre et vous relaxer dans un espace calme et chaleureux que vous séjournez ou non au domaine.
+                Le domaine Tout là-haut vous propose son centre de bien-être Pleine Nature !
+                Seul ou en couple venez profitez de soins de qualité pour un moment de qualité. Massages venant des 5 continents pour une parenthèse de bien-être et de ressourcement.',
+
+
     
 ];
