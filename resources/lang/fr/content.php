@@ -18,7 +18,7 @@ return [
     'engagement' => "Nos engagements",
     'decouvrir' =>  "Découvrez nos cabanes",
     'plan' =>  "Plan du domaine",
-    'nid douillet' =>  "Cabane Nid Douillet",
+    'nidDouillet' =>  "Cabane Nid Douillet",
     'osmose' =>  "Cabane Osmose",
     'escapade' =>  "Cabane Escapade",
     'eden' =>  "Cabane Eden",
@@ -81,10 +81,32 @@ return [
     'data' => 'Confidentialités',
     'cgv' => 'CGV',
 
+    //Cabane Nid Douillet
+    'nidDouillet-description' => 'La Cabane Nid Douillet est un refuge enchanteur pour ceux en quête de tranquillité et de connexion avec la nature. Nichée au cœur d\'un paysage pittoresque, cette cabane offre une escapade parfaite pour deux personnes en quête de sérénité. Perchée parmi les arbres majestueux, notre cabane offre un véritable cocon de confort et de bien-être. À l\'intérieur, vous trouverez un espace accueillant et douillet, décoré avec charme pour créer une atmosphère apaisante et réconfortante. Offrez-vous une pause bien méritée dans ce havre de paix où le temps semble ralentir et où chaque instant est une invitation à la détente et à la contemplation.',
+    'prix-2' => 'À partir de 145.00 €',
+    'equipement' => 'les équipements',
+    'spa-privatif' => 'Spa privatif',
+    'climatisation' => 'Climatisation',
+    'douche' => 'Douche et toilettes sèches',
+    'frigo' => 'Mini-frigo',
+    'restauration-cabane' => 'Dans notre établissement, nous accordons une importance particulière à la qualité de notre cuisine, en mettant en avant les produits frais et locaux. Cette approche nous permet non seulement de soutenir l\'économie locale, mais aussi de vous offrir une expérience culinaire authentique, ancrée dans notre terroir. Vous avez l\'assurance de vivre une expérience gastronomique authentique, où les saveurs locales sont à l\'honneur dans chaque assiette.',
+    'spa-cabane' => 'Offrez-vous un moment de détente et de relaxation dans un cadre calme et accueillant.Notre centre de bien-être vous ouvre ses portes pour une expérience inoubliable. Notre Spa "Pleine Nature" est l\'endroit idéal pour prendre soin de vous et recharger vos batteries. Faites une pause et accordez-vous le luxe d\'un moment de pure détente au cœur de la nature. Notre Spa "Pleine Nature" vous attend pour vous offrir un voyage sensoriel inoubliable et vous aider à retrouver l\'harmonie du corps et de l\'esprit.',
+    'decouvrir-bouton' => 'Découvrir les prestations et services',
+    'savoir' => 'Bon à savoir',
+    'conseil' => 'ARRIVÉE : À partir de 16h et jusqu\'à 18h<br>Arrivée tardive possible jusqu\'à 20h sur demande (prévenir 48h avant votre séjour)
+    DÉPART : Jusqu\'à 11H
+    Accès par escalier sans difficulté. Rampe disponible et adaptée pour les personnes à mobilité réduite. Merci de préférer des chaussures adaptées (proscrire les chaussures fragiles et les talons) et de prévoir des chaussures sèches pour l’intérieur de la cabane. La cabane est non fumeur. L’accueil d’invités n’est pas autorisé et nos amis les animaux domestiques ne sont pas admis dans le Domaine. Les enfants de moins de 6 ans sont placés sous la responsabilité de leurs parents.',
+    
+     //Cabane Osmose
+     'osmose-description' => 'La Cabane Osmose est un havre de paix au cœur de la nature, où chaque instant est une invitation à la détente et à la contemplation. Nichée dans un cadre idyllique, cette cabane vous offre une expérience unique, loin du tumulte de la vie moderne. Que vous soyez en quête d\'une escapade romantique ou d\'une retraite bien-être, la Cabane Osmose est l\'endroit parfait pour vous ressourcer et vous reconnecter avec la nature. Offrez-vous une parenthèse enchantée où le temps semble suspendu, et où chaque instant est une opportunité de renouer avec l\'essentiel.',
+    
+    //Cabane Escapade
+    'escapade-description' => 'La Cabane Escapade vous accueille pour un séjour d’exception en pleine forêt et vous permettra un retour à la simplicité en vous promenant par exemple dans le bois qui l’entoure. Cette cabane à la décoration soignée avec sa terrasse spacieuse suspendue à 8m de haut vous plongent dans une atmosphère hors du commun. Elle saura enchanter petits et grands aventuriers qui veulent découvrir les joies de la nature en la dominant. Prenez de la hauteur dans cet hébergement surprenant, qui vous réserve d’agréables moments.',
+    'prix-4' => 'À partir de 175.00 €',
 
-
-
-
+     //Cabane Eden
+    'eden-description' => 'Séjour en famille ou retrouvailles entre amis, la cabane Eden est faite pour vous. Déconnexion, détente et nature sont au rendez-vous, avec une vue sur la forêt verdoyante. Imaginée et conçue pour vivre au rythme de la nature, elle offre à ses visiteurs chaleur, calme et repos. Robuste, élégante et unique, cette cabane d’exception au charme sans précédent est idéale pour un moment d’évasion, de calme et de quiétude. Sa décoration chaleureuse vous séduira et la vue depuis sa terrasse vous ravira.',
+    'prix-6' => 'À partir de 205.00 €',
 
 
 

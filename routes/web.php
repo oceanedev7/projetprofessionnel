@@ -56,10 +56,10 @@ Route::get('/noscabanes', function () {
 })->name('noscabanes')->middleware(\App\Http\Middleware\Localisation::class);
 
 
-Route::get('/cabaneniddouillet', [CabaneViewController::class, 'showCabaneNidDouillet'])->name('cabane1');
-Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->name('cabane2');
-Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3');
-Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4');
+Route::get('/cabaneniddouillet', [CabaneViewController::class, 'showCabaneNidDouillet'])->name('cabane1')->middleware(\App\Http\Middleware\Localisation::class);
+Route::get('/cabaneosmose', [CabaneViewController::class, 'showCabaneOsmose'])->name('cabane2')->middleware(\App\Http\Middleware\Localisation::class);
+Route::get('/cabaneescapade', [CabaneViewController::class, 'showCabaneEscapade'])->name('cabane3')->middleware(\App\Http\Middleware\Localisation::class);
+Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name('cabane4')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 

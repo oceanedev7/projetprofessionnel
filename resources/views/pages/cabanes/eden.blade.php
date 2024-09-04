@@ -15,8 +15,10 @@
 <div class="fixed z-10 w-full"> 
     <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
     <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a> 
-    <a class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> EN </a> 
-    <a href="{{ route('reserver') }}" class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>  
+    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+        class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+         {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+     </a>     <a href="{{ route('reserver') }}" class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>  
 </div>
 @endsection
 
@@ -28,9 +30,9 @@
     <img class="w-[500px] h-screen" src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="Cabane intérieur">
     
     <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
-        <div class="text-4xl text-custom-marron font-bold mb-4 uppercase"> CABANE {{$cabane->nomCabane}}</div>
-        <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0"> {{$cabane->description}}</div>
-        <div class="italic mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">À partir de {{$cabane->prix}} €</div>
+        <div class="text-4xl text-custom-marron font-bold mb-4 uppercase"> {{ __('content.' . $nomCabane) }}</div>
+        <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0"> {{ __('content.' . $descriptionCabane) }}</div>
+        <div class="italic mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">{{ __('content.' . $prixCabane) }}</div>
     
 </div>
 </div>
@@ -38,30 +40,30 @@
 
 <div style="background-color:#F9F4EE" class="h-screen w-full"> 
     <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-8">LES ÉQUIPEMENTS</span>
+        <span class="font-bold text-custom-marron text-[40px] mt-8 uppercase">{{ __('content.equipement') }}</span>
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
     
     <div class="flex flex-row justify-center items-center space-x-20 text-custom-marron relative top-20">
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-solid fa-person text-5xl"></i>
-            <div class="text-base">2 pers.</div>
+            <div class="text-base">6  {{ __('content.pax') }}</div>
         </div>
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-solid fa-hot-tub-person text-5xl"></i>
-            <div class="text-base">Spa privatif</div>
+            <div class="text-base">{{ __('content.spa-privatif') }}</div>
         </div>
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-regular fa-snowflake text-5xl"></i>
-            <div class="text-base">Climatisation</div>
+            <div class="text-base">{{ __('content.climatisation') }}</div>
         </div>
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-solid fa-shower text-5xl"></i>
-            <div class="text-base">Douche et toilettes sèches</div>
+            <div class="text-base">{{ __('content.douche') }}</div>
         </div>
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-solid fa-toilet-portable text-5xl"></i>
-            <div class="text-base">Mini-frigo</div>
+            <div class="text-base">{{ __('content.frigo') }}</div>
         </div>
     </div>
 
@@ -78,18 +80,16 @@
 
 <div style="background-color:#F9F4EE" class="h-screen w-full"> 
     <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-10">PRESTATIONS ET SERVICES</span>
+        <span class="font-bold text-custom-marron text-[40px] mt-10 uppercase">{{ __('content.prestation') }}</span>
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
 
     <div class="flex flex-row justify-center space-x-16 relative top-16" >
     <div class="flex flex-col items-center max-w-lg	"> 
         <i class="fa-solid fa-bell-concierge text-custom-marron text-4xl"></i>
-        <div class="font-bold text-custom-marron text-2xl"> Restauration </div>
+        <div class="font-bold text-custom-marron text-2xl"> {{ __('content.restauration') }} </div>
         <div class="mt-6 text-justify">
-            Dans notre établissement, nous accordons une importance particulière à la qualité de notre cuisine, en mettant en avant les produits frais et locaux.  
-            Cette approche nous permet non seulement de soutenir l'économie locale, mais aussi de vous offrir une expérience culinaire authentique, ancrée dans notre terroir. 
-            Vous avez l'assurance de vivre une expérience gastronomique authentique, où les saveurs locales sont à l'honneur dans chaque assiette. 
+            {{ __('content.restauration-cabane') }} 
         </div>
     </div>
     
@@ -99,16 +99,13 @@
     <i class="fa-solid fa-spa text-custom-marron text-4xl"></i>
     <div class="font-bold text-custom-marron text-2xl"> Spa </div>
     <div class="mt-6 text-justify ">
-        Offrez-vous un moment de détente et de relaxation dans un cadre calme et accueillant. Notre centre de bien-être vous ouvre ses portes pour une expérience inoubliable. 
-        Notre Spa "Pleine Nature" est l'endroit idéal pour prendre soin de vous et recharger vos batteries.
-        Faites une pause et accordez-vous le luxe d'un moment de pure détente au cœur de la nature. 
-        Notre Spa "Pleine Nature" vous attend pour vous offrir un voyage sensoriel inoubliable et vous aider à retrouver l'harmonie du corps et de l'esprit
+        {{ __('content.spa-cabane') }}
     </div>
 </div>
     </div>
 
 <div class="flex justify-center" >
-    <a href="{{ route('prestations') }}" class="bg-custom-marron text-white font-bold text-base px-4 py-2 rounded-md relative top-28">DECOUVRIR LES PRESTATIONS ET SERVICES</a>
+    <a href="{{ route('prestations') }}" class="bg-custom-marron text-white font-bold text-base px-4 py-2 rounded-md relative top-28 uppercase">{{ __('content.decouvrir-bouton') }}</a>
 </div>
     
 </div>
@@ -119,18 +116,9 @@
 
     <div class="absolute inset-0 flex justify-center items-center">
         <div class="text-center px-6">
-            <div class="font-bold text-3xl">Bon à savoir !</div>
+            <div class="font-bold text-3xl">{{ __('content.savoir') }}</div>
             <div class="text-justify font-semibold text-lg max-w-3xl mt-12 mx-auto">
-                ARRIVÉE : À partir de 16h et jusqu'à 18h<br>
-                Arrivée tardive possible jusqu'à 20h sur demande (prévenir 48h avant votre séjour)<br>
-                DÉPART : Jusqu'à 11H<br>
-                Accès par escalier sans difficulté.
-                Rampe disponible et adaptée pour les personnes à mobilité réduite.
-                Merci de préférer des chaussures adaptées (proscrire les chaussures fragiles et les talons) et de prévoir des chaussures sèches pour l’intérieur de la cabane.
-                La cabane est non fumeur.
-                L’accueil d’invités n’est pas autorisé et nos amis les animaux domestiques ne sont pas admis dans le Domaine.
-                Les enfants de moins de 6 ans sont placés sous la responsabilité de leurs parents.
-            </div>
+                {!! nl2br(__('content.conseil')) !!}            </div>
         </div>
     </div>
 
