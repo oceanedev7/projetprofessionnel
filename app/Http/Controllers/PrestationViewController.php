@@ -23,6 +23,7 @@ class PrestationViewController extends Controller
         'dejeunerType' => 'dejeuner_type',
         'dinerDescription' => 'diner_description',
         'dinerType' => 'diner_type',
+    
     ]);
     }
 
