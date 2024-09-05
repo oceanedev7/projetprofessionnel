@@ -71,12 +71,17 @@
                 <div class="font-bold text-base">Newsletter</div>
                 <hr style="background-color: #C4AA84" class="w-14 h-1 my-2">
                 <div class="mb-2 text-sm font-normal">{{ __('content.offre') }}</div>
-                <input type="email" name="email" class=" bg-opacity-40 bg-white px-4 py-2  mb-4 border-none rounded-md h-8 w-72 text-center placeholder-white " placeholder="{{ __('content.email') }}" required />
+                <input type="email" name="email" class=" bg-opacity-40 bg-white px-4 py-2  mb-4 border-none rounded-md h-8 w-72 text-center placeholder-white focus:border-custom-marron focus:ring-custom-marron" placeholder="{{ __('content.email') }}" required />
                 <button style="background-color: #C4AA84" class="text-white font-bold text-base px-6 py-1 rounded-md">{{ __('content.inscrire') }}</button>
             @if (session('success'))
             <div class="font-bold">
                  {{ session('success') }}
              </div>
+            @endif
+            @if(session('error'))
+            <div class="font-bold">
+                {{ session('error') }}
+            </div>
             @endif
             </form> 
 

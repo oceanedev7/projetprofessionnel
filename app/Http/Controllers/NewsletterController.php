@@ -24,14 +24,20 @@ class NewsletterController extends Controller
      */
     public function create(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-    
-        ]);
-    //  dd($request);
 
-       Newsletter::create($request->all()); 
-       return redirect()->route('accueil')->with('success', 'Merci pour votre inscription !');
+     $request->validate([
+        'email' => 'required|email',
+    ]);
+
+    $email = Newsletter::where('email', $request->email)->exists();
+
+    if ($email) {
+        return redirect()->route('accueil')->with('error', 'Vous êtes déjà inscrit(e).');
+    }
+
+    Newsletter::create($request->all());
+
+    return redirect()->route('accueil')->with('success', 'Merci pour votre inscription !');
     }
 
     
