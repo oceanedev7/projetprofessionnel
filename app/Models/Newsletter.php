@@ -13,8 +13,5 @@ class Newsletter extends Model
         'email',  
       ];
 
-      public function visiteurs()
-    {
-        return $this->hasMany(Visiteur::class);
-    }
+
 }
