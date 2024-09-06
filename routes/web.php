@@ -10,6 +10,8 @@ use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\CabaneViewController;
 use App\Http\Controllers\PrestationViewController;
+use App\Http\Controllers\ContactRequestController;
+
 
 use App\Http\Controllers\MapController;
 
@@ -43,9 +45,9 @@ Route::get('/faq', function () {
     return view('pages.footer.faq');
 })->name('faq');
 
-Route::get('/contact&acces', function () {
-    return view('pages.contact');
-})->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
+// Route::get('/contact&acces', function () {
+//     return view('pages.contact');
+// })->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/réserver', function () {
     return view('pages.reserver');
@@ -92,9 +94,12 @@ Route::get('/newsletter', [NewsletterController::class, 'index'])->name('affiche
 Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
 Route::post('/newsletter/inscription', [NewsletterController::class,'create'])->name('ajouterNewsletter');
 
-Route::get('/formulaire', [FormulaireController::class,'index'])->name('afficherFormulaire');
-Route::post('/formulaire', [FormulaireController::class,'create'])->name('ajouterFormulaire');
-Route::get('/formulaire/delete/{id}', [FormulaireController::class,'destroy'])->name('supprimerFormulaire');
+// Route::get('/formulaire', [FormulaireController::class,'index'])->name('afficherFormulaire');
+// Route::post('/formulaire', [FormulaireController::class,'create'])->name('ajouterFormulaire');
+// Route::get('/formulaire/delete/{id}', [FormulaireController::class,'destroy'])->name('supprimerFormulaire');
+
+Route::post('/demandecontact', [ContactRequestController::class, 'store'])->name('contact-request');
+Route::get('/contact&acces', [ContactRequestController::class, 'index'])->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
 
 
 

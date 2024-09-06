@@ -31,7 +31,7 @@
 
         <div class="flex flex-col items-center p-6 min-h-screen">
             
-                <form method="post" action="{{ route('ajouterFormulaire') }}" class="w-full max-w-3xl">
+                <form method="post" action="{{ route('contact-request') }}" class="w-full max-w-3xl">
                     @csrf
                 <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-6">
                     <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="prenom" placeholder="{{ __('content.prenom') }}" required/>
@@ -40,7 +40,7 @@
                     <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="email" placeholder="{{ __('content.email') }}" required/>
                 </div>
                 <div class="flex flex-col items-center">
-                    <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" name="message" placeholder="Message" required></textarea>
+                    <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2 focus:border-custom-vert focus:ring-custom-vert" rows="8" name="message" placeholder="Message" required></textarea>
                     <button class="bg-custom-marron text-white font-medium text-base px-6 py-2 rounded-md mt-4 uppercase">{{ __('content.envoyer') }} </button>
                 </form>
                 </div>
