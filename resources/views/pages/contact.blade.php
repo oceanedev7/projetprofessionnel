@@ -34,10 +34,10 @@
                 <form method="post" action="{{ route('ajouterFormulaire') }}" class="w-full max-w-3xl">
                     @csrf
                 <div class="grid grid-cols-2 gap-y-6 gap-x-4 mb-6">
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="prenom" placeholder="{{ __('content.prenom') }}" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="nom" placeholder="{{ __('content.nom') }}" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="numeroTelephone"  placeholder="{{ __('content.telephone') }}" required/>
-                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full" name="email" placeholder="{{ __('content.email') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="prenom" placeholder="{{ __('content.prenom') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="nom" placeholder="{{ __('content.nom') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="numeroTelephone"  placeholder="{{ __('content.telephone') }}" required/>
+                    <input class="rounded border-custom-marron border-solid border-2 py-2 px-4 w-full focus:border-custom-vert focus:ring-custom-vert" name="email" placeholder="{{ __('content.email') }}" required/>
                 </div>
                 <div class="flex flex-col items-center">
                     <textarea class="resize-none rounded border-custom-marron border-solid border-2 w-full max-w-3xl p-2" rows="8" name="message" placeholder="Message" required></textarea>
