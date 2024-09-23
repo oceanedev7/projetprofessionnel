@@ -24,7 +24,7 @@
         <a  href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>
         
     
-    <div class=" absolute top-56 left-28 flex flex-col space-y-8 text-lg text-white font-bold">
+    <div class=" absolute top-56 left-28 flex flex-col space-y-6 text-lg text-white font-bold">
         <a class="uppercase" href="{{ route('accueil') }}">{{ __('content.accueil') }}</a>
         <a class="uppercase" href="{{ route('noscabanes') }}">{{ __('content.cabane') }}</a>
         <a class="uppercase" href="{{ route('prestations') }}">{{ __('content.prestation') }}</a>
