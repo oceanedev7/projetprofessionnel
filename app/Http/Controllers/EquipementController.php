@@ -14,8 +14,13 @@ class EquipementController extends Controller
      */
     public function index()
     {
-       //
-    }
+      
+        $afficherCabanes = Cabane::all();
+        $afficherEquipements = Equipement::with('cabane')->get();
+       
+    return view(
+        'pages.admin.equipements-create', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements]
+    );}
 
     /**
      * Ajouter un nouvel équipement
@@ -31,7 +36,7 @@ class EquipementController extends Controller
 
         Equipement::create($request->all()); 
 
-        return redirect("/infos/cabanes");
+        return redirect("/admin/equipements");
     }
     
 
@@ -73,7 +78,7 @@ class EquipementController extends Controller
             $update=Equipement::findOrFail($id);           
             $update->update($validatedData);
     
-            return redirect("/infos/cabanes");
+            return redirect("/admin/equipements");
     }
 
 
@@ -85,6 +90,6 @@ class EquipementController extends Controller
         $delete  = Equipement::findOrFail($id);
         $delete->delete();
 
-        return redirect("/infos/cabanes");
+        return redirect("/admin/equipements");
     }
 }

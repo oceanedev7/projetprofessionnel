@@ -73,21 +73,24 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 // })->name('infos');
 
 
-Route::get('/infos/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
-Route::post('/infos/cabanes', [CabaneController::class, 'create'])->name('ajouterCabane');
-Route::get('/infos/cabanes/delete/{id}', [CabaneController::class, 'destroy'])->name('supprimerCabane');
-Route::get('/infos/cabanes/edit/{id}', [CabaneController::class,'edit'])->name('editerCabane');
-Route::post('/infos/cabanes/update/{id}', [CabaneController::class,'update'])->name('modifierCabane');
+Route::get('/admin/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
+Route::post('/cabanes/create', [CabaneController::class, 'create'])->name('ajouterCabane');
+Route::get('/cabanes/delete/{id}', [CabaneController::class, 'destroy'])->name('supprimerCabane');
+Route::get('/cabanes/edit/{id}', [CabaneController::class,'edit'])->name('editerCabane');
+Route::post('/cabanes/update/{id}', [CabaneController::class,'update'])->name('modifierCabane');
 
-Route::post('/infos/equipements', [EquipementController::class, 'create'])->name('ajouterEquipement');
-Route::get('/infos/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');
-Route::get('/infos/equipements/edit/{id}', [EquipementController::class,'edit'])->name('editerEquipement');
-Route::post('/infos/equipements/update/{id}', [EquipementController::class,'update'])->name('modifierEquipement');
+Route::get('/admin/equipements', [EquipementController::class, 'index'])->name('afficherEquipement');
+Route::post('/equipements/create', [EquipementController::class, 'create'])->name('ajouterEquipement');
+Route::get('/equipements/delete/{id}', [EquipementController::class, 'destroy'])->name('supprimerEquipement');
+Route::get('/equipements/edit/{id}', [EquipementController::class,'edit'])->name('editerEquipement');
+Route::post('/equipements/update/{id}', [EquipementController::class,'update'])->name('modifierEquipement');
 
-Route::post('/infos/prestations', [PrestationController::class, 'create'])->name('ajouterPrestation');
-Route::get('/infos/prestations/delete/{id}', [PrestationController::class, 'destroy'])->name('supprimerPrestation');
-Route::get('/infos/prestations/edit/{id}', [PrestationController::class,'edit'])->name('editerPrestation');
-Route::post('/infos/prestations/update/{id}', [PrestationController::class,'update'])->name('modifierPrestation');
+Route::get('/admin/prestations', [PrestationController::class, 'index'])->name('afficherPrestation');
+Route::post('/prestations/create', [PrestationController::class, 'create'])->name('ajouterPrestation');
+Route::post('/category/create', [PrestationController::class, 'createCategory'])->name('ajouterCategorie');
+Route::get('/prestations/delete/{id}', [PrestationController::class, 'destroy'])->name('supprimerPrestation');
+Route::get('/prestations/edit/{id}', [PrestationController::class,'edit'])->name('editerPrestation');
+Route::post('/prestations/update/{id}', [PrestationController::class,'update'])->name('modifierPrestation');
 
 
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');

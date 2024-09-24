@@ -11,7 +11,7 @@
 <body>
 
     <div class="bg-custom-vert min-h-screen relative min-h-screen flex items-center justify-center">
-        <a href="{{ route('afficherCabane') }}" class="absolute top-4 left-4 text-white underline hover:text-gray-300">← Revenir à la liste des prestations</a>
+        <a href="{{ route('afficherCabane') }}" class="absolute top-4 left-4 text-white underline">← Revenir à la liste des prestations</a>
         
         <div class="bg-transparent p-8 w-full max-w-lg">
             <h1 class="text-2xl font-bold mb-6 text-white text-center">Modifier une prestation</h1>
@@ -20,7 +20,7 @@
                 
                 <div>
                     <label for="categorie_id" class="block text-lg font-medium mb-2 text-white">Catégorie</label>
-                    <select id="categorie_id" name="categorie_id" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <select id="categorie_id" name="categorie_id" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required>
                         @foreach($categories as $categorie)
                             <option value="{{ $categorie->id }}" {{ $prestation->categorie_id == $categorie->id ? 'selected' : '' }}>
                                 {{ $categorie->type }}
@@ -31,27 +31,27 @@
 
                 <div>
                     <label for="type" class="block text-lg font-medium mb-2 text-white">Type</label>
-                    <input id="type" name="type" value="{{ $prestation->type }}" placeholder="Ajoutez un type" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                    <input id="type" name="type" value="{{ $prestation->type }}" placeholder="Ajoutez un type" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
                 </div>
 
                 <div>
                     <label for="duree" class="block text-lg font-medium mb-2 text-white">Durée</label>
-                    <input id="duree" name="duree" value="{{ $prestation->duree }}" placeholder="Ajoutez une durée" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                    <input id="duree" name="duree" value="{{ $prestation->duree }}" placeholder="Ajoutez une durée" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
                 </div>
 
                 <div>
                     <label for="prix_adulte" class="block text-lg font-medium mb-2 text-white">Prix Adulte</label>
-                    <input id="prix_adulte" name="prix_adulte" value="{{ $prestation->prix_adulte }}" placeholder="Ajoutez un prix adulte" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                    <input id="prix_adulte" name="prix_adulte" value="{{ $prestation->prix_adulte }}" placeholder="Ajoutez un prix adulte" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
                 </div>
 
                 <div>
                     <label for="prix_enfant" class="block text-lg font-medium mb-2 text-white">Prix Enfant</label>
-                    <input id="prix_enfant" name="prix_enfant" value="{{ $prestation->prix_enfant }}" placeholder="Ajoutez un prix enfant" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500"/>
+                    <input id="prix_enfant" name="prix_enfant" value="{{ $prestation->prix_enfant }}" placeholder="Ajoutez un prix enfant" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron"/>
                 </div>
 
                 <div>
                     <label for="description" class="block text-lg font-medium mb-2 text-white">Description</label>
-                    <textarea id="description" name="description" placeholder="Ajoutez une description..." class="w-full p-4 border border-gray-300 rounded-lg bg-white resize-none focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-150 ease-in-out" rows="4" required>{{ $prestation->description }}</textarea>
+                    <textarea id="description" name="description" placeholder="Ajoutez une description..." class="w-full p-4 border border-gray-300 rounded-lg bg-white resize-none ffocus:ring-2 focus:ring-custom-marron focus:border-custom-marron transition duration-150 ease-in-out" rows="4" required>{{ $prestation->description }}</textarea>
                 </div>
 
                 <div class="text-center">

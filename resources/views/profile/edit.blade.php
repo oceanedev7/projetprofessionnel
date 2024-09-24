@@ -1,8 +1,19 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Profile') }}
+        <div class="flex  items-center justify-between"> 
+        <h2 class="font-bold text-xl text-custom-vert dark:text-gray-200 leading-tight">
+            {{ __('Mon profil') }}
         </h2>
+        <div class="flex space-x-2 hover:underline"> 
+            <i class="fa-solid fa-arrow-right-long mt-1"></i>
+            @if (Auth::user() && Auth::user()->role === 'admin')
+                <a href="{{ route('dashboard') }}" class="font-bold">Revenir au dashboard</a>
+            @else
+                <a href="{{ route('accueil') }}" class="font-bold">Revenir à la page d'accueil</a>
+            @endif
+        </div>
+        
+        </div>
     </x-slot>
 
     <div class="py-12">
