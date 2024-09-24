@@ -68,9 +68,6 @@ Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
-// Route::get('/admininfos', function () {
-//     return view('pages.admin.infos');
-// })->name('infos');
 
 
 Route::get('/admin/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
@@ -96,10 +93,6 @@ Route::post('/prestations/update/{id}', [PrestationController::class,'update'])-
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');
 Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
 Route::post('/newsletter/inscription', [NewsletterController::class,'create'])->name('ajouterNewsletter');
-
-// Route::get('/formulaire', [FormulaireController::class,'index'])->name('afficherFormulaire');
-// Route::post('/formulaire', [FormulaireController::class,'create'])->name('ajouterFormulaire');
-// Route::get('/formulaire/delete/{id}', [FormulaireController::class,'destroy'])->name('supprimerFormulaire');
 
 Route::post('/demandecontact', [ContactRequestController::class, 'store'])->name('contact-request');
 Route::get('/contact&acces', [ContactRequestController::class, 'index'])->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
