@@ -15,8 +15,12 @@ class PrestationController extends Controller
      */
     public function index()
     {      
-        //
-    }
+        $afficherPrestations = Prestation::with('categorie')->get();
+        $categories = Categorie::all();
+
+    return view(
+        'pages.admin.prestations-create', ['prestations'=>$afficherPrestations,  'categories' => $categories ])
+    ;}
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +40,22 @@ class PrestationController extends Controller
         
 
        Prestation::create($request->all()); 
-        return redirect("/infos/cabanes");
+        return redirect("/admin/prestations");
+    }
+
+    public function createCategory(Request $request)
+    {
+
+    $request->validate([
+        'categorie_id' => 'nullable|exists:categories,id', 
+        'new_categorie' => 'nullable|string|max:255', 
+    ]);
+
+    if ($request->new_categorie) {
+        Categorie::create(['type' => $request->new_categorie]);
+    }
+
+    return redirect("/admin/prestations");
     }
 
     /**
@@ -88,7 +107,7 @@ class PrestationController extends Controller
             $update=Prestation::findOrFail($id);           
             $update->update($validatedData);
             
-            return redirect()->route('afficherCabane');
+            return redirect()->route('afficherPrestation');
     }
 
     /**
@@ -99,6 +118,6 @@ class PrestationController extends Controller
         $delete  = Prestation::findOrFail($id);
         $delete->delete();
 
-        return redirect("/infos/cabanes");
+        return redirect("/admin/prestations");
     }
 }

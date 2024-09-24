@@ -15,12 +15,10 @@ class CabaneController extends Controller
     public function index()
     {
         $afficherCabanes = Cabane::all();
-        $afficherEquipements = Equipement::with('cabane')->get();
-        $afficherPrestations = Prestation::with('categorie')->get();
-        $categories = Categorie::all();
-
+      
+       
     return view(
-        'pages.admin.infos', ['cabanes'=>$afficherCabanes, 'equipements'=>$afficherEquipements, 'prestations'=>$afficherPrestations,  'categories' => $categories]
+        'pages.admin.cabanes-create', ['cabanes'=>$afficherCabanes]
     );}
 
     /**
@@ -40,7 +38,7 @@ class CabaneController extends Controller
             ]);
          Cabane::create($request->all());
  
-    return redirect("/infos/cabanes");
+    return redirect("/admin/cabanes");
     }
 
 
@@ -112,6 +110,6 @@ class CabaneController extends Controller
         $delete  = Cabane::findOrFail($id);
         $delete->delete();
 
-        return redirect("/infos/cabanes");
+        return redirect("/admin/cabanes");
     }
 }

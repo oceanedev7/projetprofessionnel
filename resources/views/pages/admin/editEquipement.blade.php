@@ -13,7 +13,7 @@
         
         <div class="bg-custom-vert min-h-screen relative min-h-screen flex items-center justify-center">
            
-            <a href="{{ route('afficherCabane') }}" class="absolute top-4 left-4 text-white underline hover:text-gray-300">← Revenir à la page principale</a>
+            <a href="{{ route('afficherCabane') }}" class="absolute top-4 left-4 text-white underline">← Revenir à la page principale</a>
     
             
             <div class="bg-transparent p-8 w-full max-w-lg">
@@ -23,7 +23,7 @@
                     
                     <div>
                         <label for="cabane_id" class="block text-lg font-medium mb-2 text-white">Cabane</label>
-                        <select name="cabane_id" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        <select name="cabane_id" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required>
                             @foreach ($cabanes as $cabane)
                                 <option value="{{ $cabane->id }}" {{ $equipement->cabane_id == $cabane->id ? 'selected' : '' }}>{{ $cabane->nomCabane }}</option>
                             @endforeach  
@@ -32,12 +32,12 @@
     
                     <div>
                         <label for="nomEquipement" class="block text-lg font-medium mb-2 text-white">Nom de l'équipement</label>
-                        <input name="nomEquipement" value="{{ $equipement->nomEquipement }}" placeholder="Ajoutez un équipement" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                        <input name="nomEquipement" value="{{ $equipement->nomEquipement }}" placeholder="Ajoutez un équipement" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
                     </div>
     
                     <div>
                         <label for="categorie" class="block text-lg font-medium mb-2 text-white">Catégorie</label>
-                        <input  name="categorie" value="{{ $equipement->categorie }}" placeholder="Ajoutez une catégorie" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-green-500" required/>
+                        <input  name="categorie" value="{{ $equipement->categorie }}" placeholder="Ajoutez une catégorie" class="w-full p-3 border border-gray-300 rounded-md bg-white focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
                     </div>
     
                     <div class="text-center">
