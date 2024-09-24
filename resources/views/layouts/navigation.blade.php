@@ -20,14 +20,19 @@
                 </div>
             </div>
 
-         <div class="uppercase text-white font-black justify-center text-2xl "> - Dashboard - </div>
+            <div class="uppercase text-white font-black justify-center text-2xl">
+                @if (Auth::user() && Auth::user()->role === 'admin') 
+                    - Dashboard -
+                @endif
+            </div>
+            
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-semibold bg-white rounded-md text-custom-vert dark:text-gray-400 dark:bg-gray-800 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                            <div>{{ Auth::user()->nom }}</div>
+                            <div>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</div>
 
                             <div class="ms-1">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
