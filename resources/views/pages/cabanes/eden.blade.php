@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.main')
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -105,10 +105,10 @@
         </div>
     </div>
 
-    <div class="flex flex-col mt-40">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-y-6 text-custom-marron">
+    <div class="flex flex-col justify-center items-center mt-40">
+        <div class="grid grid-cols-2 gap-y-6 text-custom-marron">
             @foreach($equipements as $equipement)
-                <div class="text-left">- {{ $equipement->nomEquipement }}</div>
+                <div class="flex flex-col justify-center text-left -mx-32">- {{ $equipement->nomEquipement }}</div>
             @endforeach
         </div>
     </div>

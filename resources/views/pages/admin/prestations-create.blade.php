@@ -49,8 +49,8 @@
            
             </div>
             <div class="mb-4">
-                <label  class="block text-lg font-medium mb-2 ">Type</label>
-                <input id="type" name="type" placeholder="Ajoutez un type" class="w-full p-3 border border-custom-marron rounded-md focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
+                <label  class="block text-lg font-medium mb-2 ">Nom de la prestation</label>
+                <input id="type" name="type" placeholder="Ajoutez un nom" class="w-full p-3 border border-custom-marron rounded-md focus:ring-2 focus:ring-custom-marron focus:border-custom-marron" required/>
             </div>
             <div class="mb-4">
                 <label for="duree" class="block text-lg font-medium mb-2 ">Durée</label>
@@ -77,7 +77,7 @@
             <thead class="bg-gray-100 text-gray-600">
                 <tr>
                     <th class="py-3 px-6 text-left">Catégorie</th>
-                    <th class="py-3 px-6 text-left">Type</th>
+                    <th class="py-3 px-6 text-left">Nom</th>
                     <th class="py-3 px-6 text-left">Durée</th>
                     <th class="py-3 px-6 text-left">Prix Adulte</th>
                     <th class="py-3 px-6 text-left">Prix Enfant</th>
