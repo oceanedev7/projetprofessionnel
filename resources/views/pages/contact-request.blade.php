@@ -11,7 +11,7 @@
             max-width: 600px;
             margin: auto;
             background-color: #ffffff; 
-            border: 2px solid #dddddd; 
+            border: 2px solid #422914; 
             border-radius: 5px; 
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
             padding: 20px;
