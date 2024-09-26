@@ -11,10 +11,8 @@ use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\CabaneViewController;
 use App\Http\Controllers\PrestationViewController;
 use App\Http\Controllers\ContactRequestController;
-
-
 use App\Http\Controllers\MapController;
-
+use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -66,6 +64,14 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
 
+Route::post('/reservation', [ReservationController::class, 'checkAvailability'])->name('disponibilite');
+Route::get('/reservation/extras', [ReservationController::class, 'extras'])->name('extras');
+
+// Route::get('/reservation/extras', function () {
+//     return view('pages.extras');
+// })->name('extras');
+
+
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 
@@ -88,7 +94,6 @@ Route::post('/category/create', [PrestationController::class, 'createCategory'])
 Route::get('/prestations/delete/{id}', [PrestationController::class, 'destroy'])->name('supprimerPrestation');
 Route::get('/prestations/edit/{id}', [PrestationController::class,'edit'])->name('editerPrestation');
 Route::post('/prestations/update/{id}', [PrestationController::class,'update'])->name('modifierPrestation');
-
 
 Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');
 Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
