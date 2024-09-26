@@ -94,8 +94,36 @@ class ReservationController extends Controller
             $cabane->prixTotal = $duration * $cabane->prix; 
         }
     
-        // Retour de la vue avec les cabanes disponibles
         return view('pages.available-rooms', compact('duration', 'availableCabanes', 'dateArrivee', 'dateDepart', 'nombreAdultes', 'nombreEnfants'));
     
     }
+    
+    public function extras(Request $request) {
+       
+        $data = $request->validate([
+            'cabaneNom' => 'required|string',
+            'cabaneCapacite' => 'required|integer',
+            'prixTotal' => 'required|numeric',
+            'dateArrivee' => 'required|date',
+            'dateDepart' => 'required|date',
+            'duration' => 'required|integer',
+            'nombreAdultes' => 'required|integer',
+            'nombreEnfants' => 'required|integer',
+        ]);
+    
+        return view('pages.extras', [
+            'cabane' => (object) [
+                'nomCabane' => $data['cabaneNom'],
+                'capacite' => $data['cabaneCapacite'],
+                'prixTotal' => $data['prixTotal'],
+            ],
+            'dateArrivee' => $data['dateArrivee'],
+            'dateDepart' => $data['dateDepart'],
+            'duration' => $data['duration'],
+            'nombreAdultes' => $data['nombreAdultes'],
+            'nombreEnfants' => $data['nombreEnfants'],
+        ]);
+    }
+    
+    
 }

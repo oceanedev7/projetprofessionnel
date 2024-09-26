@@ -78,7 +78,7 @@
    <div class="flex justify-center relative bottom-96">
     <div class="bg-custom-vert w-[800px] h-[200px] rounded"> 
 
-        <form action="{{ route('yourRouteName') }}" method="POST">
+        <form action="{{ route('disponibilite') }}" method="POST">
             @csrf
 
 <div class="flex justify-end mr-12 relative top-6">

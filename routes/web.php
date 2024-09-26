@@ -64,8 +64,12 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
 
-Route::post('/check-availability', [ReservationController::class, 'checkAvailability'])->name('yourRouteName');
+Route::post('/reservation', [ReservationController::class, 'checkAvailability'])->name('disponibilite');
+Route::get('/reservation/extras', [ReservationController::class, 'extras'])->name('extras');
 
+// Route::get('/reservation/extras', function () {
+//     return view('pages.extras');
+// })->name('extras');
 
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');

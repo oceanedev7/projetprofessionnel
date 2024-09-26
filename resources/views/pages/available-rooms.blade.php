@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabanes Disponibles</title>
+    <title>Réservation</title>
 </head>
 <body>
 
@@ -60,18 +60,13 @@
 @section('main')
 
 <a href="{{route('reserver')}}"> Modifier ma réservation</a>
-    {{-- <h1>Cabanes disponibles du {{ $dateArrivee }} au {{ $dateDepart }}</h1>  
-
-    <p>Nombre d'adultes : {{ $nombreAdultes }}</p>
-    <p>Nombre d'enfants : {{ $nombreEnfants }}</p> --}}
-
     
     @if($availableCabanes->isEmpty())
     <p>Aucune cabane disponible pour cette période.</p>
 @else
 
 <div class="flex flex-row p-6 mt-12">
-    <!-- Section des cabanes disponibles -->
+   
     <div class="flex-grow">
         @foreach($availableCabanes as $cabane)
         <div class="max-w-4xl border border-2 border-custom-marron rounded-lg bg-white mb-6">
@@ -102,9 +97,17 @@
                             <div class="italic text-custom-marron"> Taxes de séjour non incluses </div>
                         </div>
 
-                        <div>
+                        {{-- <div>
                             <button type="submit"  class="text-white font-bold text-sm px-4 py-2 rounded-md bg-custom-marron">Réserver</button>
-                        </div> 
+                        </div>  --}}
+                        <button type="button" 
+                        class="text-white font-bold  px-4 py-2 rounded-md bg-custom-marron" 
+                        onclick="extras('{{ $cabane->nomCabane }}', '{{ $cabane->capacite }}', '{{ $cabane->prixTotal }}', '{{ $dateArrivee ?? '' }}', '{{ $dateDepart ?? '' }}', '{{ $duration }}', '{{ $nombreAdultes }}', '{{ $nombreEnfants }}')">
+                        Réserver
+                    </button>
+
+                   
+                    
                     </div>
                 </div>
             </div>
@@ -114,29 +117,37 @@
 
 <div>
     <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
-        <h2 class="font-bold mb-4 text-custom-marron uppercase">Récapitulatif de la réservation</h2>
+        <h2 class="font-bold mb-4 text-custom-marron uppercase italic">Récapitulatif de la réservation</h2>
         
-        <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center mb-4">
-            @if(isset($cabane))
-                <div> {{ $cabane->nomCabane }} </div> 
+        
+        <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
+           
+                <div> </div> 
                 <div> - </div>
-                <div> {{ $cabane->capacite }} pers. </div>
-            @endif
+                <div>  pers. </div>
+          
         </div>
 
         <div class="flex text-custom-marron space-x-3 justify-center"> 
             <i class="fa-solid fa-mug-saucer mt-1"></i>
-            <div>Petit-déjeuner inclus</div>
+            <div class="text-sm">Petit-déjeuner inclus</div>
         </div>
+        
+        <div class="flex flex-col mt-8 space-y-4">
 
         <div class="flex justify-between">
         <label class="font-bold text-custom-marron">Date d'arrivée :</label>
-        <div class="font-semibold text-custom-marron">  {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}</div>
+        <div class="font-semibold text-custom-marron"> </div>
         </div>
 
         <div class="flex justify-between">
             <label class="font-bold text-custom-marron">Date de départ :</label>
-            <div class="font-semibold text-custom-marron">  {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}</div>
+            <div class="font-semibold text-custom-marron"> </div>
+        </div>
+
+        <div class="flex justify-between">
+            <label class="font-bold text-custom-marron">Durée :</label>
+            <div class="font-semibold text-custom-marron">  nuit(s) </div>
         </div>
 
         <div class="flex justify-between">
@@ -145,26 +156,36 @@
             <div class="flex flex-col"> 
 
                 <div class="flex space-x-2">
-            <label class="text-custom-marron">Adultes :</label>
-            <div  class="font-semibold text-custom-marron"> {{ $nombreAdultes }} </div>
+            <label class="text-custom-marron text-sm mt-1">Adultes :</label>
+            <div  class="font-semibold text-custom-marron mt-0.5">  </div>
                 </div>
 
                 <div class="flex space-x-2">
-            <label class="text-custom-marron">Enfants :</label>
-            <div> {{ $nombreEnfants  }} </div>
+            <label class="text-custom-marron text-sm mt-1">Enfants :</label>
+            <div class="font-semibold text-custom-marron mt-0.5">  </div>
         </div>
             </div>
         </div>
 
 
-        <div class="flex justify-between">
-            <label class="font-bold text-custom-marron">Durée :</label>
-            <div class="font-semibold text-custom-marron"> {{ $duration }} nuit(s) </div>
         </div>
 
+        <div class="flex justify-between">
+            <label class="font-bold text-custom-marron">Extras :</label>
+            <div class="font-semibold text-custom-marron">  </div>
+        </div>
+
+        <div class="flex flex-col mt-4 space-y-2">
+        <hr class="border-1 h-0.5 bg-custom-marron">
+
+        <div class="flex justify-between">
+            <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
+            <div class="font-black text-custom-marron text-xl"> € </div>
+        </div> 
+        </div>
         
-        <p class="font-bold text-lg">Total : {{ $cabane->prixTotal}} €</p>
-        <p class="italic">Taxes de séjour non incluses.</p>
+        <p class="italic text-sm">Taxes de séjour non incluses</p>
+
     </div>
 </div>
 </div>
@@ -179,3 +200,20 @@
     @endsection
 </body>
 </html>
+
+
+<script>
+    function extras(nomCabane, capacite, prixTotal, dateArrivee, dateDepart, duration, nombreAdultes, nombreEnfants) {
+        const url = '{{ route('extras') }}'; 
+        const redirectUrl = new URL(url);
+        redirectUrl.searchParams.append('cabaneNom', nomCabane);
+        redirectUrl.searchParams.append('cabaneCapacite', capacite);
+        redirectUrl.searchParams.append('prixTotal', prixTotal);
+        redirectUrl.searchParams.append('dateArrivee', dateArrivee);
+        redirectUrl.searchParams.append('dateDepart', dateDepart);
+        redirectUrl.searchParams.append('duration', duration);
+        redirectUrl.searchParams.append('nombreAdultes', nombreAdultes);
+        redirectUrl.searchParams.append('nombreEnfants', nombreEnfants);
+        window.location.href = redirectUrl; 
+    }
+</script>
