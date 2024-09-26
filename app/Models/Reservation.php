@@ -34,4 +34,10 @@ class Reservation extends Model
         return $this->hasMany(Prestation::class);
     }
 
+    public function cabanes()
+    {
+        return $this->belongsToMany(Cabane::class, 'reservation_cabanes', 'reservation_id', 'cabane_id')
+                    ->withPivot('dateArrivee', 'dateDepart'); // Ajouter les colonnes si nécessaire
+    }
+
 }
