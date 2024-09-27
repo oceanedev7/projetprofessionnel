@@ -167,11 +167,11 @@
                             <span>(1H-80€)</span>
                         </div>
                         <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa2()"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa2">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa2()"> 
                                 <span> - </span>
                             </button>
                         </div>
@@ -186,11 +186,11 @@
                             <span>(1H - 60€)</span>
                         </div>
                         <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa3()"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa3">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa3()"> 
                                 <span> - </span>
                             </button>
                         </div>
@@ -204,11 +204,11 @@
                             <span>(1H - 70€)</span>
                         </div>
                         <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa4()"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa4">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa4()"> 
                                 <span> - </span>
                             </button>
                         </div>
@@ -222,11 +222,11 @@
                             <span>(30min-70€)</span>
                         </div>
                         <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa5()"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa5">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa5()"> 
                                 <span> - </span>
                             </button>
                         </div>
@@ -240,11 +240,11 @@
                             <span>(1H-100€)</span>
                         </div>
                         <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa6()"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa6">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa6()"> 
                                 <span> - </span>
                             </button>
                         </div>
@@ -340,6 +340,13 @@
     var dejeunerEnfant = 0;
     var dinerAdulte = 0;
     var dinerEnfant = 0;
+    var spa1 = 0;
+    var spa2 = 0;
+    var spa3 = 0;
+    var spa4 = 0;
+    var spa5 = 0;
+    var spa6 = 0;
+
 
     function addDejAdulte(){
         dejeunerAdulte++;
@@ -391,6 +398,77 @@
         dinerEnfant--;
     }
     document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
-}
+    }
 
+    function addSpa1(){
+        spa1++;
+       document.getElementById("spa1").innerHTML = spa1;
+    }
+
+    function substractSpa1() {
+    if (spa1 > 0) {
+        spa1--;
+    }
+    document.getElementById("spa1").innerHTML = spa1;
+    }
+
+    function addSpa2(){
+        spa2++;
+       document.getElementById("spa2").innerHTML = spa2;
+    }
+
+    function substractSpa2() {
+    if (spa2 > 0) {
+        spa2--;
+    }
+    document.getElementById("spa2").innerHTML = spa2;
+    }
+
+    function addSpa3(){
+        spa3++;
+       document.getElementById("spa3").innerHTML = spa3;
+    }
+
+    function substractSpa3() {
+    if (spa3 > 0) {
+        spa3--;
+    }
+    document.getElementById("spa3").innerHTML = spa3;
+    }
+
+    function addSpa4(){
+        spa4++;
+       document.getElementById("spa4").innerHTML = spa4;
+    }
+
+    function substractSpa4() {
+    if (spa4 > 0) {
+        spa4--;
+    }
+    document.getElementById("spa4").innerHTML = spa4;
+    }
+
+    function addSpa5(){
+        spa5++;
+       document.getElementById("spa5").innerHTML = spa5;
+    }
+
+    function substractSpa5() {
+    if (spa5 > 0) {
+        spa5--;
+    }
+    document.getElementById("spa5").innerHTML = spa5;
+    }
+
+    function addSpa6(){
+        spa6++;
+       document.getElementById("spa6").innerHTML = spa6;
+    }
+
+    function substractSpa6() {
+    if (spa6 > 0) {
+        spa6--;
+    }
+    document.getElementById("spa6").innerHTML = spa6;
+    }
     </script>
