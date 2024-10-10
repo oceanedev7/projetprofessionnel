@@ -12,7 +12,6 @@
     @section('navbar')
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-        {{-- <a class="absolute top-8 right-24 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
             <x-dropdown align="right" width="48">
@@ -265,11 +264,11 @@
                 <h2 class="font-bold mb-4 text-custom-marron uppercase italic">Récapitulatif de la réservation</h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
-                    @if(isset($cabane))
-                        <div> {{ $cabane->nomCabane }} </div>
+                    
+                        <div> {{ $nomCabane }} </div>
                         <div> - </div>
-                        <div> {{ $cabane->capacite }} pers. </div>
-                    @endif
+                        <div> {{ $capacite }} pers. </div>
+                 
                 </div>
 
                 <div class="flex text-custom-marron space-x-3 justify-center">
@@ -319,7 +318,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
-                        <div class="font-black text-custom-marron text-xl"> {{ $cabane->prixTotal ?? 0 }} € </div>
+                        <div class="font-black text-custom-marron text-xl"> {{ $prixTotal ?? 0 }} € </div>
                     </div>
                 </div>
 
@@ -330,6 +329,8 @@
 
 
 @endsection
+
+
 
 </body>
 </html>

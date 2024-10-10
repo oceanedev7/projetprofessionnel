@@ -98,25 +98,14 @@ class ReservationController extends Controller
     
     }
     
-    public function extras(Request $request) {
-       
-        $data = $request->validate([
-            'cabaneNom' => 'required|string',
-            'cabaneCapacite' => 'required|integer',
-            'prixTotal' => 'required|numeric',
-            'dateArrivee' => 'required|date',
-            'dateDepart' => 'required|date',
-            'duration' => 'required|integer',
-            'nombreAdultes' => 'required|integer',
-            'nombreEnfants' => 'required|integer',
-        ]);
-    
+    public function extras(Request $request)
+    {
+        $data = $request->all(); 
+
         return view('pages.extras', [
-            'cabane' => (object) [
-                'nomCabane' => $data['cabaneNom'],
-                'capacite' => $data['cabaneCapacite'],
-                'prixTotal' => $data['prixTotal'],
-            ],
+            'nomCabane' => $data['nomCabane'],
+            'capacite' => $data['capacite'],
+            'prixTotal' => $data['prixTotal'],
             'dateArrivee' => $data['dateArrivee'],
             'dateDepart' => $data['dateDepart'],
             'duration' => $data['duration'],
@@ -124,7 +113,5 @@ class ReservationController extends Controller
             'nombreEnfants' => $data['nombreEnfants'],
         ]);
     }
-    
-    
     
 }

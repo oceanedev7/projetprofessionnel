@@ -65,7 +65,7 @@ Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])
 
 
 Route::post('/reservation', [ReservationController::class, 'checkAvailability'])->name('disponibilite');
-Route::get('/reservation/extras', [ReservationController::class, 'extras'])->name('extras');
+Route::post('/reservation/extras', [ReservationController::class, 'extras'])->name('extras');
 
 // Route::get('/reservation/extras', function () {
 //     return view('pages.extras');

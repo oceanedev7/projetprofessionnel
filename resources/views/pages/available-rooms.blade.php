@@ -97,17 +97,21 @@
                             <div class="italic text-custom-marron"> Taxes de séjour non incluses </div>
                         </div>
 
-                        {{-- <div>
-                            <button type="submit"  class="text-white font-bold text-sm px-4 py-2 rounded-md bg-custom-marron">Réserver</button>
-                        </div>  --}}
-                        <button type="button" 
-                        class="text-white font-bold  px-4 py-2 rounded-md bg-custom-marron" 
-                        onclick="extras('{{ $cabane->nomCabane }}', '{{ $cabane->capacite }}', '{{ $cabane->prixTotal }}', '{{ $dateArrivee ?? '' }}', '{{ $dateDepart ?? '' }}', '{{ $duration }}', '{{ $nombreAdultes }}', '{{ $nombreEnfants }}')">
-                        Réserver
-                    </button>
+                       
+<form action="{{ route('extras') }}" method="POST">
+    @csrf
+    <input type="hidden" name="nomCabane" value="{{ $cabane->nomCabane }}">
+    <input type="hidden" name="capacite" value="{{ $cabane->capacite }}">
+    <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
+    <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}">
+    <input type="hidden" name="dateDepart" value="{{ $dateDepart }}">
+    <input type="hidden" name="duration" value="{{ $duration }}">
+    <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
+    <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
 
-                   
-                    
+    <button type="submit" class="text-white font-bold text-sm px-4 py-2 rounded-md bg-custom-marron">Réserver</button>
+</form>
+
                     </div>
                 </div>
             </div>
@@ -137,17 +141,21 @@
 
         <div class="flex justify-between">
         <label class="font-bold text-custom-marron">Date d'arrivée :</label>
-        <div class="font-semibold text-custom-marron"> </div>
+        <div class="font-semibold text-custom-marron">
+            {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}
+        </div>
         </div>
 
         <div class="flex justify-between">
             <label class="font-bold text-custom-marron">Date de départ :</label>
-            <div class="font-semibold text-custom-marron"> </div>
+            <div class="font-semibold text-custom-marron">
+                {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}
+            </div>
         </div>
 
         <div class="flex justify-between">
             <label class="font-bold text-custom-marron">Durée :</label>
-            <div class="font-semibold text-custom-marron">  nuit(s) </div>
+            <div class="font-semibold text-custom-marron"> {{ $duration }} nuit(s) </div>
         </div>
 
         <div class="flex justify-between">
@@ -157,12 +165,12 @@
 
                 <div class="flex space-x-2">
             <label class="text-custom-marron text-sm mt-1">Adultes :</label>
-            <div  class="font-semibold text-custom-marron mt-0.5">  </div>
+            <div  class="font-semibold text-custom-marron mt-0.5">{{ $nombreAdultes }}  </div>
                 </div>
 
                 <div class="flex space-x-2">
             <label class="text-custom-marron text-sm mt-1">Enfants :</label>
-            <div class="font-semibold text-custom-marron mt-0.5">  </div>
+            <div class="font-semibold text-custom-marron mt-0.5">{{ $nombreEnfants }} </div>
         </div>
             </div>
         </div>
@@ -201,19 +209,3 @@
 </body>
 </html>
 
-
-<script>
-    function extras(nomCabane, capacite, prixTotal, dateArrivee, dateDepart, duration, nombreAdultes, nombreEnfants) {
-        const url = '{{ route('extras') }}'; 
-        const redirectUrl = new URL(url);
-        redirectUrl.searchParams.append('cabaneNom', nomCabane);
-        redirectUrl.searchParams.append('cabaneCapacite', capacite);
-        redirectUrl.searchParams.append('prixTotal', prixTotal);
-        redirectUrl.searchParams.append('dateArrivee', dateArrivee);
-        redirectUrl.searchParams.append('dateDepart', dateDepart);
-        redirectUrl.searchParams.append('duration', duration);
-        redirectUrl.searchParams.append('nombreAdultes', nombreAdultes);
-        redirectUrl.searchParams.append('nombreEnfants', nombreEnfants);
-        window.location.href = redirectUrl; 
-    }
-</script>
