@@ -56,7 +56,6 @@
     </div>
 @endsection
 
-
 @section('main')
 
 <a href="{{ route('disponibilite') }}"> Modifier ma réservation</a>
@@ -74,10 +73,11 @@
                         <div class="rounded-md">
                             <img class="mb-2 rounded-md" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="">
                         </div>
-                        <div class="text-white font-semibold">Déjeuner - Panier du Terroir</div>
+                        @if(isset($dejeuner))
+                        <div class="text-white font-semibold text-center mb-4">{{$dejeuner->type}}</div>
         
-                        <div class="flex flex-col space-y-1 mb-4">
-                            <div class="text-white italic">~ Adultes ~</div>
+                        <div class="flex flex-col space-y-1 mb-4 items-center">
+                            <div class="text-white italic">~ Adultes ({{$dejeuner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
                                 <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte()"> 
                                     <span> + </span>
@@ -88,9 +88,10 @@
                                 </button>
                             </div>
                         </div>
+                        @endif
         
-                        <div class="flex flex-col space-y-1">
-                            <div class="text-white italic">~ Enfants ~</div>
+                        <div class="flex flex-col space-y-1 items-center">
+                            <div class="text-white italic">~ Enfants ({{$dejeuner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
                                 <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant()"> 
                                     <span> + </span>
@@ -107,10 +108,11 @@
                         <div class="rounded-md">
                             <img class="mb-2 rounded-md" src="{{ Storage::url('images/diner.jpg') }}" alt="">
                         </div>
-                        <div class="text-white font-semibold">Dîner - Panier Gourmand</div>
+                        @if(isset($diner))
+                        <div class="text-white font-semibold text-center mb-4">{{$diner->type}}</div>
         
-                        <div class="flex flex-col space-y-1 mb-4">
-                            <div class="text-white italic">~ Adultes ~</div>
+                        <div class="flex flex-col space-y-1 mb-4 items-center">
+                            <div class="text-white italic">~ Adultes ({{$diner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
                                 <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte()"> 
                                     <span> + </span>
@@ -121,9 +123,10 @@
                                 </button>
                             </div>
                         </div>
+                        @endif
         
-                        <div class="flex flex-col space-y-1">
-                            <div class="text-white italic">~ Enfants ~</div>
+                        <div class="flex flex-col space-y-1 items-center">
+                            <div class="text-white italic">~ Enfants ({{$diner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
                                 <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant()"> 
                                     <span> + </span>
@@ -141,121 +144,35 @@
                 <hr class="w-12 h-0.5 bg-custom-marron ml-2 mb-4">
         
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
+
+                    @foreach ($massages as $index => $massage)
                     <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
                         <div class="rounded-md">
                             <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
                         </div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Massage oriental 
-                            <span>(45min - 60€)</span>
+                        <div class="text-white font-medium mb-4 flex flex-col text-center">
+                            {{ $massage->type }} 
+                            <span>({{ $massage->duree }} min - {{ $massage->prix_adulte }} €)</span>
                         </div>
                         <div class="flex space-x-4">
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa1()"> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount({{ $index }}, 1)"> 
                                 <span> + </span>
                             </button>
-                            <span class="text-custom-marron font-black" id="spa1">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa1()"> 
+                            <span class="text-custom-marron font-black" id="spa{{ $index }}">0</span> 
+                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount({{ $index }}, -1)"> 
                                 <span> - </span>
                             </button>
                         </div>
                     </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
-                        </div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Le Shiatsu 
-                            <span>(1H-80€)</span>
-                        </div>
-                        <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa2()"> 
-                                <span> + </span>
-                            </button>
-                            <span class="text-custom-marron font-black" id="spa2">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa2()"> 
-                                <span> - </span>
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
-                        </div>
-                        <div class="text-white font-semibold mb-2"></div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Massage suédois
-                            <span>(1H - 60€)</span>
-                        </div>
-                        <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa3()"> 
-                                <span> + </span>
-                            </button>
-                            <span class="text-custom-marron font-black" id="spa3">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa3()"> 
-                                <span> - </span>
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
-                        </div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Massage californien 
-                            <span>(1H - 70€)</span>
-                        </div>
-                        <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa4()"> 
-                                <span> + </span>
-                            </button>
-                            <span class="text-custom-marron font-black" id="spa4">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa4()"> 
-                                <span> - </span>
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
-                        </div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Le massage cranio-facial 
-                            <span>(30min-70€)</span>
-                        </div>
-                        <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa5()"> 
-                                <span> + </span>
-                            </button>
-                            <span class="text-custom-marron font-black" id="spa5">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa5()"> 
-                                <span> - </span>
-                            </button>
-                        </div>
-                    </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
-                        </div>
-                        <div class="text-white font-medium mb-4 flex flex-col text-center">Massage prénatal
-                            <span>(1H-100€)</span>
-                        </div>
-                        <div class="flex space-x-4"> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addSpa6()"> 
-                                <span> + </span>
-                            </button>
-                            <span class="text-custom-marron font-black" id="spa6">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractSpa6()"> 
-                                <span> - </span>
-                            </button>
-                        </div>
-                    </div>
+                @endforeach
+                
         
                 </div>
 
             <div class="flex justify-end mt-8">
                 <button class="text-white font-bold px-4 py-2 rounded-md bg-custom-marron uppercase" > Valider </button>
             </div>
-
+         
             </div>
         </div>
         
@@ -265,11 +182,11 @@
                 <h2 class="font-bold mb-4 text-custom-marron uppercase italic">Récapitulatif de la réservation</h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
-                    @if(isset($cabane))
-                        <div> {{ $cabane->nomCabane }} </div>
+                    
+                        <div> {{ $nomCabane }} </div>
                         <div> - </div>
-                        <div> {{ $cabane->capacite }} pers. </div>
-                    @endif
+                        <div> {{ $capacite }} pers. </div>
+                 
                 </div>
 
                 <div class="flex text-custom-marron space-x-3 justify-center">
@@ -319,7 +236,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
-                        <div class="font-black text-custom-marron text-xl"> {{ $cabane->prixTotal ?? 0 }} € </div>
+                        <div class="font-black text-custom-marron text-xl"> {{ $prixTotal ?? 0 }} € </div>
                     </div>
                 </div>
 
@@ -331,6 +248,8 @@
 
 @endsection
 
+
+
 </body>
 </html>
 
@@ -340,14 +259,7 @@
     var dejeunerEnfant = 0;
     var dinerAdulte = 0;
     var dinerEnfant = 0;
-    var spa1 = 0;
-    var spa2 = 0;
-    var spa3 = 0;
-    var spa4 = 0;
-    var spa5 = 0;
-    var spa6 = 0;
-
-
+   
     function addDejAdulte(){
         dejeunerAdulte++;
        document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
@@ -400,75 +312,17 @@
     document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
     }
 
-    function addSpa1(){
-        spa1++;
-       document.getElementById("spa1").innerHTML = spa1;
+   
+const spaCounts = Array.from({ length: {{ count($massages) }} }, () => 0);
+function SpaCount(index, change) {
+   
+    spaCounts[index] += change;
+    
+    if (spaCounts[index] < 0) {
+        spaCounts[index] = 0;
     }
 
-    function substractSpa1() {
-    if (spa1 > 0) {
-        spa1--;
-    }
-    document.getElementById("spa1").innerHTML = spa1;
-    }
-
-    function addSpa2(){
-        spa2++;
-       document.getElementById("spa2").innerHTML = spa2;
-    }
-
-    function substractSpa2() {
-    if (spa2 > 0) {
-        spa2--;
-    }
-    document.getElementById("spa2").innerHTML = spa2;
-    }
-
-    function addSpa3(){
-        spa3++;
-       document.getElementById("spa3").innerHTML = spa3;
-    }
-
-    function substractSpa3() {
-    if (spa3 > 0) {
-        spa3--;
-    }
-    document.getElementById("spa3").innerHTML = spa3;
-    }
-
-    function addSpa4(){
-        spa4++;
-       document.getElementById("spa4").innerHTML = spa4;
-    }
-
-    function substractSpa4() {
-    if (spa4 > 0) {
-        spa4--;
-    }
-    document.getElementById("spa4").innerHTML = spa4;
-    }
-
-    function addSpa5(){
-        spa5++;
-       document.getElementById("spa5").innerHTML = spa5;
-    }
-
-    function substractSpa5() {
-    if (spa5 > 0) {
-        spa5--;
-    }
-    document.getElementById("spa5").innerHTML = spa5;
-    }
-
-    function addSpa6(){
-        spa6++;
-       document.getElementById("spa6").innerHTML = spa6;
-    }
-
-    function substractSpa6() {
-    if (spa6 > 0) {
-        spa6--;
-    }
-    document.getElementById("spa6").innerHTML = spa6;
-    }
+    document.getElementById("spa" + index).innerHTML = spaCounts[index];
+}
+   
     </script>

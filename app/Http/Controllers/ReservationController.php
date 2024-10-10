@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Cabane;
+use App\Models\Prestation;
 use Carbon\Carbon;
 
 class ReservationController extends Controller
@@ -11,9 +12,26 @@ class ReservationController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $data = $request->all(); 
+        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
+        $diner = Prestation::with('categorie')->where('id', 2)->first();
+        $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
+
+        return view('pages.extras', [
+            'dejeuner' => $dejeuner,
+            'diner' => $diner,
+            'massages' => $massages,
+            'nomCabane' => $data['nomCabane'],
+            'capacite' => $data['capacite'],
+            'prixTotal' => $data['prixTotal'],
+            'dateArrivee' => $data['dateArrivee'],
+            'dateDepart' => $data['dateDepart'],
+            'duration' => $data['duration'],
+            'nombreAdultes' => $data['nombreAdultes'],
+            'nombreEnfants' => $data['nombreEnfants'],
+        ]);
     }
 
     /**
@@ -98,33 +116,13 @@ class ReservationController extends Controller
     
     }
     
-    public function extras(Request $request) {
-       
-        $data = $request->validate([
-            'cabaneNom' => 'required|string',
-            'cabaneCapacite' => 'required|integer',
-            'prixTotal' => 'required|numeric',
-            'dateArrivee' => 'required|date',
-            'dateDepart' => 'required|date',
-            'duration' => 'required|integer',
-            'nombreAdultes' => 'required|integer',
-            'nombreEnfants' => 'required|integer',
-        ]);
-    
-        return view('pages.extras', [
-            'cabane' => (object) [
-                'nomCabane' => $data['cabaneNom'],
-                'capacite' => $data['cabaneCapacite'],
-                'prixTotal' => $data['prixTotal'],
-            ],
-            'dateArrivee' => $data['dateArrivee'],
-            'dateDepart' => $data['dateDepart'],
-            'duration' => $data['duration'],
-            'nombreAdultes' => $data['nombreAdultes'],
-            'nombreEnfants' => $data['nombreEnfants'],
-        ]);
+   
+
+    public function modifierReservation()
+    {
+        // Récupérez les données nécessaires pour la vue ici, si besoin
+        return view('pages.available-rooms'); // Assurez-vous que ce fichier de vue existe
     }
-    
     
     
 }
