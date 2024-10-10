@@ -16,7 +16,6 @@ class CabaneController extends Controller
     {
         $afficherCabanes = Cabane::all();
       
-       
     return view(
         'pages.admin.cabanes-create', ['cabanes'=>$afficherCabanes]
     );}
