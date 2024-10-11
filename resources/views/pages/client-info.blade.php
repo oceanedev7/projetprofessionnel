@@ -58,7 +58,7 @@
 
 @section('main')
 
-<a href="{{ route('disponibilite') }}"> Modifier ma réservation</a>
+<a href="{{ route('extras') }}"> Modifier ma réservation</a>
 
 
     <div class="flex flex-row p-6 mt-12">

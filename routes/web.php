@@ -71,6 +71,9 @@ Route::get('/reservation/informations', function () {
     return view('pages.client-info');
 })->name('client-info');
 
+Route::get('/reservation/confirmation', function () {
+    return view('pages.resa-confirmed');
+})->name('confirmed');
 
 
 // Route::get('/reservation/extras', function () {
