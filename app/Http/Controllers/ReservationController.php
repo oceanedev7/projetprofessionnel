@@ -7,6 +7,7 @@ use App\Models\Cabane;
 use App\Models\Prestation;
 use Carbon\Carbon;
 
+
 class ReservationController extends Controller
 {
     /**
@@ -39,7 +40,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+          // 
     }
 
     /**
@@ -47,7 +48,33 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
+        $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
+        $duration = $dateArrivee->diffInDays($dateDepart);
+        
+        $nombreAdultes = $request->input('nombreAdultes');
+        $nombreEnfants = $request->input('nombreEnfants');
+        
+        $nombreTotalPersonnes = $nombreAdultes + $nombreEnfants;
+    
+        $availableCabanes = Cabane::whereDoesntHave('reservations', function($query) use ($dateArrivee, $dateDepart) {
+            $query->where(function($query) use ($dateArrivee, $dateDepart) {
+                $query->whereBetween('reservation_cabanes.dateArrivee', [$dateArrivee, $dateDepart])
+                      ->orWhereBetween('reservation_cabanes.dateDepart', [$dateArrivee, $dateDepart])
+                      ->orWhere(function($query) use ($dateArrivee, $dateDepart) {
+                          $query->where('reservation_cabanes.dateArrivee', '<=', $dateArrivee)
+                                ->where('reservation_cabanes.dateDepart', '>=', $dateDepart);
+                      });
+            });
+        })
+        ->where('capacite', '>=', $nombreTotalPersonnes)
+        ->get();
+
+        foreach ($availableCabanes as $cabane) {
+            $cabane->prixTotal = $duration * $cabane->prix; 
+        }
+    
+        return view('pages.available-rooms', compact('duration', 'availableCabanes', 'dateArrivee', 'dateDepart', 'nombreAdultes', 'nombreEnfants'));
     }
 
     /**
@@ -83,46 +110,4 @@ class ReservationController extends Controller
     }
 
 
-
-    public function checkAvailability(Request $request)
-    {
-        $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
-        $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
-        $duration = $dateArrivee->diffInDays($dateDepart);
-        
-        $nombreAdultes = $request->input('nombreAdultes');
-        $nombreEnfants = $request->input('nombreEnfants');
-        
-        $nombreTotalPersonnes = $nombreAdultes + $nombreEnfants;
-    
-        $availableCabanes = Cabane::whereDoesntHave('reservations', function($query) use ($dateArrivee, $dateDepart) {
-            $query->where(function($query) use ($dateArrivee, $dateDepart) {
-                $query->whereBetween('reservation_cabanes.dateArrivee', [$dateArrivee, $dateDepart])
-                      ->orWhereBetween('reservation_cabanes.dateDepart', [$dateArrivee, $dateDepart])
-                      ->orWhere(function($query) use ($dateArrivee, $dateDepart) {
-                          $query->where('reservation_cabanes.dateArrivee', '<=', $dateArrivee)
-                                ->where('reservation_cabanes.dateDepart', '>=', $dateDepart);
-                      });
-            });
-        })
-        ->where('capacite', '>=', $nombreTotalPersonnes)
-        ->get();
-
-        foreach ($availableCabanes as $cabane) {
-            $cabane->prixTotal = $duration * $cabane->prix; 
-        }
-    
-        return view('pages.available-rooms', compact('duration', 'availableCabanes', 'dateArrivee', 'dateDepart', 'nombreAdultes', 'nombreEnfants'));
-    
-    }
-    
-   
-
-    public function modifierReservation()
-    {
-        // Récupérez les données nécessaires pour la vue ici, si besoin
-        return view('pages.available-rooms'); // Assurez-vous que ce fichier de vue existe
-    }
-    
-    
 }
