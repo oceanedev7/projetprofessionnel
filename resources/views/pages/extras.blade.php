@@ -64,6 +64,9 @@
     <div class="flex flex-row p-6 mt-12">
         <div class="flex-grow">
 
+            <form id="reservationForm" action="{{ route('info-extra') }}" method="POST"> <!-- Spécifiez votre route ici -->
+                @csrf 
+
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
                 <div class="uppercase font-bold text-custom-marron text-xl ml-4">Restauration</div>
                 <hr class="w-12 h-0.5 bg-custom-marron ml-2 mb-4">
@@ -81,11 +84,12 @@
                         <div class="flex flex-col space-y-1 mb-4 items-center">
                             <div class="text-white italic">~ Adultes ({{$dejeuner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte()"> 
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerAdulte">0</span> 
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte()"> 
+                                <input type="hidden" name="dejeuner_adulte" id="inputDejeunerAdulte" value="0"> <!-- Champ caché pour adultes -->
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -95,11 +99,12 @@
                         <div class="flex flex-col space-y-1 items-center">
                             <div class="text-white italic">~ Enfants ({{$dejeuner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant()"> 
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerEnfant">0</span> 
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant()"> 
+                                <input type="hidden" name="dejeuner_enfant" id="inputDejeunerEnfant" value="0"> <!-- Champ caché pour enfants -->
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -116,11 +121,12 @@
                         <div class="flex flex-col space-y-1 mb-4 items-center">
                             <div class="text-white italic">~ Adultes ({{$diner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte()"> 
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerAdulte">0</span> 
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte()"> 
+                                <input type="hidden" name="diner_adulte" id="inputDinerAdulte" value="0"> <!-- Champ caché pour adultes -->
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -130,11 +136,12 @@
                         <div class="flex flex-col space-y-1 items-center">
                             <div class="text-white italic">~ Enfants ({{$diner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant()"> 
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerEnfant">0</span> 
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant()"> 
+                                <input type="hidden" name="diner_enfant" id="inputDinerEnfant" value="0"> <!-- Champ caché pour enfants -->
+                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -157,25 +164,29 @@
                             <span>({{ $massage->duree }} min - {{ $massage->prix_adulte }} €)</span>
                         </div>
                         <div class="flex space-x-4">
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount({{ $index }}, 1)"> 
+                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, 1)"> 
                                 <span> + </span>
                             </button>
                             <span class="text-custom-marron font-black" id="spa{{ $index }}">0</span> 
-                            <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount({{ $index }}, -1)"> 
+                            <input type="hidden" name="spa_count[]" id="inputSpa{{ $index }}" value="0">  <!-- Champ caché pour spa -->
+                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, -1)"> 
                                 <span> - </span>
                             </button>
                         </div>
+                        
                     </div>
                 @endforeach
                 
         
                 </div>
 
+        
             <div class="flex justify-end mt-8">
-                <button class="text-white font-bold px-4 py-2 rounded-md bg-custom-marron uppercase" > Valider </button>
+                <button type="submit" class="text-white font-bold px-4 py-2 rounded-md bg-custom-marron uppercase" > Valider </button>
             </div>
-         
+        
             </div>
+        </form>
         </div>
         
 
@@ -261,63 +272,80 @@
     var dejeunerEnfant = 0;
     var dinerAdulte = 0;
     var dinerEnfant = 0;
+    const spaCounts = Array.from({ length: {{ count($massages) }} }, () => 0);
+
    
-    function addDejAdulte(){
+    function addDejAdulte(event){
+        event.preventDefault();
         dejeunerAdulte++;
        document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
+       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; // Met à jour le champ caché
     }
 
-    function addDejEnfant(){
+    function addDejEnfant(event){
+        event.preventDefault();
            dejeunerEnfant++;
       
        document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
+       document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; // Met à jour le champ caché
        
     }
 
-    function addDinAdulte(){
+    function addDinAdulte(event){
+        event.preventDefault();
         dinerAdulte++;
        document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
+       document.getElementById("inputDinerAdulte").value = dinerAdulte; // Met à jour le champ caché
     }
 
-    function addDinEnfant(){
+    function addDinEnfant(event){
+        event.preventDefault();
            dinerEnfant++;
       
        document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
+       document.getElementById("inputDinerEnfant").value = dinerEnfant; // Met à jour le champ caché
        
     }
 
-    function substractDejAdulte(){
+    function substractDejAdulte(event){
+        event.preventDefault();
         if (dejeunerAdulte > 0) {
             dejeunerAdulte--;
     }
        document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
-       localStorage.setItem('dejeunerAdulte', dejeunerAdulte); 
+       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; // Met à jour le champ caché
     }
 
-    function substractDejEnfant(){
+    function substractDejEnfant(event){
+        event.preventDefault();
         if (dejeunerEnfant > 0) {
             dejeunerEnfant--;
     }
       document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
+      document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; // Met à jour le champ caché
     }
 
-    function substractDinAdulte(){
+    function substractDinAdulte(event){
+        event.preventDefault();
         if (dinerAdulte > 0) {
         dinerAdulte--;
     }
        document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
+       document.getElementById("inputDinerAdulte").value = dinerAdulte; // Met à jour le champ caché
     }
 
-    function substractDinEnfant() {
+    function substractDinEnfant(event) {
+        event.preventDefault();
     if (dinerEnfant > 0) {
         dinerEnfant--;
     }
     document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
+    document.getElementById("inputDinerEnfant").value = dinerEnfant; // Met à jour le champ caché
     }
 
    
-const spaCounts = Array.from({ length: {{ count($massages) }} }, () => 0);
-function SpaCount(index, change) {
+function SpaCount(event, index, change) {
+    event.preventDefault();
    
     spaCounts[index] += change;
     
@@ -326,6 +354,7 @@ function SpaCount(index, change) {
     }
 
     document.getElementById("spa" + index).innerHTML = spaCounts[index];
+    document.getElementById("inputSpa" + index).value = spaCounts[index]; // Met à jour le champ caché
 }
    
     </script>
