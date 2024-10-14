@@ -11,6 +11,7 @@ use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\CabaneViewController;
 use App\Http\Controllers\PrestationViewController;
 use App\Http\Controllers\ContactRequestController;
+use App\Http\Controllers\ExtrasController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ReservationController;
 use Illuminate\Support\Facades\Redis;
@@ -67,13 +68,19 @@ Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])
 Route::post('/reservation', [ReservationController::class, 'store'])->name('disponibilite');
 Route::post('/reservation/extras', [ReservationController::class, 'index'])->name('extras');
 
-Route::get('/reservation/informations', function () {
-    return view('pages.client-info');
-})->name('client-info');
+// Route::get('/reservation/informations', function () {
+//     return view('pages.client-info');
+// })->name('client-info');
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
 })->name('confirmed');
+
+
+
+Route::post('/reservation/informations', [ExtrasController::class, 'store'])->name('info-extra');
+// Route::post('/reservation/informations/cabane', [ExtrasController::class, 'index'])->name('client-info');
+
 
 
 // Route::get('/reservation/extras', function () {

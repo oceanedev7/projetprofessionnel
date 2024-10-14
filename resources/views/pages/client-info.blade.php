@@ -58,7 +58,7 @@
 
 @section('main')
 
-<a href="{{ route('extras') }}"> Modifier ma réservation</a>
+<a href="#"> Modifier ma réservation</a>
 
 
     <div class="flex flex-row p-6 mt-12">
@@ -121,6 +121,7 @@
                 </form>
             </div>
         </div>
+
         
         <div>
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
@@ -128,9 +129,20 @@
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div>  </div>
+                        <div></div>
                         <div> - </div>
                         <div> pers. </div>
+
+                       
+{{-- <div>Nom de la Cabane : {{ $nomCabane }}</div>
+<div>Capacité : {{ $capacite }}</div>
+<div>Prix Total : {{ $prixTotal }} €</div>
+<div>Date d'Arrivée : {{ $dateArrivee }}</div>
+<div>Date de Départ : {{ $dateDepart }}</div>
+<div>Durée : {{ $duration }} jours</div>
+<div>Nombre d'Adultes : {{ $nombreAdultes }}</div>
+<div>Nombre d'Enfants : {{ $nombreEnfants }}</div> --}}
+
                  
                 </div>
 
@@ -165,15 +177,55 @@
 
                             <div class="flex space-x-2">
                                 <label class="text-custom-marron text-sm mt-1">Enfants :</label>
-                                <div class="font-semibold text-custom-marron mt-0.5"> </div>
+                                <div class="font-semibold text-custom-marron mt-0.5"></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex justify-between">
-                    <label class="font-bold text-custom-marron">Extras :</label>
-                    <div class="font-semibold text-custom-marron">  </div>
+                <div class="flex flex-col">
+                    <label class="font-bold text-custom-marron mb-4">Extras :</label>
+
+                    <div class="uppercase text-center underline mb-2">Restauration</div>
+
+                    <div class="italic mb-4">  
+                        <div class="flex justify-between"> 
+                            <div class="font-semibold text-custom-marron">Déjeuners Adulte : </div>
+                            <div>{{ $extras['dejeuner_adulte'] }} x {{$dejeuner->prix_adulte}} €</div>
+                        </div>
+
+                        <div class="flex justify-between"> 
+                            <div class="font-semibold text-custom-marron">Déjeuners Enfant : </div>
+                            <div>{{ $extras['dejeuner_enfant'] }} x  {{$dejeuner->prix_enfant}} €</div>
+                        </div>
+                     
+                        <div class="flex justify-between"> 
+                            <div class="font-semibold text-custom-marron">Diners Adulte : </div>
+                            <div>{{ $extras['diner_adulte'] }} x {{$diner->prix_adulte}} € </div>
+                        </div>
+
+                        <div class="flex justify-between mb-6"> 
+                            <div class="font-semibold text-custom-marron">Diners Enfant : </div>
+                            <div>{{ $extras['diner_enfant'] }} x {{$diner->prix_enfant}} €</div>
+                        </div>
+                     
+
+                        <div class="flex flex-col">
+                            <div class="uppercase text-center underline mb-2">Spa </div>
+
+                            @foreach($extras['spa_counts'] as $index => $count)
+                            <div class="flex justify-between">
+                                <div class="font-semibold text-custom-marron">{{ $massages[$index]->type }}</div>
+                                <div>{{ $count }} x {{ $massages[$index]->prix_adulte }} € </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <div class="flex justify-between"> 
+                        <div class="italic font-black text-custom-marron"> Total des extras :  </div>
+                        <div class="font-black text-custom-marron"> {{ $total }} € </div>
+                    </div>
                 </div>
 
                 <div class="flex flex-col mt-4 space-y-2">

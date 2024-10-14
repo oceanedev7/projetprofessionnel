@@ -13,9 +13,9 @@
 
     <div class="bg-custom-vert">
 
-        <div class="flex space-x-2 hover:underline absolute top-6 left-6"> 
-            <i class="fa-solid fa-arrow-left mt-1"></i>
-                <a href="{{ route('dashboard') }}" class="font-bold">Revenir au dashboard</a>
+        <div class="flex space-x-2 hover:underline underline-white text-white absolute top-6 left-6"> 
+            <i class="fa-solid fa-arrow-left mt-1 "></i>
+                <a href="{{ route('dashboard') }}" class="font-bold ">Revenir au dashboard</a>
         </div>
 
     <div class="container mx-auto p-8">
