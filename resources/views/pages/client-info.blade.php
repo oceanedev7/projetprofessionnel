@@ -216,7 +216,7 @@
 
                     <div class="flex justify-between"> 
                         <div class="italic font-black text-custom-marron"> Total des extras :  </div>
-                        <div class="font-black text-custom-marron"> {{ $total }} € </div>
+                        <div class="font-black text-custom-marron"> {{ $totalExtra }} € </div>
                     </div>
                 </div>
 

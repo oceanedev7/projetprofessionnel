@@ -49,20 +49,20 @@ class ClientInfoController extends Controller
         $diner = Prestation::with('categorie')->where('id', 2)->first();
         $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
     
-        $total = 0;
+        $totalExtra = 0;
     
-        $total += $extras['dejeuner_adulte'] * $dejeuner->prix_adulte;
-        $total += $extras['dejeuner_enfant'] * $dejeuner->prix_enfant;
-        $total += $extras['diner_adulte'] * $diner->prix_adulte;
-        $total += $extras['diner_enfant'] * $diner->prix_enfant;
+        $totalExtra += $extras['dejeuner_adulte'] * $dejeuner->prix_adulte;
+        $totalExtra += $extras['dejeuner_enfant'] * $dejeuner->prix_enfant;
+        $totalExtra += $extras['diner_adulte'] * $diner->prix_adulte;
+        $totalExtra += $extras['diner_enfant'] * $diner->prix_enfant;
     
         foreach ($extras['spa_counts'] as $index => $count) {
             if ($count > 0) {
-                $total += $count * $massages[$index]->prix_adulte;
+                $totalExtra += $count * $massages[$index]->prix_adulte;
             }
         }
     
-        return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'total'));
+        return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'totalExtra'));
        
     }
 
