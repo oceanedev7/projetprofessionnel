@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AvailableRoomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
 use App\Http\Controllers\LanguageController;
@@ -9,6 +9,7 @@ use App\Http\Controllers\PrestationController;
 use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\CabaneViewController;
+use App\Http\Controllers\ClientInfoController;
 use App\Http\Controllers\PrestationViewController;
 use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\ExtrasController;
@@ -65,12 +66,16 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::post('/reservation', [ReservationController::class, 'store'])->name('disponibilite');
-Route::post('/reservation/extras', [ReservationController::class, 'index'])->name('extras');
 
-// Route::get('/reservation/informations', function () {
-//     return view('pages.client-info');
-// })->name('client-info');
+
+// Route::post('/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite');
+Route::match(['get', 'post'], '/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite');
+
+Route::match(['get', 'post'], '/reservation/extras', [ExtrasController::class, 'index'])->name('extras');
+
+// Route::post('/reservation/extras', [ExtrasController::class, 'index'])->name('extras');
+
+Route::post('/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client');
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
@@ -78,14 +83,6 @@ Route::get('/reservation/confirmation', function () {
 
 
 
-Route::post('/reservation/informations', [ExtrasController::class, 'store'])->name('info-extra');
-// Route::post('/reservation/informations/cabane', [ExtrasController::class, 'index'])->name('client-info');
-
-
-
-// Route::get('/reservation/extras', function () {
-//     return view('pages.extras');
-// })->name('extras');
 
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');

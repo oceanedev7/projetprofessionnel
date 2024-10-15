@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prestation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
@@ -13,8 +14,49 @@ class ExtrasController extends Controller
      */
     public function index(Request $request)
 {
-    // 
+    // Validation des données
+    $request->validate([
+        'nomCabane' => 'required|string',
+        'capacite' => 'required|integer',
+        'prixTotal' => 'required|numeric',
+        'dateArrivee' => 'required|date_format:d-m-Y', // Validation avec format dd-mm-yyyy
+        'dateDepart' => 'required|date_format:d-m-Y',  // Validation avec format dd-mm-yyyy
+        'duration' => 'required|integer',
+        'nombreAdultes' => 'required|integer',
+        'nombreEnfants' => 'required|integer',
+    ]);
+
+    // Récupération des données de la requête
+    $data = $request->all(); 
+
+    // Conversion des dates au format requis par Laravel
+    $data['dateArrivee'] = Carbon::createFromFormat('d-m-Y', $data['dateArrivee']);
+    $data['dateDepart'] = Carbon::createFromFormat('d-m-Y', $data['dateDepart']);
+
+    // Récupération des prestations
+    $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
+    $diner = Prestation::with('categorie')->where('id', 2)->first();
+    $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
+
+    // Pour déboguer, vous pouvez utiliser dd() pour voir les données
+    // dd($data); // Décommentez cette ligne si nécessaire pour le débogage
+
+    // Renvoyer la vue avec les données
+    return view('pages.extras', [
+        'dejeuner' => $dejeuner,
+        'diner' => $diner,
+        'massages' => $massages,
+        'nomCabane' => $data['nomCabane'],
+        'capacite' => $data['capacite'],
+        'prixTotal' => $data['prixTotal'],
+        'dateArrivee' => $data['dateArrivee'],
+        'dateDepart' => $data['dateDepart'],
+        'duration' => $data['duration'],
+        'nombreAdultes' => $data['nombreAdultes'],
+        'nombreEnfants' => $data['nombreEnfants'],
+    ]);
 }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,44 +71,7 @@ class ExtrasController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'dejeuner_adulte' => 'required|integer|min:0',
-            'dejeuner_enfant' => 'required|integer|min:0',
-            'diner_adulte' => 'required|integer|min:0',
-            'diner_enfant' => 'required|integer|min:0',
-            'spa_count' => 'array', // Spa count will be an array
-            'spa_count.*' => 'integer|min:0', // Validate each item in the array
-        ]);
-    
-        // Récupérer les données
-        $extras = [
-            'dejeuner_adulte' => $validatedData['dejeuner_adulte'],
-            'dejeuner_enfant' => $validatedData['dejeuner_enfant'],
-            'diner_adulte' => $validatedData['diner_adulte'],
-            'diner_enfant' => $validatedData['diner_enfant'],
-            'spa_counts' => $validatedData['spa_count'],
-        ];
-    
-        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
-        $diner = Prestation::with('categorie')->where('id', 2)->first();
-        $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
-    
-        $total = 0;
-    
-        // Calculer le total
-        $total += $extras['dejeuner_adulte'] * $dejeuner->prix_adulte;
-        $total += $extras['dejeuner_enfant'] * $dejeuner->prix_enfant;
-        $total += $extras['diner_adulte'] * $diner->prix_adulte;
-        $total += $extras['diner_enfant'] * $diner->prix_enfant;
-    
-        foreach ($extras['spa_counts'] as $index => $count) {
-            if ($count > 0) {
-                $total += $count * $massages[$index]->prix_adulte; // Ajustez en fonction de votre structure de prix
-            }
-        }
-    
-        // Passer les données à la vue
-        return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'total'));
+        // 
     }
     
 
