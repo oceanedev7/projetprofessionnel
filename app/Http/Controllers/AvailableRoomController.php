@@ -31,6 +31,7 @@ class AvailableRoomController extends Controller
      */
     public function store(Request $request)
     {
+
         $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
         $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
         $duration = $dateArrivee->diffInDays($dateDepart);

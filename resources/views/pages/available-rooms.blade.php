@@ -102,8 +102,8 @@
                             <input type="hidden" name="nomCabane" value="{{ $cabane->nomCabane }}">
                             <input type="hidden" name="capacite" value="{{ $cabane->capacite }}">
                             <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
-                            <input type="hidden" name="dateArrivee" value="{{ $dateArrivee->format('d-m-Y') }}"> <!-- format ici -->
-                            <input type="hidden" name="dateDepart" value="{{ $dateDepart->format('d-m-Y') }}"> <!-- format ici -->
+                            <input type="hidden" name="dateArrivee" value="{{ $dateArrivee}}"> 
+                            <input type="hidden" name="dateDepart" value="{{ $dateDepart}}"> 
                             <input type="hidden" name="duration" value="{{ $duration }}">
                             <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                             <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">

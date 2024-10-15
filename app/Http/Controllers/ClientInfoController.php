@@ -33,31 +33,16 @@ class ClientInfoController extends Controller
             'dejeuner_enfant' => 'required|integer|min:0',
             'diner_adulte' => 'required|integer|min:0',
             'diner_enfant' => 'required|integer|min:0',
-            'spa_count' => 'array', // Spa count will be an array
-            'spa_count.*' => 'integer|min:0', // Validate each item in the array
-
-            'nomCabane' => 'required|string',
-            'capacite' => 'required|integer',
-            'dateArrivee' => 'required|date',
-            'dateDepart' => 'required|date',
-            'nombreAdultes' => 'required|integer',
-            'nombreEnfants' => 'required|integer',
-    
+            'spa_count' => 'array', 
+            // 'spa_count.*' => 'integer|min:0'
         ]);
     
-        // Récupérer les données
         $extras = [
             'dejeuner_adulte' => $validatedData['dejeuner_adulte'],
             'dejeuner_enfant' => $validatedData['dejeuner_enfant'],
             'diner_adulte' => $validatedData['diner_adulte'],
             'diner_enfant' => $validatedData['diner_enfant'],
             'spa_counts' => $validatedData['spa_count'],
-            'nomCabane' => $validatedData['nomCabane'],
-        'capacite' => $validatedData['capacite'],
-        'dateArrivee' => $validatedData['dateArrivee'],
-        'dateDepart' => $validatedData['dateDepart'],
-        'nombreAdultes' => $validatedData['nombreAdultes'],
-        'nombreEnfants' => $validatedData['nombreEnfants'],
         ];
     
         $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
@@ -66,7 +51,6 @@ class ClientInfoController extends Controller
     
         $total = 0;
     
-        // Calculer le total
         $total += $extras['dejeuner_adulte'] * $dejeuner->prix_adulte;
         $total += $extras['dejeuner_enfant'] * $dejeuner->prix_enfant;
         $total += $extras['diner_adulte'] * $diner->prix_adulte;
@@ -74,12 +58,12 @@ class ClientInfoController extends Controller
     
         foreach ($extras['spa_counts'] as $index => $count) {
             if ($count > 0) {
-                $total += $count * $massages[$index]->prix_adulte; // Ajustez en fonction de votre structure de prix
+                $total += $count * $massages[$index]->prix_adulte;
             }
         }
     
-        // Passer les données à la vue
         return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'total'));
+       
     }
 
     /**

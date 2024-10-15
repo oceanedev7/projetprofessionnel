@@ -129,7 +129,7 @@
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div> {{ $nomCabane }}</div>
+                        <div> </div>
                         <div> - </div>
                         <div> pers. </div>
 
