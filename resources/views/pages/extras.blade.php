@@ -58,13 +58,13 @@
 
 @section('main')
 
-<a href="{{ route('disponibilite') }}"> Modifier ma réservation</a>
+<a href="#"> Modifier ma réservation</a>
 
 
     <div class="flex flex-row p-6 mt-12">
         <div class="flex-grow">
 
-            <form id="reservationForm" action="{{ route('info-extra') }}" method="POST"> <!-- Spécifiez votre route ici -->
+            <form id="reservationForm" action="{{ route('info-client') }}" method="post"> <!-- Spécifiez votre route ici -->
                 @csrf 
 
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
@@ -84,12 +84,12 @@
                         <div class="flex flex-col space-y-1 mb-4 items-center">
                             <div class="text-white italic">~ Adultes ({{$dejeuner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerAdulte">0</span> 
                                 <input type="hidden" name="dejeuner_adulte" id="inputDejeunerAdulte" value="0"> <!-- Champ caché pour adultes -->
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -99,12 +99,12 @@
                         <div class="flex flex-col space-y-1 items-center">
                             <div class="text-white italic">~ Enfants ({{$dejeuner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerEnfant">0</span> 
                                 <input type="hidden" name="dejeuner_enfant" id="inputDejeunerEnfant" value="0"> <!-- Champ caché pour enfants -->
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -121,12 +121,12 @@
                         <div class="flex flex-col space-y-1 mb-4 items-center">
                             <div class="text-white italic">~ Adultes ({{$diner->prix_adulte}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerAdulte">0</span> 
                                 <input type="hidden" name="diner_adulte" id="inputDinerAdulte" value="0"> <!-- Champ caché pour adultes -->
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -136,12 +136,12 @@
                         <div class="flex flex-col space-y-1 items-center">
                             <div class="text-white italic">~ Enfants ({{$diner->prix_enfant}}€) ~</div>
                             <div class="flex space-x-4">
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant(event)"> 
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerEnfant">0</span> 
                                 <input type="hidden" name="diner_enfant" id="inputDinerEnfant" value="0"> <!-- Champ caché pour enfants -->
-                                <button class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant(event)"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant(event)"> 
                                     <span> - </span>
                                 </button>
                             </div>
@@ -179,6 +179,8 @@
                 
         
                 </div>
+
+    
 
         
             <div class="flex justify-end mt-8">

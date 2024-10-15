@@ -97,20 +97,20 @@
                             <div class="italic text-custom-marron"> Taxes de séjour non incluses </div>
                         </div>
 
-                       
-<form action="{{ route('extras') }}" method="POST">
-    @csrf
-    <input type="hidden" name="nomCabane" value="{{ $cabane->nomCabane }}">
-    <input type="hidden" name="capacite" value="{{ $cabane->capacite }}">
-    <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
-    <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}">
-    <input type="hidden" name="dateDepart" value="{{ $dateDepart }}">
-    <input type="hidden" name="duration" value="{{ $duration }}">
-    <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
-    <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
-
-    <button type="submit" class="text-white font-bold text-sm px-4 py-2 rounded-md bg-custom-marron">Réserver</button>
-</form>
+                        <form action="{{ route('extras') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="nomCabane" value="{{ $cabane->nomCabane }}">
+                            <input type="hidden" name="capacite" value="{{ $cabane->capacite }}">
+                            <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
+                            <input type="hidden" name="dateArrivee" value="{{ $dateArrivee}}"> 
+                            <input type="hidden" name="dateDepart" value="{{ $dateDepart}}"> 
+                            <input type="hidden" name="duration" value="{{ $duration }}">
+                            <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
+                            <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
+                        
+                            <button type="submit">Réserver</button>
+                        </form>
+                        
 
                     </div>
                 </div>
@@ -118,6 +118,8 @@
         </div>
         @endforeach
     </div>
+
+   
 
 <div>
     <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">

@@ -129,19 +129,11 @@
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div></div>
+                        <div> </div>
                         <div> - </div>
                         <div> pers. </div>
 
-                       
-{{-- <div>Nom de la Cabane : {{ $nomCabane }}</div>
-<div>Capacité : {{ $capacite }}</div>
-<div>Prix Total : {{ $prixTotal }} €</div>
-<div>Date d'Arrivée : {{ $dateArrivee }}</div>
-<div>Date de Départ : {{ $dateDepart }}</div>
-<div>Durée : {{ $duration }} jours</div>
-<div>Nombre d'Adultes : {{ $nombreAdultes }}</div>
-<div>Nombre d'Enfants : {{ $nombreEnfants }}</div> --}}
+
 
                  
                 </div>

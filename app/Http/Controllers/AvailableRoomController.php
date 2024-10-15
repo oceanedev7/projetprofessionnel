@@ -8,31 +8,14 @@ use App\Models\Prestation;
 use Carbon\Carbon;
 
 
-class ReservationController extends Controller
+class AvailableRoomController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(Request $request)
     {
-        $data = $request->all(); 
-        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
-        $diner = Prestation::with('categorie')->where('id', 2)->first();
-        $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
-
-        return view('pages.extras', [
-            'dejeuner' => $dejeuner,
-            'diner' => $diner,
-            'massages' => $massages,
-            'nomCabane' => $data['nomCabane'],
-            'capacite' => $data['capacite'],
-            'prixTotal' => $data['prixTotal'],
-            'dateArrivee' => $data['dateArrivee'],
-            'dateDepart' => $data['dateDepart'],
-            'duration' => $data['duration'],
-            'nombreAdultes' => $data['nombreAdultes'],
-            'nombreEnfants' => $data['nombreEnfants'],
-        ]);
+        // 
     }
 
     /**
@@ -48,6 +31,7 @@ class ReservationController extends Controller
      */
     public function store(Request $request)
     {
+
         $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
         $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
         $duration = $dateArrivee->diffInDays($dateDepart);
