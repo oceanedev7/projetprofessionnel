@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cabane;
 use App\Models\Prestation;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,6 @@ class ClientInfoController extends Controller
             'diner_adulte' => 'required|integer|min:0',
             'diner_enfant' => 'required|integer|min:0',
             'spa_count' => 'array', 
-            // 'spa_count.*' => 'integer|min:0'
         ]);
     
         $extras = [
@@ -44,6 +44,15 @@ class ClientInfoController extends Controller
             'diner_enfant' => $validatedData['diner_enfant'],
             'spa_counts' => $validatedData['spa_count'],
         ];
+        
+        $nomCabane = $request->input('nomCabane');
+        $capacite = $request->input('capacite');
+        $prixTotal = $request->input('prixTotal');
+        $dateArrivee = $request->input('dateArrivee');
+        $dateDepart = $request->input('dateDepart');
+        $duration = $request->input('duration');
+        $nombreAdultes = $request->input('nombreAdultes');
+        $nombreEnfants = $request->input('nombreEnfants');
     
         $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
         $diner = Prestation::with('categorie')->where('id', 2)->first();
@@ -61,18 +70,25 @@ class ClientInfoController extends Controller
                 $totalExtra += $count * $massages[$index]->prix_adulte;
             }
         }
+
+        $prixFinal = $prixTotal + $totalExtra; 
     
-        return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'totalExtra'));
-       
+        return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'totalExtra', 
+            'nomCabane', 'capacite', 'dateArrivee', 'dateDepart', 'duration', 
+            'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal' )); 
     }
+    
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Request $request)
     {
-        //
-    }
+        
+    // 
+}
+
+    
 
     /**
      * Show the form for editing the specified resource.

@@ -129,9 +129,9 @@
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div> </div>
+                        <div> {{ $nomCabane }}</div>
                         <div> - </div>
-                        <div> pers. </div>
+                        <div> {{  $capacite }} pers. </div>
 
 
 
@@ -146,17 +146,17 @@
                 <div class="flex flex-col mt-8 space-y-4">
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">Date d'arrivée :</label>
-                        <div class="font-semibold text-custom-marron"> </div>
+                        <div class="font-semibold text-custom-marron">{{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }} </div>
                     </div>
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">Date de départ :</label>
-                        <div class="font-semibold text-custom-marron"></div>
+                        <div class="font-semibold text-custom-marron">{{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}</div>
                     </div>
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">Durée :</label>
-                        <div class="font-semibold text-custom-marron"> nuit(s) </div>
+                        <div class="font-semibold text-custom-marron">{{ $duration }} nuit(s) </div>
                     </div>
 
                     <div class="flex justify-between">
@@ -164,12 +164,12 @@
                         <div class="flex flex-col">
                             <div class="flex space-x-2">
                                 <label class="text-custom-marron text-sm mt-1">Adultes :</label>
-                                <div class="font-semibold text-custom-marron mt-0.5"> </div>
+                                <div class="font-semibold text-custom-marron mt-0.5">{{ $nombreAdultes }} </div>
                             </div>
 
                             <div class="flex space-x-2">
                                 <label class="text-custom-marron text-sm mt-1">Enfants :</label>
-                                <div class="font-semibold text-custom-marron mt-0.5"></div>
+                                <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreEnfants }}</div>
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
-                        <div class="font-black text-custom-marron text-xl">  € </div>
+                        <div class="font-black text-custom-marron text-xl">  {{ $prixFinal }} €</div>
                     </div>
                 </div>
 

@@ -66,8 +66,6 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
-
-
 // Route::post('/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite');
 Route::match(['get', 'post'], '/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite');
 

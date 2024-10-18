@@ -168,7 +168,7 @@
                                 <span> + </span>
                             </button>
                             <span class="text-custom-marron font-black" id="spa{{ $index }}">0</span> 
-                            <input type="hidden" name="spa_count[]" id="inputSpa{{ $index }}" value="0">  <!-- Champ caché pour spa -->
+                            <input type="hidden" name="spa_count[]" id="inputSpa{{ $index }}" value="0"> 
                             <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, -1)"> 
                                 <span> - </span>
                             </button>
@@ -180,7 +180,15 @@
         
                 </div>
 
-    
+
+                <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
+        <input type="hidden" name="capacite" value="{{ $capacite }}">
+        <input type="hidden" name="prixTotal" value="{{ $prixTotal }}">
+        <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
+        <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
+        <input type="hidden" name="duration" value="{{ $duration }}">
+        <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
+        <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
 
         
             <div class="flex justify-end mt-8">
@@ -251,7 +259,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
-                        <div class="font-black text-custom-marron text-xl"> {{ $prixTotal ?? 0 }} € </div>
+                        <div class="font-black text-custom-marron text-xl"> {{ $prixTotal }} € </div>
                     </div>
                 </div>
 
