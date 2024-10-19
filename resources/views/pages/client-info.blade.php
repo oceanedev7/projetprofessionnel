@@ -66,58 +66,80 @@
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
                 <div class="uppercase text-custom-marron font-bold text-xl">Informations client</div>
                 
-                <form class="flex flex-col w-full space-y-4">
+                <form class="flex flex-col w-full space-y-4" action="{{route ('validate-client')}}" method="POST">
                     @csrf
                     <div class="flex space-x-6">
                         <input 
+                        name="prenom"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Prénom" 
                             value="{{ Auth::user()->prenom ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
+                        name="nom"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Nom" 
                             value="{{ Auth::user()->nom ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
                     <div class="flex space-x-6">
                         <input 
+                        name="telephone"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Numéro de téléphone" 
                             value="{{ Auth::user()->telephone ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
+                        name="email"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Adresse email" 
                             value="{{ Auth::user()->email ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
                     
-                    <input 
+                    <input
+                    name="adresse_postale"
                         class="rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                         placeholder="Adresse postale" 
                         value="{{ Auth::user()->adresse_postale ?? '' }}"
+                        {{ Auth::check() ? 'readonly' : '' }} 
                     >
         
                     <div class="flex space-x-6">
                         <input 
+                        name="code_postal"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Code postal" 
                             value="{{ Auth::user()->code_postal ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
+                        name="ville"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Ville" 
                             value="{{ Auth::user()->ville ?? '' }}"
+                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
         
                     <textarea 
+                     name="message"
                         rows="8" 
                         class="resize-none rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                         placeholder="Message"></textarea>
+
+                        <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
+                        <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
+                        <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
+                        <input type="hidden" name="duration" value="{{ $duration }}">
+                        <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
+                        <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
         
-                    <a class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</a>
+                    <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>
             </div>
         </div>

@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\ExtrasController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ValidateClientController;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
@@ -73,7 +74,15 @@ Route::match(['get', 'post'], '/reservation/extras', [ExtrasController::class, '
 
 // Route::post('/reservation/extras', [ExtrasController::class, 'index'])->name('extras');
 
-Route::post('/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client');
+Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client');
+
+// Route::match(['get', 'post'], '/reservation/validate/client', [ClientInfoController::class, 'create'])->name('validate-client');
+
+Route::post('/reservation/validate/client', [ValidateClientController::class, 'create'])->name('validate-client');
+
+Route::get('/reservation/paiement', function () {
+    return view('pages.paiement');
+})->name('resa-payment');
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');

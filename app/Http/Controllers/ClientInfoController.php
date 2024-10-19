@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Cabane;
 use App\Models\Prestation;
+use App\Models\Reservation;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class ClientInfoController extends Controller
 {
@@ -19,11 +23,11 @@ class ClientInfoController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
         //
-    }
-
+      }
+    
     /**
      * Store a newly created resource in storage.
      */
