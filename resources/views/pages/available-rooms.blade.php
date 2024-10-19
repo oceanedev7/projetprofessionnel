@@ -108,7 +108,7 @@
                             <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                             <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
                         
-                            <button type="submit">Réserver</button>
+                            <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center uppercase" type="submit">Réserver</button>
                         </form>
                         
 

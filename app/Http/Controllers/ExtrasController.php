@@ -13,26 +13,38 @@ class ExtrasController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request)
-{
-    $data = $request->all(); 
+    {
+
+        $nomCabane = $request->input('nomCabane');
+        $capacite = $request->input('capacite');
+        $prixTotal = $request->input('prixTotal');
+        $dateArrivee = $request->input('dateArrivee');
+        $dateDepart = $request->input('dateDepart');
+        $duration = $request->input('duration');
+        $nombreAdultes = $request->input('nombreAdultes');
+        $nombreEnfants = $request->input('nombreEnfants');
+    
+       
         $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
         $diner = Prestation::with('categorie')->where('id', 2)->first();
         $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
-
+    
+    
         return view('pages.extras', [
             'dejeuner' => $dejeuner,
             'diner' => $diner,
             'massages' => $massages,
-            'nomCabane' => $data['nomCabane'],
-            'capacite' => $data['capacite'],
-            'prixTotal' => $data['prixTotal'],
-            'dateArrivee' => $data['dateArrivee'],
-            'dateDepart' => $data['dateDepart'],
-            'duration' => $data['duration'],
-            'nombreAdultes' => $data['nombreAdultes'],
-            'nombreEnfants' => $data['nombreEnfants'],
+            'nomCabane' => $nomCabane,
+            'capacite' => $capacite,
+            'prixTotal' => $prixTotal,
+            'dateArrivee' => $dateArrivee,
+            'dateDepart' => $dateDepart,
+            'duration' => $duration,
+            'nombreAdultes' => $nombreAdultes,
+            'nombreEnfants' => $nombreEnfants,
         ]);
-}
+    }
+    
 
 
     /**
