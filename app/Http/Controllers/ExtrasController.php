@@ -20,7 +20,7 @@ class ExtrasController extends Controller
         $prixTotal = $request->input('prixTotal');
         $dateArrivee = $request->input('dateArrivee');
         $dateDepart = $request->input('dateDepart');
-        $duration = $request->input('duration');
+        $nombreNuitees = $request->input('nombreNuitees');
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
     
@@ -39,7 +39,7 @@ class ExtrasController extends Controller
             'prixTotal' => $prixTotal,
             'dateArrivee' => $dateArrivee,
             'dateDepart' => $dateDepart,
-            'duration' => $duration,
+            'nombreNuitees' => $nombreNuitees,
             'nombreAdultes' => $nombreAdultes,
             'nombreEnfants' => $nombreEnfants,
         ]);

@@ -92,7 +92,7 @@
 
                     <div class="flex mt-12 justify-between items-center"> 
                         <div class="flex flex-col">
-                            <div class="text-custom-marron"> Pour {{ $duration }} nuit(s) </div>
+                            <div class="text-custom-marron"> Pour {{ $nombreNuitees }} nuit(s) </div>
                             <div class="font-black text-2xl text-custom-marron "> {{ $cabane->prixTotal }} €  </div>
                             <div class="italic text-custom-marron"> Taxes de séjour non incluses </div>
                         </div>
@@ -104,7 +104,7 @@
                             <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
                             <input type="hidden" name="dateArrivee" value="{{ $dateArrivee}}"> 
                             <input type="hidden" name="dateDepart" value="{{ $dateDepart}}"> 
-                            <input type="hidden" name="duration" value="{{ $duration }}">
+                            <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
                             <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                             <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
                         
@@ -157,7 +157,7 @@
 
         <div class="flex justify-between">
             <label class="font-bold text-custom-marron">Durée :</label>
-            <div class="font-semibold text-custom-marron"> {{ $duration }} nuit(s) </div>
+            <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} nuit(s) </div>
         </div>
 
         <div class="flex justify-between">

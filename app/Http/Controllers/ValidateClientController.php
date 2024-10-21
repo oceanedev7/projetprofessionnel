@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class ValidateClientController extends Controller
         $nomCabane = $request->input('nomCabane');
         $dateArrivee = $request->input('dateArrivee');
         $dateDepart = $request->input('dateDepart');
-        $duration = $request->input('duration');
+        $nombreNuitees = $request->input('nombreNuitees');
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
 
@@ -53,7 +54,7 @@ class ValidateClientController extends Controller
             $user = Auth::user();
         } else {
          
-            $user = User::create([
+            Guest::create([
                 'prenom' => $validated['prenom'],
                 'nom' => $validated['nom'],
                 'telephone' => $validated['telephone'],
@@ -80,7 +81,7 @@ class ValidateClientController extends Controller
             'nomCabane' => $nomCabane,
             'dateArrivee' => $dateArrivee,
             'dateDepart' => $dateDepart,
-            'nombreNuitees' => $duration,
+            'nombreNuitees' => $nombreNuitees,
             'nombreAdultes' => $nombreAdultes,
             'nombreEnfants' => $nombreEnfants,
         ]);
