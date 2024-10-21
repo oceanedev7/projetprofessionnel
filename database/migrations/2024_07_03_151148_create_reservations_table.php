@@ -23,6 +23,7 @@ return new class extends Migration
             $table->datetime('dateDepart');
             $table->integer('nombreNuitees');
             $table->decimal('prix');
+            $table->text('message')->nullable();
             $table->timestamps();
 
 

@@ -17,6 +17,7 @@ class Reservation extends Model
        'dateArrivee',
         'dateDepart',
         'nombreNuitees',
+        'message',
         'prix',
      ];
 

@@ -17,7 +17,7 @@ class Guest extends Model
        'adresse_postale',
        'code_postal',
         'ville',
-        'message',
+
         
     ];
 
