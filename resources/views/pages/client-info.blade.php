@@ -74,14 +74,12 @@
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Prénom" 
                             value="{{ Auth::user()->prenom ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
                         name="nom"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Nom" 
                             value="{{ Auth::user()->nom ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
                     <div class="flex space-x-6">
@@ -90,14 +88,12 @@
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Numéro de téléphone" 
                             value="{{ Auth::user()->telephone ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
                         name="email"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Adresse email" 
                             value="{{ Auth::user()->email ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
                     
@@ -106,7 +102,6 @@
                         class="rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                         placeholder="Adresse postale" 
                         value="{{ Auth::user()->adresse_postale ?? '' }}"
-                        {{ Auth::check() ? 'readonly' : '' }} 
                     >
         
                     <div class="flex space-x-6">
@@ -115,14 +110,12 @@
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Code postal" 
                             value="{{ Auth::user()->code_postal ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                         <input 
                         name="ville"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
                             placeholder="Ville" 
                             value="{{ Auth::user()->ville ?? '' }}"
-                            {{ Auth::check() ? 'readonly' : '' }} 
                         >
                     </div>
         
@@ -135,7 +128,7 @@
                         <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
                         <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
                         <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
-                        <input type="hidden" name="duration" value="{{ $duration }}">
+                        <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
                         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
         
@@ -178,7 +171,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">Durée :</label>
-                        <div class="font-semibold text-custom-marron">{{ $duration }} nuit(s) </div>
+                        <div class="font-semibold text-custom-marron">{{ $nombreNuitees }} nuit(s) </div>
                     </div>
 
                     <div class="flex justify-between">

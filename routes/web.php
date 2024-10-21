@@ -89,9 +89,6 @@ Route::get('/reservation/confirmation', function () {
 })->name('confirmed');
 
 
-
-
-
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
 

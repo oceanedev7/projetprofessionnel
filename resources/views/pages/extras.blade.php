@@ -186,7 +186,7 @@
         <input type="hidden" name="prixTotal" value="{{ $prixTotal }}">
         <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
         <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
-        <input type="hidden" name="duration" value="{{ $duration }}">
+        <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
 
@@ -230,7 +230,7 @@
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">Durée :</label>
-                        <div class="font-semibold text-custom-marron"> {{ $duration }} nuit(s) </div>
+                        <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} nuit(s) </div>
                     </div>
 
                     <div class="flex justify-between">

@@ -17,12 +17,18 @@ class Reservation extends Model
        'dateArrivee',
         'dateDepart',
         'nombreNuitees',
+        'message',
         'prix',
      ];
 
      public function client()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function guest()
+    {
+        return $this->belongsTo(Guest::class);
     }
 
     public function paiement()
@@ -38,7 +44,7 @@ class Reservation extends Model
     public function cabanes()
     {
         return $this->belongsToMany(Cabane::class, 'reservation_cabanes', 'reservation_id', 'cabane_id')
-                    ->withPivot('dateArrivee', 'dateDepart'); // Ajouter les colonnes si nécessaire
+                    ->withPivot('dateArrivee', 'dateDepart'); 
     }
 
 }

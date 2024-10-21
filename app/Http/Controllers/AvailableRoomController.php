@@ -34,7 +34,7 @@ class AvailableRoomController extends Controller
 
         $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
         $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
-        $duration = $dateArrivee->diffInDays($dateDepart);
+        $nombreNuitees = $dateArrivee->diffInDays($dateDepart);
         
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
@@ -55,10 +55,10 @@ class AvailableRoomController extends Controller
         ->get();
 
         foreach ($availableCabanes as $cabane) {
-            $cabane->prixTotal = $duration * $cabane->prix; 
+            $cabane->prixTotal = $nombreNuitees * $cabane->prix; 
         }
     
-        return view('pages.available-rooms', compact('duration', 'availableCabanes', 'dateArrivee', 'dateDepart', 'nombreAdultes', 'nombreEnfants'));
+        return view('pages.available-rooms', compact('nombreNuitees', 'availableCabanes', 'dateArrivee', 'dateDepart', 'nombreAdultes', 'nombreEnfants'));
     }
 
     /**

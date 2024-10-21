@@ -54,7 +54,7 @@ class ClientInfoController extends Controller
         $prixTotal = $request->input('prixTotal');
         $dateArrivee = $request->input('dateArrivee');
         $dateDepart = $request->input('dateDepart');
-        $duration = $request->input('duration');
+        $nombreNuitees = $request->input('nombreNuitees');
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
     
@@ -78,7 +78,7 @@ class ClientInfoController extends Controller
         $prixFinal = $prixTotal + $totalExtra; 
     
         return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'totalExtra', 
-            'nomCabane', 'capacite', 'dateArrivee', 'dateDepart', 'duration', 
+            'nomCabane', 'capacite', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
             'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal' )); 
     }
     

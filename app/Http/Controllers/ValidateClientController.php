@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Guest;
 use App\Models\Reservation;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class ValidateClientController extends Controller
         $nomCabane = $request->input('nomCabane');
         $dateArrivee = $request->input('dateArrivee');
         $dateDepart = $request->input('dateDepart');
-        $duration = $request->input('duration');
+        $nombreNuitees = $request->input('nombreNuitees');
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
 
@@ -48,12 +49,24 @@ class ValidateClientController extends Controller
             'nombreNuitees' => 'required|integer',
         ]);
     
-        // Vérifier si l'utilisateur est authentifié
+
         if (Auth::check()) {
             $user = Auth::user();
+
+            Reservation::create([
+                'user_id' => $user->id, 
+                'message' => $validated['message'],
+                'nomCabane' => $validated['nomCabane'],
+                'nombreAdultes' => $validated['nombreAdultes'],
+                'nombreEnfants' => $validated['nombreEnfants'],
+                'dateArrivee' => $validated['dateArrivee'],
+                'dateDepart' => $validated['dateDepart'],
+                'nombreNuitees' => $validated['nombreNuitees'],
+            ]);
+    
         } else {
-         
-            $user = User::create([
+            
+            $guest = Guest::create([
                 'prenom' => $validated['prenom'],
                 'nom' => $validated['nom'],
                 'telephone' => $validated['telephone'],
@@ -62,27 +75,26 @@ class ValidateClientController extends Controller
                 'code_postal' => $validated['code_postal'],
                 'ville' => $validated['ville'],
             ]);
+    
+            Reservation::create([
+                'guest_id' => $guest->id, 
+                'message' => $validated['message'],
+                'nomCabane' => $validated['nomCabane'],
+                'nombreAdultes' => $validated['nombreAdultes'],
+                'nombreEnfants' => $validated['nombreEnfants'],
+                'dateArrivee' => $validated['dateArrivee'],
+                'dateDepart' => $validated['dateDepart'],
+                'nombreNuitees' => $validated['nombreNuitees'],
+            ]);
         }
     
-       
-        Reservation::create([
-            'user_id' => $user->id,
-            'message' => $validated['message'],
-            'nomCabane' => $validated['nomCabane'],
-        'nombreAdultes' => $validated['nombreAdultes'],
-        'nombreEnfants' => $validated['nombreEnfants'],
-        'dateArrivee' => $validated['dateArrivee'],
-        'dateDepart' => $validated['dateDepart'],
-        'nombreNuitees' => $validated['nombreNuitees'],
-        ]);
-    
         return redirect()->route('resa-payment', [
-            'nomCabane' => $nomCabane,
-            'dateArrivee' => $dateArrivee,
-            'dateDepart' => $dateDepart,
-            'nombreNuitees' => $duration,
-            'nombreAdultes' => $nombreAdultes,
-            'nombreEnfants' => $nombreEnfants,
+            'nomCabane' => $validated['nomCabane'],
+            'dateArrivee' => $validated['dateArrivee'],
+            'dateDepart' => $validated['dateDepart'],
+            'nombreNuitees' => $validated['nombreNuitees'],
+            'nombreAdultes' => $validated['nombreAdultes'],
+            'nombreEnfants' => $validated['nombreEnfants'],
         ]);
     }
 
