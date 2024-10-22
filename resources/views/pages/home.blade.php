@@ -126,7 +126,9 @@
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
     </div>
 
+
         <div class="md:justify-items-center md:grid md:grid-cols-2 md:gap-y-6 md:relative md:top-12 md:p-0 p-6 items-center justify-center md:space-y-0 space-y-4 flex flex-col">
+
 
             <a href="{{ route('cabane1')}}" class="relative group block overflow-visible ml:0 md:ml-32">
         
@@ -176,8 +178,8 @@
 <div style="background-color:#F9F4EE" class="w-full h-screen"> 
 
     <div class="flex flex-col items-center justify-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-8 uppercase"> {{ __('content.plan') }} </span>
-        <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
+        <span class="font-bold text-custom-marron text-[40px] relative top-6 uppercase"> {{ __('content.plan') }} </span>
+        <hr class="border-t-4 border-custom-beige w-32 relative top-8 ">
 
     </div>
 

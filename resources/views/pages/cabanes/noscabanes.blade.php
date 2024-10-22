@@ -24,7 +24,9 @@
             <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
         </div>
     
+
             <div class="md:justify-items-center md:grid md:grid-cols-2 md:gap-y-6 md:relative md:top-12 flex flex-col md:p-0 p-6 md:space-y-0 space-y-4 items-center justify-center">
+
     
                 <a href="{{ route('cabane1') }}" class="relative group block overflow-visible ml:0 md:ml-32">
             
