@@ -16,15 +16,16 @@
     <main>
         @yield('main')
     </main>
-
-    <footer style="background-color: #536D37" class="max-h-300px w-full text-white py-6 flex flex-wrap ">
-            {{-- Logo footer --}}
+    
+ 
+      <footer style="background-color: #536D37" class="max-h-300px w-full text-white py-6 flex flex-wrap ">
+            {{-- Logo footer  --}}
              <img class="h-72 w-72 ml-4" src="{{ Storage::url('images/logofooter.png') }}" alt="Logo Footer">
 
-            <hr class="border-r h-60 mx-6 my-auto"> 
+            <hr class="border-r h-60 mx-6 my-auto">
 
             
-            {{-- Contact --}}
+            {{-- Contact  --}}
              <div class=" ml-4 flex flex-col mt-16">
                 <div class="font-bold text-base mb-2 ml-6">{{ __('content.acces-menu') }}</div>
                         
@@ -49,9 +50,9 @@
                     </div>
                     <div class="text-sm">contact@toutlahaut.org</div>
                 </div>
-            </div> 
+            </div>
     
-            {{-- Réseaux sociaux --}}
+            {{-- Réseaux sociaux  --}}
               <div class="flex flex-col ml-20 mt-16">
                 <div class="font-bold text-base mb-2">{{ __('content.suivez-nous') }}</div> 
              <div class="flex flex-row">   
@@ -62,10 +63,10 @@
                     <i class="fa-brands fa-instagram "></i>
                 </a>
             </div>
-        </div> 
+        </div>
 
     
-            {{-- Newsletter --}}
+            {{-- Newsletter--}}
              <form method="post" action="{{ route('ajouterNewsletter') }}" class="flex-1 flex flex-col items-center text-center ml-16 mt-16">               
                  @csrf
                 <div class="font-bold text-base">Newsletter</div>
@@ -84,10 +85,6 @@
             </div>
             @endif
             </form> 
-
-            
-            
-          
     
             {{-- Liens des informations obligatoires --}}
              <div class="text-sm text-white mt-8 space-x-28 mx-auto max-w-7xl flex justify-center">
