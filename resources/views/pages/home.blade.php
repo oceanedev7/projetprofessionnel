@@ -68,7 +68,7 @@
 @section('main')
 
 
-<div class="w-full h-screen bg-black"> 
+<div class="w-full md:h-screen bg-black"> 
     <video autoplay muted loop class="w-full h-screen object-cover opacity-50">
         <source src="{{ Storage::url('videos/videoaccueil.mp4') }}" type="video/mp4"  alt="Vidéo drone Martinique">
     </video>
@@ -78,20 +78,21 @@
         <img class="w-64 h-64" src="{{ Storage::url('images/logoaccueil.png') }}" alt="Logo Tout-là-haut"> 
     </div>
 
-        <div class="absolute max-w-3xl top-72 text-white font-bold text-center text-2xl"> 
+        <div class="absolute md:max-w-3xl max-w-sm top-72 text-white font-bold text-center text-2xl"> 
            <div> {{ __('content.titre') }} </div>              
         <div class="mt-2 text-white font-light text-center text-base tracking-widest"> 
             {{ __('content.sous-titre') }}  
         </div>
         </div>  
         
-        <div class="absolute right-1/2 top-96 bottom-0 mx-4 flex items-center justify-center">
+        <div class="absolute right-1/2 top-96 bottom-0 mx-4 items-center justify-center hidden md:flex">
             <hr class="w-0 h-24 border-l-2 border-white" />
         </div>
+        
 </div>                      
 </div>
 
-<div style="background-color:#F9F4EE" class="w-full h-[500px] ">
+<div style="background-color:#F9F4EE" class="w-full md:h-[500px] ">
 
     <div class="flex flex-col justify-center items-center">
         <span class="font-bold text-custom-marron text-[40px] mt-8 uppercase">{{ __('content.domaine') }} </span>
@@ -99,7 +100,7 @@
     </div>
 
 
-    <div class="flex space-x-28 flex-row items-center justify-center space-y-16">
+    <div class="flex flex-col p-6 items-center md:space-x-28 md:flex-row  md:items-center md:justify-center md:space-y-16">
          <p class="w-96 text-justify text-left mb-6">  
             {{ __('content.presentation') }}
          </p> 
@@ -118,50 +119,52 @@
 
 
 
-<div class="bg-custom-vert h-screen w-full"> 
+<div class="bg-custom-vert md:h-screen w-full"> 
 
-    <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-white text-[40px] mt-8 uppercase"> {{ __('content.decouvrir') }} </span>
+    <div class="flex flex-col items-center md:justify-center md:items-center">
+        <span class="font-bold text-white text-center text-[40px] mt-8 uppercase"> {{ __('content.decouvrir') }} </span>
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 ">
     </div>
 
-        <div class="justify-items-center grid grid-cols-2 gap-y-6 relative top-6">
 
-            <a href="{{ route('cabane1')}}" class="relative group block overflow-visible ml-32">
+        <div class="md:justify-items-center md:grid md:grid-cols-2 md:gap-y-6 md:relative md:top-12 md:p-0 p-6 items-center justify-center md:space-y-0 space-y-4 flex flex-col">
+
+
+            <a href="{{ route('cabane1')}}" class="relative group block overflow-visible ml:0 md:ml-32">
         
                 <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/nid.png') }}" alt="Cabane Nid douillet">
                 <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-                    <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
+                    <div class="absolute top-1/2 left-8 md:left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
                         <h3 class="text-3xl font-bold"> {{ __('content.nidDouillet') }} </h3>
                         <p class="text-lg font-normal">2 {{ __('content.pax') }} | 60m² | 8m {{ __('content.hauteur') }}</p>
                     </div>
                 </div>
             </a>
             
-            <a href="{{ route('cabane2') }}" class="relative group block overflow-visible mr-32">
+            <a href="{{ route('cabane2') }}" class="relative group block overflow-visible mr-0 md:mr-32">
                 <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/osmose.png') }}" alt="Cabane Osmose">
                 <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-                    <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
+                    <div class="absolute top-1/2 left-8 md:left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
                         <h3 class="text-3xl font-bold">{{ __('content.osmose') }} </h3>
                         <p class="text-lg font-normal">2 {{ __('content.pax') }}  | 60m² | 8m {{ __('content.hauteur') }}</p>
                     </div>
                 </div>
             </a>
             
-            <a href="{{ route('cabane3') }}" class="relative group block overflow-visible ml-32">
+            <a href="{{ route('cabane3') }}" class="relative group block overflow-visible ml:0 md:ml-32">
                 <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/escapade.png') }}" alt="Cabane Escapade">
                 <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-                    <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
+                    <div class="absolute top-1/2 left-0.5 md:left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
                         <h3 class="text-3xl font-bold">{{ __('content.escapade') }} </h3>
                         <p class="text-lg font-normal">4 {{ __('content.pax') }}  | 85m² + {{ __('content.ilot') }}  | 8m {{ __('content.hauteur') }} </p>
                     </div>
                 </div>
             </a>
 
-            <a href="{{ route('cabane4') }}" class="relative group block overflow-visible mr-32">
+            <a href="{{ route('cabane4') }}" class="relative group block overflow-visible mr-0 md:mr-32">
                 <img class="h-[200px] w-[250px] object-cover transition-opacity duration-300 ease-in-out group-hover:opacity-60" src="{{ Storage::url('images/eden.png') }}" alt="Cabane Eden">
                 <div class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out flex items-center justify-center">
-                    <div class="absolute top-1/2 left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
+                    <div class="absolute top-1/2 left-12 md:left-28 bg-opacity-70 p-4 rounded-md text-white whitespace-nowrap space-y-2 z-10 transform -translate-y-1/2">
                         <h3 class="text-3xl font-bold">{{ __('content.eden') }} </h3>
                         <p class="text-lg font-normal">6 {{ __('content.pax') }}  | 110m² | 6m {{ __('content.hauteur') }} </p>
                     </div>
@@ -180,8 +183,8 @@
 
     </div>
 
-            <div class=" flex justify-center"> 
-                <img class="h-[550px] w-[800px]" src="{{ Storage::url('images/plandomaine.png') }}" alt="Plan du domaine">
+            <div class=" flex justify-center md:mt-0 mt-12"> 
+                <img class="md:h-[550px] md:w-[800px] h-[400px]"  src="{{ Storage::url('images/plandomaine.png') }}" alt="Plan du domaine">
             </div>
 
     </div>

@@ -57,18 +57,19 @@
 </div>
 
 
-<div style="background-color:#F9F4EE" class="w-full h-screen flex">
 
-    <div style="background-color:#945508" class="h-screen w-2/4"></div>
+<div style="background-color:#F9F4EE" class="w-full h-screen flex flex-col md:flex-row">
 
-    <div class="flex flex-col justify-center p-8">
+    <div style="background-color:#945508" class="h-screen w-full md:w-2/4"></div>
+
+    <div class="flex flex-col justify-center p-8 w-full md:w-2/4">
         
         <div class="flex flex-col justify-center items-center">
-            <span class="font-bold text-custom-marron text-[40px] ml-28 mb-20 text-center leading-tight uppercase">{!! nl2br(__('content.coordonnees')) !!}</span>
-            <hr class="border-t-4 border-custom-beige w-24 relative left-16 bottom-16">
+            <span class="font-bold text-custom-marron text-[40px] ml-0  mb-20 text-center leading-tight uppercase">{!! nl2br(__('content.coordonnees')) !!}</span>
+            <hr class="border-t-4 border-custom-beige w-24 relative left-0  bottom-16 md:bottom-16">
         </div>
 
-        <div class="text-xl ml-24 space-y-10"> 
+        <div class="text-xl ml-0 md:ml-24 space-y-10"> 
             <div>
                 <span class="text-custom-marron font-bold">{{ __('content.adresse-postale') }} :</span> <br/>
                 Route de Jolimont, 97226 Morne-Vert

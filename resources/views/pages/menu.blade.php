@@ -9,39 +9,50 @@
 </head>
 <body>
     
-    <div class="bg-custom-vert h-screen w-full" >
-
-        <div class="flex flex-row-reverse"> 
-            <img class="w-[700px] h-screen" src="{{ Storage::url('images/cabanemenu.jpg') }}" alt="Cabane menu">
-        </div>
-
-        <div class="absolute top-0 left-28"> 
-            <img class="h-[250px] w-[250px]" src="{{ Storage::url('images/logomenu.png') }}" alt="Logo menu">
-        </div>
-
-        <button id="retour" class="absolute top-6 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> X </button> 
+    <div class="bg-custom-vert h-screen w-full">
+        <button id="retour" class="absolute top-6 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> X </button>
+        <a href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-gray-400 bg-opacity-65  md:bg-custom-vert md:bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>
         
-        <a  href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>
+        <div class="md:flex md:h-screen">
+            <div class="bg-custom-vert flex flex-col items-center justify-center md:w-1/2">
+                
+                <div class="flex justify-center md:relative md:bottom-8"> 
+                    <img class="h-[250px] w-[250px] max-w-full object-contain" src="{{ Storage::url('images/logomenu.png') }}" alt="Logo menu">
+                </div>
+                
+                <div class="flex flex-col space-y-4 md:space-y-6 md:text-xl text-lg text-white font-bold  md:relative md:bottom-14"> 
+                    <a class="uppercase" href="{{ route('accueil') }}">{{ __('content.accueil') }}</a>
+                    <a class="uppercase" href="{{ route('noscabanes') }}">{{ __('content.cabane') }}</a>
+                    <a class="uppercase" href="{{ route('prestations') }}">{{ __('content.prestation') }}</a>
+                    <a class="uppercase" href="{{ route('reserver') }}">{{ __('content.reserver') }}</a>
+                    <a class="uppercase" href="{{ route('contact') }}">{{ __('content.acces-menu') }}</a>
+                </div>
+                
+                <div class="flex space-x-4 md:p-0 p-6 md:relative md:bottom-6 md:mr-20">
+                    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" class="bg-gray-400 bg-opacity-65 text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base flex items-center justify-center">
+                        {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+                    </a>
         
+                    <a href="https://www.facebook.com" class="bg-gray-400 bg-opacity-65 text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base text-center">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+        
+                    <a href="https://www.instagram.com" class="bg-gray-400 bg-opacity-65 text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base text-center">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="md:h-screen md:w-1/2 md:flex md:justify-end">
+                <img class="hidden  md:block w-[700px] md:h-screen" src="{{ Storage::url('images/cabanemenu.jpg') }}" alt="Cabane menu">
+            </div>
+        </div>
+        
+        
+    </div>
     
-    <div class=" absolute top-56 left-28 flex flex-col space-y-6 text-lg text-white font-bold">
-        <a class="uppercase" href="{{ route('accueil') }}">{{ __('content.accueil') }}</a>
-        <a class="uppercase" href="{{ route('noscabanes') }}">{{ __('content.cabane') }}</a>
-        <a class="uppercase" href="{{ route('prestations') }}">{{ __('content.prestation') }}</a>
-        <a class="uppercase" href="{{ route('reserver') }}">{{ __('content.reserver') }}</a>
-        <a class="uppercase" href="{{ route('contact') }}">{{ __('content.acces-menu') }}</a>
-    </div>
-
-
-    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" class="flex items-center justify-center absolute bottom-8 left-28 bg-gray-400 bg-opacity-65  text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base">  {{ App::getLocale() === 'en' ? 'FR' : 'EN' }} </a> 
-    <a href="https://www.facebook.com" class="flex items-center justify-center absolute bottom-8 left-44 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-facebook-f"></i> </a> 
-    <a href="https://www.instagram.com"  class="flex items-center justify-center absolute bottom-8 left-60 bg-gray-400 bg-opacity-65  text-white py-3.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> <i class="fa-brands fa-instagram"></i> </a> 
-
- 
-
-    </div>
-
-
-
+   
+    
+    
 </body>
 </html>
