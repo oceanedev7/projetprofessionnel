@@ -148,7 +148,7 @@
 
 
     <div style="background-color:#F9F4EE" class="md:h-screen w-full flex items-center">
-        <div class="container mx-auto px-4  p-8 md:p-0">
+        <div class="container mx-auto px-4 p-8">
             <div class="grid grid-cols-2 gap-x-14 gap-y-8"> 
                 @foreach ($massages as $massage)
                     <div class="flex flex-col">
