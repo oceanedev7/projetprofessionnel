@@ -70,11 +70,11 @@
     @section('main')
 
 
-    <div class="bg-custom-vert h-screen w-full flex">
+    <div class="bg-custom-vert md:h-screen w-full md:flex-row flex flex-col">
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/restauration.png') }}" alt="Panier repas">
     
-        <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-8 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4 uppercase">{{ __('content.restauration') }}  </h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     
@@ -86,9 +86,9 @@
     
     
 
-    <div style="background-color:#F9F4EE" class=" h-screen w-full"> 
+    <div style="background-color:#F9F4EE" class="md:h-screen w-full"> 
 
-        <div class="flex flex-row justify-center space-x-60 relative top-16">
+        <div class="flex flex-col items-center justify-center md:flex-row md:justify-center md:space-x-60 relative md:top-16">
         
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
@@ -132,11 +132,11 @@
     </div>
 
 
-    <div class="bg-custom-vert h-screen w-full flex">
+    <div class="bg-custom-vert md:h-screen w-full md:flex-row flex flex-col">
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/spa.jpg') }}" alt="Massage">
     
-        <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-8 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4">{{ __('content.spa') }}</h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     
@@ -147,16 +147,16 @@
     </div>
 
 
-    <div style="background-color:#F9F4EE" class="h-screen w-full flex items-center">
-        <div class="container mx-auto px-4">
+    <div style="background-color:#F9F4EE" class="md:h-screen w-full flex items-center">
+        <div class="container mx-auto px-4  p-8 md:p-0">
             <div class="grid grid-cols-2 gap-x-14 gap-y-8"> 
                 @foreach ($massages as $massage)
                     <div class="flex flex-col">
-                        <div class="flex items-center">
+                        <div class="flex flex-col md:flex-row md:items-center">
                             <div class="font-bold text-custom-marron text-lg">{{ __('content.type_' . $massage->id) }}</div>
-                            <hr class="h-1 w-2 bg-custom-marron mx-4"/>
+                            <hr class="h-1 w-2 bg-custom-marron mx-4 hidden md:block"/>
                             <div class="font-bold text-custom-marron text-lg">{{ $massage->duree }}min</div>
-                            <div class="font-bold text-custom-marron text-lg ml-auto">{{ $massage->prix_adulte }}€</div>
+                            <div class="font-bold text-custom-marron text-lg md:ml-auto">{{ $massage->prix_adulte }}€</div>
                         </div>
                         <div class="text-justify mt-2 text-sm w-full">   {{ __('content.description_' . $massage->id) }}</div>
                     </div>
