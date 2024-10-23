@@ -98,23 +98,19 @@
   
   <select name="nombreAdultes" class="text-sm rounded mx-4 focus:border-custom-marron focus:ring-custom-marron" required>
     <option value="" disabled selected>0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-  </select>
+    @for ($i = 1; $i <= 6; $i++)
+        <option value="{{ $i }}">{{ $i }}</option>
+    @endfor
+</select>
 
-  <select name="nombreEnfants" class="text-sm rounded focus:border-custom-marron focus:ring-custom-marron" >
+
+  <select name="nombreEnfants" class="text-sm rounded focus:border-custom-marron focus:ring-custom-marron">
     <option value="" disabled selected>0</option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-  </select>
+    @for ($i = 1; $i <= 6; $i++)
+        <option value="{{ $i }}">{{ $i }}</option>
+    @endfor
+</select>
+
 
   </div>
 
