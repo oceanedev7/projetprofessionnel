@@ -1,14 +1,5 @@
 @extends('layouts.main')
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réservation</title>
-</head>
-<body>
-
     @section('navbar')
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
@@ -272,11 +263,6 @@
 @endsection
 
 
-
-</body>
-</html>
-
-
 <script>
     var dejeunerAdulte = 0;
     var dejeunerEnfant = 0;
@@ -289,7 +275,7 @@
         event.preventDefault();
         dejeunerAdulte++;
        document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
-       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; // Met à jour le champ caché
+       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; 
     }
 
     function addDejEnfant(event){
@@ -297,7 +283,7 @@
            dejeunerEnfant++;
       
        document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
-       document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; // Met à jour le champ caché
+       document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; 
        
     }
 
@@ -305,7 +291,7 @@
         event.preventDefault();
         dinerAdulte++;
        document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
-       document.getElementById("inputDinerAdulte").value = dinerAdulte; // Met à jour le champ caché
+       document.getElementById("inputDinerAdulte").value = dinerAdulte; 
     }
 
     function addDinEnfant(event){
@@ -313,7 +299,7 @@
            dinerEnfant++;
       
        document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
-       document.getElementById("inputDinerEnfant").value = dinerEnfant; // Met à jour le champ caché
+       document.getElementById("inputDinerEnfant").value = dinerEnfant; 
        
     }
 
@@ -323,7 +309,7 @@
             dejeunerAdulte--;
     }
        document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
-       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; // Met à jour le champ caché
+       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; 
     }
 
     function substractDejEnfant(event){
@@ -332,7 +318,7 @@
             dejeunerEnfant--;
     }
       document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
-      document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; // Met à jour le champ caché
+      document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; 
     }
 
     function substractDinAdulte(event){
@@ -341,7 +327,7 @@
         dinerAdulte--;
     }
        document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
-       document.getElementById("inputDinerAdulte").value = dinerAdulte; // Met à jour le champ caché
+       document.getElementById("inputDinerAdulte").value = dinerAdulte; 
     }
 
     function substractDinEnfant(event) {
@@ -350,7 +336,7 @@
         dinerEnfant--;
     }
     document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
-    document.getElementById("inputDinerEnfant").value = dinerEnfant; // Met à jour le champ caché
+    document.getElementById("inputDinerEnfant").value = dinerEnfant; 
     }
 
    
@@ -364,7 +350,7 @@ function SpaCount(event, index, change) {
     }
 
     document.getElementById("spa" + index).innerHTML = spaCounts[index];
-    document.getElementById("inputSpa" + index).value = spaCounts[index]; // Met à jour le champ caché
+    document.getElementById("inputSpa" + index).value = spaCounts[index]; 
 }
    
     </script>
