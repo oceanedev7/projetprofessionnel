@@ -43,11 +43,11 @@ class AvailableRoomController extends Controller
     
         $availableCabanes = Cabane::whereDoesntHave('reservations', function($query) use ($dateArrivee, $dateDepart) {
             $query->where(function($query) use ($dateArrivee, $dateDepart) {
-                $query->whereBetween('reservation_cabanes.dateArrivee', [$dateArrivee, $dateDepart])
-                      ->orWhereBetween('reservation_cabanes.dateDepart', [$dateArrivee, $dateDepart])
+                $query->whereBetween('reservations.dateArrivee', [$dateArrivee, $dateDepart])
+                      ->orWhereBetween('reservations.dateDepart', [$dateArrivee, $dateDepart])
                       ->orWhere(function($query) use ($dateArrivee, $dateDepart) {
-                          $query->where('reservation_cabanes.dateArrivee', '<=', $dateArrivee)
-                                ->where('reservation_cabanes.dateDepart', '>=', $dateDepart);
+                          $query->where('reservations.dateArrivee', '<=', $dateArrivee)
+                                ->where('reservations.dateDepart', '>=', $dateDepart);
                       });
             });
         })
