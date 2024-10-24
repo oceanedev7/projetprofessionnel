@@ -78,7 +78,7 @@ Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoCon
 
 // Route::match(['get', 'post'], '/reservation/validate/client', [ClientInfoController::class, 'create'])->name('validate-client');
 
-Route::post('/reservation/validate/client', [ValidateClientController::class, 'create'])->name('validate-client');
+Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client');
 
 Route::get('/reservation/paiement', function () {
     return view('pages.paiement');
