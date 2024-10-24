@@ -24,7 +24,7 @@ class Cabane extends Model
 
     public function reservations()
     {
-        return $this->belongsToMany(Reservation::class, 'reservation_cabanes', 'cabane_id', 'reservation_id')
-                    ->withPivot('dateArrivee', 'dateDepart'); 
+        return $this->hasMany(Reservation::class);
     }
+    
 }
