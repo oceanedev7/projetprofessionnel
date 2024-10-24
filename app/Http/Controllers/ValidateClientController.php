@@ -87,6 +87,8 @@ if (Auth::check()) {
         'ville' => $validated['ville'],
     ]);
 
+    //  dd($guest->id);
+
     Reservation::create([
         'user_id' => null,
         'guest_id' => $guest->id,
@@ -100,12 +102,18 @@ if (Auth::check()) {
     ]);
 }
 
-return view('pages.paiement', compact(
-    'nomCabane', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
-    'nombreAdultes', 'nombreEnfants', 'user', 'guest',
-));
+session([
+    'nomCabane' => $nomCabane,
+    'dateArrivee' => $dateArrivee,
+    'dateDepart' => $dateDepart,
+    'nombreNuitees' => $nombreNuitees,
+    'nombreAdultes' => $nombreAdultes,
+    'nombreEnfants' => $nombreEnfants,
+    'user' => $user,
+    'guest' => $guest,
+]);
 
-    
+return redirect()->route('resa-payment');
     }     
     
 
