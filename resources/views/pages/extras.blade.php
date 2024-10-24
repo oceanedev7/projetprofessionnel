@@ -55,7 +55,7 @@
     <div class="flex flex-row p-6 mt-12">
         <div class="flex-grow">
 
-            <form id="reservationForm" action="{{ route('info-client') }}" method="post"> <!-- Spécifiez votre route ici -->
+            <form id="reservationForm" action="{{ route('info-client') }}" method="post"> 
                 @csrf 
 
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">

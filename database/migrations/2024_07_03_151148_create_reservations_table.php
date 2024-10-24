@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('reservations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('guest_id');
+            $table->unsignedBigInteger('user_id')->nullable();;
+            $table->unsignedBigInteger('guest_id')->nullable();;
             $table->unsignedBigInteger('paiement_id')->nullable();
             $table->string('nomCabane');
             $table->integer('nombreAdultes');
-            $table->integer('nombreEnfants');
+            $table->integer('nombreEnfants')->nullable();
             $table->datetime('dateArrivee');
             $table->datetime('dateDepart');
             $table->integer('nombreNuitees');
-            $table->decimal('prix');
+            $table->decimal('prix')->nullable();
             $table->text('message')->nullable();
             $table->timestamps();
 

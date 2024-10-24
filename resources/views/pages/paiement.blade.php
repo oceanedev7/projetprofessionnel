@@ -1,6 +1,6 @@
 <div> Bonjour </div>
 
-{{-- <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
+<div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
     <div> {{ $nomCabane }}</div>
     <div> - </div>
     <div> {{ $nombreEnfants }} pers. </div>
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
