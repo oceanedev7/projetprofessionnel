@@ -59,9 +59,9 @@ $validated = $request->validate([
     'nombreNuitees' => 'required|integer',
 ]);
 
+$user = null;
+$guest = null;
 
-
-// Création de la réservation
 if (Auth::check()) {
     $user = Auth::user();
     
@@ -100,10 +100,9 @@ if (Auth::check()) {
     ]);
 }
 
-// Retourne à la vue de paiement avec les variables nécessaires
 return view('pages.paiement', compact(
     'nomCabane', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
-    'nombreAdultes', 'nombreEnfants'
+    'nombreAdultes', 'nombreEnfants', 'user', 'guest',
 ));
 
     
