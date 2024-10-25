@@ -36,11 +36,14 @@ class ValidateClientController extends Controller
     {
 
 $nomCabane = $request->input('nomCabane');
+$capacite = $request->input('capacite');
 $dateArrivee = $request->input('dateArrivee');
 $dateDepart = $request->input('dateDepart');
 $nombreNuitees = $request->input('nombreNuitees');
 $nombreAdultes = $request->input('nombreAdultes');
 $nombreEnfants = $request->input('nombreEnfants');
+$prixFinal = $request->input('montant');
+
 
 $validated = $request->validate([
     'prenom' => 'required|string',
@@ -57,6 +60,7 @@ $validated = $request->validate([
     'dateArrivee' => 'required|date',
     'dateDepart' => 'required|date',
     'nombreNuitees' => 'required|integer',
+    'montant' => 'required|numeric',
 ]);
 
 $user = null;
@@ -109,11 +113,13 @@ session([
     'nombreNuitees' => $nombreNuitees,
     'nombreAdultes' => $nombreAdultes,
     'nombreEnfants' => $nombreEnfants,
+    'prixFinal' => $prixFinal, 
+   'capacite' => $capacite,
     'user' => $user,
     'guest' => $guest,
 ]);
 
-return redirect()->route('resa-payment');
+return view('pages.paiement');
     }     
     
 

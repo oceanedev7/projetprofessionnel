@@ -117,11 +117,14 @@
                         placeholder="Message"></textarea>
 
                         <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
+                        <input type="hidden" name="capacite" value="{{ $capacite }}">
                         <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
                         <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
                         <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
                         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
+                        <input type="hidden" name="montant" value="{{ $prixFinal }}">
+
         
                     <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>

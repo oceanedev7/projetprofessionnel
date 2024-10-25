@@ -14,6 +14,7 @@ use App\Http\Controllers\PrestationViewController;
 use App\Http\Controllers\ContactRequestController;
 use App\Http\Controllers\ExtrasController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ValidateClientController;
 use Illuminate\Support\Facades\Redis;
@@ -51,7 +52,7 @@ Route::get('/faq', function () {
 //     return view('pages.contact');
 // })->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::get('/réserver', function () {
+Route::get('/reserver', function () {
     return view('pages.reserver');
 })->name('reserver');
 
@@ -80,9 +81,7 @@ Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoCon
 
 Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client');
 
-Route::get('/reservation/paiement', function () {
-    return view('pages.paiement');
-})->name('resa-payment');
+// Route::match(['get', 'post'], '/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
