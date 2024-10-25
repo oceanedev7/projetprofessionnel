@@ -20,6 +20,13 @@
         <div class="flex-1 flex flex-col  items-center justify-center p-12 ">
         <div class="mb-6 "> 
             <div class="text-white space-y-4"> 
+
+                @if (session('success'))
+                <div class="alert alert-success bg-white">
+                    {{ session('success') }}
+                </div>
+                @endif
+
                 <div class="font-bold text-2xl">Votre réservation est confirmée !</div>
                 <div class="font-semibold text-xl" >Réservation N°</div>
                 <div class="text-justify">Merci d'avoir choisi TOUT LÀ-HAUT pour votre séjour. 

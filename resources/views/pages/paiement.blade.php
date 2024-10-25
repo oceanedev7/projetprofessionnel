@@ -80,7 +80,7 @@
                     
                         <div id="card-errors" role="alert" class="text-red-500 mt-2 text-center"></div>
                     </div>
-                    
+
                     <button type="submit" class=" space-x-2 bg-custom-marron text-white font-bold rounded py-2 px-4 w-full">
                         <span>  <i class="fa-solid fa-lock"></i> </span>
                        <span> Valider le paiement </span>

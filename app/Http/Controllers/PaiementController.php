@@ -6,6 +6,7 @@ use App\Models\Paiement;
 use App\Models\Reservation;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Stripe\Stripe;
 use Stripe\Charge;
 
@@ -34,10 +35,6 @@ class PaiementController extends Controller
 {
     $montant = session('prixFinal');
 
-        if (!$montant || $montant <= 0) {
-            return redirect()->back()->with('error', 'Le montant de la réservation est invalide.');
-        }
-
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         try {
@@ -57,15 +54,9 @@ class PaiementController extends Controller
                 'description' => 'Paiement effectué via Stripe pour la commande #' . $charge->id,
             ]);
 
-            $reservationId = $request->id;
-            $reservation = Reservation::find($reservationId);
-            if ($reservation) {
-                $reservation->prix = $montant;
-                $reservation->save();
-            }
-
             
             return redirect()->route('confirmed')->with('success', 'Paiement effectué avec succès !');
+            
         } catch (\Exception $e) {
             
             Paiement::create([

@@ -69,7 +69,7 @@ $guest = null;
 if (Auth::check()) {
     $user = Auth::user();
     
-    Reservation::create([
+   Reservation::create([
         'user_id' => $user->id,
         'guest_id' => null,
         'message' => $validated['message'],
@@ -79,6 +79,7 @@ if (Auth::check()) {
         'dateArrivee' => $dateArrivee,
         'dateDepart' => $dateDepart,
         'nombreNuitees' => $nombreNuitees,
+        'prix' => $prixFinal,
     ]);
 } else {
     $guest = Guest::create([
@@ -93,7 +94,7 @@ if (Auth::check()) {
 
     //  dd($guest->id);
 
-    Reservation::create([
+     Reservation::create([
         'user_id' => null,
         'guest_id' => $guest->id,
         'message' => $validated['message'],
@@ -103,8 +104,10 @@ if (Auth::check()) {
         'dateArrivee' => $dateArrivee,
         'dateDepart' => $dateDepart,
         'nombreNuitees' => $nombreNuitees,
+        'prix' => $prixFinal,
     ]);
 }
+
 
 session([
     'nomCabane' => $nomCabane,
@@ -120,7 +123,7 @@ session([
 ]);
 
 return view('pages.paiement');
-    }     
+}     
     
 
     /**

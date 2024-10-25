@@ -125,7 +125,6 @@
                         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
                         <input type="hidden" name="montant" value="{{ $prixFinal }}">
 
-        
                     <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>
             </div>
