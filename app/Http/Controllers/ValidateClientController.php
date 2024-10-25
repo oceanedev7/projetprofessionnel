@@ -36,11 +36,14 @@ class ValidateClientController extends Controller
     {
 
 $nomCabane = $request->input('nomCabane');
+$capacite = $request->input('capacite');
 $dateArrivee = $request->input('dateArrivee');
 $dateDepart = $request->input('dateDepart');
 $nombreNuitees = $request->input('nombreNuitees');
 $nombreAdultes = $request->input('nombreAdultes');
 $nombreEnfants = $request->input('nombreEnfants');
+$prixFinal = $request->input('montant');
+
 
 $validated = $request->validate([
     'prenom' => 'required|string',
@@ -57,6 +60,7 @@ $validated = $request->validate([
     'dateArrivee' => 'required|date',
     'dateDepart' => 'required|date',
     'nombreNuitees' => 'required|integer',
+    'montant' => 'required|numeric',
 ]);
 
 $user = null;
@@ -65,7 +69,7 @@ $guest = null;
 if (Auth::check()) {
     $user = Auth::user();
     
-    Reservation::create([
+   Reservation::create([
         'user_id' => $user->id,
         'guest_id' => null,
         'message' => $validated['message'],
@@ -75,6 +79,7 @@ if (Auth::check()) {
         'dateArrivee' => $dateArrivee,
         'dateDepart' => $dateDepart,
         'nombreNuitees' => $nombreNuitees,
+        'prix' => $prixFinal,
     ]);
 } else {
     $guest = Guest::create([
@@ -87,7 +92,9 @@ if (Auth::check()) {
         'ville' => $validated['ville'],
     ]);
 
-    Reservation::create([
+    //  dd($guest->id);
+
+     Reservation::create([
         'user_id' => null,
         'guest_id' => $guest->id,
         'message' => $validated['message'],
@@ -97,16 +104,26 @@ if (Auth::check()) {
         'dateArrivee' => $dateArrivee,
         'dateDepart' => $dateDepart,
         'nombreNuitees' => $nombreNuitees,
+        'prix' => $prixFinal,
     ]);
 }
 
-return view('pages.paiement', compact(
-    'nomCabane', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
-    'nombreAdultes', 'nombreEnfants', 'user', 'guest',
-));
 
-    
-    }     
+session([
+    'nomCabane' => $nomCabane,
+    'dateArrivee' => $dateArrivee,
+    'dateDepart' => $dateDepart,
+    'nombreNuitees' => $nombreNuitees,
+    'nombreAdultes' => $nombreAdultes,
+    'nombreEnfants' => $nombreEnfants,
+    'prixFinal' => $prixFinal, 
+   'capacite' => $capacite,
+    'user' => $user,
+    'guest' => $guest,
+]);
+
+return view('pages.paiement');
+}     
     
 
     /**

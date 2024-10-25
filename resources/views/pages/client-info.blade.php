@@ -117,13 +117,15 @@
                         placeholder="Message"></textarea>
 
                         <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
+                        <input type="hidden" name="capacite" value="{{ $capacite }}">
                         <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
                         <input type="hidden" name="dateDepart" value="{{ $dateDepart }}"> 
                         <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
                         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
-        
-                    <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
+                        <input type="hidden" name="montant" value="{{ $prixFinal }}">
+
+                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>
             </div>
         </div>
@@ -243,3 +245,13 @@
 
 @endsection
 
+<script> 
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const button = this.querySelector('button[type="submit"]');
+    button.disabled = true; 
+    this.submit();
+});
+
+</script>
