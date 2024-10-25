@@ -22,7 +22,7 @@
             <div class="text-white space-y-4"> 
 
                 @if (session('success'))
-                <div class="alert alert-success bg-white">
+                <div class="alert text-custom-marron alert-success bg-white">
                     {{ session('success') }}
                 </div>
                 @endif
