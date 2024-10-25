@@ -81,7 +81,7 @@ Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoCon
 
 Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client');
 
-// Route::match(['get', 'post'], '/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
+Route::post('/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');

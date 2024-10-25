@@ -25,12 +25,12 @@
                 </div>
 
                 <div class="mb-2">
-                    <strong>Nombre d'adultes :</strong> {{ session('nombreAdultes') }} pers.
+                    <strong>Nombre d'adultes :</strong> {{ session('nombreAdultes') }} adultes
                 </div>
 
                 @if(session('nombreEnfants') && session('nombreEnfants') > 0)
                     <div class="mb-2">
-                        <strong>Nombre d'enfants :</strong> {{ session('nombreEnfants') }} pers.
+                        <strong>Nombre d'enfants :</strong> {{ session('nombreEnfants') }} enfants
                     </div>
                 @endif
 
@@ -57,7 +57,7 @@
 
          
             <div class="flex flex-col justify-center">
-                <form action="#" method="POST" id="payment-form">
+                <form action="{{route ('payment.process')}}" method="POST" id="payment-form">
                     @csrf
 
                     <div class="mb-4">

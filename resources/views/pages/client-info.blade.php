@@ -126,7 +126,7 @@
                         <input type="hidden" name="montant" value="{{ $prixFinal }}">
 
         
-                    <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
+                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>
             </div>
         </div>
@@ -246,3 +246,13 @@
 
 @endsection
 
+<script> 
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const button = this.querySelector('button[type="submit"]');
+    button.disabled = true; 
+    this.submit();
+});
+
+</script>
