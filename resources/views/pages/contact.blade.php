@@ -47,7 +47,11 @@
 
 <div style="background-color:#F9F4EE" class="w-full h-screen flex flex-col md:flex-row">
 
-    <div style="background-color:#945508" class="h-screen w-full md:w-2/4"></div>
+    <div class="h-screen w-full md:w-2/4">
+    
+        <img class="w-full h-screen object-cover" src="{{ Storage::url('images/maps.png') }}" alt="Carte Google Maps">
+
+    </div>
 
     <div class="flex flex-col justify-center p-8 w-full md:w-2/4">
         
