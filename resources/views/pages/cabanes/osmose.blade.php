@@ -60,8 +60,11 @@
         <div class="text-4xl text-custom-marron font-bold mb-4 uppercase"> {{ __('content.' . $nomCabane) }}</div>
         <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0">{{ __('content.' . $descriptionCabane) }}</div>
         <div class="italic mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">{{ __('content.' . $prixCabane) }}</div>
-    
+        <div class="relative top-4"> 
+            <a class="bg-custom-marron rounded text-white font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
+            </div>
 </div>
+
 </div>
 
 

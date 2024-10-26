@@ -86,6 +86,11 @@
                        <span> Valider le paiement </span>
                     </button>
                 </form>
+
+                @if(session('error'))
+                <p class="text-red-600 font-bold text-center">{{ session('error') }}</p>
+            @endif
+
             </div>
         </div>
     </div>

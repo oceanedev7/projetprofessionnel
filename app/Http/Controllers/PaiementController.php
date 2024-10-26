@@ -17,7 +17,7 @@ class PaiementController extends Controller
      */
     public function index()
     {
-     //
+        return view('pages.paiement');
     }
 
     /**
@@ -67,7 +67,7 @@ class PaiementController extends Controller
             ]);
 
             
-            return redirect()->route('payment.process')->with('error', 'Erreur lors du paiement : ' . $e->getMessage());
+            return redirect()->route('payment.failure')->with('error', 'Erreur lors du paiement. Veuillez réessayer.');
 }
 }
 
