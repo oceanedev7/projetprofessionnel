@@ -83,6 +83,8 @@ Route::post('/reservation/validate/client', [ValidateClientController::class, 's
 
 Route::post('/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
 
+Route::get('/reservation/paiement/failure', [PaiementController::class, 'index'])->name('payment.failure');
+
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
 })->name('confirmed');
