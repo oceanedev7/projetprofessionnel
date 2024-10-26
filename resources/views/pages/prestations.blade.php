@@ -70,6 +70,10 @@
             <div class="text-justify text-white max-w-lg mx-auto md:mx-0">
                 {{ __('content.text-restauration') }}            
             </div>
+
+            <div class="relative top-6"> 
+                <a class="bg-white rounded text-custom-marron font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
+                </div>
         </div>
     </div>
     
@@ -132,6 +136,10 @@
             <div class="text-justify text-white max-w-lg mx-auto md:mx-0">
                 {{ __('content.text-spa') }}
             </div>
+
+            <div class="relative top-6"> 
+                <a class="bg-white rounded text-custom-marron font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
+                </div>
         </div>
     </div>
 
