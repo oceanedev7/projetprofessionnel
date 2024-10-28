@@ -91,6 +91,8 @@
                 <p class="text-red-600 font-bold text-center">{{ session('error') }}</p>
             @endif
 
+                <img class="w-full" src="{{ Storage::url('images/cblogo.png') }}" alt="Carte Google Maps">
+
             </div>
         </div>
     </div>

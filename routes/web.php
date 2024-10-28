@@ -16,6 +16,7 @@ use App\Http\Controllers\ExtrasController;
 use App\Http\Controllers\MapController;
 use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UserReservationController;
 use App\Http\Controllers\ValidateClientController;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
@@ -88,6 +89,9 @@ Route::get('/reservation/paiement/failure', [PaiementController::class, 'index']
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
 })->name('confirmed');
+
+
+Route::get('/moncompte/reservations', [UserReservationController::class, 'index'])->name('user-reservation');
 
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');

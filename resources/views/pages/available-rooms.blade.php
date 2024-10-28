@@ -24,6 +24,10 @@
                     <x-dropdown-link :href="route('profile.edit')">
                         {{ __('Mon profil') }}
                     </x-dropdown-link>
+
+                    <x-dropdown-link :href="route('user-reservation')">
+                        {{ __('Mes réservations') }}
+                    </x-dropdown-link>
     
                     <!-- Déconnexion -->
                     <form method="POST" action="{{ route('logout') }}">

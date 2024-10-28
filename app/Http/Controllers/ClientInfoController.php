@@ -49,6 +49,7 @@ class ClientInfoController extends Controller
             'spa_counts' => $validatedData['spa_count'],
         ];
         
+        
         $nomCabane = $request->input('nomCabane');
         $capacite = $request->input('capacite');
         $prixTotal = $request->input('prixTotal');
@@ -58,6 +59,7 @@ class ClientInfoController extends Controller
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
     
+
         $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
         $diner = Prestation::with('categorie')->where('id', 2)->first();
         $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
