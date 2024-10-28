@@ -49,7 +49,7 @@
 
     <div class="h-screen w-full md:w-2/4">
     
-        <img class="w-full h-screen object-cover" src="{{ Storage::url('images/maps.png') }}" alt="Carte Google Maps">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d1591.8543542236362!2d-61.1507548668958!3d14.700926540024968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e6!4m1!2sJolimont%20%2C%2097226!4m5!1s0x8c6aaf86c96f4bd3%3A0x2acb1458a2c34fd6!2sMorne-Vert!3m2!1d14.7070314!2d-61.145001!5e1!3m2!1sfr!2sfr!4v1730125969006!5m2!1sfr!2sfr" width='650px' height='585px' style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     </div>
 
