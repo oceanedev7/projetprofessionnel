@@ -68,81 +68,50 @@
 
         
                 <div class="flex ml-4 space-x-8 mb-6">
+
+
+
+            
+                    @foreach ($restaurants as $index => $restaurant)
+                
                     <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
                         <div class="rounded-md">
                             <img class="mb-2 rounded-md" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="">
                         </div>
+                
+                        <div class="text-white font-semibold text-center mb-4">{{ $restaurant->type }}</div>
+                
+                        <div class="flex flex-col space-y-1 mb-4 items-center">
+                            <div class="text-white italic">~ Adultes ({{ $restaurant->prix_adulte }}€) ~</div>
+                            <div class="flex space-x-4">
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2"  onclick="cateringAdultCount(event, {{ $index }}, -1)"> 
+                                    <span> - </span>
+                                </button>
+                                <span class="text-custom-marron font-black" id="cateringAdult{{ $index }}">0</span> 
+                                <input type="hidden" name="catering_adult[]" id="inputcateringAdult{{ $index }}" value="0"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2"  onclick="cateringAdultCount(event, {{ $index }}, 1)"> 
+                                    <span> + </span>
+                                </button>
+                            </div>
+                        </div>
+                
+                        <div class="flex flex-col space-y-1 items-center">
+                            <div class="text-white italic">~ Enfants ({{ $restaurant->prix_enfant }}€) ~</div>
+                            <div class="flex space-x-4">
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="cateringChildCount(event, {{ $index }}, -1)"> 
+                                    <span> - </span>
+                                </button>
+                                <span class="text-custom-marron font-black" id="cateringChild{{ $index }}">0</span> 
+                                <input type="hidden" name="catering_child[]" id="inputcateringChild{{ $index }}" value="0"> 
+                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="cateringChildCount(event, {{ $index }}, 1)"> 
+                                    <span> + </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+         
 
-                        
-                        @if(isset($dejeuner))
-                        <div class="text-white font-semibold text-center mb-4">{{$dejeuner->type}}</div>
-        
-                        <div class="flex flex-col space-y-1 mb-4 items-center">
-                            <div class="text-white italic">~ Adultes ({{$dejeuner->prix_adulte}}€) ~</div>
-                            <div class="flex space-x-4">
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejAdulte(event)"> 
-                                    <span> + </span>
-                                </button>
-                                <span class="text-custom-marron font-black" id="dejeunerAdulte">0</span> 
-                                <input type="hidden" name="dejeuner_adulte" id="inputDejeunerAdulte" value="0"> 
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte(event)"> 
-                                    <span> - </span>
-                                </button>
-                            </div>
-                        </div>
-                        @endif
-        
-                        <div class="flex flex-col space-y-1 items-center">
-                            <div class="text-white italic">~ Enfants ({{$dejeuner->prix_enfant}}€) ~</div>
-                            <div class="flex space-x-4">
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDejEnfant(event)"> 
-                                    <span> + </span>
-                                </button>
-                                <span class="text-custom-marron font-black" id="dejeunerEnfant">0</span> 
-                                <input type="hidden" name="dejeuner_enfant" id="inputDejeunerEnfant" value="0"> 
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant(event)"> 
-                                    <span> - </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
-                        <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/diner.jpg') }}" alt="">
-                        </div>
-                        @if(isset($diner))
-                        <div class="text-white font-semibold text-center mb-4">{{$diner->type}}</div>
-        
-                        <div class="flex flex-col space-y-1 mb-4 items-center">
-                            <div class="text-white italic">~ Adultes ({{$diner->prix_adulte}}€) ~</div>
-                            <div class="flex space-x-4">
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinAdulte(event)"> 
-                                    <span> + </span>
-                                </button>
-                                <span class="text-custom-marron font-black" id="dinerAdulte">0</span> 
-                                <input type="hidden" name="diner_adulte" id="inputDinerAdulte" value="0"> 
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte(event)"> 
-                                    <span> - </span>
-                                </button>
-                            </div>
-                        </div>
-                        @endif
-        
-                        <div class="flex flex-col space-y-1 items-center">
-                            <div class="text-white italic">~ Enfants ({{$diner->prix_enfant}}€) ~</div>
-                            <div class="flex space-x-4">
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="addDinEnfant(event)"> 
-                                    <span> + </span>
-                                </button>
-                                <span class="text-custom-marron font-black" id="dinerEnfant">0</span> 
-                                <input type="hidden" name="diner_enfant" id="inputDinerEnfant" value="0"> 
-                                <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant(event)"> 
-                                    <span> - </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
         
                 <div class="uppercase font-bold text-custom-marron text-xl ml-4">Spa</div>
@@ -160,13 +129,13 @@
                             <span>({{ $massage->duree }} min - {{ $massage->prix_adulte }} €)</span>
                         </div>
                         <div class="flex space-x-4">
-                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, 1)"> 
-                                <span> + </span>
+                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, -1)"> 
+                                <span> - </span>
                             </button>
                             <span class="text-custom-marron font-black" id="spa{{ $index }}">0</span> 
                             <input type="hidden" name="spa_count[]" id="inputSpa{{ $index }}" value="0"> 
-                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, -1)"> 
-                                <span> - </span>
+                            <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="SpaCount(event, {{ $index }}, 1)"> 
+                                <span> + </span>
                             </button>
                         </div>
                         
@@ -269,82 +238,42 @@
 
 
 <script>
-    var dejeunerAdulte = 0;
-    var dejeunerEnfant = 0;
-    var dinerAdulte = 0;
-    var dinerEnfant = 0;
+    
     const spaCounts = Array.from({ length: {{ count($massages) }} }, () => 0);
+    const cateringAdultCounts = Array.from({ length: {{ count($restaurants) }} }, () => 0);
+    const cateringChildCounts = Array.from({ length: {{ count($restaurants) }} }, () => 0);
 
+
+    function cateringAdultCount(event, index, change) {
+    event.preventDefault();
    
-    function addDejAdulte(event){
-        event.preventDefault();
-        dejeunerAdulte++;
-       document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
-       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; 
+    cateringAdultCounts[index] += change;
+    
+    if (cateringAdultCounts[index] < 0) {
+        cateringAdultCounts[index] = 0;
     }
 
-    function addDejEnfant(event){
-        event.preventDefault();
-           dejeunerEnfant++;
-      
-       document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
-       document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; 
-       
-    }
+    document.getElementById("cateringAdult" + index).innerHTML = cateringAdultCounts[index];
+    document.getElementById("inputcateringAdult" + index).value = cateringAdultCounts[index]; 
+}
 
-    function addDinAdulte(event){
-        event.preventDefault();
-        dinerAdulte++;
-       document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
-       document.getElementById("inputDinerAdulte").value = dinerAdulte; 
-    }
 
-    function addDinEnfant(event){
-        event.preventDefault();
-           dinerEnfant++;
-      
-       document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
-       document.getElementById("inputDinerEnfant").value = dinerEnfant; 
-       
-    }
-
-    function substractDejAdulte(event){
-        event.preventDefault();
-        if (dejeunerAdulte > 0) {
-            dejeunerAdulte--;
-    }
-       document.getElementById("dejeunerAdulte").innerHTML = dejeunerAdulte;
-       document.getElementById("inputDejeunerAdulte").value = dejeunerAdulte; 
-    }
-
-    function substractDejEnfant(event){
-        event.preventDefault();
-        if (dejeunerEnfant > 0) {
-            dejeunerEnfant--;
-    }
-      document.getElementById("dejeunerEnfant").innerHTML = dejeunerEnfant;
-      document.getElementById("inputDejeunerEnfant").value = dejeunerEnfant; 
-    }
-
-    function substractDinAdulte(event){
-        event.preventDefault();
-        if (dinerAdulte > 0) {
-        dinerAdulte--;
-    }
-       document.getElementById("dinerAdulte").innerHTML = dinerAdulte;
-       document.getElementById("inputDinerAdulte").value = dinerAdulte; 
-    }
-
-    function substractDinEnfant(event) {
-        event.preventDefault();
-    if (dinerEnfant > 0) {
-        dinerEnfant--;
-    }
-    document.getElementById("dinerEnfant").innerHTML = dinerEnfant;
-    document.getElementById("inputDinerEnfant").value = dinerEnfant; 
-    }
-
+function cateringChildCount(event, index, change) {
+    event.preventDefault();
    
+    cateringChildCounts[index] += change;
+    
+    if (cateringChildCounts[index] < 0) {
+        cateringChildCounts[index] = 0;
+    }
+
+    document.getElementById("cateringChild" + index).innerHTML = cateringChildCounts[index];
+    document.getElementById("inputcateringChild" + index).value = cateringChildCounts[index]; 
+}
+
+
+
+
 function SpaCount(event, index, change) {
     event.preventDefault();
    
@@ -357,5 +286,6 @@ function SpaCount(event, index, change) {
     document.getElementById("spa" + index).innerHTML = spaCounts[index];
     document.getElementById("inputSpa" + index).value = spaCounts[index]; 
 }
-   
+
+
     </script>

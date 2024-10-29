@@ -145,8 +145,6 @@
                         <div> - </div>
                         <div> {{  $capacite }} pers. </div>
 
-
-
                  
                 </div>
 
@@ -179,10 +177,12 @@
                                 <div class="font-semibold text-custom-marron mt-0.5">{{ $nombreAdultes }} </div>
                             </div>
 
+                            @if ($nombreEnfants > 0)
                             <div class="flex space-x-2">
                                 <label class="text-custom-marron text-sm mt-1">Enfants :</label>
                                 <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreEnfants }}</div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -193,35 +193,35 @@
                     <div class="uppercase text-center underline mb-2">Restauration</div>
 
                     <div class="italic mb-4">  
-                        <div class="flex justify-between"> 
-                            <div class="font-semibold text-custom-marron">Déjeuners Adulte : </div>
-                            <div>{{ $extras['dejeuner_adulte'] }} x {{$dejeuner->prix_adulte}} €</div>
+            
+                        @foreach($extras['catering_adults'] as $index => $count)
+                        <div class="flex justify-between">
+                            <div class="font-semibold text-custom-marron">{{ $restaurants[$index]->type }}</div>
+                            <div>{{ $count }} x {{ $restaurants[$index]->prix_adulte }} € </div>
                         </div>
+                        @endforeach
 
-                        <div class="flex justify-between"> 
-                            <div class="font-semibold text-custom-marron">Déjeuners Enfant : </div>
-                            <div>{{ $extras['dejeuner_enfant'] }} x  {{$dejeuner->prix_enfant}} €</div>
+                        
+                        @foreach($extras['catering_children'] as $index => $count)
+                        @if ($count > 0)
+                        <div class="flex justify-between">
+                            <div class="font-semibold text-custom-marron">{{ $restaurants[$index]->type }}</div>
+                            <div>{{ $count }} x {{ $restaurants[$index]->prix_enfant }} € </div>
                         </div>
-                     
-                        <div class="flex justify-between"> 
-                            <div class="font-semibold text-custom-marron">Diners Adulte : </div>
-                            <div>{{ $extras['diner_adulte'] }} x {{$diner->prix_adulte}} € </div>
-                        </div>
-
-                        <div class="flex justify-between mb-6"> 
-                            <div class="font-semibold text-custom-marron">Diners Enfant : </div>
-                            <div>{{ $extras['diner_enfant'] }} x {{$diner->prix_enfant}} €</div>
-                        </div>
-                     
+                        @endif 
+                        @endforeach
+                       
 
                         <div class="flex flex-col">
                             <div class="uppercase text-center underline mb-2">Spa </div>
 
                             @foreach($extras['spa_counts'] as $index => $count)
+                            @if ($count > 0)
                             <div class="flex justify-between">
                                 <div class="font-semibold text-custom-marron">{{ $massages[$index]->type }}</div>
                                 <div>{{ $count }} x {{ $massages[$index]->prix_adulte }} € </div>
                             </div>
+                            @endif
                             @endforeach
                         </div>
                     </div>
