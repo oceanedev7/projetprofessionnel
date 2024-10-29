@@ -28,7 +28,7 @@
                     <strong>Nombre d'adultes :</strong> {{ session('nombreAdultes') }} adultes
                 </div>
 
-                @if(session('nombreEnfants') && session('nombreEnfants') > 0)
+                @if(session('nombreEnfants') > 0)
                     <div class="mb-2">
                         <strong>Nombre d'enfants :</strong> {{ session('nombreEnfants') }} enfants
                     </div>

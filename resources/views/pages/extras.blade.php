@@ -206,10 +206,12 @@
                                 <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreAdultes }} </div>
                             </div>
 
+                            @if ($nombreEnfants > 0)
                             <div class="flex space-x-2">
                                 <label class="text-custom-marron text-sm mt-1">Enfants :</label>
                                 <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreEnfants }} </div>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
