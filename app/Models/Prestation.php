@@ -19,9 +19,9 @@ class Prestation extends Model
         ];
     
     
-        public function reservation()
+        public function reservations()
         {
-            return $this->belongsTo(Reservation::class);
+            return $this->belongsToMany(Reservation::class);
         }
     
     

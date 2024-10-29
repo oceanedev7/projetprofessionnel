@@ -25,14 +25,12 @@ class ExtrasController extends Controller
         $nombreEnfants = $request->input('nombreEnfants');
     
        
-        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
-        $diner = Prestation::with('categorie')->where('id', 2)->first();
+        $restaurants = Prestation::with('categorie')->where('categorie_id', 1)->get();
         $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
     
     
         return view('pages.extras', [
-            'dejeuner' => $dejeuner,
-            'diner' => $diner,
+            'restaurants' => $restaurants,
             'massages' => $massages,
             'nomCabane' => $nomCabane,
             'capacite' => $capacite,
