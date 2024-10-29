@@ -156,7 +156,7 @@
 
 
 <div style="background-color:#F9F4EE" class="h-screen w-full"> 
-    
+
     <div id="animation-carousel" class="relative top-28 left-60 max-w-screen-md"  data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
@@ -170,11 +170,11 @@
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-100 ease-linear" data-carousel-item="active">
-                <img src="{{ Storage::url('images/caroussel3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane terrasse">
+                <img src="{{ Storage::url('images/caroussel3.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane salon">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-100 ease-linear" data-carousel-item>
-                <img src="{{ Storage::url('images/caroussel4.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane terrasse">
+                <img src="{{ Storage::url('images/caroussel4.jpg') }}" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Cabane chambre étage">
             </div>
         
         </div>
