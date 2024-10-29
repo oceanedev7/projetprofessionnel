@@ -87,43 +87,26 @@
 
         <div class="flex flex-col items-center justify-center md:flex-row md:justify-center md:space-x-60 relative md:top-16">
         
+            @foreach ($restaurants as $restaurant)
+                
+         
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
-                @if(isset($dejeuner))
-             <div class="text-lg font-bold text-center mb-2">{{ __('content.' . $dejeunerType) }}</div>
+        
+             <div class="text-lg font-bold text-center mb-2">{{ $restaurant->type}}</div>
                 <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
                     <div class="text-lg mb-2 md:mb-0">
                         <span class="font-semibold">{{ __('content.adulte') }} :</span>
-                        <span>{{ $dejeuner->prix_adulte }} €</span>
+                        <span>{{ $restaurant->prix_adulte }} €</span>
                     </div>
                     <div class="text-lg">
                         <span class="font-semibold">{{ __('content.enfant') }} :</span>
-                        <span>{{ $dejeuner->prix_enfant }} €</span>
+                        <span>{{ $restaurant->prix_enfant }} €</span>
                     </div>
                 </div>
                 <div class="text-center">{{ __('content.' . $dejeunerDescription) }}</div>
-                @endif
             </div>
-            
-            
-
-            <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
-                <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/diner.jpg') }}" alt="Déjeuner">
-                @if(isset($diner))
-                <div class="text-lg font-bold text-center mb-2">{{ __('content.' . $dinerType) }}</div>
-                <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
-                    <div class="text-lg mb-2 md:mb-0">
-                        <span class="font-semibold">{{ __('content.adulte') }} :</span>
-                        <span>{{ $diner->prix_adulte }} €</span>
-                    </div>
-                    <div class="text-lg">
-                        <span class="font-semibold">{{ __('content.enfant') }} :</span>
-                        <span>{{ $diner->prix_enfant }} €</span>
-                    </div>
-                </div>
-                <div class="text-center">{{ __('content.' . $dinerDescription) }}</div>
-                @endif
-            </div>
+   @endforeach
     
     </div>
     </div>

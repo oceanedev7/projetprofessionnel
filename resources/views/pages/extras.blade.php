@@ -65,6 +65,7 @@
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
                 <div class="uppercase font-bold text-custom-marron text-xl ml-4">Restauration</div>
                 <hr class="w-12 h-0.5 bg-custom-marron ml-2 mb-4">
+
         
                 <div class="flex ml-4 space-x-8 mb-6">
                     <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
@@ -83,7 +84,7 @@
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerAdulte">0</span> 
-                                <input type="hidden" name="dejeuner_adulte" id="inputDejeunerAdulte" value="0"> <!-- Champ caché pour adultes -->
+                                <input type="hidden" name="dejeuner_adulte" id="inputDejeunerAdulte" value="0"> 
                                 <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejAdulte(event)"> 
                                     <span> - </span>
                                 </button>
@@ -98,7 +99,7 @@
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dejeunerEnfant">0</span> 
-                                <input type="hidden" name="dejeuner_enfant" id="inputDejeunerEnfant" value="0"> <!-- Champ caché pour enfants -->
+                                <input type="hidden" name="dejeuner_enfant" id="inputDejeunerEnfant" value="0"> 
                                 <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDejEnfant(event)"> 
                                     <span> - </span>
                                 </button>
@@ -120,7 +121,7 @@
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerAdulte">0</span> 
-                                <input type="hidden" name="diner_adulte" id="inputDinerAdulte" value="0"> <!-- Champ caché pour adultes -->
+                                <input type="hidden" name="diner_adulte" id="inputDinerAdulte" value="0"> 
                                 <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinAdulte(event)"> 
                                     <span> - </span>
                                 </button>
@@ -135,7 +136,7 @@
                                     <span> + </span>
                                 </button>
                                 <span class="text-custom-marron font-black" id="dinerEnfant">0</span> 
-                                <input type="hidden" name="diner_enfant" id="inputDinerEnfant" value="0"> <!-- Champ caché pour enfants -->
+                                <input type="hidden" name="diner_enfant" id="inputDinerEnfant" value="0"> 
                                 <button type="button" class="bg-white text-custom-marron font-black rounded flex justify-center items-center py-0 px-2" onclick="substractDinEnfant(event)"> 
                                     <span> - </span>
                                 </button>
