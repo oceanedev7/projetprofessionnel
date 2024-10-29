@@ -58,7 +58,7 @@
 
     <div class="bg-custom-vert h-screen w-full" >
         <div class="flex flex-row"> 
-            <img class="w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Cabane intérieur">
+            <img class="w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Intérieur Cabane">
             <h1 class=" relative top-60 left-32 text-6xl text-white font-bold "> Réserver <br/> votre séjour </h1>
             <hr class="border-t-4 border-custom-beige w-24 relative top-96 right-52">
         </div>

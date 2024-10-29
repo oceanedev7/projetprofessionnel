@@ -68,7 +68,7 @@
         <div class="max-w-4xl border border-2 border-custom-marron rounded-lg bg-white mb-6">
             <div class="flex">
                 <div>
-                    <img class="max-w-sm rounded" src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="">
+                    <img class="max-w-sm rounded" src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="Cabane Eden">
                 </div>
 
                 <div class="flex flex-col p-8 justify-center">

@@ -14,7 +14,7 @@
     <div class="w-full h-screen bg-custom-vert flex"> 
 
         <div class="flex-1">             
-            <img class="h-full w-full object-cover" src="{{ Storage::url('images/reservation.jpg') }}" alt="Cabane menu">
+            <img class="h-full w-full object-cover" src="{{ Storage::url('images/reservation.jpg') }}" alt="Cabane au bord de l'eau">
         </div>
     
         <div class="flex-1 flex flex-col  items-center justify-center p-12">

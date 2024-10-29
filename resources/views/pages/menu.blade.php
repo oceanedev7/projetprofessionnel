@@ -17,7 +17,7 @@
             <div class="bg-custom-vert flex flex-col items-center justify-center md:w-1/2">
                 
                 <div class="flex justify-center md:relative md:bottom-8"> 
-                    <img class="h-[250px] w-[250px] max-w-full object-contain" src="{{ Storage::url('images/logomenu.png') }}" alt="Logo menu">
+                    <img class="h-[250px] w-[250px] max-w-full object-contain" src="{{ Storage::url('images/logomenu.png') }}" alt="Logo Tout Là-haut">
                 </div>
                 
                 <div class="flex flex-col space-y-4 md:space-y-6 md:text-xl text-lg text-white font-bold  md:relative md:bottom-14"> 
@@ -44,7 +44,7 @@
             </div>
         
             <div class="md:h-screen md:w-1/2 md:flex md:justify-end">
-                <img class="hidden  md:block w-[700px] md:h-screen" src="{{ Storage::url('images/cabanemenu.jpg') }}" alt="Cabane menu">
+                <img class="hidden  md:block w-[700px] md:h-screen" src="{{ Storage::url('images/cabanemenu.jpg') }}" alt="Intérieur Cabane">
             </div>
         </div>
         
