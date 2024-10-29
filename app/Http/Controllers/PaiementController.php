@@ -43,7 +43,7 @@ class PaiementController extends Controller
                 'amount' => $montant * 100, 
                 'currency' => 'eur', 
                 'source' => $request->stripeToken, 
-                'description' => 'Paiement pour votre commande', 
+                'description' => 'Paiement pour votre réservation', 
             ]);
 
            

@@ -10,13 +10,12 @@ class PrestationViewController extends Controller
 
     public function showPrestations()
     {
-        $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
-    $diner = Prestation::with('categorie')->where('id', 2)->first();
+    
+    $restaurants = Prestation::with('categorie')->where('categorie_id', 1)->get();
     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
 
     return view('pages.prestations', [
-        'dejeuner' => $dejeuner,
-        'diner' => $diner,
+        'restaurants' => $restaurants,
         'massages' => $massages,
 
         'dejeunerDescription' => 'dejeuner_description',
