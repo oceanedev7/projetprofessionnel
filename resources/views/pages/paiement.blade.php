@@ -91,7 +91,7 @@
                 <p class="text-red-600 font-bold text-center">{{ session('error') }}</p>
             @endif
 
-                <img class="w-full" src="{{ Storage::url('images/cblogo.png') }}" alt="Carte Google Maps">
+                <img class="w-full" src="{{ Storage::url('images/cblogo.png') }}" alt="Logos des services de paiement ">
 
             </div>
         </div>
@@ -101,7 +101,7 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script>
-    const stripe = Stripe('pk_test_51QCOnYC04zdWVjVGimUQlKBkErpT0ului28Q7pRcm8HkipLg5rbiWag7NVWn61KXFW5UookZ3OZNMUKb93s7FOkG00p8bC31zV'); // Clé publique Stripe
+    const stripe = Stripe('pk_test_51QCOnYC04zdWVjVGimUQlKBkErpT0ului28Q7pRcm8HkipLg5rbiWag7NVWn61KXFW5UookZ3OZNMUKb93s7FOkG00p8bC31zV'); 
     const elements = stripe.elements();
     
     const cardElement = elements.create('card');

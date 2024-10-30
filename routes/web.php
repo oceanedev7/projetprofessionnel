@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminReservationController;
 use App\Http\Controllers\AvailableRoomController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EquipementController;
@@ -96,6 +97,9 @@ Route::get('/moncompte/reservations', [UserReservationController::class, 'index'
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
+
+Route::get('/admin/reservations', [AdminReservationController::class, 'index'])->name('admin-reservation');
+Route::get('/admin/reservations/details/{id}', [AdminReservationController::class, 'show'])->name('admin-reservation-details');
 
 
 Route::get('/admin/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');

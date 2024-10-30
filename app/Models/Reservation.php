@@ -11,6 +11,8 @@ class Reservation extends Model
 
     protected $fillable = [
         'user_id',
+        'guest_id',
+        'paiement_id',
         'nomCabane',
        'nombreAdultes',
         'nombreEnfants',
@@ -38,7 +40,8 @@ class Reservation extends Model
 
     public function prestations()
     {
-        return $this->belongsToMany(Prestation::class);
+        return $this->belongsToMany(Prestation::class, 'reservation__prestations')
+        ->withPivot('quantite');
     }
 
     public function cabane()

@@ -21,7 +21,8 @@ class Prestation extends Model
     
         public function reservations()
         {
-            return $this->belongsToMany(Reservation::class);
+            return $this->belongsToMany(Reservation::class, 'reservation__prestations')
+                    ->withPivot('quantite');
         }
     
     

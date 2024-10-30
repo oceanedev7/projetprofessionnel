@@ -31,62 +31,63 @@ class ClientInfoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    // public function store(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'dejeuner_adulte' => 'required|integer|min:0',
-    //         'dejeuner_enfant' => 'required|integer|min:0',
-    //         'diner_adulte' => 'required|integer|min:0',
-    //         'diner_enfant' => 'required|integer|min:0',
-    //         'spa_count' => 'array', 
-    //     ]);
-    
-    //     $extras = [
-    //         'dejeuner_adulte' => $validatedData['dejeuner_adulte'],
-    //         'dejeuner_enfant' => $validatedData['dejeuner_enfant'],
-    //         'diner_adulte' => $validatedData['diner_adulte'],
-    //         'diner_enfant' => $validatedData['diner_enfant'],
-    //         'spa_counts' => $validatedData['spa_count'],
-    //     ];
-        
-        
-    //     $nomCabane = $request->input('nomCabane');
-    //     $capacite = $request->input('capacite');
-    //     $prixTotal = $request->input('prixTotal');
-    //     $dateArrivee = $request->input('dateArrivee');
-    //     $dateDepart = $request->input('dateDepart');
-    //     $nombreNuitees = $request->input('nombreNuitees');
-    //     $nombreAdultes = $request->input('nombreAdultes');
-    //     $nombreEnfants = $request->input('nombreEnfants');
-    
+ 
+//     public function store(Request $request)
+// {
+//     $validatedData = $request->validate([     
+//         'spa_count' => 'array', 
+//         'catering_adult' => 'array', 
+//         'catering_child' => 'array', 
+//     ]);
 
-    //     $dejeuner = Prestation::with('categorie')->where('id', 1)->first();
-    //     $diner = Prestation::with('categorie')->where('id', 2)->first();
-    //     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
+//     $extras = [
+//         'spa_counts' => $validatedData['spa_count'],
+//         'catering_adults' => $validatedData['catering_adult'],
+//         'catering_children' => $validatedData['catering_child'],
+//     ];
     
-    //     $totalExtra = 0;
-    
-    //     $totalExtra += $extras['dejeuner_adulte'] * $dejeuner->prix_adulte;
-    //     $totalExtra += $extras['dejeuner_enfant'] * $dejeuner->prix_enfant;
-    //     $totalExtra += $extras['diner_adulte'] * $diner->prix_adulte;
-    //     $totalExtra += $extras['diner_enfant'] * $diner->prix_enfant;
-    
-    //     foreach ($extras['spa_counts'] as $index => $count) {
-    //         if ($count > 0) {
-    //             $totalExtra += $count * $massages[$index]->prix_adulte;
-    //         }
-    //     }
+//     $nomCabane = $request->input('nomCabane');
+//     $capacite = $request->input('capacite');
+//     $prixTotal = $request->input('prixTotal');
+//     $dateArrivee = $request->input('dateArrivee');
+//     $dateDepart = $request->input('dateDepart');
+//     $nombreNuitees = $request->input('nombreNuitees');
+//     $nombreAdultes = $request->input('nombreAdultes');
+//     $nombreEnfants = $request->input('nombreEnfants');
 
-    //     $prixFinal = $prixTotal + $totalExtra; 
-    
-    //     return view('pages.client-info', compact('extras', 'massages', 'dejeuner', 'diner', 'totalExtra', 
-    //         'nomCabane', 'capacite', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
-    //         'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal' )); 
-    // }
-    
+//     $restaurants = Prestation::with('categorie')->where('categorie_id', 1)->get();
+//     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
 
+//     $totalExtra = 0;
 
-    public function store(Request $request)
+//     foreach ($extras['catering_adults'] as $index => $count) {
+//         if ($count > 0) {
+//             $totalExtra += $count * $restaurants[$index]->prix_adulte;
+//         }
+//     }
+
+//     foreach ($extras['catering_children'] as $index => $count) {
+//         if ($count > 0) {
+//             $totalExtra += $count * $restaurants[$index]->prix_enfant;
+//         }
+//     }
+
+//     foreach ($extras['spa_counts'] as $index => $count) {
+//         if ($count > 0) {
+//             $totalExtra += $count * $massages[$index]->prix_adulte;
+//         }
+//     }
+
+//     $prixFinal = $prixTotal + $totalExtra; 
+
+//     return view('pages.client-info', compact(
+//         'extras', 'massages', 'restaurants', 'totalExtra', 'nomCabane', 
+//         'capacite', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
+//         'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal'
+//     )); 
+// }
+
+public function store(Request $request)
 {
     $validatedData = $request->validate([     
         'spa_count' => 'array', 
@@ -114,23 +115,36 @@ class ClientInfoController extends Controller
 
     $totalExtra = 0;
 
+    $prestationsIds = [];
     foreach ($extras['catering_adults'] as $index => $count) {
         if ($count > 0) {
+            $prestationsIds[] = $restaurants[$index]->id; 
             $totalExtra += $count * $restaurants[$index]->prix_adulte;
         }
     }
 
     foreach ($extras['catering_children'] as $index => $count) {
         if ($count > 0) {
+            $prestationsIds[] = $restaurants[$index]->id; 
             $totalExtra += $count * $restaurants[$index]->prix_enfant;
         }
     }
 
     foreach ($extras['spa_counts'] as $index => $count) {
         if ($count > 0) {
+            $prestationsIds[] = $massages[$index]->id; 
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
+
+    session([
+        'prestations_ids' => $prestationsIds,
+        'prestations_quantites' => array_merge(
+            $extras['catering_adults'], 
+            $extras['catering_children'], 
+            $extras['spa_counts']
+        )
+    ]);
 
     $prixFinal = $prixTotal + $totalExtra; 
 

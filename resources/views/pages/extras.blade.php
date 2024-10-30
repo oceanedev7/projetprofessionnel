@@ -122,7 +122,7 @@
                     @foreach ($massages as $index => $massage)
                     <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
                         <div class="rounded-md">
-                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="">
+                            <img class="mb-2 rounded-md" src="{{ Storage::url('images/resaspa.jpg') }}" alt="Prestation Spa">
                         </div>
                         <div class="text-white font-medium mb-4 flex flex-col text-center">
                             {{ $massage->type }} 
