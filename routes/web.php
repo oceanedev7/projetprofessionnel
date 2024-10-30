@@ -99,6 +99,8 @@ Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang
 
 
 Route::get('/admin/reservations', [AdminReservationController::class, 'index'])->name('admin-reservation');
+Route::get('/admin/reservations/details/{id}', [AdminReservationController::class, 'show'])->name('admin-reservation-details');
+
 
 Route::get('/admin/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
 Route::post('/cabanes/create', [CabaneController::class, 'create'])->name('ajouterCabane');

@@ -38,7 +38,9 @@ class AdminReservationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $reservation = Reservation::with('prestations')->findOrFail($id);
+
+    return view('pages.admin.reservation-details', compact('reservation'));
     }
 
     /**
