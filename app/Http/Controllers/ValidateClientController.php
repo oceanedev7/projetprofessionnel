@@ -129,7 +129,6 @@ class ValidateClientController extends Controller
 
 public function store(Request $request)
 {
-    // Récupération des données de la requête
     $nomCabane = $request->input('nomCabane');
     $capacite = $request->input('capacite');
     $dateArrivee = $request->input('dateArrivee');
@@ -139,7 +138,6 @@ public function store(Request $request)
     $nombreEnfants = $request->input('nombreEnfants');
     $prixFinal = $request->input('montant');
 
-    // Validation des données de la requête
     $validated = $request->validate([
         'prenom' => 'required|string',
         'nom' => 'required|string',
@@ -161,11 +159,9 @@ public function store(Request $request)
     $user = null;
     $guest = null;
 
-    // Vérifier si l'utilisateur est connecté
     if (Auth::check()) {
         $user = Auth::user();
 
-        // Création de la réservation et récupération de l'instance
         $reservation = Reservation::create([
             'user_id' => $user->id,
             'guest_id' => null,
@@ -179,7 +175,7 @@ public function store(Request $request)
             'prix' => $prixFinal,
         ]);
     } else {
-        // Création d'un nouvel invité
+
         $guest = Guest::create([
             'prenom' => $validated['prenom'],
             'nom' => $validated['nom'],
@@ -190,7 +186,6 @@ public function store(Request $request)
             'ville' => $validated['ville'],
         ]);
 
-        // Création de la réservation et récupération de l'instance
         $reservation = Reservation::create([
             'user_id' => null,
             'guest_id' => $guest->id,
@@ -205,22 +200,15 @@ public function store(Request $request)
         ]);
     }
 
-    // Récupérer les données des prestations de la session
-    $prestationsIds = session('prestations_ids'); // IDs des prestations
-    $prestationsQuantities = session('prestations_quantities'); // Quantités des prestations
+    $prestationsIds = session('prestations_ids'); 
+    $prestationsQuantites = session('prestations_quantites'); 
 
-    // Attacher les prestations à la réservation
-    if (!empty($prestationsIds) && !empty($prestationsQuantities)) {
-        foreach ($prestationsIds as $index => $prestId) {
-            if (isset($prestationsQuantities[$index]) && $prestationsQuantities[$index] > 0) {
-                $reservation->prestations()->attach($prestId, [
-                    'quantite' => $prestationsQuantities[$index],
-                ]);
-            }
-        }
+    foreach ($prestationsIds as $index => $prestId) {
+        $reservation->prestations()->attach($prestId, [
+            'quantite' => $prestationsQuantites[$index],
+        ]);
     }
 
-    // Stocker les données dans la session
     session([
         'nomCabane' => $nomCabane,
         'dateArrivee' => $dateArrivee,

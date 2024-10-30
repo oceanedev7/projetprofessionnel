@@ -115,33 +115,31 @@ public function store(Request $request)
 
     $totalExtra = 0;
 
-    // Récupérer les IDs des prestations
     $prestationsIds = [];
     foreach ($extras['catering_adults'] as $index => $count) {
         if ($count > 0) {
-            $prestationId[] = $restaurants[$index]->id; 
+            $prestationsIds[] = $restaurants[$index]->id; 
             $totalExtra += $count * $restaurants[$index]->prix_adulte;
         }
     }
 
     foreach ($extras['catering_children'] as $index => $count) {
         if ($count > 0) {
-            $prestationId[] = $restaurants[$index]->id; // Ajouter l'ID à la liste
+            $prestationsIds[] = $restaurants[$index]->id; 
             $totalExtra += $count * $restaurants[$index]->prix_enfant;
         }
     }
 
     foreach ($extras['spa_counts'] as $index => $count) {
         if ($count > 0) {
-            $prestationsIds[] = $massages[$index]->id; // Ajouter l'ID à la liste
+            $prestationsIds[] = $massages[$index]->id; 
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
 
-    // Stocker les IDs et les quantités dans la session
     session([
         'prestations_ids' => $prestationsIds,
-        'prestations_quantities' => array_merge(
+        'prestations_quantites' => array_merge(
             $extras['catering_adults'], 
             $extras['catering_children'], 
             $extras['spa_counts']
