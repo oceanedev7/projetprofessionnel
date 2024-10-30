@@ -34,9 +34,10 @@ class PaiementController extends Controller
     public function store(Request $request)
 {
     $montant = session('prixFinal');
-
+//   dd($montant);
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
+      
         try {
           
             $charge = Charge::create([

@@ -193,6 +193,7 @@
                     <div class="text-center mb-4 font-semibold italic">Adultes</div>
 
                     @foreach($extras['catering_adults'] as $index => $count)
+                    @if ($count > 0)
                     <div class="flex justify-between">
                         <div class="font-semibold text-custom-marron">  
                             @php
@@ -205,6 +206,7 @@
 
                         <div>{{ $count }} x {{ $restaurants[$index]->prix_adulte }} € </div>
                     </div>
+                    @endif
                     @endforeach
 
 

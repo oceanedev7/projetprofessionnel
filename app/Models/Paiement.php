@@ -13,7 +13,6 @@ class Paiement extends Model
     protected $fillable = [
         'moyenPaiement',
         'montant',
-        'datePaiement',
         'statutPaiement',
         'description',
      ];

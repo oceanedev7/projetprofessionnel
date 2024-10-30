@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('reservation__prestations', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('prestation_id');
+            $table->unsignedBigInteger('prestation_id')->nullable();
             $table->unsignedBigInteger('reservation_id');
-            $table->integer('quantite');
+            $table->integer('quantite')->nullable();
 
             $table->foreign('prestation_id')->references('id')->on('prestations')->onDelete('cascade');
             $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade');
