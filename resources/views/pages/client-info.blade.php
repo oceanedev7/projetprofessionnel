@@ -247,13 +247,18 @@
                         <div class="italic font-black text-custom-marron"> Total des extras :  </div>
                         <div class="font-black text-custom-marron"> {{ $totalExtra }} € </div>
                     </div>
+
+                    <div class="flex justify-between"> 
+                        <div class="italic font-black text-custom-marron"> Total de la cabane:  </div>
+                        <div class="font-black text-custom-marron"> {{ $prixTotal }} € </div>
+                    </div>
                 
                 <div class="flex flex-col mt-4 space-y-2">
                     <hr class="border-1 h-0.5 bg-custom-marron">
 
                     <div class="flex justify-between">
                         <label class="font-black text-custom-marron uppercase text-xl">Total :</label>
-                        <div class="font-black text-custom-marron text-xl"> {{ $prixTotal }} € </div>
+                        <div class="font-black text-custom-marron text-xl"> {{ $prixFinal }} € </div>
                     </div>
                 </div>
 
