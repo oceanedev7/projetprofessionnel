@@ -23,14 +23,14 @@ class Reservation extends Model
         'prix',
      ];
 
-     public function client()
+     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function guest()
     {
-        return $this->belongsTo(Guest::class);
+        return $this->belongsTo(Guest::class, 'guest_id');
     }
 
     public function paiement()
