@@ -86,8 +86,10 @@
 
          <div class="flex space-x-2">
             <div>{{ $reservation->nombreAdultes }} adultes</div>
+            @if ($reservation->nombreEnfants > 0)  
             <div> - </div>  
-            <div> {{ $reservation->nombreEnfants }} enfants</div>
+            <div> {{ $reservation->nombreEnfants }} enfants</div>  
+            @endif
          </div>
 
     <div class="flex flex-col ml-auto">

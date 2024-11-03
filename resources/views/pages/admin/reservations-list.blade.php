@@ -26,7 +26,7 @@
                     <img class="w-[200px] h-[200px] rounded-lg"  src="{{ Storage::url('images/osmose.png') }}" alt="Cabane Osmose">
 
                     <div class="flex-1">
-                        <h2 class="text-2xl font-semibold mb-2">{{ $reservation->nomCabane }}</h2>
+                        <h2 class="text-2xl font-semibold mb-2">{{ $reservation->nomCabane}}</h2>
                         
                         <div>
                             <p><span class="font-medium">Adultes :</span> {{ $reservation->nombreAdultes }}</p>
