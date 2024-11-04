@@ -25,7 +25,6 @@ class CabaneController extends Controller
      */
     public function create(Request $request)
     {
-        // dd($request);
         $request->validate(
             [
             'nomCabane'=>'required|string|min:3',
@@ -58,8 +57,7 @@ class CabaneController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request); 
-        // dd($request->nomCabane);
+        
         $validatedData =  $request->validate(
             [
             'nomCabane'=>'required|string|min:3',
@@ -68,9 +66,7 @@ class CabaneController extends Controller
             'prix'=>'required|numeric',
             'disponibilite'=>'required|boolean',
             ]);
-            // dd($request->nomCabane);
-            // dd($id);         
-
+               
             $update=Cabane::findOrFail($id);  
             $update->update($validatedData);
     
