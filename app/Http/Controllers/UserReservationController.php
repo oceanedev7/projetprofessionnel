@@ -13,9 +13,15 @@ class UserReservationController extends Controller
     public function index()
     {
         
-         $user = Auth::user();
+    //      $user = Auth::user();
 
-         $reservations = $user->reservations; 
+    //  $reservations = $user->reservations; 
+    $user = Auth::user();
+
+    // Si l'utilisateur est connecté, obtenir ses réservations
+    $reservations = $user->reservations()->orderBy('created_at', 'desc')->get();
+
+
 
          return view('pages.user-reservation', compact('reservations'));
     }

@@ -12,8 +12,7 @@ class AdminReservationController extends Controller
      */
     public function index()
     {
-        $reservations = Reservation::with(['prestations', 'user', 'guest'])->get();
-
+        $reservations = Reservation::with(['prestations', 'user', 'guest'])->orderBy('created_at', 'desc')->get();
         return view('pages.admin.reservations-list', compact('reservations'));
     }
 
@@ -38,7 +37,7 @@ class AdminReservationController extends Controller
      */
     public function show(string $id)
     {
-        $reservation = Reservation::with('prestations')->findOrFail($id);
+        $reservation = Reservation::with(['prestations', 'user', 'guest'])->findOrFail($id);
 
     return view('pages.admin.reservation-details', compact('reservation'));
     }

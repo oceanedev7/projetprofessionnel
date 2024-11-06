@@ -19,40 +19,80 @@
         <div class="text-center uppercase text-3xl font-black text-white"> listes des réservations </div>
         
         
-        <div class="container mx-auto p-4 space-y-8 mt-10">
+        <div class="mx-auto p-4 space-y-8 mt-10">
             @foreach($reservations as $reservation)
-                <div class="flex flex-row md:flex-row items-center bg-white rounded-lg shadow-md p-6 ">
-                    
-                    <img class="w-[200px] h-[200px] rounded-lg"  src="{{ Storage::url('images/osmose.png') }}" alt="Cabane Osmose">
 
+        
+                <div class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md p-6 space-y-6 md:space-y-0 md:space-x-10">
+    
+                    <img class="w-[200px] h-[200px] rounded-lg" src="{{ Storage::url('images/osmose.png') }}" alt="Cabane Osmose">
+                    
                     <div class="flex-1">
-                        <h2 class="text-2xl font-semibold mb-2">{{ $reservation->nomCabane}}</h2>
+                        <h2 class="text-xl font-bold uppercase text-custom-marron mb-2">{{ $reservation->nomCabane }}</h2>
                         
                         <div>
                             <p><span class="font-medium">Adultes :</span> {{ $reservation->nombreAdultes }}</p>
-
                             @if ($reservation->nombreEnfants > 0)
                                 <p><span class="font-medium">Enfants :</span> {{ $reservation->nombreEnfants }}</p>
-                           @endif 
-
+                            @endif
                         </div>
                         
-                        <div class="mb-4">
+                        
+                        <div>
                             <p><span class="font-medium">Arrivée :</span> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</p>
                             <p><span class="font-medium">Départ :</span> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</p>
                         </div>
                     </div>
                     
-                    <div class="flex flex-col space-y-2"> 
-                    <div class="font-semibold  mt-4 md:mt-0 md:ml-6">
-                        Prix Total : {{ $reservation->prix }} €
+                    <hr class="w-0 h-32 border-l-2 border-black relative right-7" />
+                    
+                    <div class="flex-1 ">
+                        <h2 class="text-xl font-bold uppercase mb-2 text-custom-marron">Informations client</h2>
+                
+                        <p><span class="font-medium">Nom :</span>
+                            @if ($reservation->user)
+                                {{ $reservation->user->nom }}
+                            @elseif ($reservation->guest)
+                                {{ $reservation->guest->nom }}
+                            @endif
+                        </p>
+                        <p><span class="font-medium">Prénom :</span>
+                            @if ($reservation->user)
+                                {{ $reservation->user->prenom }}
+                            @elseif ($reservation->guest)
+                                {{ $reservation->guest->prenom }}
+                            @endif
+                        </p>
+                        <p><span class="font-medium">Numéro de tél. :</span>
+                            @if ($reservation->user)
+                                {{ $reservation->user->telephone }}
+                            @elseif ($reservation->guest)
+                                {{ $reservation->guest->telephone }}
+                            @endif
+                        </p>
+                        <p><span class="font-medium">Adresse email :</span>
+                            @if ($reservation->user)
+                                {{ $reservation->user->email }}
+                            @elseif ($reservation->guest)
+                                {{ $reservation->guest->email }}
+                                @endif
+                        </p>
                     </div>
-        
-                    <a href="{{route ('admin-reservation-details' , ['id' => $reservation->id])}}" class="bg-custom-marron rounded text-white font-bold py-2 px-4 mt-4 md:mt-0 md:ml-6">
-                        Voir le détail
-                    </a>
+                    
+                    <div class="flex flex-col  space-y-2">
+                        <div class="font-bold text-lg uppercase">
+                            Prix Total : {{ $reservation->prix }} €
+                        </div>
+                        
+                        <a href="{{ route('admin-reservation-details', ['id' => $reservation->id]) }}" 
+                           class="bg-custom-marron rounded text-white font-bold py-2 text-center">
+                            Voir le détail
+                        </a>
                     </div>
                 </div>
+                
+                
+                
             @endforeach
         </div>
         
