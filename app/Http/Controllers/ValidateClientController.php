@@ -204,7 +204,7 @@ public function store(Request $request)
     $prestationsQuantites = session('prestations_quantites'); 
     $prestationsTypes = session('prestations_types');
 
-
+dd($prestationsQuantites, $prestationsIds);
     foreach ($prestationsIds as $index => $prestId) {
         $reservation->prestations()->attach($prestId, [
             'quantite' => $prestationsQuantites[$index],

@@ -82,6 +82,9 @@ Route::get('/reservation/confirmation', function () {
 })->name('confirmed');
 
 Route::get('/moncompte/reservations', [UserReservationController::class, 'index'])->name('user-reservation');
+Route::get('/moncompte/reservation/details/{id}', [UserReservationController::class, 'show'])->name('user-reservation-details');
+Route::get('/moncompte/reservation/delete/{id}', [UserReservationController::class, 'destroy'])->name('supprimer-user-reservation');
+
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 

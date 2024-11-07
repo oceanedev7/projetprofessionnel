@@ -135,13 +135,14 @@ public function store(Request $request)
     }
 
     foreach ($extras['spa_counts'] as $index => $count) {
-        if ($count > 0) {
+        if ($count > 0) {       
+
             $prestationsIds[] = $massages[$index]->id; 
             $prestationsTypes[] = null;
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
-    // dd($extras['spa_counts']);
+w            //  dd($count, 'extras', $extras);
 
 
     session([
