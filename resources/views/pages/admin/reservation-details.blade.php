@@ -92,7 +92,7 @@
     @endif
 
 
-    @if($prestation->pivot->type === null)
+    @if($prestation->pivot->type === 'Massage')
     <div class="flex space-x-1">
         <div class="flex font-semibold space-x-1">
      <div>

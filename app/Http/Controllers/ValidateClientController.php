@@ -200,15 +200,24 @@ public function store(Request $request)
         ]);
     }
 
-    $prestationsIds = session('prestations_ids'); 
-    $prestationsQuantites = session('prestations_quantites'); 
-    $prestationsTypes = session('prestations_types');
+    $restaurationIds = session('restauration_ids');
+$restaurationQuantites = session('restauration_quantites');
+$massageIds = session('massage_ids');
+$massageQuantites = session('massage_quantites');
+$prestationsTypes = session('prestations_types');
+           
 
-dd($prestationsQuantites, $prestationsIds);
-    foreach ($prestationsIds as $index => $prestId) {
-        $reservation->prestations()->attach($prestId, [
-            'quantite' => $prestationsQuantites[$index],
-            'type' => $prestationsTypes[$index],
+    foreach ($restaurationIds as $index => $restId) {
+        $reservation->prestations()->attach($restId, [
+            'quantite' => $restaurationQuantites[$index], 
+            'type' => $prestationsTypes[$index] 
+        ]);
+    }
+
+    foreach ($massageIds as $index => $massageId) {
+        $reservation->prestations()->attach($massageId, [
+            'quantite' => $massageQuantites[$index],  
+            'type' => 'Massage'  
         ]);
     }
 
