@@ -115,12 +115,16 @@ public function store(Request $request)
 
     $totalExtra = 0;
 
-    $prestationsIds = [];
-    $prestationsTypes = [];
+    $restaurationIds = [];
+$massageIds = [];
+$restaurationQuantites = [];
+$massageQuantites = [];
+$prestationsTypes = [];
 
     foreach ($extras['catering_adults'] as $index => $count) {
         if ($count > 0) {
-            $prestationsIds[] = $restaurants[$index]->id; 
+            $restaurationIds[] = $restaurants[$index]->id; 
+            $restaurationQuantites[] = $count;
             $prestationsTypes[] = 'Adulte';
             $totalExtra += $count * $restaurants[$index]->prix_adulte;
         }
@@ -128,31 +132,31 @@ public function store(Request $request)
 
     foreach ($extras['catering_children'] as $index => $count) {
         if ($count > 0) {
-            $prestationsIds[] = $restaurants[$index]->id;
+            $restaurationIds[] = $restaurants[$index]->id;
+            $restaurationQuantites[] = $count;
             $prestationsTypes[] = 'Enfant';  
             $totalExtra += $count * $restaurants[$index]->prix_enfant;
         }
     }
 
     foreach ($extras['spa_counts'] as $index => $count) {
-        if ($count > 0) {
-            $prestationsIds[] = $massages[$index]->id; 
-            $prestationsTypes[] = null;
+        if ($count > 0) {       
+
+            $massageIds[] = $massages[$index]->id;
+            $massageQuantites[] = $count; 
+            $prestationsTypes[] = 'Massage';
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
-    // dd($extras['spa_counts']);
+       
 
-
-    session([
-        'prestations_ids' => $prestationsIds,
-        'prestations_types' => $prestationsTypes,
-        'prestations_quantites' => array_merge(
-            $extras['catering_adults'], 
-            $extras['catering_children'], 
-            $extras['spa_counts']
-        )
-    ]);
+        session([
+            'restauration_ids' => $restaurationIds,
+            'restauration_quantites' => $restaurationQuantites,
+            'massage_ids' => $massageIds,
+            'massage_quantites' => $massageQuantites,
+            'prestations_types' => $prestationsTypes,
+        ]);
 
     $prixFinal = $prixTotal + $totalExtra; 
 

@@ -28,7 +28,6 @@
                 <div class="mb-6 "> 
             <div class="text-white space-y-4"> 
                 <div class="font-bold text-2xl">Votre réservation est confirmée !</div>
-                <div class="font-semibold text-xl" >Réservation N°</div>
                 <div class="text-justify">Merci d'avoir choisi TOUT LÀ-HAUT pour votre séjour. 
                 Nous nous réjouissons de vous accueillir au sein de notre domaine et serons à votre disposition tout au long du séjour.</div>
             </div>

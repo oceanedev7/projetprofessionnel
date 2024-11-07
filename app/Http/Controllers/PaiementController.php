@@ -34,12 +34,11 @@ class PaiementController extends Controller
     public function store(Request $request)
 {
     $montant = session('prixFinal');
-//   dd($montant);
+
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-      
         try {
-          
+            
             $charge = Charge::create([
                 'amount' => $montant * 100, 
                 'currency' => 'eur', 
@@ -47,7 +46,6 @@ class PaiementController extends Controller
                 'description' => 'Paiement pour votre réservation', 
             ]);
 
-           
             Paiement::create([
                 'moyenPaiement' => 'Stripe', 
                 'montant' => $montant, 
@@ -55,7 +53,6 @@ class PaiementController extends Controller
                 'description' => 'Paiement effectué via Stripe pour la commande #' . $charge->id,
             ]);
 
-            
             return redirect()->route('confirmed')->with('success', 'Paiement effectué avec succès !');
             
         } catch (\Exception $e) {
@@ -67,7 +64,6 @@ class PaiementController extends Controller
                 'description' => 'Erreur lors du paiement : ' . $e->getMessage(),
             ]);
 
-            
             return redirect()->route('payment.failure')->with('error', 'Erreur lors du paiement. Veuillez réessayer.');
 }
 }

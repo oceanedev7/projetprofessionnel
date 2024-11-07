@@ -16,8 +16,7 @@ class CabaneController extends Controller
     {
         $afficherCabanes = Cabane::all();
       
-    return view(
-        'pages.admin.cabanes-create', ['cabanes'=>$afficherCabanes]
+        return view('pages.admin.cabanes-create', ['cabanes'=>$afficherCabanes]
     );}
 
     /**
@@ -48,7 +47,6 @@ class CabaneController extends Controller
     public function edit(string $id)
     {
         $cabane=Cabane::findOrFail($id); 
-        // dd($edit);
         return view("pages.admin.editCabane", compact('cabane'));
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -40,7 +41,8 @@ class UserReservationController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $reservation = Reservation::with('prestations')->findOrFail($id);
+        return view('pages.user-reservation-details', compact('reservation'));
     }
 
     /**
@@ -64,6 +66,9 @@ class UserReservationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $delete  = Reservation::findOrFail($id);
+        $delete->delete();
+
+        return redirect("/moncompte/reservations");
     }
 }
