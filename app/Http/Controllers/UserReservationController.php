@@ -13,9 +13,8 @@ class UserReservationController extends Controller
     public function index()
     {
         
-         $user = Auth::user();
-
-         $reservations = $user->reservations; 
+     $user = Auth::user();
+     $reservations = $user->reservations;
 
          return view('pages.user-reservation', compact('reservations'));
     }

@@ -116,16 +116,20 @@ public function store(Request $request)
     $totalExtra = 0;
 
     $prestationsIds = [];
+    $prestationsTypes = [];
+
     foreach ($extras['catering_adults'] as $index => $count) {
         if ($count > 0) {
             $prestationsIds[] = $restaurants[$index]->id; 
+            $prestationsTypes[] = 'Adulte';
             $totalExtra += $count * $restaurants[$index]->prix_adulte;
         }
     }
 
     foreach ($extras['catering_children'] as $index => $count) {
         if ($count > 0) {
-            $prestationsIds[] = $restaurants[$index]->id; 
+            $prestationsIds[] = $restaurants[$index]->id;
+            $prestationsTypes[] = 'Enfant';  
             $totalExtra += $count * $restaurants[$index]->prix_enfant;
         }
     }
@@ -133,12 +137,16 @@ public function store(Request $request)
     foreach ($extras['spa_counts'] as $index => $count) {
         if ($count > 0) {
             $prestationsIds[] = $massages[$index]->id; 
+            $prestationsTypes[] = null;
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
+    // dd($extras['spa_counts']);
+
 
     session([
         'prestations_ids' => $prestationsIds,
+        'prestations_types' => $prestationsTypes,
         'prestations_quantites' => array_merge(
             $extras['catering_adults'], 
             $extras['catering_children'], 
