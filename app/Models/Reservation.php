@@ -41,7 +41,7 @@ class Reservation extends Model
     public function prestations()
     {
         return $this->belongsToMany(Prestation::class, 'reservation__prestations')
-        ->withPivot('quantite');
+        ->withPivot('quantite' , 'type');
     }
 
     public function cabane()

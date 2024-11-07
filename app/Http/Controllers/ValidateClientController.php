@@ -202,10 +202,13 @@ public function store(Request $request)
 
     $prestationsIds = session('prestations_ids'); 
     $prestationsQuantites = session('prestations_quantites'); 
+    $prestationsTypes = session('prestations_types');
+
 
     foreach ($prestationsIds as $index => $prestId) {
         $reservation->prestations()->attach($prestId, [
             'quantite' => $prestationsQuantites[$index],
+            'type' => $prestationsTypes[$index],
         ]);
     }
 

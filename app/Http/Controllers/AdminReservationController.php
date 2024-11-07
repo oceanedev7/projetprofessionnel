@@ -63,6 +63,9 @@ class AdminReservationController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $delete  = Reservation::findOrFail($id);
+        $delete->delete();
+
+        return redirect("admin/reservations");
     }
 }

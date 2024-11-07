@@ -89,6 +89,7 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/reservations', [AdminReservationController::class, 'index'])->name('admin-reservation');
     Route::get('/reservations/details/{id}', [AdminReservationController::class, 'show'])->name('admin-reservation-details');
+    Route::get('/reservation/delete/{id}', [AdminReservationController::class, 'destroy'])->name('supprimerReservation');
 
     Route::get('/cabanes', [CabaneController::class, 'index'])->name('afficherCabane');
     Route::post('/cabanes/create', [CabaneController::class, 'create'])->name('ajouterCabane');

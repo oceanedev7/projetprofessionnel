@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('prestation_id')->nullable();
             $table->unsignedBigInteger('reservation_id');
             $table->integer('quantite')->nullable();
+            $table->string('type')->nullable();
+
 
             $table->foreign('prestation_id')->references('id')->on('prestations')->onDelete('cascade');
             $table->foreign('reservation_id')->references('id')->on('reservations')->onDelete('cascade');
