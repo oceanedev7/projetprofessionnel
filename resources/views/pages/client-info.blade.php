@@ -71,13 +71,13 @@
                         <input 
                         name="prenom"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Prénom" 
+                            placeholder="{{ __('content.prenom') }}" 
                             value="{{ Auth::user()->prenom ?? '' }}"
                         >
                         <input 
                         name="nom"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Nom" 
+                            placeholder="{{ __('content.nom') }}" 
                             value="{{ Auth::user()->nom ?? '' }}"
                         >
                     </div>
@@ -85,13 +85,13 @@
                         <input 
                         name="telephone"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Numéro de téléphone" 
+                            placeholder="{{ __('content.telephone') }}" 
                             value="{{ Auth::user()->telephone ?? '' }}"
                         >
                         <input 
                         name="email"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Adresse email" 
+                            placeholder="{{ __('content.email') }}" 
                             value="{{ Auth::user()->email ?? '' }}"
                         >
                     </div>
@@ -99,7 +99,7 @@
                     <input
                     name="adresse_postale"
                         class="rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                        placeholder="Adresse postale" 
+                        placeholder="{{ __('content.postale') }}" 
                         value="{{ Auth::user()->adresse_postale ?? '' }}"
                     >
         
@@ -107,13 +107,13 @@
                         <input 
                         name="code_postal"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Code postal" 
+                            placeholder="{{ __('content.code') }}" 
                             value="{{ Auth::user()->code_postal ?? '' }}"
                         >
                         <input 
                         name="ville"
                             class="w-full rounded border-custom-marron border-solid border-2 py-2 px-4 focus:border-custom-vert focus:ring-custom-vert" 
-                            placeholder="Ville" 
+                            placeholder="{{ __('content.ville') }}" 
                             value="{{ Auth::user()->ville ?? '' }}"
                         >
                     </div>
@@ -132,6 +132,13 @@
                         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
                         <input type="hidden" name="montant" value="{{ $prixFinal }}">
+                        
+
+                        <input type="hidden" name="restaurationIds" value="{{ implode(',', $restaurationIds) }}">
+                        <input type="hidden" name="restaurationQuantites" value="{{ implode(',', $restaurationQuantites) }}">
+                        <input type="hidden" name="massageIds" value="{{ implode(',', $massageIds) }}">
+                        <input type="hidden" name="massageQuantites" value="{{ implode(',', $massageQuantites) }}">
+                        <input type="hidden" name="prestationsTypes" value="{{ implode(',', $prestationsTypes) }}">
 
                     <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
                 </form>
@@ -140,48 +147,48 @@
 
         <div>
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
-                <h2 class="font-bold mb-4 text-custom-marron uppercase italic">Récapitulatif de la réservation</h2>
+                <h2 class="font-bold mb-4 text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
                         <div> {{ $nomCabane }} </div>
                         <div> - </div>
-                        <div> {{ $capacite }} pers. </div>
+                        <div> {{ $capacite }} {{ __('content.pax') }}  </div>
                  
                 </div>
 
                 <div class="flex text-custom-marron space-x-3 justify-center">
                     <i class="fa-solid fa-mug-saucer mt-1"></i>
-                    <div class="text-sm">Petit-déjeuner inclus</div>
+                    <div class="text-sm">{{ __('content.pdj') }} </div>
                 </div>
 
                 <div class="flex flex-col mt-8 space-y-4">
                     <div class="flex justify-between">
-                        <label class="font-bold text-custom-marron">Date d'arrivée :</label>
+                        <label class="font-bold text-custom-marron">{{ __('content.arrivee') }}  :</label>
                         <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}</div>
                     </div>
 
                     <div class="flex justify-between">
-                        <label class="font-bold text-custom-marron">Date de départ :</label>
+                        <label class="font-bold text-custom-marron">{{ __('content.depart') }} :</label>
                         <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}</div>
                     </div>
 
                     <div class="flex justify-between">
-                        <label class="font-bold text-custom-marron">Durée :</label>
+                        <label class="font-bold text-custom-marron">{{ __('content.duree') }} :</label>
                         <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} nuit(s) </div>
                     </div>
 
                     <div class="flex justify-between">
-                        <label class="font-bold text-custom-marron">Nombre de pers. :</label>
+                        <label class="font-bold text-custom-marron">{{ __('content.nombre') }} :</label>
                         <div class="flex flex-col">
                             <div class="flex space-x-2">
-                                <label class="text-custom-marron text-sm mt-1">Adultes :</label>
+                                <label class="text-custom-marron text-sm mt-1">{{ __('content.adultes') }} :</label>
                                 <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreAdultes }} </div>
                             </div>
 
                             @if ($nombreEnfants > 0)
                             <div class="flex space-x-2">
-                                <label class="text-custom-marron text-sm mt-1">Enfants :</label>
+                                <label class="text-custom-marron text-sm mt-1">{{ __('content.enfants-1') }} :</label>
                                 <div class="font-semibold text-custom-marron mt-0.5"> {{ $nombreEnfants }} </div>
                             </div>
                             @endif
@@ -190,11 +197,11 @@
                 </div>
 
                
-                    <label class="font-bold text-custom-marron">Extras :</label>
+                    <label class="font-bold text-custom-marron">{{ __('content.extra') }} :</label>
                    
-                    <div class="uppercase text-center underline mb-2">Restauration</div>     
+                    <div class="uppercase text-center underline mb-2">{{ __('content.restauration') }}</div>     
                     
-                    <div class="text-center mb-4 font-semibold italic">Adultes</div>
+                    <div class="text-center mb-4 font-semibold italic">{{ __('content.adultes') }}</div>
 
                     @foreach($extras['catering_adults'] as $index => $count)
                     @if ($count > 0)
@@ -214,7 +221,7 @@
                     @endforeach
 
 
-                    <div class="text-center mb-4 font-semibold italic">Enfants</div>
+                    <div class="text-center mb-4 font-semibold italic">{{ __('content.enfants-1') }}</div>
 
                         @foreach($extras['catering_children'] as $index => $count)
                         @if ($count > 0)
@@ -255,7 +262,7 @@
                     </div>
 
                     <div class="flex justify-between"> 
-                        <div class="italic font-black text-custom-marron"> Total de la cabane:  </div>
+                        <div class="italic font-black text-custom-marron"> Total de la cabane : </div>
                         <div class="font-black text-custom-marron"> {{ $prixTotal }} € </div>
                     </div>
                 
@@ -268,7 +275,7 @@
                     </div>
                 </div>
 
-                <p class="italic text-sm">Taxes de séjour non incluses</p>
+                <p class="italic text-sm">{{ __('content.taxe') }}</p>
             </div>
         </div>
         

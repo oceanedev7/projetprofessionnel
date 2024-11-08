@@ -128,6 +128,13 @@ return [
     'taxe' =>'Taxes de séjour non incluses',
     'valider' =>'Valider',
     'info' =>'Informations client',
+    'ville' =>'Ville',
+    'code' =>'Code postal',
+    'postale' =>'Adresse postale',
+
+
+
+
 
 
     'nom_cabane_cabaneNidDouillet' =>  "Cabane Nid Douillet",
@@ -142,9 +149,8 @@ return [
     'nom_cabane_cabaneEden' =>  "Cabane Eden",
     'description_cabane_cabaneEden' => 'Séjour en famille ou retrouvailles entre amis, la cabane Eden est faite pour vous. Déconnexion, détente et nature sont au rendez-vous, avec une vue sur la forêt verdoyante. Imaginée et conçue pour vivre au rythme de la nature, elle offre à ses visiteurs chaleur, calme et repos. Robuste, élégante et unique, cette cabane d’exception au charme sans précédent est idéale pour un moment d’évasion, de calme et de quiétude. Sa décoration chaleureuse vous séduira et la vue depuis sa terrasse vous ravira.',
 
-    'type_dejeuner' => 'Déjeuner - Panier du Terroir (11H à 13H30)',
-    'type_diner' => 'Dîner - Panier Gourmand (19H à 21H)',
-
+    'restaurant_panier_du_terroir' => 'Panier du Terroir (11H à 13H30)',
+    'restaurant_panier_gourmand' => 'Panier Gourmand (19H à 21H)',
 
 ];
     

@@ -123,6 +123,12 @@ return [
     'taxe' =>'Tourist taxes not included',
     'valider' =>'Validate',
     'info' =>'Customer information',
+    'ville' =>'City',
+    'code' =>'Zip code',
+    'postale' =>'Postal address',
+
+
+
 
     'nom_cabane_cabaneNidDouillet' =>  "Nid Douillet Cabin",
     'description_cabane_cabaneNidDouillet' => "The Cozy Nest Cabin is an enchanting retreat for those seeking tranquility and a connection with nature. Nestled in the heart of a picturesque landscape, this cabin offers a perfect getaway for two people in search of serenity. Perched among majestic trees, our cabin provides a true cocoon of comfort and well-being. Inside, you\'ll find a welcoming and snug space, charmingly decorated to create a soothing and comforting atmosphere. Treat yourself to a well-deserved break in this haven of peace where time seems to slow down, and every moment invites relaxation and contemplation.",
@@ -136,6 +142,6 @@ return [
     'nom_cabane_cabaneEden' =>  " Eden Cabin",
     'description_cabane_cabaneEden' => 'Whether for a family getaway or a reunion with friends, the Eden Cabin is perfect for you. Disconnect, relax, and enjoy nature with a view of the lush forest. Designed to let you live in harmony with nature, it offers warmth, tranquility, and rest to its visitors. Sturdy, elegant, and unique, this exceptional cabin with unparalleled charm is ideal for a moment of escape, calm, and serenity. Its cozy decor will captivate you, and the view from its terrace will delight you.',
 
-    'type_dejeuner' => 'Lunch - Terroir Basket (11 AM to 1:30 PM)',
-    'type_diner' => 'Dinner - Gourmand Basket (7 PM to 9 PM)',
+    'restaurant_panier_du_terroir' => 'Panier of the Terroir (11 AM to 1:30 PM)',
+    'restaurant_panier_gourmand' => 'Gourmet Basket (7 PM to 9 PM)',
 ];

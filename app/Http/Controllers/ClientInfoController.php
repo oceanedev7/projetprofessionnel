@@ -31,7 +31,6 @@ class ClientInfoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
- 
 //     public function store(Request $request)
 // {
 //     $validatedData = $request->validate([     
@@ -41,9 +40,9 @@ class ClientInfoController extends Controller
 //     ]);
 
 //     $extras = [
-//         'spa_counts' => $validatedData['spa_count'],
-//         'catering_adults' => $validatedData['catering_adult'],
-//         'catering_children' => $validatedData['catering_child'],
+//         'spa_counts' => $validatedData['spa_count'] ?? [],
+//         'catering_adults' => $validatedData['catering_adult'] ?? [],
+//         'catering_children' => $validatedData['catering_child'] ?? [],
 //     ];
     
 //     $nomCabane = $request->input('nomCabane');
@@ -60,23 +59,47 @@ class ClientInfoController extends Controller
 
 //     $totalExtra = 0;
 
+//     $restaurationIds = [];
+// $massageIds = [];
+// $restaurationQuantites = [];
+// $massageQuantites = [];
+// $prestationsTypes = [];
+
 //     foreach ($extras['catering_adults'] as $index => $count) {
 //         if ($count > 0) {
+//             $restaurationIds[] = $restaurants[$index]->id; 
+//             $restaurationQuantites[] = $count;
+//             $prestationsTypes[] = 'Adulte';
 //             $totalExtra += $count * $restaurants[$index]->prix_adulte;
 //         }
 //     }
 
 //     foreach ($extras['catering_children'] as $index => $count) {
 //         if ($count > 0) {
+//             $restaurationIds[] = $restaurants[$index]->id;
+//             $restaurationQuantites[] = $count;
+//             $prestationsTypes[] = 'Enfant';  
 //             $totalExtra += $count * $restaurants[$index]->prix_enfant;
 //         }
 //     }
 
 //     foreach ($extras['spa_counts'] as $index => $count) {
-//         if ($count > 0) {
+//         if ($count > 0) {       
+
+//             $massageIds[] = $massages[$index]->id;
+//             $massageQuantites[] = $count; 
+//             $prestationsTypes[] = 'Massage';
 //             $totalExtra += $count * $massages[$index]->prix_adulte;
 //         }
 //     }
+
+//         session([
+//             'restauration_ids' => $restaurationIds,
+//             'restauration_quantites' => $restaurationQuantites,
+//             'massage_ids' => $massageIds,
+//             'massage_quantites' => $massageQuantites,
+//             'prestations_types' => $prestationsTypes,
+//         ]);
 
 //     $prixFinal = $prixTotal + $totalExtra; 
 
@@ -87,6 +110,7 @@ class ClientInfoController extends Controller
 //     )); 
 // }
 
+
 public function store(Request $request)
 {
     $validatedData = $request->validate([     
@@ -96,9 +120,9 @@ public function store(Request $request)
     ]);
 
     $extras = [
-        'spa_counts' => $validatedData['spa_count'],
-        'catering_adults' => $validatedData['catering_adult'],
-        'catering_children' => $validatedData['catering_child'],
+        'spa_counts' => $validatedData['spa_count'] ?? [],
+        'catering_adults' => $validatedData['catering_adult'] ?? [],
+        'catering_children' => $validatedData['catering_child'] ?? [],
     ];
     
     $nomCabane = $request->input('nomCabane');
@@ -148,25 +172,17 @@ $prestationsTypes = [];
             $totalExtra += $count * $massages[$index]->prix_adulte;
         }
     }
-       
-
-        session([
-            'restauration_ids' => $restaurationIds,
-            'restauration_quantites' => $restaurationQuantites,
-            'massage_ids' => $massageIds,
-            'massage_quantites' => $massageQuantites,
-            'prestations_types' => $prestationsTypes,
-        ]);
 
     $prixFinal = $prixTotal + $totalExtra; 
 
     return view('pages.client-info', compact(
         'extras', 'massages', 'restaurants', 'totalExtra', 'nomCabane', 
         'capacite', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
-        'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal'
+        'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal',
+        'restaurationIds', 'restaurationQuantites', 'massageIds', 
+        'massageQuantites', 'prestationsTypes'
     )); 
 }
-
 
     /**
      * Display the specified resource.
