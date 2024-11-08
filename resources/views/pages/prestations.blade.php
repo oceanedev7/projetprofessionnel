@@ -93,7 +93,13 @@
             <div class="flex flex-col items-center max-w-xs p-4 rounded-lg text-custom-marron">
                 <img class="w-full rounded-lg mb-4" src="{{ Storage::url('images/dejeuner.jpg') }}" alt="Déjeuner">
         
-             <div class="text-lg font-bold text-center mb-2">{{ $restaurant->type}}</div>
+             <div class="text-lg font-bold text-center mb-2">
+                @if ($restaurant->type == 'Déjeuner : Panier du Terroir (11H à 13H30)')
+                            {{ __('content.restaurant_panier_du_terroir') }}
+                        @elseif ($restaurant->type == 'Dîner : Panier Gourmand (19H à 21H)')
+                            {{ __('content.restaurant_panier_gourmand') }}
+                        @endif 
+             </div>
                 <div class="flex flex-col md:flex-row md:space-x-4 mb-2">
                     <div class="text-lg mb-2 md:mb-0">
                         <span class="font-semibold">{{ __('content.adulte') }} :</span>
