@@ -84,8 +84,11 @@
                         </div>
                 
                         <div class="text-white font-semibold text-center mb-4">
-                            {{ $restaurant->type }}
-    
+                            @if ($restaurant->type == 'Déjeuner : Panier du Terroir (11H à 13H30)')
+                            {{ __('content.restaurant_panier_du_terroir') }}
+                        @elseif ($restaurant->type == 'Dîner : Panier Gourmand (19H à 21H)')
+                            {{ __('content.restaurant_panier_gourmand') }}
+                        @endif    
                         </div>
                 
                         <div class="flex flex-col space-y-1 mb-4 items-center">
@@ -192,12 +195,24 @@
                 <div class="flex flex-col mt-8 space-y-4">
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">{{ __('content.arrivee') }} :</label>
-                        <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}</div>
+                        <div class="font-semibold text-custom-marron">
+                            @if ( App::getLocale() === 'en')
+                                {{ \Carbon\Carbon::parse($dateArrivee)->format('m/d/Y') }}
+                            @else
+                                {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}
+                            @endif
+                        </div>
                     </div>
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">{{ __('content.depart') }} :</label>
-                        <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}</div>
+                        <div class="font-semibold text-custom-marron">
+                            @if ( App::getLocale() === 'en')
+                            {{ \Carbon\Carbon::parse($dateDepart)->format('m/d/Y') }}
+                        @else
+                            {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}
+                        @endif
+                        </div>
                     </div>
 
                     <div class="flex justify-between">
