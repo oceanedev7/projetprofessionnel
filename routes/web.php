@@ -52,7 +52,10 @@ Route::get('/faq', function () {
 
 Route::get('/reserver', function () {
     return view('pages.reserver');
-})->name('reserver');
+})->name('reserver')->middleware(\App\Http\Middleware\Localisation::class);
+
+Route::get('/contact&acces', [ContactRequestController::class, 'index'])->name('contact')->middleware(\App\Http\Middleware\Localisation::class);
+
 
 Route::get('/noscabanes', function () {
     return view('pages.cabanes.noscabanes');
@@ -65,13 +68,13 @@ Route::get('/cabaneeden', [CabaneViewController::class, 'showCabaneEden'])->name
 
 Route::get('/prestations', [PrestationViewController::class, 'showPrestations'])->name('prestations')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::match(['get', 'post'], '/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite');
+Route::match(['get', 'post'], '/reservation/cabanes/disponibilite', [AvailableRoomController::class, 'store'])->name('disponibilite')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::match(['get', 'post'], '/reservation/extras', [ExtrasController::class, 'index'])->name('extras');
+Route::match(['get', 'post'], '/reservation/extras', [ExtrasController::class, 'index'])->name('extras')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client');
 
-Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client');
+Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::post('/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
 
@@ -118,8 +121,6 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
     Route::post('/newsletter/inscription', [NewsletterController::class, 'create'])->name('ajouterNewsletter');
 
     Route::post('/demandecontact', [ContactRequestController::class, 'store'])->name('contact-request');
-    Route::get('/contact&acces', [ContactRequestController::class, 'index'])->name('contact')
-        ->middleware(\App\Http\Middleware\Localisation::class);
 
     Route::get('/dashboard', function () {
         return view('dashboard');
