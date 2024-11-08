@@ -102,4 +102,40 @@ return [
     //Cabane Eden
     'eden-description' => 'Whether for a family getaway or a reunion with friends, the Eden Cabin is perfect for you. Disconnect, relax, and enjoy nature with a view of the lush forest. Designed to let you live in harmony with nature, it offers warmth, tranquility, and rest to its visitors. Sturdy, elegant, and unique, this exceptional cabin with unparalleled charm is ideal for a moment of escape, calm, and serenity. Its cozy decor will captivate you, and the view from its terrace will delight you.',
     'prix-6' => 'From 205.00€',
+
+    //Reserver 
+    'sejour' => 'Book<br>your stay',
+    'disponibilite' => 'Check availability',
+    'arrivee' => 'Arrival date',
+    'depart' => 'Departure date',
+    'au'=> 'to',
+    'pour'=> 'For',
+
+    'adultes'=> 'Adults',
+    'enfants'=> 'Children<br>(from 2 to 10 years)',
+    'enfants-1'=> 'Children',
+    'recap' => 'Reservation summary',
+    'pdj' => 'Complimentary breakfast',
+    'duree' => 'Duration',
+    'extra' => 'Additional services',
+    'nombre' => 'No. of poeple',
+    'nuit' => 'night(s)',
+    'taxe' =>'Tourist taxes not included',
+    'valider' =>'Validate',
+    'info' =>'Customer information',
+
+    'nom_cabane_cabaneNidDouillet' =>  "Nid Douillet Cabin",
+    'description_cabane_cabaneNidDouillet' => "The Cozy Nest Cabin is an enchanting retreat for those seeking tranquility and a connection with nature. Nestled in the heart of a picturesque landscape, this cabin offers a perfect getaway for two people in search of serenity. Perched among majestic trees, our cabin provides a true cocoon of comfort and well-being. Inside, you\'ll find a welcoming and snug space, charmingly decorated to create a soothing and comforting atmosphere. Treat yourself to a well-deserved break in this haven of peace where time seems to slow down, and every moment invites relaxation and contemplation.",
+
+    'nom_cabane_cabaneOsmose' =>  "Osmose Cabin",
+    'description_cabane_cabaneOsmose' => "The Osmose Cabin is a peaceful haven in the heart of nature, where every moment invites relaxation and contemplation. Nestled in an idyllic setting, this cabin offers you a unique experience, away from the hustle and bustle of modern life. Whether you are seeking a romantic getaway or a wellness retreat, the Osmose Cabin is the perfect place to recharge and reconnect with nature. Treat yourself to an enchanted interlude where time seems to stand still, and where each moment is an opportunity to return to what truly matters.",
+
+    'nom_cabane_cabaneEscapade' =>  "Escapade Cabin",
+    'description_cabane_cabaneEscapade' => 'The Escapade Cabin welcomes you for an exceptional stay in the heart of the forest, offering a return to simplicity as you stroll through the surrounding woods. This carefully decorated cabin, with its spacious terrace suspended 8 meters high, immerses you in an extraordinary atmosphere. It will captivate both young and old adventurers eager to discover the joys of nature from a lofty vantage point. Elevate your experience in this surprising accommodation, which promises delightful moments.',
+
+    'nom_cabane_cabaneEden' =>  " Eden Cabin",
+    'description_cabane_cabaneEden' => 'Whether for a family getaway or a reunion with friends, the Eden Cabin is perfect for you. Disconnect, relax, and enjoy nature with a view of the lush forest. Designed to let you live in harmony with nature, it offers warmth, tranquility, and rest to its visitors. Sturdy, elegant, and unique, this exceptional cabin with unparalleled charm is ideal for a moment of escape, calm, and serenity. Its cozy decor will captivate you, and the view from its terrace will delight you.',
+
+    'type_dejeuner' => 'Lunch - Terroir Basket (11 AM to 1:30 PM)',
+    'type_diner' => 'Dinner - Gourmand Basket (7 PM to 9 PM)',
 ];

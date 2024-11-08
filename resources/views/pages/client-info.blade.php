@@ -2,7 +2,7 @@
 
     @section('navbar')
     <div class="fixed z-10 w-full"> 
-        <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
+        <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
         {{-- <a class="absolute top-8 right-24 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
@@ -41,14 +41,18 @@
             </x-dropdown>
         </div>
     @else
-        <a href="{{ route('login') }}" class="absolute top-8 right-24 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        <a href="{{ route('login') }}" class="absolute top-8 right-24 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
             <i class="fa-solid fa-user"></i>
         </a>
     @endif
        
        
-        <a class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> EN </a> 
-    </div>
+    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+        class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+         {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+     </a>   
+
+</div>
 @endsection
 
 @section('main')
@@ -59,7 +63,7 @@
     <div class="flex flex-row p-6 mt-12">
         <div class="flex-grow">
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
-                <div class="uppercase text-custom-marron font-bold text-xl">Informations client</div>
+                <div class="uppercase text-custom-marron font-bold text-xl">{{ __('content.info') }} </div>
                 
                 <form class="flex flex-col w-full space-y-4" action="{{route ('validate-client')}}" method="POST">
                     @csrf

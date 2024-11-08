@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,9 +15,12 @@ class UserReservationController extends Controller
     public function index()
     {
         
-     $user = Auth::user();
-     $reservations = $user->reservations;
+    //  $user = Auth::user();
+    //  $reservations = $user->reservations;
 
+    $user = Auth::user();
+    $reservations = $user->reservations()->orderBy('created_at', 'desc')->get();
+    
          return view('pages.user-reservation', compact('reservations'));
     }
 

@@ -48,7 +48,11 @@
     @endif
        
        
-        <a class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> EN </a> 
+    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+        class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+         {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+     </a>     
+    
     </div>
 @endsection
 
@@ -74,23 +78,23 @@
                 <div class="flex flex-col p-8 justify-center">
                     <div class="flex flex-col space-y-4">
                         <div class="flex text-custom-marron text-2xl font-black space-x-2 uppercase">
-                            <div> {{ $cabane->nomCabane }} </div> 
+                            <div> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $cabane->nomCabane))) }} </div> 
                             <div> - </div>
-                            <div> {{ $cabane->capacite }} pers. </div>
+                            <div> {{ $cabane->capacite }} {{ __('content.pax') }} </div>
                         </div>
 
                         <div class="flex text-custom-marron space-x-3"> 
                             <i class="fa-solid fa-mug-saucer mt-1"></i>
-                            <div>Petit-déjeuner inclus</div>
+                            <div>{{ __('content.pdj') }}</div>
                         </div>
-                        <div class="max-w-sm text-custom-marron text-justify text-sm"> {{ $cabane->description }} </div>
+                        <div class="max-w-sm text-custom-marron text-justify text-sm">{{ __('content.description_cabane_' . lcfirst(str_replace(' ', '', $cabane->nomCabane))) }} </div>
                     </div>
 
                     <div class="flex mt-12 justify-between items-center"> 
                         <div class="flex flex-col">
-                            <div class="text-custom-marron"> Pour {{ $nombreNuitees }} nuit(s) </div>
+                            <div class="text-custom-marron"> {{ __('content.pour') }} {{ $nombreNuitees }} {{ __('content.nuit') }} </div>
                             <div class="font-black text-2xl text-custom-marron "> {{ $cabane->prixTotal }} €  </div>
-                            <div class="italic text-custom-marron"> Taxes de séjour non incluses </div>
+                            <div class="italic text-custom-marron"> {{ __('content.taxe') }} </div>
                         </div>
 
                         <form action="{{ route('extras') }}" method="POST">
@@ -104,7 +108,7 @@
                             <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                             <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
                         
-                            <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center uppercase" type="submit">Réserver</button>
+                            <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center uppercase" type="submit">{{ __('content.reserver') }}</button>
                         </form>
                         
 
@@ -119,56 +123,64 @@
 
 <div>
     <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
-        <h2 class="font-bold mb-4 text-custom-marron uppercase italic">Récapitulatif de la réservation</h2>
+        <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }}</h2>
         
         
         <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
            
                 <div> </div> 
                 <div> - </div>
-                <div>  pers. </div>
+                <div>  {{ __('content.pax') }} </div>
           
         </div>
 
         <div class="flex text-custom-marron space-x-3 justify-center"> 
             <i class="fa-solid fa-mug-saucer mt-1"></i>
-            <div class="text-sm">Petit-déjeuner inclus</div>
+            <div class="text-sm">{{ __('content.pdj') }}</div>
         </div>
         
         <div class="flex flex-col mt-8 space-y-4">
 
         <div class="flex justify-between">
-        <label class="font-bold text-custom-marron">Date d'arrivée :</label>
+        <label class="font-bold text-custom-marron">{{ __('content.arrivee') }} :</label>
         <div class="font-semibold text-custom-marron">
-            {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}
+            @if ( App::getLocale() === 'en')
+                {{ \Carbon\Carbon::parse($dateArrivee)->format('m/d/Y') }}
+            @else
+                {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}
+            @endif
         </div>
         </div>
 
         <div class="flex justify-between">
-            <label class="font-bold text-custom-marron">Date de départ :</label>
+            <label class="font-bold text-custom-marron">{{ __('content.depart') }} :</label>
             <div class="font-semibold text-custom-marron">
+                @if ( App::getLocale() === 'en')
+                {{ \Carbon\Carbon::parse($dateDepart)->format('m/d/Y') }}
+            @else
                 {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}
+            @endif
             </div>
         </div>
 
         <div class="flex justify-between">
-            <label class="font-bold text-custom-marron">Durée :</label>
-            <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} nuit(s) </div>
+            <label class="font-bold text-custom-marron">{{ __('content.duree') }} :</label>
+            <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} {{ __('content.nuit') }} </div>
         </div>
 
         <div class="flex justify-between">
-            <label class="font-bold text-custom-marron">Nombre de pers. :</label>
+            <label class="font-bold text-custom-marron">{{ __('content.nombre') }}  :</label>
 
             <div class="flex flex-col"> 
 
                 <div class="flex space-x-2">
-            <label class="text-custom-marron text-sm mt-1">Adultes :</label>
+            <label class="text-custom-marron text-sm mt-1">{{ __('content.adultes') }} :</label>
             <div  class="font-semibold text-custom-marron mt-0.5">{{ $nombreAdultes }}  </div>
                 </div>
 
                 @if ($nombreEnfants > 0)
                 <div class="flex space-x-2">
-            <label class="text-custom-marron text-sm mt-1">Enfants :</label>
+            <label class="text-custom-marron text-sm mt-1">{{ __('content.enfants-1') }} :</label>
             <div class="font-semibold text-custom-marron mt-0.5">{{ $nombreEnfants }} </div>
         </div>
         @endif
@@ -179,7 +191,7 @@
         </div>
 
         <div class="flex justify-between">
-            <label class="font-bold text-custom-marron">Extras :</label>
+            <label class="font-bold text-custom-marron">{{ __('content.extra') }} :</label>
             <div class="font-semibold text-custom-marron">  </div>
         </div>
 
@@ -192,7 +204,7 @@
         </div> 
         </div>
         
-        <p class="italic text-sm">Taxes de séjour non incluses</p>
+        <p class="italic text-sm">{{ __('content.taxe') }}</p>
 
     </div>
 </div>

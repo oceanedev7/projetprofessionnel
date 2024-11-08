@@ -108,6 +108,42 @@ return [
     'eden-description' => 'Séjour en famille ou retrouvailles entre amis, la cabane Eden est faite pour vous. Déconnexion, détente et nature sont au rendez-vous, avec une vue sur la forêt verdoyante. Imaginée et conçue pour vivre au rythme de la nature, elle offre à ses visiteurs chaleur, calme et repos. Robuste, élégante et unique, cette cabane d’exception au charme sans précédent est idéale pour un moment d’évasion, de calme et de quiétude. Sa décoration chaleureuse vous séduira et la vue depuis sa terrasse vous ravira.',
     'prix-6' => 'À partir de 205.00 €',
 
+    //Reserver
+    'sejour' => 'Réservez<br>votre séjour',
+    'disponibilite' => 'Vérifier les disponibilités',
+    'arrivee' => 'Date d\'arrivée',
+    'depart' => 'Date de départ',
+    'au'=> 'au',
+    'pour'=> 'Pour',
+
+    'adultes'=> 'Adultes',
+    'enfants'=> 'Enfants<br>(de 2 à 10 ans)',
+    'enfants-1'=> 'Enfants',
+    'recap' => 'Récapitulatif de la réservation',
+    'pdj' => 'Petit-déjeuner inclus',
+    'duree' => 'Durée',
+    'extra' => 'Extras',
+    'nombre' => 'Nombre de pers.',
+    'nuit' => 'nuit(s)',
+    'taxe' =>'Taxes de séjour non incluses',
+    'valider' =>'Valider',
+    'info' =>'Informations client',
+
+
+    'nom_cabane_cabaneNidDouillet' =>  "Cabane Nid Douillet",
+    'description_cabane_cabaneNidDouillet' => "La Cabane Nid Douillet est un refuge enchanteur pour ceux en quête de tranquillité et de connexion avec la nature. Nichée au cœur d'un paysage pittoresque, cette cabane offre une escapade parfaite pour deux personnes en quête de sérénité. Perchée parmi les arbres majestueux, notre cabane offre un véritable cocon de confort et de bien-être. À l'intérieur, vous trouverez un espace accueillant et douillet, décoré avec charme pour créer une atmosphère apaisante et réconfortante. Offrez-vous une pause bien méritée dans ce havre de paix où le temps semble ralentir et où chaque instant est une invitation à la détente et à la contemplation.",
+
+    'nom_cabane_cabaneOsmose' =>  "Cabane Osmose",
+    'description_cabane_cabaneOsmose' => "La Cabane Osmose est un havre de paix au cœur de la nature, où chaque instant est une invitation à la détente et à la contemplation. Nichée dans un cadre idyllique, cette cabane vous offre une expérience unique, loin du tumulte de la vie moderne. Que vous soyez en quête d\'une escapade romantique ou d\'une retraite bien-être, la Cabane Osmose est l\'endroit parfait pour vous ressourcer et vous reconnecter avec la nature. Offrez-vous une parenthèse enchantée où le temps semble suspendu, et où chaque instant est une opportunité de renouer avec l\'essentiel.",
+
+    'nom_cabane_cabaneEscapade' =>  "Cabane Escapade",
+    'description_cabane_cabaneEscapade' => 'La Cabane Escapade vous accueille pour un séjour d’exception en pleine forêt et vous permettra un retour à la simplicité en vous promenant par exemple dans le bois qui l’entoure. Cette cabane à la décoration soignée avec sa terrasse spacieuse suspendue à 8m de haut vous plongent dans une atmosphère hors du commun. Elle saura enchanter petits et grands aventuriers qui veulent découvrir les joies de la nature en la dominant. Prenez de la hauteur dans cet hébergement surprenant, qui vous réserve d’agréables moments.',
+
+    'nom_cabane_cabaneEden' =>  "Cabane Eden",
+    'description_cabane_cabaneEden' => 'Séjour en famille ou retrouvailles entre amis, la cabane Eden est faite pour vous. Déconnexion, détente et nature sont au rendez-vous, avec une vue sur la forêt verdoyante. Imaginée et conçue pour vivre au rythme de la nature, elle offre à ses visiteurs chaleur, calme et repos. Robuste, élégante et unique, cette cabane d’exception au charme sans précédent est idéale pour un moment d’évasion, de calme et de quiétude. Sa décoration chaleureuse vous séduira et la vue depuis sa terrasse vous ravira.',
+
+    'type_dejeuner' => 'Déjeuner - Panier du Terroir (11H à 13H30)',
+    'type_diner' => 'Dîner - Panier Gourmand (19H à 21H)',
 
 
 ];
