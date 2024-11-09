@@ -72,17 +72,17 @@ Route::match(['get', 'post'], '/reservation/cabanes/disponibilite', [AvailableRo
 
 Route::match(['get', 'post'], '/reservation/extras', [ExtrasController::class, 'index'])->name('extras')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client');
+Route::match(['get', 'post'], '/reservation/informations/client', [ClientInfoController::class, 'store'])->name('info-client')->middleware(\App\Http\Middleware\Localisation::class);;
 
 Route::post('/reservation/validate/client', [ValidateClientController::class, 'store'])->name('validate-client')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::post('/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process');
+Route::post('/reservation/paiement', [PaiementController::class, 'store'])->name('payment.process')->middleware(\App\Http\Middleware\Localisation::class);;
 
-Route::get('/reservation/paiement/failure', [PaiementController::class, 'index'])->name('payment.failure');
+Route::get('/reservation/paiement/failure', [PaiementController::class, 'index'])->name('payment.failure')->middleware(\App\Http\Middleware\Localisation::class);;
 
 Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
-})->name('confirmed');
+})->name('confirmed')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/moncompte/reservations', [UserReservationController::class, 'index'])->name('user-reservation');
 Route::get('/moncompte/reservation/details/{id}', [UserReservationController::class, 'show'])->name('user-reservation-details');

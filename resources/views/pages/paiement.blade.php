@@ -8,9 +8,10 @@
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-white bg-opacity-65 text-custom-marron py-3 px-3 border-none rounded-md w-12 text-base inline-block text-center">
             <i class="fa-solid fa-bars"></i>
         </a>    
-        <a class="absolute top-8 right-8 bg-white bg-opacity-65 text-custom-marron py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
-            EN
-        </a> 
+        <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+            class="absolute top-8 right-8 bg-white bg-opacity-65 text-custom-marron py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+             {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+         </a>   
     </div>
 
     <div class="p-32 flex justify-center items-center h-full">
@@ -18,36 +19,46 @@
 
            
             <div>
-                <div class="uppercase text-custom-marron text-lg font-bold mb-4">Votre réservation :</div>
+                <div class="uppercase text-custom-marron text-lg font-bold mb-4">{{ __('content.paiement') }} :</div>
 
                 <div class="mb-2">
-                    <strong>Cabane :</strong> {{ session('nomCabane') }} - {{ session('capacite') }} pers.
+                    <strong>{{ __('content.cabane-n') }}  :</strong> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', session('nomCabane')))) }} - {{ session('capacite') }} {{ __('content.pax') }}
                 </div>
 
                 <div class="mb-2">
-                    <strong>Nombre d'adultes :</strong> {{ session('nombreAdultes') }} adultes
+                    <strong>{{ __('content.n-adulte') }} :</strong> {{ session('nombreAdultes') }} {{ __('content.adultes') }}
                 </div>
 
                 @if(session('nombreEnfants') > 0)
                     <div class="mb-2">
-                        <strong>Nombre d'enfants :</strong> {{ session('nombreEnfants') }} enfants
+                        <strong>{{ __('content.n-enfant') }} :</strong> {{ session('nombreEnfants') }} {!! nl2br(__('content.enfants')) !!}
                     </div>
                 @endif
 
                 <div class="mb-2">
-                    <strong>Date d'arrivée :</strong> {{ \Carbon\Carbon::parse(session('dateArrivee'))->format('d/m/Y') }}
+                    <strong>{{ __('content.arrivee') }} :</strong> 
+                    @if ( App::getLocale() === 'en')
+                    {{ \Carbon\Carbon::parse(session('dateDepart'))->format('m/d/Y') }}
+                @else
+                    {{ \Carbon\Carbon::parse(session('dateDepart'))->format('d/m/Y') }}
+                @endif
                 </div>
 
                 <div class="mb-2">
-                    <strong>Date de départ :</strong> {{ \Carbon\Carbon::parse(session('dateDepart'))->format('d/m/Y') }}
+                    <strong>{{ __('content.depart') }}:</strong> 
+                    @if ( App::getLocale() === 'en')
+                    {{ \Carbon\Carbon::parse(session('dateDepart'))->format('m/d/Y') }}
+                @else
+                    {{ \Carbon\Carbon::parse(session('dateDepart'))->format('d/m/Y') }}
+                @endif
                 </div>
 
                 <div class="mb-2">
-                    <strong>Nombre de nuitées :</strong> {{ session('nombreNuitees') }} nuit(s)
+                    <strong>{{ __('content.nuitee') }} :</strong> {{ session('nombreNuitees') }} {{ __('content.nuit') }}
                 </div>
 
                 <div class="mb-4">
-                    <label for="amount" class="block text-gray-700 font-semibold">Montant à payer :</label>
+                    <label for="amount" class="block text-gray-700 font-semibold">{{ __('content.total') }} :</label>
                     <div class="font-bold text-xl text-custom-marron mt-0.5">
                         {{ session('prixFinal') }} €
                     </div>
@@ -63,12 +74,12 @@
                     <div class="mb-4">
                        
                         <div class="flex justify-between items-center mb-1">
-                            <label for="card-element" class="text-gray-700">Votre carte</label>
+                            <label for="card-element" class="text-gray-700"> {{ __('content.carte') }}</label>
                             
                             <div class="relative group inline-block cursor-pointer">
                                 <i class="fa-solid fa-circle-info text-gray-500"></i>
                                 <span class="absolute bottom-full right-0 transform translate-x-1/2 mb-2 w-48 bg-gray-800 text-white text-center text-sm rounded-md py-2 px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                   CVC : Les 3 chiffres au dos de votre carte bancaire
+                                    {{ __('content.cvc') }}
                                 </span>
                             </div>
                         </div>
@@ -83,7 +94,7 @@
 
                     <button type="submit" class=" space-x-2 bg-custom-marron text-white font-bold rounded py-2 px-4 w-full">
                         <span>  <i class="fa-solid fa-lock"></i> </span>
-                       <span> Valider le paiement </span>
+                       <span> {{ __('content.confirmer') }} </span>
                     </button>
                 </form>
 

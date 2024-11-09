@@ -132,11 +132,6 @@ return [
     'code' =>'Code postal',
     'postale' =>'Adresse postale',
 
-
-
-
-
-
     'nom_cabane_cabaneNidDouillet' =>  "Cabane Nid Douillet",
     'description_cabane_cabaneNidDouillet' => "La Cabane Nid Douillet est un refuge enchanteur pour ceux en quête de tranquillité et de connexion avec la nature. Nichée au cœur d'un paysage pittoresque, cette cabane offre une escapade parfaite pour deux personnes en quête de sérénité. Perchée parmi les arbres majestueux, notre cabane offre un véritable cocon de confort et de bien-être. À l'intérieur, vous trouverez un espace accueillant et douillet, décoré avec charme pour créer une atmosphère apaisante et réconfortante. Offrez-vous une pause bien méritée dans ce havre de paix où le temps semble ralentir et où chaque instant est une invitation à la détente et à la contemplation.",
 
@@ -151,6 +146,34 @@ return [
 
     'restaurant_panier_du_terroir' => 'Panier du Terroir (11H à 13H30)',
     'restaurant_panier_gourmand' => 'Panier Gourmand (19H à 21H)',
+
+    //Paiement
+
+    'paiement' => 'Votre réservation',
+    'total' => 'Montant à payer',
+    'confirmer' => 'Valider le paiement',
+    'cvc' => 'CVC : Les 3 chiffres au dos de votre carte bancaire',
+    'nuitee' => 'Nombre de nuitées', 
+    'n-adulte' => 'Nombre d\'adultes', 
+    'n-enfant' => 'Nombre d\'enfants', 
+    'carte' => 'Votre carte',
+    'n-carte' => 'Numéro de carte',
+    'cabane-n' => 'Cabane',
+ 
+    'merci' => 'Merci d\'avoir choisi TOUT LÀ-HAUT pour votre séjour. Nous nous réjouissons de vous accueillir au sein de notre domaine et serons à votre disposition tout au long du séjour.',
+    'retour' => 'Retour à la page d\'accueil',
+    'confirmed' => 'Votre réservation est confirmée !',
+    'success' => 'Paiement effectué avec succès !',
+
+
+
+
+
+
+
+
+
+
 
 ];
     

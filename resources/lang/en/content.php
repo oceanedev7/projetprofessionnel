@@ -144,4 +144,38 @@ return [
 
     'restaurant_panier_du_terroir' => 'Panier of the Terroir (11 AM to 1:30 PM)',
     'restaurant_panier_gourmand' => 'Gourmet Basket (7 PM to 9 PM)',
+
+    //Paiement
+
+    'paiement' => 'Your reservation',
+    'total' => 'Amount to be paid',
+    'confirmer' => 'Confirm the payment',
+    'cvc' => 'CVC: The 3 digits on the back of your bank card',
+    'nuitee' => 'Number of nights', 
+    'n-adulte' => 'Number of adults', 
+    'n-enfant' => 'Number of children', 
+    'carte' => 'Your card', 
+    'n-carte' => 'Card number',
+    'cabane-n' => 'Cabin',
+
+    'merci' => 'Thank you for choosing TOUT LÀ-HAUT for your stay. We are delighted to welcome you to our property and will be at your disposal throughout your stay.',
+    'retour' => 'Go back to the homepage',
+    'confirmed' => 'Your reservation is confirmed !',
+    'success' => 'Payment completed successfully !',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ];
