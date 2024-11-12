@@ -1,5 +1,8 @@
 @extends('layouts.cgv')
 
+@section('title', __('content.cgv'))
+
+
 @section ('titre')
 
 <div class="flex flex-col ">

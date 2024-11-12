@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-    
+@section('title', __('content.prestation'))
 
     @section('navbar')
     <div class="fixed z-10 w-full"> 

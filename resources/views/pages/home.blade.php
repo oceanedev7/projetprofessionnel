@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+@section('title', __('content.accueil'))
 
 
 @section('navbar')

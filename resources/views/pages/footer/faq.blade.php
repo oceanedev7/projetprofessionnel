@@ -1,5 +1,7 @@
 @extends('layouts.cgv')
 
+@section('title', 'FAQ')
+
  @section ('titre')
 
            <div class="flex flex-col h-screen text-white text-justify items-center relative ">

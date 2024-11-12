@@ -1,5 +1,7 @@
 @extends('layouts.cgv')
 
+@section('title', __('content.plan-site'))
+
 
 @section ('titre')
 
@@ -12,9 +14,9 @@
     <a href="{{ route('prestations') }}" >PRESTATIONS ET SERVICES</a>
     <a href="{{ route('reserver') }}" >RÉSERVER</a>
     <a href="{{ route('contact') }}" >CONTACT & ACCÈS</a>
-    <a href="{{ route('mentionslegales') }}" >MENTIONS LÉGALES</a>
+    <a href="{{ route('mentionslegales') }}">MENTIONS LÉGALES</a>
     <a href="{{ route('cgv') }}" >CGV</a>
-    <a href="{{ route('confidentialite') }}" >CONFIDENTIALITÉ</a>
+    <a href="{{ route('confidentialite') }}">CONFIDENTIALITÉ</a>
     <a href="{{ route('faq') }}" >FAQ</a>
     <a href="{{ route('plandusite') }}">PLAN DU SITE</a>
 </div>
