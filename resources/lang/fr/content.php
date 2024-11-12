@@ -188,6 +188,69 @@ return [
     'deconnexion' => 'Se déconnecter',
     'profil' => 'Mon profil',
 
+    //FAQ
+
+    'question' => 'Questions & Réponses',
+   'activite' => 'Il y a-t-il des activités disponibles sur place ?',
+   'rep_activite' => 'Oui, nous proposons une variété d\'activités en plein air telles que la randonnée, le vélo, l\'observation de la faune et la détente dans notre espace bien-être (selon la disponibilité).',
+   'animal' => 'Puis-je amener mon animal de compagnie ?',
+   'rep_animal' => 'Malheureusement, nous ne pouvons pas accueillir les animaux de compagnie dans nos cabanes pour des raisons de sécurité et de confort des autres clients.',
+    'heure' => 'À quelle heure puis-je arriver et partir ?',
+    'rep_heure' => 'L’arrivée se fait à partir de 16h et jusqu\'à 18h et le départ jusqu\'à 11H. Ceci dit, 
+    les heures d\'arrivée et de départ peuvent être ajustées sur demande. Veuillez nous contacter pour organiser votre arrivée et votre départ.',
+    'acces' => 'Comment puis-je accéder aux cabanes ?',
+    'rep_acces' => 'Nos cabanes sont accessibles à pied, mais certaines peuvent nécessiter une courte randonnée pour y accéder. Nous vous fournirons toutes les informations nécessaires lors de votre réservation.',
+    'mobilite' => 'Les cabanes sont-elles adaptées pour les personnes à mobilité réduite ?',
+    'rep_mobilite' => 'Oui, nos cabanes sont accessibles aux personnes à mobilité réduite.',
+    'offre' => 'Avez-vous des offres spéciales ou des forfaits disponibles ?',
+    'rep_offre' => 'Nous proposons régulièrement des offres spéciales et forfaits thématiques. Suivez-nous pour découvrir nos dernières offres.',
+
+    //Confidentialités
+
+    'politique' => 'Politique de<br>confidentialités',
+     'collecte' => 'Collecte des données personnelles',
+     'collecte_text' => 'Tout Là-Haut collecte des données personnelles des clients lors de la réservation d\'un séjour dans nos 
+      cabanes en bois. Ces données peuvent inclure le nom, l\'adresse, l\'adresse e-mail, le numéro de téléphone, 
+      ainsi que les informations relatives au paiement.',
+
+     'utilisation' => 'Utilisation des données personnelles',
+     'utilisation_text' => 'Les données personnelles collectées sont utilisées dans le but de traiter les réservations, 
+      de fournir les services demandés par les clients, de gérer les paiements et de communiquer 
+      avec les clients concernant leur séjour.',
+
+     'conservation' => 'Conservation des données personnelles',
+     'conservation_text' => 'Tout Là-Haut conserve les données personnelles des clients aussi longtemps que nécessaire pour atteindre les 
+      finalités pour lesquelles elles ont été collectées, notamment pour se conformer à nos obligations légales, 
+      résoudre les litiges et faire respecter nos accords.',
+
+     'protection' => 'Protection des données personnelles',
+     'protection_text' => 'Tout Là-Haut met en place des mesures de sécurité appropriées pour protéger 
+     les données personnelles contre tout accès non autorisé, toute utilisation abusive ou toute divulgation.',
+
+     'partage' => 'Partage des données personnelles',
+     'partage_text' => 'Tout Là-Haut ne partage pas les données personnelles des clients avec des tiers, sauf dans les cas suivants :
+      Lorsque cela est nécessaire pour fournir les services demandés par les clients 
+      (par exemple, communication avec les prestataires de services tiers pour la gestion des réservations).
+      Lorsque cela est requis par la loi ou par une autorité gouvernementale compétente.',
+
+     'droits' => 'Droits des clients', 
+     'droits_text' => 'Les clients ont le droit d\'accéder à leurs données personnelles, de les rectifier, 
+      de les supprimer ou de limiter leur traitement. Ils peuvent également s\'opposer au traitement 
+      de leurs données personnelles pour des motifs légitimes. Pour exercer ces droits, les clients 
+      peuvent contacter Tout Là-Haut à l\'adresse contact@toutlahaut.org.',
+
+     'modification' => 'Modifications de la politique de confidentialité',
+     'modification_text' => 'Tout Là-Haut se réserve le droit de modifier cette politique de confidentialité à tout moment. 
+      Les clients seront informés de toute modification substantielle de cette politique.',
+
+      'contact_text' => 'Pour toute question concernant cette politique de confidentialité, 
+      veuillez contacter Tout Là-Haut à l\'adresse contact@toutlahaut.org.',
+
+
+
+
+
+
 
 
 

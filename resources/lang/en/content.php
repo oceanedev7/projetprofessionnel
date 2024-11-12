@@ -182,6 +182,61 @@ return [
     'deconnexion' => 'Log off',
     'profil' => 'My profile',
 
+    //FAQ
+
+    'question' => 'Questions & Answers',
+   'activite' => 'Are there any activities available on site ?',
+   'rep_activite' => 'Yes, we offer a variety of outdoor activities such as hiking, cycling, wildlife watching and relaxing in our wellness area (subject to availability).',
+    'animal' => 'Can I bring my pet ?',
+    'rep_animal' => 'Unfortunately, we cannot accommodate pets in our cabins for reasons of safety and comfort of other guests.',
+    'heure' => 'What time can I arrive and depart ?',
+    'rep_heure' => 'Arrival is from 4 p.m. to 6 p.m. and departure until 11 a.m. That said, 
+    Arrival and departure times can be adjusted upon request. Please contact us to arrange your arrival and departure.',
+    'acces' => 'How can I access the cabins ?',
+    'rep_acces' => 'Our cabins are accessible by foot, but some may require a short hike to access. We will provide you with all the necessary information when you make your reservation.',
+    'mobilite' => 'Are the cabins suitable for people with reduced mobility ?',
+    'rep_mobilite' => 'Yes, our cabins are accessible to people with reduced mobility.',
+    'offre' => 'Do you have any special offers or packages available ?',
+    'rep_offre' => 'We regularly offer special offers and themed packages. Follow us to discover our latest offers.',
+
+
+     //Confidentialités
+
+     'politique' => 'Privacy policy',
+    'collecte' => 'Collection of personal data',
+    'collecte_text' => 'Tout Là-Haut collects personal data from customers when booking a stay in our 
+      wooden cabins. This data may include name, address, email address, telephone number, as well as payment information.',
+     'utilisation' => 'Use of personal data',
+     'utilisation_text' => 'The personal data collected is used for the purpose of processing reservations, 
+      to provide the services requested by customers, manage payments and communicate 
+      with guests regarding their stay.',
+     'conservation' => 'Retention of personal data',
+     'conservation_text' => 'Tout Là-Haut retains customers\' personal data for as long as necessary to achieve the 
+      purposes for which they were collected, in particular to comply with our legal obligations, 
+      resolve disputes and enforce our agreements.',
+
+     'protection' => 'Protection of personal data',
+     'protection_text' => 'Tout Là-Haut implements appropriate security measures to protect 
+      personal data against unauthorized access, misuse or disclosure.',
+
+     'partage' => 'Sharing of personal data',
+     'partage_text' => 'Tout Là-Haut does not share customer personal data with third parties, except in the following cases:
+      When necessary to provide services requested by customers 
+      (e.g. communication with third party service providers for booking management).
+      When required by law or a competent government authority.',
+
+     'droits' => 'Customer Rights', 
+     'droits_text' => 'Customers have the right to access their personal data, to rectify it, 
+      to delete them or limit their processing. They can also object to the processing 
+      of their personal data for legitimate reasons. To exercise these rights, customers 
+      can contact Tout Là-Haut at contact@toutlahaut.org.',
+
+     'modification' => 'Privacy Policy Changes',
+     'modification_text' => 'Tout Là-Haut reserves the right to modify this privacy policy at any time. 
+      Customers will be informed of any material changes to this policy.',
+
+      'contact_text' => 'For any questions regarding this privacy policy, please contact Tout Là-Haut at contact@toutlahaut.org.',
+
 
 
 

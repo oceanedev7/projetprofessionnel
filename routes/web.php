@@ -40,15 +40,15 @@ Route::get('/conditionsgeneralesdevente', function () {
 
 Route::get('/confidentialite', function () {
     return view('pages.footer.confidentialite');
-})->name('confidentialite');
+})->name('confidentialite')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/plandusite', function () {
     return view('pages.footer.plandusite');
-})->name('plandusite');
+})->name('plandusite')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/faq', function () {
     return view('pages.footer.faq');
-})->name('faq');
+})->name('faq')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/reserver', function () {
     return view('pages.reserver');
