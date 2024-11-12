@@ -128,8 +128,6 @@ return [
     'postale' =>'Postal address',
 
 
-
-
     'nom_cabane_cabaneNidDouillet' =>  "Nid Douillet Cabin",
     'description_cabane_cabaneNidDouillet' => "The Cozy Nest Cabin is an enchanting retreat for those seeking tranquility and a connection with nature. Nestled in the heart of a picturesque landscape, this cabin offers a perfect getaway for two people in search of serenity. Perched among majestic trees, our cabin provides a true cocoon of comfort and well-being. Inside, you\'ll find a welcoming and snug space, charmingly decorated to create a soothing and comforting atmosphere. Treat yourself to a well-deserved break in this haven of peace where time seems to slow down, and every moment invites relaxation and contemplation.",
 
@@ -163,7 +161,7 @@ return [
     'confirmed' => 'Your reservation is confirmed !',
     'success' => 'Payment completed successfully !',
 
-
+'valider_resa' => 'Validate my reservation',
 
 
 

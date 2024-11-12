@@ -140,14 +140,14 @@
                         <input type="hidden" name="massageQuantites" value="{{ implode(',', $massageQuantites) }}">
                         <input type="hidden" name="prestationsTypes" value="{{ implode(',', $prestationsTypes) }}">
 
-                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
+                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">{{__('content.valider_resa')}}</button>
                 </form>
             </div>
         </div>
 
         <div>
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
-                <h2 class="font-bold mb-4 text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
+                <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     

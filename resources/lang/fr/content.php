@@ -165,7 +165,7 @@ return [
     'confirmed' => 'Votre réservation est confirmée !',
     'success' => 'Paiement effectué avec succès !',
 
-
+    'valider_resa' => 'Valider ma réservation',
 
 
 
