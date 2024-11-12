@@ -279,6 +279,22 @@ return [
         by email or via our website. It will be confirmed by Tout Là-Haut after receipt of payment.',
 
 
+    //Login 
+    'mdp' => 'Password',
+    'souvenir' => 'Remember me',
+    'oublie' => 'Forgotten password ?',
+    'compte' => 'Don\'t have an account yet? Sign up !',
+    'connexion' => 'Log in',
+
+    //Register 
+    'inscription' => 'Register', 
+    'register' => 'Already registered ?',
+    'mdp_confirm' => 'Confirm password', 
+ 
+
+
+
+
 
 
 

@@ -287,6 +287,21 @@ return [
     'reservation_text' => 'La réservation d\'un séjour dans l\'une de nos cabanes en bois peut s\'effectuer par téléphone,
             par email ou via notre site internet. Elle sera confirmée par Tout Là-Haut après réception du paiement.',
 
+            //Login 
+
+    'mdp' => 'Mot de passe',
+    'souvenir' => 'Se souvenir de moi',
+    'oublie' => 'Mot de passe oublié ?',
+    'compte' => 'Vous n\'avez pas encore de compte ? Inscrivez-vous !',
+    'connexion' => 'Se connecter',
+
+    //Register 
+    'inscription' => 'S\'inscrire', 
+    'register' => 'Déjà inscrit(e) ?', 
+    'mdp_confirm' => 'Confirmez le mot de passe', 
+
+
+
 
 
 
