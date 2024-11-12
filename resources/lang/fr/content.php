@@ -246,6 +246,47 @@ return [
       'contact_text' => 'Pour toute question concernant cette politique de confidentialité, 
       veuillez contacter Tout Là-Haut à l\'adresse contact@toutlahaut.org.',
 
+         //Mentions légales
+
+         'mention-1' => 'Mentions<br>légales',
+         'proprio' => 'Propriétaire du site',
+         'publication' => 'Responsable de la publication',
+         'agence' => 'Agence de Communication',
+         'hebergeur' => 'Hébergeur',
+         'nom-1' => 'Nom',
+         'rgpd' => 'Conformément à la loi informatique et libertés du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d\'un droit d\'accès, de rectification, de suppression et de portabilité des données vous concernant. Pour exercer ce droit, veuillez nous contacter à l\'adresse contact@toutlahaut.org. Les données collectées sur ce site sont destinées à un usage interne et ne seront en aucun cas cédées à des tiers.',
+         'cookie' => 'Le site Tout Là-Haut peut être amené à vous demander l\'acceptation des cookies à des fins de statistiques et d\'amélioration de l\'expérience utilisateur. Vous pouvez à tout moment modifier vos préférences en matière de cookies via les réglages de votre navigateur.',
+         'credit_text' => 'Conception et réalisation du site : Agence de Communication "CréaWeb"<br>Crédits photographiques : Les photographies utilisées sur le site sont fournies par John Doe Photography.',
+         'auteur' => 'Droits d\'auteur',
+         'auteur_text' => 'L\'ensemble des contenus présents sur le site Tout Là-Haut (textes, photographies, vidéos, etc.) sont protégés par les dispositions du Code de la Propriété Intellectuelle. Toute reproduction, même partielle, est strictement interdite sans autorisation préalable de Tout Là-Haut.',
+         'credit' => 'Crédits',
+
+        //CGV 
+
+        'cgv-1' => 'CONDITIONS<br>GÉNÉRALES<br>DE VENTE',
+        'objet' => 'Objet',
+        'objet_text' => 'Les présentes conditions générales de vente ont pour objet de définir les droits et obligations des parties dans le cadre de la vente de séjours proposés par Tout Là-Haut dans ses cabanes en bois.',
+        'law' => 'Droit applicable', 
+        'law_text' => 'En cas de litige, les parties s\'efforceront de trouver une solution amiable. 
+            À défaut, les tribunaux compétents seront ceux du lieu du siège social de Tout Là-Haut.
+            Les présentes conditions générales de vente sont soumises au droit français.', 
+        'responsabilite' => 'Responsabilités', 
+        'responsabilite_text' => 'Tout Là-Haut décline toute responsabilité en cas de vol, de perte ou de dommage causé aux biens du client pendant son séjour. 
+            Le client est responsable de tout dommage causé aux équipements mis à sa disposition.', 
+        'annulation-1' => 'Modification et annulation',
+        'annulation_text' => 'Toute modification ou annulation de réservation doit être notifiée à Tout Là-Haut par écrit. 
+            Les conditions de modification ou d\'annulation seront précisées lors de la réservation et peuvent varier selon les périodes de l\'année.',
+        'modalite' => 'Modalités de paiement',
+        'modalite_text' => 'Le règlement du séjour s\'effectue par carte bancaire, virement bancaire ou chèque,
+        selon les modalités précisées lors de la réservation. Un acompte pourra être demandé au moment de la réservation.',
+        'tarif' => 'Tarifs', 
+        'tarif_text' => 'Les tarifs des séjours sont indiqués en euros toutes taxes comprises. 
+             comprennent l\'hébergement et l\'accès aux équipements, prestations et services proposés par Tout Là-Haut. 
+             Les frais annexes (taxe de séjour, options supplémentaires) sont à la charge du client et précisés lors de la réservation.', 
+    'reservation-1' => 'Réservation',
+    'reservation_text' => 'La réservation d\'un séjour dans l\'une de nos cabanes en bois peut s\'effectuer par téléphone,
+            par email ou via notre site internet. Elle sera confirmée par Tout Là-Haut après réception du paiement.',
+
 
 
 

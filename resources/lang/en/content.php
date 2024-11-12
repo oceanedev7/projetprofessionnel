@@ -238,6 +238,55 @@ return [
       'contact_text' => 'For any questions regarding this privacy policy, please contact Tout Là-Haut at contact@toutlahaut.org.',
 
 
+     //Mentions légales
+
+      'mention-1' => 'Legal<br>notice',
+      'proprio' => 'Website owner',
+      'publication' => 'Responsible for publication',
+      'agence' => 'Communication Agency',
+      'hebergeur' => 'Web host',
+      'nom-1' => 'Name',
+      'rgpd' => 'In accordance with the amended Data Protection Act of January 6, 1978 and the General Data Protection Regulation (GDPR), you have a right of access, rectification, deletion and portability of data concerning you. To exercise this right, please contact us at contact@toutlahaut.org. The data collected on this site is intended for internal use and will under no circumstances be transferred to third parties.',
+      'cookie' => 'The Tout Là-Haut site may ask you to accept cookies for statistical purposes and to improve the user experience. You can change your cookie preferences at any time via your browser settings.',
+      'credit_text' => 'Design and creation of the site: Communication Agency "CréaWeb"<br>Photographic credits: The photographs used on the site are provided by John Doe Photography.',
+      'auteur' => 'Copyright',
+      'auteur_text' => 'All content present on the Tout Là-Haut site (texts, photographs, videos, etc.) is protected by the provisions of the Intellectual Property Code. Any reproduction, even partial, is strictly prohibited without prior authorization from Tout Là-Haut.',
+      'credit' => 'Credits',
+
+     //CGV 
+
+    'cgv-1' => 'GENERAL<br>CONDITIONS<br>OF SALE',        
+    'objet' => 'Purpose',
+    'objet_text' => 'The purpose of these general conditions of sale is to define the rights and obligations of the parties in the context of the sale of stays offered by Tout Là-Haut in its wooden cabins.',
+    'law' => 'Applicable law', 
+    'law_text' => 'In the event of a dispute, the parties will endeavor to find an amicable solution. 
+    Failing this, the competent courts will be those of the head office of Tout Là-Haut.
+    These general conditions of sale are subject to French law.', 
+    'responsabilite' => 'Responsibility', 
+    'responsabilite_text' => 'Tout Là-Haut declines all responsibility in the event of theft, loss or damage caused to the client\'s property during their stay. 
+    The customer is responsible for any damage caused to the equipment made available to him.', 
+    'annulation-1' => 'Modification and cancellation',
+    'annulation_text' => 'Any modification or cancellation of reservation must be notified to Tout Là-Haut in writing. 
+    The conditions for modification or cancellation will be specified when booking and may vary depending on the time of year.',
+    'modalite' => 'Payment terms',
+    'modalite_text' => 'Payment for the stay is made by credit card, bank transfer or check, according to the terms specified when booking. A deposit may be requested at the time of booking.',
+     'tarif' => 'Prices', 
+     'tarif_text' => 'Prices for stays are indicated in euros, all taxes included. 
+        include accommodation and access to the equipment, benefits and services offered by Tout Là-Haut. 
+        Additional costs (tourist tax, additional options) are the responsibility of the customer and specified when booking.', 
+        'reservation-1' => 'Reservation',
+        'reservation_text' => 'Reserving a stay in one of our wooden cabins can be made by telephone,
+        by email or via our website. It will be confirmed by Tout Là-Haut after receipt of payment.',
+
+
+
+
+
+
+
+
+
+
 
 
 

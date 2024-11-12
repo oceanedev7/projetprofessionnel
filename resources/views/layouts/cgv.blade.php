@@ -14,7 +14,7 @@
     <nav>
         <div class="fixed z-10 w-full "> 
             <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-            {{-- <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
+
             @if(Auth::check())
             <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-52">
                 <x-dropdown align="right" width="48">

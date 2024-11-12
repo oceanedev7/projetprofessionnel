@@ -32,11 +32,11 @@ Route::get('/menu', function () {
 
 Route::get('/mentionslegales', function () {
     return view('pages.footer.mentionslegales');
-})->name('mentionslegales');
+})->name('mentionslegales')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/conditionsgeneralesdevente', function () {
     return view('pages.footer.conditionsvente');
-})->name('cgv');
+})->name('cgv')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/confidentialite', function () {
     return view('pages.footer.confidentialite');
