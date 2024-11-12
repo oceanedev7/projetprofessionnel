@@ -1,5 +1,8 @@
 @extends('layouts.main')
 
+@section('title', __('content.info'))
+
+
     @section('navbar')
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
@@ -21,11 +24,11 @@
     
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Mon profil') }}
+                        {{ __('content.profil') }}
                     </x-dropdown-link>
 
                     <x-dropdown-link :href="route('user-reservation')">
-                        {{ __('Mes réservations') }}
+                        {{ __('content.my_resa') }}
                     </x-dropdown-link>
     
                     <!-- Déconnexion -->
@@ -34,7 +37,7 @@
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Se déconnecter') }}
+                             {{ __('content.deconnexion') }}
                         </x-dropdown-link>
                     </form>
                 </x-slot>
@@ -140,18 +143,18 @@
                         <input type="hidden" name="massageQuantites" value="{{ implode(',', $massageQuantites) }}">
                         <input type="hidden" name="prestationsTypes" value="{{ implode(',', $prestationsTypes) }}">
 
-                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">Valider ma réservation</button>
+                    <button type="submit" class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center">{{__('content.valider_resa')}}</button>
                 </form>
             </div>
         </div>
 
         <div>
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
-                <h2 class="font-bold mb-4 text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
+                <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div> {{ $nomCabane }} </div>
+                        <div> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $nomCabane))) }}</div>
                         <div> - </div>
                         <div> {{ $capacite }} {{ __('content.pax') }}  </div>
                  
@@ -165,17 +168,26 @@
                 <div class="flex flex-col mt-8 space-y-4">
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">{{ __('content.arrivee') }}  :</label>
-                        <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}</div>
+                    @if ( App::getLocale() === 'en')
+                        {{ \Carbon\Carbon::parse($dateArrivee)->format('m/d/Y') }}
+                    @else
+                        {{ \Carbon\Carbon::parse($dateArrivee)->format('d/m/Y') }}
+                    @endif
                     </div>
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">{{ __('content.depart') }} :</label>
-                        <div class="font-semibold text-custom-marron"> {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}</div>
-                    </div>
+
+                    @if ( App::getLocale() === 'en')
+                        {{ \Carbon\Carbon::parse($dateDepart)->format('m/d/Y') }}
+                    @else
+                        {{ \Carbon\Carbon::parse($dateDepart)->format('d/m/Y') }}
+                    @endif                    
+                </div>
 
                     <div class="flex justify-between">
                         <label class="font-bold text-custom-marron">{{ __('content.duree') }} :</label>
-                        <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} nuit(s) </div>
+                        <div class="font-semibold text-custom-marron"> {{ $nombreNuitees }} {{ __('content.nuit') }} </div>
                     </div>
 
                     <div class="flex justify-between">
@@ -257,12 +269,12 @@
                         </div>
 
                     <div class="flex justify-between"> 
-                        <div class="italic font-black text-custom-marron"> Total des extras :  </div>
+                        <div class="italic font-black text-custom-marron"> {{ __('content.total_extra') }} :  </div>
                         <div class="font-black text-custom-marron"> {{ $totalExtra }} € </div>
                     </div>
 
                     <div class="flex justify-between"> 
-                        <div class="italic font-black text-custom-marron"> Total de la cabane : </div>
+                        <div class="italic font-black text-custom-marron">{{ __('content.total_cabane') }} : </div>
                         <div class="font-black text-custom-marron"> {{ $prixTotal }} € </div>
                     </div>
                 

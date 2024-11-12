@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css','resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Tout Là-Haut</title>
+    <title>@yield('title')</title>
 </head>
 
 <body>
@@ -32,7 +32,11 @@
         
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Mon profil') }}
+                            {{ __('content.profil') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('user-reservation')">
+                            {{ __('content.my_resa') }}
                         </x-dropdown-link>
                         
                         <!-- Déconnexion -->
@@ -41,7 +45,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Se déconnecter') }}
+                                 {{ __('content.deconnexion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>

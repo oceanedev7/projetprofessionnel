@@ -11,9 +11,7 @@
 <body>
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-        {{-- <a href="{{ route('login') }}" class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
-            <i class="fa-solid fa-user"></i>
-        </a> --}}
+
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-52">
             <x-dropdown align="right" width="48">
@@ -31,11 +29,11 @@
     
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Mon profil') }}
+                        {{ __('content.profil') }}
                     </x-dropdown-link>
     
                     <x-dropdown-link :href="route('user-reservation')">
-                        {{ __('Mes réservations') }}
+                        {{ __('content.my_resa') }}
                     </x-dropdown-link>
     
                     <!-- Déconnexion -->
@@ -44,7 +42,7 @@
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Se déconnecter') }}
+                            {{ __('content.deconnexion') }}
                         </x-dropdown-link>
                     </form>
                 </x-slot>
@@ -56,7 +54,7 @@
         </a>
     @endif
     
-            <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+        <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
             class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
              {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
          </a>
@@ -67,10 +65,10 @@
     <div class="w-full bg-custom-beige p-12"> 
         <div class="flex space-x-2 hover:underline underline-white text-white absolute top-10 left-28"> 
             <i class="fa-solid fa-arrow-left mt-1 "></i>
-                <a href="{{ route('user-reservation') }}" class="font-bold ">Voir toutes mes réservations</a>
+                <a href="{{ route('user-reservation') }}" class="font-bold ">{{ __('content.resa_list') }}</a>
         </div> 
         
-        <div class="text-center uppercase text-3xl font-black text-white mb-14 relative top-8"> Détails de ma réservation </div>
+        <div class="text-center uppercase text-3xl font-black text-white mb-14 relative top-8"> {{ __('content.resa_detail_titre') }} </div>
     
         <div class="mx-72 items-center flex flex-col bg-white rounded-lg shadow-md p-6 space-y-8">
 
@@ -78,41 +76,41 @@
                 <img class="rounded-lg" src="{{ Storage::url('images/caroussel1.jpg') }}" alt="Chambre">
             </div>
     
-        <div>
-            <div class="font-bold uppercase mb-2"> Informations du client </div>
-            <p><span class="font-medium">Prénom :</span> {{ $reservation->user->prenom ?? $reservation->guest->prenom }}</p>
-            <p><span class="font-medium">Nom :</span> {{ $reservation->user->nom ?? $reservation->guest->nom }}</p>
-            <p><span class="font-medium">Adresse postale :</span>
+        <div class="flex flex-col items-center">
+            <div class="font-bold uppercase mb-4"> {{ __('content.info') }} </div>
+            <p><span class="font-medium">{{ __('content.prenom') }} :</span> {{ $reservation->user->prenom ?? $reservation->guest->prenom }}</p>
+            <p><span class="font-medium">{{ __('content.nom') }} :</span> {{ $reservation->user->nom ?? $reservation->guest->nom }}</p>
+            <p><span class="font-medium">{{ __('content.adresse-postale') }} :</span>
                 {{ $reservation->user->adresse_postale ?? $reservation->guest->adresse_postale }}, 
                 {{ $reservation->user->ville ?? $reservation->guest->ville }}
                 {{ $reservation->user->code_postal ?? $reservation->guest->code_postal}}
             </p>
-            <p><span class="font-medium">Numéro de téléphone :</span> {{ $reservation->user->telephone ?? $reservation->guest->telephone }}</p>
-            <p><span class="font-medium">Adresse email :</span> {{ $reservation->user->email ?? $reservation->guest->email }}</p>
+            <p><span class="font-medium">{{ __('content.telephone') }} :</span> {{ $reservation->user->telephone ?? $reservation->guest->telephone }}</p>
+            <p><span class="font-medium">{{ __('content.email') }} :</span> {{ $reservation->user->email ?? $reservation->guest->email }}</p>
     
         </div>
     
-        <div>
-            <div class="font-bold uppercase mb-6"> Détails de la réservation </div>
-            <div class="font-semibold ml-10 italic underline mb-2"> Hébergement </div>
+        <div class="flex flex-col items-center ">
+            <div class="font-bold uppercase mb-4"> {{ __('content.resa_detail_titre') }} </div>
+
+            <div class="font-semibold ml-10 italic underline mb-2">{{ __('content.hebergement') }} </div>
     
-            <p><span class="font-medium">Hébergement :</span> {{ $reservation->nomCabane }}</p>
-            <p><span class="font-medium">Date d'arrivée :</span> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</p>
-            <p><span class="font-medium">Date de départ :</span> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</p>
-            <p><span class="font-medium">Nombre de nuitée(s) :</span> {{  $reservation->nombreNuitees }} nuit(s)</p>
-            <p><span class="font-medium">Nombre d'adultes :</span> {{  $reservation->nombreAdultes }} adultes</p>
+            <p><span class="font-medium">{{ __('content.hebergement') }} :</span> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->nomCabane))) }}</p>
+            <p><span class="font-medium">{{ __('content.arrivee') }}:</span> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</p>
+            <p><span class="font-medium">{{ __('content.depart') }} :</span> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</p>
+            <p><span class="font-medium">{{ __('content.n-nuit') }} :</span> {{  $reservation->nombreNuitees }} {{ __('content.nuit') }}</p>
+            <p><span class="font-medium">{{ __('content.n-adulte') }} :</span> {{  $reservation->nombreAdultes }} {{ __('content.adultes') }}</p>
             @if($reservation->nombreEnfants > 0)
-                <p><span class="font-medium">Nombre d'enfants :</span> {{  $reservation->nombreEnfants }} enfants</p>
+                <p><span class="font-medium">{{ __('content.n-enfant') }} :</span> {{  $reservation->nombreEnfants }} {{ __('content.enfants-1') }}</p>
             @endif
         </div>
     
     
-        <div>
-            <div class="font-semibold ml-10 italic underline mb-2"> Extras </div>
+        <div class="flex flex-col items-center">
+            <div class="font-semibold ml-10 italic underline mb-2"> {{ __('content.extra') }} </div>
     
          @foreach($reservation->prestations as $prestation)
          
-        @dd($prestation);
          @if($prestation->pivot->type === 'Adulte')
          <div class="flex space-x-1">
             <div class="flex font-semibold space-x-1">
@@ -165,9 +163,9 @@
 
         <p><span class="font-medium">Message :</span> {{  $reservation->message }}</p>
 
-        <p class="font-bold uppercase text-xl"><span class="font-bold uppercase">Prix total :</span> {{ $reservation->prix }}€</p>
+        <p class="font-bold uppercase text-xl"><span class="font-bold uppercase">{{ __('content.prix_total') }}  :</span> {{ $reservation->prix }}€</p>
 
-        <a href="{{route ('supprimer-user-reservation', $reservation->id)}}" class="w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">Annuler la réservation</a>
+        <a href="{{route ('supprimer-user-reservation', $reservation->id)}}" class="hover:bg-red-500 w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">{{ __('content.annuler') }}</a>
     
     
     </div>

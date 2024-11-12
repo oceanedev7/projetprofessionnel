@@ -1,5 +1,7 @@
 @extends('layouts.main')
 
+@section('title', __('content.extra'))
+
     @section('navbar')
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
@@ -21,11 +23,11 @@
     
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Mon profil') }}
+                        {{ __('content.profil') }}
                     </x-dropdown-link>
 
                     <x-dropdown-link :href="route('user-reservation')">
-                        {{ __('Mes réservations') }}
+                        {{ __('content.my_resa') }}
                     </x-dropdown-link>
     
                     <!-- Déconnexion -->
@@ -34,7 +36,7 @@
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Se déconnecter') }}
+                             {{ __('content.deconnexion') }}
                         </x-dropdown-link>
                     </form>
                 </x-slot>

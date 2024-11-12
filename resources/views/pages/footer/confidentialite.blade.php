@@ -1,5 +1,8 @@
 @extends('layouts.cgv')
 
+@section('title', __('content.data'))
+
+
 @section ('titre')
 <div class="flex flex-col ">
 <h1 class=" ml-12 mt-60 text-6xl text-white font-bold"> POLITIQUE DE <br/> CONFIDENTIALITÉS</h1>

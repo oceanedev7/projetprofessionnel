@@ -114,18 +114,21 @@ $prestationsTypes = explode(',', $request->input('prestationsTypes'));
            
 
     foreach ($restaurationIds as $index => $restId) {
+        if (!empty($restId) && isset($restaurationQuantites[$index]) && !empty($prestationsTypes[$index])) {
         $reservation->prestations()->attach($restId, [
             'quantite' => $restaurationQuantites[$index], 
             'type' => $prestationsTypes[$index] 
         ]);
-    }
+    }}
 
     foreach ($massageIds as $index => $massageId) {
+        if (!empty($massageId) && isset($massageQuantites[$index])) {
+
         $reservation->prestations()->attach($massageId, [
             'quantite' => $massageQuantites[$index],  
             'type' => 'Massage'  
         ]);
-    }
+    }}
 
     session([
         'nomCabane' => $nomCabane,

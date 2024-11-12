@@ -53,7 +53,7 @@ class PaiementController extends Controller
                 'description' => 'Paiement effectué via Stripe pour la commande #' . $charge->id,
             ]);
 
-            return redirect()->route('confirmed')->with('success', 'Paiement effectué avec succès !');
+            return redirect()->route('confirmed')->with('success', __('content.success'));
             
         } catch (\Exception $e) {
             

@@ -1,11 +1,14 @@
 @extends('layouts.main')
 
+@section('title', __('content.osmose'))
+
+
 @section('navbar')
 <div class="fixed z-10 w-full"> 
     <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
     {{-- <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
     @if(Auth::check())
-    <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-52">
+    <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-56">
         <x-dropdown align="right" width="48">
             <x-slot name="trigger">
                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-bold rounded-md bg-white bg-opacity-90 text-custom-vert focus:outline-none transition ease-in-out duration-150">
@@ -21,7 +24,11 @@
 
             <x-slot name="content">
                 <x-dropdown-link :href="route('profile.edit')">
-                    {{ __('Mon profil') }}
+                    {{ __('content.profil') }}
+                </x-dropdown-link>
+
+                <x-dropdown-link :href="route('user-reservation')">
+                    {{ __('content.my_resa') }}
                 </x-dropdown-link>
 
                 <!-- Déconnexion -->
@@ -30,7 +37,7 @@
                     <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Se déconnecter') }}
+                         {{ __('content.deconnexion') }}
                     </x-dropdown-link>
                 </form>
             </x-slot>
@@ -43,9 +50,9 @@
 @endif
 
     <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
-        class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        class="absolute top-8 right-40 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
          {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
-     </a>     <a href="{{ route('reserver') }}" class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm"> RÉSERVER </a>  
+     </a>     <a href="{{ route('reserver') }}" class="absolute top-8 right-8 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>  
 </div>
 @endsection
 
