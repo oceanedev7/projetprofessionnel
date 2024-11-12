@@ -114,6 +114,8 @@ return [
     'arrivee' => 'Date d\'arrivée',
     'depart' => 'Date de départ',
     'au'=> 'au',
+    'de'=> 'De',
+
     'pour'=> 'Pour',
 
     'adultes'=> 'Adultes',
@@ -147,6 +149,9 @@ return [
     'restaurant_panier_du_terroir' => 'Panier du Terroir (11H à 13H30)',
     'restaurant_panier_gourmand' => 'Panier Gourmand (19H à 21H)',
 
+    'total_cabane' => 'Total de la cabane',
+    'total_extra' => 'Total des extras',
+
     //Paiement
 
     'paiement' => 'Votre réservation',
@@ -156,6 +161,7 @@ return [
     'nuitee' => 'Nombre de nuitées', 
     'n-adulte' => 'Nombre d\'adultes', 
     'n-enfant' => 'Nombre d\'enfants', 
+    'n-nuit' => 'Nombre de nuitée(s)', 
     'carte' => 'Votre carte',
     'n-carte' => 'Numéro de carte',
     'cabane-n' => 'Cabane',
@@ -166,6 +172,23 @@ return [
     'success' => 'Paiement effectué avec succès !',
 
     'valider_resa' => 'Valider ma réservation',
+
+    //Mes réservations (espace user)
+
+    'my_resa' => 'Mes réservations',
+    'resa_detail' => 'Voir le détail de ma réservation',
+    'resa_detail_titre' => 'Détails de ma réservation',
+    'resa_list' => 'Voir toutes mes réservations',
+    'prix_total' => 'Prix total',
+    'hebergement' => 'Hebergement',
+    'annuler' => 'Annuler la réservation',
+
+    //Mes réservations (espace user)
+
+    'deconnexion' => 'Se déconnecter',
+    'profil' => 'Mon profil',
+
+
 
 
 

@@ -84,8 +84,8 @@ Route::get('/reservation/confirmation', function () {
     return view('pages.resa-confirmed');
 })->name('confirmed')->middleware(\App\Http\Middleware\Localisation::class);
 
-Route::get('/moncompte/reservations', [UserReservationController::class, 'index'])->name('user-reservation');
-Route::get('/moncompte/reservation/details/{id}', [UserReservationController::class, 'show'])->name('user-reservation-details');
+Route::get('/moncompte/reservations', [UserReservationController::class, 'index'])->name('user-reservation')->middleware(\App\Http\Middleware\Localisation::class);
+Route::get('/moncompte/reservation/details/{id}', [UserReservationController::class, 'show'])->name('user-reservation-details')->middleware(\App\Http\Middleware\Localisation::class);
 Route::get('/moncompte/reservation/delete/{id}', [UserReservationController::class, 'destroy'])->name('supprimer-user-reservation');
 
 

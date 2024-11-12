@@ -12,9 +12,6 @@
 <body>
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-        {{-- <a href="{{ route('login') }}" class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
-            <i class="fa-solid fa-user"></i>
-        </a> --}}
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-52">
             <x-dropdown align="right" width="48">
@@ -32,11 +29,11 @@
     
                 <x-slot name="content">
                     <x-dropdown-link :href="route('profile.edit')">
-                        {{ __('Mon profil') }}
+                        {{ __('content.profil') }}
                     </x-dropdown-link>
     
                     <x-dropdown-link :href="route('user-reservation')">
-                        {{ __('Mes réservations') }}
+                        {{ __('content.my_resa') }}
                     </x-dropdown-link>
     
                     <!-- Déconnexion -->
@@ -45,7 +42,7 @@
                         <x-dropdown-link :href="route('logout')"
                                 onclick="event.preventDefault();
                                             this.closest('form').submit();">
-                            {{ __('Se déconnecter') }}
+                             {{ __('content.deconnexion') }}
                         </x-dropdown-link>
                     </form>
                 </x-slot>
@@ -73,7 +70,7 @@
  
 <div class="w-full bg-custom-beige p-12 space-y-12"> 
 
-    <div class="text-center uppercase text-white font-black text-3xl"> Mes réservations </div>
+    <div class="text-center uppercase text-white font-black text-3xl">{{ __('content.my_resa') }} </div>
 
         @foreach($reservations as $reservation)
     
@@ -84,26 +81,40 @@
 
     <div class="flex flex-col flex-grow justify-center"> 
        
-            <div class=" uppercase font-bold text-xl">{{ $reservation->nomCabane }}</div>
+            <div class=" uppercase font-bold text-xl">{{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->nomCabane))) }}</div>
         
         <div class="flex space-x-2 font-semibold">
-            <div> du </div>
-            <div> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</div> 
-            <div> au </div>  
-            <div> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</div>
+            <div> {{ __('content.de') }} </div>
+            <div>  
+                @if ( App::getLocale() === 'en')
+                    {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('m/d/Y') }}
+                @else
+                    {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}
+                @endif
+            </div> 
+
+            <div> {{ __('content.au') }} </div>  
+
+            <div>  @if ( App::getLocale() === 'en')
+                    {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('m/d/Y') }}
+                @else
+                    {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}
+                @endif
+            </div>
+
          </div>
 
          <div class="flex space-x-2">
-            <div>{{ $reservation->nombreAdultes }} adultes</div>
+            <div>{{ $reservation->nombreAdultes }}  {{ __('content.adultes') }}</div>
             @if ($reservation->nombreEnfants > 0)  
             <div> - </div>  
-            <div> {{ $reservation->nombreEnfants }} enfants</div>  
+            <div> {{ $reservation->nombreEnfants }}  {{ __('content.enfants-1') }}</div>  
             @endif
          </div>
 
     <div class="flex flex-col ml-auto">
     <div class="font-black text-xl mb-2 ml-auto">TOTAL : {{ $reservation->prix }} € </div>
-    <a href="{{route ('user-reservation-details', $reservation->id)}}" class="bg-custom-marron rounded text-white font-bold py-2 px-4 ">Voir le détail de ma réservation</a>
+    <a href="{{route ('user-reservation-details', $reservation->id)}}" class="bg-custom-marron rounded text-white font-bold py-2 px-4 ">{{ __('content.resa_detail') }}</a>
     </div>
 
     </div>

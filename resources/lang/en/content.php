@@ -109,6 +109,8 @@ return [
     'arrivee' => 'Arrival date',
     'depart' => 'Departure date',
     'au'=> 'to',
+    'de'=> 'From',
+
     'pour'=> 'For',
 
     'adultes'=> 'Adults',
@@ -143,6 +145,9 @@ return [
     'restaurant_panier_du_terroir' => 'Panier of the Terroir (11 AM to 1:30 PM)',
     'restaurant_panier_gourmand' => 'Gourmet Basket (7 PM to 9 PM)',
 
+    'total_cabane' => 'Cabin total',
+    'total_extra' => 'Total additional services',
+
     //Paiement
 
     'paiement' => 'Your reservation',
@@ -151,17 +156,33 @@ return [
     'cvc' => 'CVC: The 3 digits on the back of your bank card',
     'nuitee' => 'Number of nights', 
     'n-adulte' => 'Number of adults', 
-    'n-enfant' => 'Number of children', 
+    'n-enfant' => 'Number of children',
+    'n-nuit' => 'Number of nights', 
     'carte' => 'Your card', 
     'n-carte' => 'Card number',
     'cabane-n' => 'Cabin',
-
     'merci' => 'Thank you for choosing TOUT LÀ-HAUT for your stay. We are delighted to welcome you to our property and will be at your disposal throughout your stay.',
     'retour' => 'Go back to the homepage',
     'confirmed' => 'Your reservation is confirmed !',
     'success' => 'Payment completed successfully !',
+    'valider_resa' => 'Validate my reservation',
 
-'valider_resa' => 'Validate my reservation',
+    //Mes réservations (espace user)
+
+    'my_resa' => 'My reservations',
+    'resa_detail' => 'See the details of my reservation',
+    'resa_detail_titre' => 'Details of my reservation',
+    'resa_list' => 'See all my reservations',
+    'prix_total' => 'Total price',
+    'hebergement' => 'Accommodation',
+    'annuler' => 'Cancel reservation',
+
+    //Mes réservations (espace user)
+
+    'deconnexion' => 'Log off',
+    'profil' => 'My profile',
+
+
 
 
 
