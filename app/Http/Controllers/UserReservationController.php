@@ -19,10 +19,11 @@ class UserReservationController extends Controller
     //  $reservations = $user->reservations;
 
     $user = Auth::user();
-    $reservations = $user->reservations()->orderBy('created_at', 'desc')->get();
-    
-         return view('pages.user-reservation', compact('reservations'));
-    }
+
+    if ($user) {
+        $reservations = $user->reservations()->orderBy('created_at', 'desc')->get();
+        return view('pages.user-reservation', compact('reservations'));
+    }}
 
     /**
      * Show the form for creating a new resource.

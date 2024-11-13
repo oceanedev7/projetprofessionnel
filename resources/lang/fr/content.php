@@ -81,6 +81,7 @@ return [
     'data' => 'Confidentialités',
     'cgv' => 'CGV',
 
+
     //Cabane Nid Douillet
     'nidDouillet-description' => 'La Cabane Nid Douillet est un refuge enchanteur pour ceux en quête de tranquillité et de connexion avec la nature. Nichée au cœur d\'un paysage pittoresque, cette cabane offre une escapade parfaite pour deux personnes en quête de sérénité. Perchée parmi les arbres majestueux, notre cabane offre un véritable cocon de confort et de bien-être. À l\'intérieur, vous trouverez un espace accueillant et douillet, décoré avec charme pour créer une atmosphère apaisante et réconfortante. Offrez-vous une pause bien méritée dans ce havre de paix où le temps semble ralentir et où chaque instant est une invitation à la détente et à la contemplation.',
     'prix-2' => 'À partir de 145.00 €',
@@ -299,6 +300,8 @@ return [
     'inscription' => 'S\'inscrire', 
     'register' => 'Déjà inscrit(e) ?', 
     'mdp_confirm' => 'Confirmez le mot de passe', 
+    'return' => 'Retour à la page de connexion', 
+
 
 
 

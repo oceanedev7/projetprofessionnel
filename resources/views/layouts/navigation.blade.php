@@ -29,7 +29,7 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
-                        <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-semibold bg-white rounded-md text-custom-vert dark:text-gray-400 dark:bg-gray-800 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                        <button class="inline-flex items-center relative right-16 px-3 py-2 border border-transparent text-sm leading-4 font-semibold bg-white rounded-md text-custom-vert dark:text-gray-400 dark:bg-gray-800 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</div>
 
                             <div class="ms-1">
@@ -38,11 +38,16 @@
                                 </svg>
                             </div>
                         </button>
+                        
                     </x-slot>
 
                     <x-slot name="content">
                         <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Mon Profil') }}
+                            {{ __('content.profil') }}
+                        </x-dropdown-link>
+
+                        <x-dropdown-link :href="route('user-reservation')">
+                            {{ __('content.my_resa') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -52,7 +57,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Se déconnecter') }}
+                               {{ __('content.deconnexion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
@@ -70,6 +75,11 @@
             </div>
         </div>
     </div>
+    
+    <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
+        class="absolute top-4 right-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+         {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
+     </a> 
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
@@ -88,7 +98,7 @@
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Mon profil') }}
+                    {{ __('content.profil') }}
                 </x-responsive-nav-link>
 
                 <!-- Authentication -->
@@ -98,7 +108,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Se déconnecter') }}
+                        {{ __('content.deconnexion') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

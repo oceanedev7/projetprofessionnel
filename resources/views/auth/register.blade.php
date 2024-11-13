@@ -1,6 +1,6 @@
   <a href="login" class="absolute top-6 left-6 text-white hover:underline"> 
     <i class="fa-solid fa-arrow-left"></i> 
-    Retour à la page de connexion 
+    {{ __('content.return') }}
 </a>
 
 <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 

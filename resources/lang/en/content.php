@@ -92,6 +92,7 @@ return [
     A ramp is available and suitable for people with reduced mobility.Please wear appropriate footwear (avoid delicate shoes and heels) and bring dry shoes for inside the cabin.
     The cabin is non-smoking. Guest visits are not permitted, and pets are not allowed on the property. Children under 6 years old are the responsibility of their parents.",
            
+
     //Cabane Osmose
     'osmose-description' => 'The Osmose Cabin is a peaceful haven in the heart of nature, where every moment invites relaxation and contemplation. Nestled in an idyllic setting, this cabin offers you a unique experience, away from the hustle and bustle of modern life. Whether you are seeking a romantic getaway or a wellness retreat, the Osmose Cabin is the perfect place to recharge and reconnect with nature. Treat yourself to an enchanted interlude where time seems to stand still, and where each moment is an opportunity to return to what truly matters.',
     
@@ -290,6 +291,11 @@ return [
     'inscription' => 'Register', 
     'register' => 'Already registered ?',
     'mdp_confirm' => 'Confirm password', 
+    'return' => 'Return to login page', 
+
+    //Mon profil
+    
+
  
 
 
