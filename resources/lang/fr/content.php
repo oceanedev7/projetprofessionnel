@@ -74,7 +74,7 @@ return [
     
     //Footer 
     'suivez-nous' => 'Suivez-nous',
-    'offre' => 'Ne passez pas à côté de nos meilleures offres',
+    'offre-1' => 'Ne passez pas à côté de nos meilleures offres',
     'inscrire' => 'S\'inscrire',
     'mention' => 'Mentions légales',
     'plan-site' => 'Plan du site',
