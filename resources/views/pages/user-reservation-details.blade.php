@@ -33,7 +33,7 @@
                     </x-dropdown-link>
     
                     <x-dropdown-link :href="route('user-reservation')">
-                        {{ __('content.my_resa') }}
+                         {{ __('content.my_resa') }}
                     </x-dropdown-link>
     
                     <!-- Déconnexion -->

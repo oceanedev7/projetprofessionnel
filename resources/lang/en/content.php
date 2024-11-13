@@ -92,6 +92,7 @@ return [
     A ramp is available and suitable for people with reduced mobility.Please wear appropriate footwear (avoid delicate shoes and heels) and bring dry shoes for inside the cabin.
     The cabin is non-smoking. Guest visits are not permitted, and pets are not allowed on the property. Children under 6 years old are the responsibility of their parents.",
            
+
     //Cabane Osmose
     'osmose-description' => 'The Osmose Cabin is a peaceful haven in the heart of nature, where every moment invites relaxation and contemplation. Nestled in an idyllic setting, this cabin offers you a unique experience, away from the hustle and bustle of modern life. Whether you are seeking a romantic getaway or a wellness retreat, the Osmose Cabin is the perfect place to recharge and reconnect with nature. Treat yourself to an enchanted interlude where time seems to stand still, and where each moment is an opportunity to return to what truly matters.',
     
@@ -181,6 +182,131 @@ return [
 
     'deconnexion' => 'Log off',
     'profil' => 'My profile',
+
+    //FAQ
+
+    'question' => 'Questions & Answers',
+   'activite' => 'Are there any activities available on site ?',
+   'rep_activite' => 'Yes, we offer a variety of outdoor activities such as hiking, cycling, wildlife watching and relaxing in our wellness area (subject to availability).',
+    'animal' => 'Can I bring my pet ?',
+    'rep_animal' => 'Unfortunately, we cannot accommodate pets in our cabins for reasons of safety and comfort of other guests.',
+    'heure' => 'What time can I arrive and depart ?',
+    'rep_heure' => 'Arrival is from 4 p.m. to 6 p.m. and departure until 11 a.m. That said, 
+    Arrival and departure times can be adjusted upon request. Please contact us to arrange your arrival and departure.',
+    'acces' => 'How can I access the cabins ?',
+    'rep_acces' => 'Our cabins are accessible by foot, but some may require a short hike to access. We will provide you with all the necessary information when you make your reservation.',
+    'mobilite' => 'Are the cabins suitable for people with reduced mobility ?',
+    'rep_mobilite' => 'Yes, our cabins are accessible to people with reduced mobility.',
+    'offre' => 'Do you have any special offers or packages available ?',
+    'rep_offre' => 'We regularly offer special offers and themed packages. Follow us to discover our latest offers.',
+
+
+     //Confidentialités
+
+     'politique' => 'Privacy policy',
+    'collecte' => 'Collection of personal data',
+    'collecte_text' => 'Tout Là-Haut collects personal data from customers when booking a stay in our 
+      wooden cabins. This data may include name, address, email address, telephone number, as well as payment information.',
+     'utilisation' => 'Use of personal data',
+     'utilisation_text' => 'The personal data collected is used for the purpose of processing reservations, 
+      to provide the services requested by customers, manage payments and communicate 
+      with guests regarding their stay.',
+     'conservation' => 'Retention of personal data',
+     'conservation_text' => 'Tout Là-Haut retains customers\' personal data for as long as necessary to achieve the 
+      purposes for which they were collected, in particular to comply with our legal obligations, 
+      resolve disputes and enforce our agreements.',
+
+     'protection' => 'Protection of personal data',
+     'protection_text' => 'Tout Là-Haut implements appropriate security measures to protect 
+      personal data against unauthorized access, misuse or disclosure.',
+
+     'partage' => 'Sharing of personal data',
+     'partage_text' => 'Tout Là-Haut does not share customer personal data with third parties, except in the following cases:
+      When necessary to provide services requested by customers 
+      (e.g. communication with third party service providers for booking management).
+      When required by law or a competent government authority.',
+
+     'droits' => 'Customer Rights', 
+     'droits_text' => 'Customers have the right to access their personal data, to rectify it, 
+      to delete them or limit their processing. They can also object to the processing 
+      of their personal data for legitimate reasons. To exercise these rights, customers 
+      can contact Tout Là-Haut at contact@toutlahaut.org.',
+
+     'modification' => 'Privacy Policy Changes',
+     'modification_text' => 'Tout Là-Haut reserves the right to modify this privacy policy at any time. 
+      Customers will be informed of any material changes to this policy.',
+
+      'contact_text' => 'For any questions regarding this privacy policy, please contact Tout Là-Haut at contact@toutlahaut.org.',
+
+
+     //Mentions légales
+
+      'mention-1' => 'Legal<br>notice',
+      'proprio' => 'Website owner',
+      'publication' => 'Responsible for publication',
+      'agence' => 'Communication Agency',
+      'hebergeur' => 'Web host',
+      'nom-1' => 'Name',
+      'rgpd' => 'In accordance with the amended Data Protection Act of January 6, 1978 and the General Data Protection Regulation (GDPR), you have a right of access, rectification, deletion and portability of data concerning you. To exercise this right, please contact us at contact@toutlahaut.org. The data collected on this site is intended for internal use and will under no circumstances be transferred to third parties.',
+      'cookie' => 'The Tout Là-Haut site may ask you to accept cookies for statistical purposes and to improve the user experience. You can change your cookie preferences at any time via your browser settings.',
+      'credit_text' => 'Design and creation of the site: Communication Agency "CréaWeb"<br>Photographic credits: The photographs used on the site are provided by John Doe Photography.',
+      'auteur' => 'Copyright',
+      'auteur_text' => 'All content present on the Tout Là-Haut site (texts, photographs, videos, etc.) is protected by the provisions of the Intellectual Property Code. Any reproduction, even partial, is strictly prohibited without prior authorization from Tout Là-Haut.',
+      'credit' => 'Credits',
+
+     //CGV 
+
+    'cgv-1' => 'GENERAL<br>CONDITIONS<br>OF SALE',        
+    'objet' => 'Purpose',
+    'objet_text' => 'The purpose of these general conditions of sale is to define the rights and obligations of the parties in the context of the sale of stays offered by Tout Là-Haut in its wooden cabins.',
+    'law' => 'Applicable law', 
+    'law_text' => 'In the event of a dispute, the parties will endeavor to find an amicable solution. 
+    Failing this, the competent courts will be those of the head office of Tout Là-Haut.
+    These general conditions of sale are subject to French law.', 
+    'responsabilite' => 'Responsibility', 
+    'responsabilite_text' => 'Tout Là-Haut declines all responsibility in the event of theft, loss or damage caused to the client\'s property during their stay. 
+    The customer is responsible for any damage caused to the equipment made available to him.', 
+    'annulation-1' => 'Modification and cancellation',
+    'annulation_text' => 'Any modification or cancellation of reservation must be notified to Tout Là-Haut in writing. 
+    The conditions for modification or cancellation will be specified when booking and may vary depending on the time of year.',
+    'modalite' => 'Payment terms',
+    'modalite_text' => 'Payment for the stay is made by credit card, bank transfer or check, according to the terms specified when booking. A deposit may be requested at the time of booking.',
+     'tarif' => 'Prices', 
+     'tarif_text' => 'Prices for stays are indicated in euros, all taxes included. 
+        include accommodation and access to the equipment, benefits and services offered by Tout Là-Haut. 
+        Additional costs (tourist tax, additional options) are the responsibility of the customer and specified when booking.', 
+        'reservation-1' => 'Reservation',
+        'reservation_text' => 'Reserving a stay in one of our wooden cabins can be made by telephone,
+        by email or via our website. It will be confirmed by Tout Là-Haut after receipt of payment.',
+
+
+    //Login 
+    'mdp' => 'Password',
+    'souvenir' => 'Remember me',
+    'oublie' => 'Forgotten password ?',
+    'compte' => 'Don\'t have an account yet? Sign up !',
+    'connexion' => 'Log in',
+
+    //Register 
+    'inscription' => 'Register', 
+    'register' => 'Already registered ?',
+    'mdp_confirm' => 'Confirm password', 
+    'return' => 'Return to login page', 
+
+    //Mon profil
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 

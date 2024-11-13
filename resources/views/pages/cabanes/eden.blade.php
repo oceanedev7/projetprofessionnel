@@ -43,7 +43,7 @@
         </x-dropdown>
     </div>
 @else
-    <a href="{{ route('login') }}" class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+    <a href="{{ route('login') }}" class="absolute top-8 right-56 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
         <i class="fa-solid fa-user"></i>
     </a>
 @endif

@@ -19,6 +19,7 @@ use App\Http\Controllers\PaiementController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\UserReservationController;
 use App\Http\Controllers\ValidateClientController;
+use App\Http\Middleware\Localisation;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
@@ -32,23 +33,23 @@ Route::get('/menu', function () {
 
 Route::get('/mentionslegales', function () {
     return view('pages.footer.mentionslegales');
-})->name('mentionslegales');
+})->name('mentionslegales')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/conditionsgeneralesdevente', function () {
     return view('pages.footer.conditionsvente');
-})->name('cgv');
+})->name('cgv')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/confidentialite', function () {
     return view('pages.footer.confidentialite');
-})->name('confidentialite');
+})->name('confidentialite')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/plandusite', function () {
     return view('pages.footer.plandusite');
-})->name('plandusite');
+})->name('plandusite')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/faq', function () {
     return view('pages.footer.faq');
-})->name('faq');
+})->name('faq')->middleware(\App\Http\Middleware\Localisation::class);
 
 Route::get('/reserver', function () {
     return view('pages.reserver');
@@ -128,7 +129,13 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
 });
 
-Route::middleware('auth')->group(function () {
+// Route::middleware('auth')->group(function () {
+//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+// });
+
+Route::middleware(['auth', Localisation::class])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

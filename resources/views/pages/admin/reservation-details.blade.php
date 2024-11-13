@@ -25,7 +25,7 @@
                 <img class="rounded-lg" src="{{ Storage::url('images/caroussel1.jpg') }}" alt="Chambre">
             </div>
     
-        <div>
+        <div class="flex flex-col items-center">
             <div class="font-bold uppercase mb-2"> Informations du client </div>
             <p><span class="font-medium">Prénom :</span> {{ $reservation->user->prenom ?? $reservation->guest->prenom }}</p>
             <p><span class="font-medium">Nom :</span> {{ $reservation->user->nom ?? $reservation->guest->nom }}</p>
@@ -39,7 +39,7 @@
     
         </div>
     
-        <div>
+        <div  class="flex flex-col items-center">
             <div class="font-bold uppercase mb-6"> Détails de la réservation </div>
             <div class="font-semibold ml-10 italic underline mb-2"> Hébergement </div>
     
@@ -54,7 +54,7 @@
         </div>
     
     
-        <div>
+        <div  class="flex flex-col items-center">
             <div class="font-semibold ml-10 italic underline mb-2"> Extras </div>
     
          @foreach($reservation->prestations as $prestation)
@@ -113,7 +113,7 @@
 
         <p class="font-bold uppercase text-xl"><span class="font-bold uppercase">Prix total :</span> {{ $reservation->prix }}€</p>
 
-    <a href="{{ route('supprimerReservation', $reservation->id) }}" class="w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">Annuler la réservation</a>
+    <a href="{{ route('supprimerReservation', $reservation->id) }}" class="hover:bg-red-500 w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">Annuler la réservation</a>
     
     
     </div>

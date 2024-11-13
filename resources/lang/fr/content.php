@@ -81,6 +81,7 @@ return [
     'data' => 'Confidentialités',
     'cgv' => 'CGV',
 
+
     //Cabane Nid Douillet
     'nidDouillet-description' => 'La Cabane Nid Douillet est un refuge enchanteur pour ceux en quête de tranquillité et de connexion avec la nature. Nichée au cœur d\'un paysage pittoresque, cette cabane offre une escapade parfaite pour deux personnes en quête de sérénité. Perchée parmi les arbres majestueux, notre cabane offre un véritable cocon de confort et de bien-être. À l\'intérieur, vous trouverez un espace accueillant et douillet, décoré avec charme pour créer une atmosphère apaisante et réconfortante. Offrez-vous une pause bien méritée dans ce havre de paix où le temps semble ralentir et où chaque instant est une invitation à la détente et à la contemplation.',
     'prix-2' => 'À partir de 145.00 €',
@@ -187,6 +188,127 @@ return [
 
     'deconnexion' => 'Se déconnecter',
     'profil' => 'Mon profil',
+
+    //FAQ
+
+    'question' => 'Questions & Réponses',
+   'activite' => 'Il y a-t-il des activités disponibles sur place ?',
+   'rep_activite' => 'Oui, nous proposons une variété d\'activités en plein air telles que la randonnée, le vélo, l\'observation de la faune et la détente dans notre espace bien-être (selon la disponibilité).',
+   'animal' => 'Puis-je amener mon animal de compagnie ?',
+   'rep_animal' => 'Malheureusement, nous ne pouvons pas accueillir les animaux de compagnie dans nos cabanes pour des raisons de sécurité et de confort des autres clients.',
+    'heure' => 'À quelle heure puis-je arriver et partir ?',
+    'rep_heure' => 'L’arrivée se fait à partir de 16h et jusqu\'à 18h et le départ jusqu\'à 11H. Ceci dit, 
+    les heures d\'arrivée et de départ peuvent être ajustées sur demande. Veuillez nous contacter pour organiser votre arrivée et votre départ.',
+    'acces' => 'Comment puis-je accéder aux cabanes ?',
+    'rep_acces' => 'Nos cabanes sont accessibles à pied, mais certaines peuvent nécessiter une courte randonnée pour y accéder. Nous vous fournirons toutes les informations nécessaires lors de votre réservation.',
+    'mobilite' => 'Les cabanes sont-elles adaptées pour les personnes à mobilité réduite ?',
+    'rep_mobilite' => 'Oui, nos cabanes sont accessibles aux personnes à mobilité réduite.',
+    'offre' => 'Avez-vous des offres spéciales ou des forfaits disponibles ?',
+    'rep_offre' => 'Nous proposons régulièrement des offres spéciales et forfaits thématiques. Suivez-nous pour découvrir nos dernières offres.',
+
+    //Confidentialités
+
+    'politique' => 'Politique de<br>confidentialités',
+     'collecte' => 'Collecte des données personnelles',
+     'collecte_text' => 'Tout Là-Haut collecte des données personnelles des clients lors de la réservation d\'un séjour dans nos 
+      cabanes en bois. Ces données peuvent inclure le nom, l\'adresse, l\'adresse e-mail, le numéro de téléphone, 
+      ainsi que les informations relatives au paiement.',
+
+     'utilisation' => 'Utilisation des données personnelles',
+     'utilisation_text' => 'Les données personnelles collectées sont utilisées dans le but de traiter les réservations, 
+      de fournir les services demandés par les clients, de gérer les paiements et de communiquer 
+      avec les clients concernant leur séjour.',
+
+     'conservation' => 'Conservation des données personnelles',
+     'conservation_text' => 'Tout Là-Haut conserve les données personnelles des clients aussi longtemps que nécessaire pour atteindre les 
+      finalités pour lesquelles elles ont été collectées, notamment pour se conformer à nos obligations légales, 
+      résoudre les litiges et faire respecter nos accords.',
+
+     'protection' => 'Protection des données personnelles',
+     'protection_text' => 'Tout Là-Haut met en place des mesures de sécurité appropriées pour protéger 
+     les données personnelles contre tout accès non autorisé, toute utilisation abusive ou toute divulgation.',
+
+     'partage' => 'Partage des données personnelles',
+     'partage_text' => 'Tout Là-Haut ne partage pas les données personnelles des clients avec des tiers, sauf dans les cas suivants :
+      Lorsque cela est nécessaire pour fournir les services demandés par les clients 
+      (par exemple, communication avec les prestataires de services tiers pour la gestion des réservations).
+      Lorsque cela est requis par la loi ou par une autorité gouvernementale compétente.',
+
+     'droits' => 'Droits des clients', 
+     'droits_text' => 'Les clients ont le droit d\'accéder à leurs données personnelles, de les rectifier, 
+      de les supprimer ou de limiter leur traitement. Ils peuvent également s\'opposer au traitement 
+      de leurs données personnelles pour des motifs légitimes. Pour exercer ces droits, les clients 
+      peuvent contacter Tout Là-Haut à l\'adresse contact@toutlahaut.org.',
+
+     'modification' => 'Modifications de la politique de confidentialité',
+     'modification_text' => 'Tout Là-Haut se réserve le droit de modifier cette politique de confidentialité à tout moment. 
+      Les clients seront informés de toute modification substantielle de cette politique.',
+
+      'contact_text' => 'Pour toute question concernant cette politique de confidentialité, 
+      veuillez contacter Tout Là-Haut à l\'adresse contact@toutlahaut.org.',
+
+         //Mentions légales
+
+         'mention-1' => 'Mentions<br>légales',
+         'proprio' => 'Propriétaire du site',
+         'publication' => 'Responsable de la publication',
+         'agence' => 'Agence de Communication',
+         'hebergeur' => 'Hébergeur',
+         'nom-1' => 'Nom',
+         'rgpd' => 'Conformément à la loi informatique et libertés du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d\'un droit d\'accès, de rectification, de suppression et de portabilité des données vous concernant. Pour exercer ce droit, veuillez nous contacter à l\'adresse contact@toutlahaut.org. Les données collectées sur ce site sont destinées à un usage interne et ne seront en aucun cas cédées à des tiers.',
+         'cookie' => 'Le site Tout Là-Haut peut être amené à vous demander l\'acceptation des cookies à des fins de statistiques et d\'amélioration de l\'expérience utilisateur. Vous pouvez à tout moment modifier vos préférences en matière de cookies via les réglages de votre navigateur.',
+         'credit_text' => 'Conception et réalisation du site : Agence de Communication "CréaWeb"<br>Crédits photographiques : Les photographies utilisées sur le site sont fournies par John Doe Photography.',
+         'auteur' => 'Droits d\'auteur',
+         'auteur_text' => 'L\'ensemble des contenus présents sur le site Tout Là-Haut (textes, photographies, vidéos, etc.) sont protégés par les dispositions du Code de la Propriété Intellectuelle. Toute reproduction, même partielle, est strictement interdite sans autorisation préalable de Tout Là-Haut.',
+         'credit' => 'Crédits',
+
+        //CGV 
+
+        'cgv-1' => 'CONDITIONS<br>GÉNÉRALES<br>DE VENTE',
+        'objet' => 'Objet',
+        'objet_text' => 'Les présentes conditions générales de vente ont pour objet de définir les droits et obligations des parties dans le cadre de la vente de séjours proposés par Tout Là-Haut dans ses cabanes en bois.',
+        'law' => 'Droit applicable', 
+        'law_text' => 'En cas de litige, les parties s\'efforceront de trouver une solution amiable. 
+            À défaut, les tribunaux compétents seront ceux du lieu du siège social de Tout Là-Haut.
+            Les présentes conditions générales de vente sont soumises au droit français.', 
+        'responsabilite' => 'Responsabilités', 
+        'responsabilite_text' => 'Tout Là-Haut décline toute responsabilité en cas de vol, de perte ou de dommage causé aux biens du client pendant son séjour. 
+            Le client est responsable de tout dommage causé aux équipements mis à sa disposition.', 
+        'annulation-1' => 'Modification et annulation',
+        'annulation_text' => 'Toute modification ou annulation de réservation doit être notifiée à Tout Là-Haut par écrit. 
+            Les conditions de modification ou d\'annulation seront précisées lors de la réservation et peuvent varier selon les périodes de l\'année.',
+        'modalite' => 'Modalités de paiement',
+        'modalite_text' => 'Le règlement du séjour s\'effectue par carte bancaire, virement bancaire ou chèque,
+        selon les modalités précisées lors de la réservation. Un acompte pourra être demandé au moment de la réservation.',
+        'tarif' => 'Tarifs', 
+        'tarif_text' => 'Les tarifs des séjours sont indiqués en euros toutes taxes comprises. 
+             comprennent l\'hébergement et l\'accès aux équipements, prestations et services proposés par Tout Là-Haut. 
+             Les frais annexes (taxe de séjour, options supplémentaires) sont à la charge du client et précisés lors de la réservation.', 
+    'reservation-1' => 'Réservation',
+    'reservation_text' => 'La réservation d\'un séjour dans l\'une de nos cabanes en bois peut s\'effectuer par téléphone,
+            par email ou via notre site internet. Elle sera confirmée par Tout Là-Haut après réception du paiement.',
+
+            //Login 
+
+    'mdp' => 'Mot de passe',
+    'souvenir' => 'Se souvenir de moi',
+    'oublie' => 'Mot de passe oublié ?',
+    'compte' => 'Vous n\'avez pas encore de compte ? Inscrivez-vous !',
+    'connexion' => 'Se connecter',
+
+    //Register 
+    'inscription' => 'S\'inscrire', 
+    'register' => 'Déjà inscrit(e) ?', 
+    'mdp_confirm' => 'Confirmez le mot de passe', 
+    'return' => 'Retour à la page de connexion', 
+
+
+
+
+
+
+
+
 
 
 

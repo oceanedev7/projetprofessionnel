@@ -5,20 +5,20 @@
 
 @section ('titre')
 
-<h1 class=" relative top-24 left-40 text-4xl text-white font-bold"> PLAN DU SITE </h1>
+<h1 class=" relative top-24 left-40 text-4xl text-white font-bold uppercase"> {{ __('content.plan-site') }} </h1>
 <hr class="border-t-4 border-custom-beige w-24 relative top-36 right-20">
 
-<div class="relative top-44 right-32 text-white flex flex-col space-y-4 text-base">
-    <a href="{{ route('accueil') }}" >ACCUEIL</a>
-    <a href="{{ route('noscabanes') }}" >LES CABANES</a>
-    <a href="{{ route('prestations') }}" >PRESTATIONS ET SERVICES</a>
-    <a href="{{ route('reserver') }}" >RÉSERVER</a>
-    <a href="{{ route('contact') }}" >CONTACT & ACCÈS</a>
-    <a href="{{ route('mentionslegales') }}">MENTIONS LÉGALES</a>
-    <a href="{{ route('cgv') }}" >CGV</a>
-    <a href="{{ route('confidentialite') }}">CONFIDENTIALITÉ</a>
+<div class="relative top-44 right-32 text-white flex flex-col space-y-4 text-base uppercase">
+    <a href="{{ route('accueil') }}" >{{ __('content.accueil') }}</a>
+    <a href="{{ route('noscabanes') }}" >{{ __('content.cabane') }}</a>
+    <a href="{{ route('prestations') }}" >{{ __('content.prestation') }}</a>
+    <a href="{{ route('reserver') }}" >{{ __('content.reserver') }}</a>
+    <a href="{{ route('contact') }}" >{{ __('content.contactez-nous') }}</a>
+    <a href="{{ route('mentionslegales') }}">{{ __('content.mention') }}</a>
+    <a href="{{ route('cgv') }}" >{{ __('content.cgv') }}</a>
+    <a href="{{ route('confidentialite') }}">{{ __('content.data') }}</a>
     <a href="{{ route('faq') }}" >FAQ</a>
-    <a href="{{ route('plandusite') }}">PLAN DU SITE</a>
+    <a href="{{ route('plandusite') }}">{{ __('content.plan-site') }}</a>
 </div>
 @endsection
 

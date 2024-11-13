@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex  items-center justify-between"> 
         <h2 class="font-bold text-xl text-custom-vert dark:text-gray-200 leading-tight">
-            {{ __('Mon profil') }}
+            {{ __('content.profil') }}
         </h2>
         <div class="flex space-x-2 hover:underline"> 
             <i class="fa-solid fa-arrow-right-long mt-1"></i>
