@@ -71,9 +71,9 @@
     <div class="flex-grow">
         @foreach($availableCabanes as $cabane)
         <div class="max-w-4xl border border-2 border-custom-marron rounded-lg bg-white mb-6">
-            <div class="flex">
+            <div class="md:flex md:flex-row flex flex-col">
                 <div>
-                    <img class="max-w-sm rounded" src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="Cabane Eden">
+                    <img class="md:max-w-sm rounded " src="{{ Storage::url('images/cabaneeden.jpg') }}" alt="Cabane Eden">
                 </div>
 
                 <div class="flex flex-col p-8 justify-center">
@@ -122,7 +122,7 @@
 
    
 
-<div>
+<div class="hidden md:block">
     <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
         <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }}</h2>
         

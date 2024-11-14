@@ -70,14 +70,12 @@
 
             <div class="max-w-4xl mx-auto border border-2 border-custom-marron rounded-lg bg-white mb-6 p-8">
                 <div class="uppercase font-bold text-custom-marron text-xl ml-4">{{ __('content.restauration') }} </div>
-                <hr class="w-12 h-0.5 bg-custom-marron ml-2 mb-4">
+                <hr class="w-12 h-0.5 bg-custom-marron ml-2 md:mb-4 mb-8">
 
         
-                <div class="flex ml-4 space-x-8 mb-6">
+                <div class="md:flex md:flex-row flex flex-col md:ml-4 md:space-x-8 md:mb-6 mb-8 space-y-8 md:space-y-0 items-center">
 
 
-
-            
                     @foreach ($restaurants as $index => $restaurant)
                 
                     <div class="w-60 bg-custom-beige rounded flex flex-col items-center p-4">
@@ -127,7 +125,7 @@
                 </div>
         
                 <div class="uppercase font-bold text-custom-marron text-xl ml-4">Spa</div>
-                <hr class="w-12 h-0.5 bg-custom-marron ml-2 mb-4">
+                <hr class="w-12 h-0.5 bg-custom-marron ml-2 md:mb-4 mb-8">
         
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
 
@@ -168,7 +166,7 @@
         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
 
         
-            <div class="flex justify-end mt-8">
+            <div class="flex md:justify-end justify-center mt-8">
                 <button type="submit" class="text-white font-bold px-4 py-2 rounded-md bg-custom-marron uppercase" > {{ __('content.valider') }} </button>
             </div>
         
@@ -177,7 +175,7 @@
         </div>
         
 
-        <div>
+        <div class="hidden md:block">
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
                 <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }}</h2>
 

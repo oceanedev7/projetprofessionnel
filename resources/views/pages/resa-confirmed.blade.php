@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <div class="w-full h-screen bg-custom-vert flex"> 
+    <div class="w-full md:h-screen bg-custom-vert md:flex md:flex-row "> 
         <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
             class="absolute top-8 right-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
              {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
