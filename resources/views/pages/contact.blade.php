@@ -46,7 +46,7 @@
 
 
 
-<div style="background-color:#F9F4EE" class="w-full h-screen flex flex-col md:flex-row">
+<div style="background-color:#F9F4EE" class="w-full  flex flex-col md:flex-row">
 
     <div class=" w-full md:w-2/4">
     
@@ -61,7 +61,7 @@
             <hr class="border-t-4 border-custom-beige w-24 relative left-0  bottom-16 md:bottom-16">
         </div>
 
-        <div class="text-xl ml-0 md:ml-24 space-y-10"> 
+        <div class=" text-xl ml-0 md:ml-24 space-y-10"> 
             <div>
                 <span class="text-custom-marron font-bold">{{ __('content.adresse-postale') }} :</span> <br/>
                 Route de Jolimont, 97226 Morne-Vert

@@ -4,7 +4,7 @@
 
 
 @section('navbar')
-<div class="fixed z-10 w-full"> 
+<div class="fixed z-50 w-full"> 
     <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-custom-vert bg-opacity-90 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
     {{-- <a class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
     @if(Auth::check())
@@ -59,7 +59,7 @@
 
 @section('main')
 
-<div style="background-color:#F9F4EE" class="h-screen w-full flex "> 
+<div style="background-color:#F9F4EE" class="md:h-screen md:w-full md:flex md:flex-row flex flex-col space-y-4 md:space-y-0 "> 
         
     <img class="w-[500px] h-screen" src="{{ Storage::url('images/cabaneosmose.jpg') }}" alt="Cabane intérieur">
 
@@ -75,14 +75,14 @@
 </div>
 
 
-<div style="background-color:#F9F4EE" class="h-screen w-full"> 
+<div style="background-color:#F9F4EE" class="md:h-screen w-full"> 
     <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-8 uppercase">{{ __('content.equipement') }}</span>
+        <span class="font-bold text-custom-marron text-[40px] md:mt-8 mt-12 uppercase">{{ __('content.equipement') }}</span>
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
     
     
-    <div class="flex flex-row justify-center items-center space-x-20 text-custom-marron relative top-20">
+    <div class="md:flex md:flex-row flex flex-col md:justify-center md:items-center md:space-x-20 md:space-y-0 space-y-6 text-custom-marron relative top-12 md:relative md:top-20">
         <div class="flex flex-col items-center space-y-2">
             <i class="fa-solid fa-person text-5xl"></i>
             <div class="text-base">2 {{ __('content.pax') }}</div>
@@ -105,10 +105,10 @@
         </div>
     </div>
 
-    <div class="flex flex-col justify-center items-center mt-40">
-        <div class="grid grid-cols-2 gap-y-6 text-custom-marron">
+    <div class="flex flex-col justify-center items-center mt-24 md:mt-40">
+        <div class="md:grid md:grid-cols-2 md:gap-y-6 flex flex-col p-2 md:p-0 text-custom-marron">
             @foreach($equipements as $equipement)
-                <div class="flex flex-col justify-center text-left -mx-32">- {{ $equipement->nomEquipement }}</div>
+                <div class="md:flex md:flex-col md:justify-center text-left md:-mx-32">- {{ $equipement->nomEquipement }}</div>
             @endforeach
         </div>
     </div>
@@ -116,14 +116,14 @@
 </div>
 
 
-<div style="background-color:#F9F4EE" class="h-screen w-full"> 
+<div style="background-color:#F9F4EE" class="md:h-screen w-full p-8 md:p-0"> 
     <div class="flex flex-col justify-center items-center">
-        <span class="font-bold text-custom-marron text-[40px] mt-10 uppercase">{{ __('content.prestation') }}</span>
+        <span class="font-bold text-custom-marron text-center text-[40px] md:mt-10 uppercase">{{ __('content.prestation') }}</span>
         <hr class="border-t-4 border-custom-beige w-32 relative top-2 left-2">
     </div>
 
-    <div class="flex flex-row justify-center space-x-16 relative top-16" >
-    <div class="flex flex-col items-center max-w-lg	"> 
+    <div class="md:flex md:flex-row flex flex-col justify-center md:space-x-16 space-y-6 md:space-y-0 relative top-8 md:relative md:top-16" >
+    <div class="flex flex-col items-center max-w-lg p-4	md:p-0	"> 
         <i class="fa-solid fa-bell-concierge text-custom-marron text-4xl"></i>
         <div class="font-bold text-custom-marron text-2xl"> {{ __('content.restauration') }} </div>
         <div class="mt-6 text-justify">
@@ -133,7 +133,7 @@
     
 
 
-<div class="flex flex-col items-center max-w-lg" > 
+<div class="flex flex-col items-center md:max-w-lg md:p-0 p-4" > 
     <i class="fa-solid fa-spa text-custom-marron text-4xl"></i>
     <div class="font-bold text-custom-marron text-2xl"> Spa </div>
     <div class="mt-6 text-justify ">
@@ -164,10 +164,10 @@
 </div>
 
 
-<div style="background-color:#F9F4EE" class="h-screen w-full"> 
+<div style="background-color:#F9F4EE" class="md:h-screen w-full md:p-0 p-10"> 
 
 
-    <div id="animation-carousel" class="relative top-28 left-60 max-w-screen-md"  data-carousel="static">
+    <div id="animation-carousel" class="relative md:top-28 md:left-60 md:max-w-screen-md"  data-carousel="static">
         <!-- Carousel wrapper -->
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
              <!-- Item 1 -->
