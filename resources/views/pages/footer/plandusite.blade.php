@@ -5,10 +5,10 @@
 
 @section ('titre')
 
-<h1 class=" relative top-24 left-40 text-4xl text-white font-bold uppercase"> {{ __('content.plan-site') }} </h1>
-<hr class="border-t-4 border-custom-beige w-24 relative top-36 right-20">
+<h1 class="relative md:top-24 md:left-40 text-4xl text-white font-bold uppercase mt-24 md:mt-0 text-center"> {{ __('content.plan-site') }} </h1>
+<hr class="hidden md:block border-t-4 border-custom-beige w-24 relative top-36 right-20">
 
-<div class="relative top-44 right-32 text-white flex flex-col space-y-4 text-base uppercase">
+<div class="relative md:top-44 md:right-32 text-white flex flex-col space-y-4 text-base uppercase p-8 md:p-0 md:text-left text-center">
     <a href="{{ route('accueil') }}" >{{ __('content.accueil') }}</a>
     <a href="{{ route('noscabanes') }}" >{{ __('content.cabane') }}</a>
     <a href="{{ route('prestations') }}" >{{ __('content.prestation') }}</a>

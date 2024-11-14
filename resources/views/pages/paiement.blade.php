@@ -11,7 +11,7 @@
 <body>
 
 
-    <div class="bg-custom-beige w-full h-screen">
+    <div class="bg-custom-beige w-full md:h-screen">
 
    
         <div class="fixed z-10 w-full"> 
@@ -24,8 +24,8 @@
              </a>   
         </div>
     
-        <div class="p-32 flex justify-center items-center h-full">
-            <div class="bg-white p-12 rounded-lg shadow-lg w-full max-w-4xl grid grid-cols-2 ">
+        <div class="md:p-32 p-12 flex justify-center items-center h-full">
+            <div class="bg-white mt-16 md:mt-0 p-12 rounded-lg shadow-lg w-full md:max-w-4xl md:grid md:grid-cols-2 ">
     
                
                 <div>

@@ -5,8 +5,8 @@
 
 @section ('titre')
 <div class="flex flex-col ">
-<h1 class=" ml-12 mt-60 text-6xl text-white font-bold uppercase"> {!! nl2br(__('content.politique')) !!}</h1>
-<hr class="border-t-4 border-custom-beige w-32 relative top-6 left-14">
+<h1 class="p-12 mt-12 md:mt-0 md:text-left text-center md:p-0 md:ml-12 md:mt-60 md:text-6xl text-4xl text-white font-bold uppercase"> {!! nl2br(__('content.politique')) !!}</h1>
+<hr class="hidden md:block border-t-4 border-custom-beige w-32 relative top-6 left-14">
 </div>
 @endsection
 
@@ -15,7 +15,7 @@
     @section('main')
 
     <div style="background-color:#F9F4EE" class="w-full">
-        <div class="ml-32 mr-32 text-justify p-10">
+        <div class="md:ml-32 md:mr-32 text-justify p-10">
             <h3 class="text-custom-vert font-bold text-xl">1- {{ __('content.collecte') }}</h3>
             <br/>
             <p>

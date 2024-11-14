@@ -67,7 +67,7 @@
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/restauration.png') }}" alt="Panier repas">
     
-        <div class="flex flex-col justify-center p-8 md:p-0 px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-12 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4 uppercase">{{ __('content.restauration') }}  </h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     
@@ -122,7 +122,7 @@
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/spa.jpg') }}" alt="Massage">
     
-        <div class="flex flex-col justify-center p-8 md:p-0 px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-12 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4">{{ __('content.spa') }}</h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     

@@ -4,12 +4,12 @@
 
  @section ('titre')
 
-           <div class="flex flex-col h-screen text-white text-justify items-center relative ">
-            <h1 class="text-5xl text-white font-bold relative top-24 left-16">{{ __('content.question') }}</h1>
-            <hr class="border-t-4 border-custom-beige w-72 relative top-28 left-20">
+           <div class="flex flex-col h-screen text-white text-justify items-center relative">
+            <h1 class="md:text-5xl text-2xl top-24 text-white font-bold relative md:top-24 md:left-16">{{ __('content.question') }}</h1>
+            <hr class="hidden md:block border-t-4 border-custom-beige w-72 md:relative md:top-28 md:left-20">
         
             <!-- FAQ Container -->
-            <div class=" max-w-xl flex-1 px-4 relative left-16 top-40 ">
+            <div class=" md:max-w-xl max-w-sm md:flex-1 px-4 relative md:left-16 md:top-36 top-32">
                 <div id="accordion-flush" class="space-y-6" data-accordion="collapse" data-active-classes="bg-custom-vert dark:bg-gray-900 text-custom-beige dark:text-white" data-inactive-classes="text-gray-500 dark:text-gray-400">
         
                     <!-- Question 1 -->

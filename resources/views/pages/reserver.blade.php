@@ -60,11 +60,11 @@
     @section('main')
 
 
-    <div class="bg-custom-vert h-screen w-full" >
-        <div class="flex flex-row"> 
-            <img class="w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Intérieur Cabane">
-            <h1 class=" relative top-60 left-32 text-6xl text-white font-bold ">{!! nl2br(__('content.sejour')) !!}</h1>
-            <hr class="border-t-4 border-custom-beige w-24 relative top-96 right-32">
+    <div class="bg-custom-vert md:h-screen w-full" >
+        <div class="md:flex md:flex-row flex flex-col"> 
+            <img class="hidden md:block w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Intérieur Cabane">
+            <h1 class="p-8 text-center md:text-left md:p-0 mt-12 md:mt-0 relative md:top-60 md:left-32 text-6xl text-white font-bold ">{!! nl2br(__('content.sejour')) !!}</h1>
+            <hr class="hidden md:block border-t-4 border-custom-beige w-24 relative top-96 right-32">
         </div>
     </div> 
 

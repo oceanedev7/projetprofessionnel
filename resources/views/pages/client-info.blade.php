@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <div>
+        <div class="hidden md:block">
             <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
                 <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }} </h2>
 

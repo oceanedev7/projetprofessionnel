@@ -68,7 +68,7 @@ return [
 
     //Footer
     'suivez-nous' => 'Follow us',
-    'offre' => 'Don\'t miss out on our best offers',
+    'offre-1' => 'Don\'t miss out on our best offers',
     'inscrire' => 'Sign up',
     'mention' => 'Legal notice',
     'plan-site' => 'Sitemap',
