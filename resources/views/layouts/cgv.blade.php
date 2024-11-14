@@ -67,9 +67,9 @@
     </nav>
 
     <header>
-        <div class="bg-custom-vert h-screen w-full relative " >
-            <div class="flex flex-row"> 
-                <img class="w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Cabane intérieur">
+        <div class="bg-custom-vert md:h-screen w-full relative" >
+            <div class="md:flex md:flex-row flex flex-col"> 
+                <img class="hidden md:block w-[550px] h-screen" src="{{ Storage::url('images/cgv.jpg') }}" alt="Cabane intérieur">
                @yield('titre')
          </div>
 

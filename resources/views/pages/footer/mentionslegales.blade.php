@@ -6,8 +6,8 @@
 @section ('titre')
 
 <div class="flex flex-col ">
-<h1 class=" ml-36 mt-56 text-6xl text-white font-bold uppercase"> {!! nl2br(__('content.mention-1')) !!} </h1>
-<hr class="border-t-4 border-custom-beige w-32 relative top-4 left-36">
+<h1 class="p-12 mt-12 md:mt-0 md:text-left text-center md:p-0 md:ml-36 md:mt-56 text-6xl text-white font-bold uppercase"> {!! nl2br(__('content.mention-1')) !!} </h1>
+<hr class="hidden md:block border-t-4 border-custom-beige w-32 relative top-4 left-36">
 </div>
 @endsection
 
@@ -15,7 +15,7 @@
 
     @section('main')
     <div style="background-color:#F9F4EE" class="w-full flex flex-col justify-center">
-        <div class="ml-44 mr-44 text-justify p-10">
+        <div class="md:ml-44 md:mr-44 text-justify p-10">
             <h3 class="text-custom-vert font-bold text-xl">1- {{ __('content.proprio') }} :</h3> 
             <br/>
             <p>
