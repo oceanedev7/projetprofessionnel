@@ -141,6 +141,7 @@ $prestationsTypes = explode(',', $request->input('prestationsTypes'));
         'capacite' => $capacite,
         'user' => $user,
         'guest' => $guest,
+        'reservationId' => $reservation->id
     ]);
 
     return view('pages.paiement');
