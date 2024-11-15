@@ -12,7 +12,7 @@ class AdminReservationController extends Controller
      */
     public function index()
     {
-        $reservations = Reservation::with(['prestations', 'user', 'guest'])->orderBy('created_at', 'desc')->get();
+        $reservations = Reservation::with(['prestations', 'user', 'guest', 'paiement'])->orderBy('created_at', 'desc')->get();
         return view('pages.admin.reservations-list', compact('reservations'));
     }
 

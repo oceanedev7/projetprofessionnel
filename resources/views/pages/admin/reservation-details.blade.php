@@ -113,6 +113,11 @@
 
         <p class="font-bold uppercase text-xl"><span class="font-bold uppercase">Prix total :</span> {{ $reservation->prix }}€</p>
 
+        
+            <div>{{ $reservation->paiement->moyenPaiement }}</div>
+    
+    
+
     <a href="{{ route('supprimerReservation', $reservation->id) }}" class="hover:bg-red-500 w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">Annuler la réservation</a>
     
     
