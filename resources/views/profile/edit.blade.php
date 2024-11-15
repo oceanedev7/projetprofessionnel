@@ -9,7 +9,7 @@
             @if (Auth::user() && Auth::user()->role === 'admin')
                 <a href="{{ route('dashboard') }}" class="font-bold">Revenir au dashboard</a>
             @else
-                <a href="{{ route('accueil') }}" class="font-bold">Revenir à la page d'accueil</a>
+                <a href="{{ route('accueil') }}" class="font-bold"> {{ __('content.back') }}</a>
             @endif
         </div>
         

@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-            {{ __('Mettre à jour le mot de passe') }}
+            {{ __('content.update_mdp') }}
         </h2>
 
         <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-            {{ __('Assurez-vous que votre compte utilise un mot de passe long et aléatoire pour rester sécurisé.') }}
+            {{ __('content.secure_mdp') }}
         </p>
     </header>
 
@@ -14,25 +14,25 @@
         @method('put')
 
         <div>
-            <x-input-label for="update_password_current_password" :value="__('Mot de passe actuel')" />
+            <x-input-label for="update_password_current_password" :value="__('content.current_mdp')" />
             <x-text-input id="update_password_current_password" name="current_password" type="password" class="mt-1 block w-full" autocomplete="current-password" />
             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="update_password_password" :value="__('Nouveau mot de passe')" />
+            <x-input-label for="update_password_password" :value="__('content.new_mdp')" />
             <x-text-input id="update_password_password" name="password" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 
         <div>
-            <x-input-label for="update_password_password_confirmation" :value="__('Confirmez le nouveau mot de passe')" />
+            <x-input-label for="update_password_password_confirmation" :value="__('content.confirm_mdp')" />
             <x-text-input id="update_password_password_confirmation" name="password_confirmation" type="password" class="mt-1 block w-full" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
         </div>
 
         <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Sauvegarder') }}</x-primary-button>
+            <x-primary-button>{{ __('content.save') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
                 <p
@@ -41,7 +41,7 @@
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
                     class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Sauvegardé.') }}</p>
+                >{{ __('content.saved') }}</p>
             @endif
         </div>
     </form>
