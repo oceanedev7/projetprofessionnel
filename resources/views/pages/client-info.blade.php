@@ -4,8 +4,8 @@
 
 
     @section('navbar')
-    <div class="fixed z-10 w-full"> 
-        <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
+    <div class=" z-10 w-full"> 
+        <a href="{{ route('menu') }}" class="absolute top-4 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
             <x-dropdown align="right" width="48">
@@ -43,14 +43,14 @@
             </x-dropdown>
         </div>
     @else
-        <a href="{{ route('login') }}" class="absolute top-8 right-24 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        <a href="{{ route('login') }}" class="absolute top-4 right-24 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
             <i class="fa-solid fa-user"></i>
         </a>
     @endif
        
        
     <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
-        class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        class="absolute top-4 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
          {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
      </a>   
 

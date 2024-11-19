@@ -71,30 +71,6 @@ class CabaneController extends Controller
             return redirect()->route('afficherCabane');
     }
 
-        /**
-     * Mettre à jour les informations
-     */
-    // public function updateTest(Request $request, $id)
-    // {
-    //     $validatedData =  $request->validate(
-    //         [
-    //         'nomCabane'=>'required|string|min:3',
-    //         'description'=>'required|string',
-    //         'capacite'=>'required|integer',
-    //         'prix'=>'required|numeric',
-    //         'disponibilite'=>'required|boolean',
-    //         ]);
-    //         // dd($request->nomCabane);
-
-    //         $update=Cabane::findOrFail($id);           
-    //         $update->update($validatedData);
-    
-    //         return redirect()->route('afficherCabane');
-    //         // return view('pages.admin.infos');
-    // }
-
-
-
     /**
      * Supprimer une cabane 
      */
