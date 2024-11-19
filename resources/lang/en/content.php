@@ -293,7 +293,35 @@ return [
     'mdp_confirm' => 'Confirm password', 
     'return' => 'Return to login page', 
 
-    //Mon profil
+    //Espace user
+
+    'back' => 'Return to home page',
+    'info_profil' => 'Profile information',
+    'update_profil' => 'Update your profile information.',
+    'save' => 'Save',
+    'saved' => 'Saved.',
+    'correct_mail'=> 'Your email address is not correct.',
+    'send_back' => 'Click here to resend the verification email.',
+    'new_link' => 'A new verification link has been sent to your email address.',
+    'update_mdp' => 'Update password',
+    'secure_mdp' => 'Make sure your account uses a long, random password to stay secure.',
+    'current_mdp' => 'Current password',
+    'new_mdp' => 'New password',
+    'confirm_mdp' => 'Confirm the new password',
+    'delete_profile' => 'Delete account',
+    'delete_data' => 'Once your account is deleted, all its resources and data will be permanently erased. Before deleting your account, please download any data or information you wish to keep.',
+    'cancel' => 'Cancel',
+    'delete_account' => 'Are you sure you want to delete your account ?',
+    'delete_account_data' => 'Once your account is deleted, all its resources and data will be permanently erased. Please enter your password to confirm that you want to permanently delete your account.',
+
+
+
+
+
+
+
+
+
     
 
  

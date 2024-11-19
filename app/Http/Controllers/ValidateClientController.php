@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cabane;
 use App\Models\Guest;
 use App\Models\Prestation;
 use App\Models\Reservation;
@@ -35,7 +36,6 @@ class ValidateClientController extends Controller
      */
 public function store(Request $request)
 {
-    $nomCabane = $request->input('nomCabane');
     $capacite = $request->input('capacite');
     $dateArrivee = $request->input('dateArrivee');
     $dateDepart = $request->input('dateDepart');
@@ -43,6 +43,10 @@ public function store(Request $request)
     $nombreAdultes = $request->input('nombreAdultes');
     $nombreEnfants = $request->input('nombreEnfants');
     $prixFinal = $request->input('montant');
+    $cabaneId = $request->input('cabane_id');
+
+    $cabane = Cabane::findOrFail($cabaneId); 
+
 
     $validated = $request->validate([
         'prenom' => 'required|string',
@@ -53,13 +57,14 @@ public function store(Request $request)
         'code_postal' => 'required|string',
         'ville' => 'required|string',
         'message' => 'required|string',
-        'nomCabane' => 'required|string',
         'nombreAdultes' => 'required|integer',
         'nombreEnfants' => 'nullable|integer',
         'dateArrivee' => 'required|date',
         'dateDepart' => 'required|date',
         'nombreNuitees' => 'required|integer',
         'montant' => 'required|numeric',
+        'cabane_id' => 'required|exists:cabanes,id',
+       
     ]);
 
     $user = null;
@@ -72,7 +77,7 @@ public function store(Request $request)
             'user_id' => $user->id,
             'guest_id' => null,
             'message' => $validated['message'],
-            'nomCabane' => $nomCabane,
+            'cabane_id' => $cabaneId,            
             'nombreAdultes' => $nombreAdultes,
             'nombreEnfants' => $nombreEnfants,
             'dateArrivee' => $dateArrivee,
@@ -96,7 +101,7 @@ public function store(Request $request)
             'user_id' => null,
             'guest_id' => $guest->id,
             'message' => $validated['message'],
-            'nomCabane' => $nomCabane,
+            'cabane_id' => $cabaneId,           
             'nombreAdultes' => $nombreAdultes,
             'nombreEnfants' => $nombreEnfants,
             'dateArrivee' => $dateArrivee,
@@ -106,6 +111,7 @@ public function store(Request $request)
         ]);
     }
 
+    
 $restaurationIds = explode(',', $request->input('restaurationIds'));
 $restaurationQuantites = explode(',', $request->input('restaurationQuantites'));
 $massageIds = explode(',', $request->input('massageIds'));
@@ -129,9 +135,8 @@ $prestationsTypes = explode(',', $request->input('prestationsTypes'));
             'type' => 'Massage'  
         ]);
     }}
-
     session([
-        'nomCabane' => $nomCabane,
+        'cabane_id' =>  $cabaneId,
         'dateArrivee' => $dateArrivee,
         'dateDepart' => $dateDepart,
         'nombreNuitees' => $nombreNuitees,
@@ -141,6 +146,8 @@ $prestationsTypes = explode(',', $request->input('prestationsTypes'));
         'capacite' => $capacite,
         'user' => $user,
         'guest' => $guest,
+        'reservationId' => $reservation->id,
+        'cabane' => $cabane,
     ]);
 
     return view('pages.paiement');

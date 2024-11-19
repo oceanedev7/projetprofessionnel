@@ -34,6 +34,7 @@ class PaiementController extends Controller
     public function store(Request $request)
 {
     $montant = session('prixFinal');
+    $reservationId = session('reservationId');
 
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
@@ -46,12 +47,16 @@ class PaiementController extends Controller
                 'description' => 'Paiement pour votre réservation', 
             ]);
 
-            Paiement::create([
+            $paiement = Paiement::create([
                 'moyenPaiement' => 'Stripe', 
                 'montant' => $montant, 
                 'statutPaiement' => true, 
                 'description' => 'Paiement effectué via Stripe pour la commande #' . $charge->id,
             ]);
+
+            $reservation = Reservation::find($reservationId);
+            $reservation->paiement_id = $paiement->id;
+            $reservation->save();   
 
             return redirect()->route('confirmed')->with('success', __('content.success'));
             

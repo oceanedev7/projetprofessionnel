@@ -16,8 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();;
             $table->unsignedBigInteger('guest_id')->nullable();;
             $table->unsignedBigInteger('paiement_id')->nullable();
-            $table->unsignedBigInteger('cabane_id')->nullable();
-            $table->string('nomCabane');
+            $table->unsignedBigInteger('cabane_id');
             $table->integer('nombreAdultes');
             $table->integer('nombreEnfants')->nullable();
             $table->datetime('dateArrivee');
@@ -31,7 +30,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('guest_id')->references('id')->on('guests')->onDelete('cascade');
             $table->foreign('paiement_id')->references('id')->on('paiements')->onDelete('cascade');
-            $table->foreign('cabane_id')->references('id')->on('cabanes')->onDelete('cascade');
+            $table->foreign('cabane_id')->references('id')->on('cabanes')->onDelete('restrict');
         });
     }
 

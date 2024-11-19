@@ -303,6 +303,34 @@ return [
     'return' => 'Retour à la page de connexion', 
 
 
+    //Espace user
+
+    'back' => 'Revenir à la page d\'accueil',
+    'info_profil' => 'Informations du profil',
+    'update_profil' => 'Mettez à jour les informations de votre profil.',
+    'save' => 'Sauvegarder',
+    'saved' => 'Sauvegardé.',
+    'correct_mail'=> 'Votre adresse e-mail n\'est pas correcte.',
+    'send_back' => 'Cliquez ici pour renvoyer l\'e-mail de vérification.',
+    'new_link' => 'Un nouveau lien de vérification a été envoyé à votre adresse e-mail.',
+    'update_mdp' => 'Mettre à jour le mot de passe',
+    'secure_mdp' => 'Assurez-vous que votre compte utilise un mot de passe long et aléatoire pour rester sécurisé.',
+    'current_mdp' => 'Mot de passe actuel',
+    'new_mdp' => 'Nouveau mot de passe',
+    'confirm_mdp' => 'Confirmez le nouveau mot de passe',
+    'delete_profile' => 'Supprimer le compte',
+    'delete_data' => 'Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Avant de supprimer votre compte, veuillez télécharger toutes les données ou informations que vous souhaitez conserver.',
+    'cancel' => 'Annuler',
+    'delete_account' => 'Êtes-vous sûr de vouloir supprimer votre compte ?',
+    'delete_account_data' => 'Une fois votre compte supprimé, toutes ses ressources et données seront définitivement effacées. Veuillez entrer votre mot de passe pour confirmer que vous souhaitez supprimer définitivement votre compte.',
+
+    
+
+
+
+
+
+
 
 
 

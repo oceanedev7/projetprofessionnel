@@ -3,9 +3,8 @@
 @section('title', __('content.extra'))
 
     @section('navbar')
-    <div class="fixed z-10 w-full"> 
-        <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-        {{-- <a class="absolute top-8 right-24 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
+    <div class="z-10 w-full"> 
+        <a href="{{ route('menu') }}" class="absolute top-4 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
             <x-dropdown align="right" width="48">
@@ -43,14 +42,14 @@
             </x-dropdown>
         </div>
     @else
-        <a href="{{ route('login') }}" class="absolute top-8 right-24 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        <a href="{{ route('login') }}" class="absolute top-4 right-24 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
             <i class="fa-solid fa-user"></i>
         </a>
     @endif
        
        
     <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
-        class="absolute top-8 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        class="absolute top-4 right-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
          {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
      </a>   
 
@@ -58,9 +57,6 @@
 @endsection
 
 @section('main')
-
-<a href="#"> Modifier ma réservation</a>
-
 
     <div class="flex flex-row p-6 mt-12">
         <div class="flex-grow">
@@ -155,8 +151,6 @@
         
                 </div>
 
-
-                <input type="hidden" name="nomCabane" value="{{ $nomCabane }}">
         <input type="hidden" name="capacite" value="{{ $capacite }}">
         <input type="hidden" name="prixTotal" value="{{ $prixTotal }}">
         <input type="hidden" name="dateArrivee" value="{{ $dateArrivee }}"> 
@@ -164,7 +158,7 @@
         <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
         <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
         <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
-
+        <input type="hidden" name="cabane_id" value="{{ $cabane->id }}">
         
             <div class="flex md:justify-end justify-center mt-8">
                 <button type="submit" class="text-white font-bold px-4 py-2 rounded-md bg-custom-marron uppercase" > {{ __('content.valider') }} </button>
@@ -176,12 +170,12 @@
         
 
         <div class="hidden md:block">
-            <div class="sticky top-24 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
+            <div class="sticky top-16 border border-2 border-custom-marron rounded-lg p-6 ml-6" style="min-width: 300px;">
                 <h2 class="font-bold mb-4 text-center text-custom-marron uppercase italic">{{ __('content.recap') }}</h2>
 
                 <div class="flex text-custom-marron font-bold space-x-2 uppercase justify-center">
                     
-                        <div> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $nomCabane))) }} </div>
+                        <div> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '',  $cabane->nomCabane))) }} </div>
                         <div> - </div>
                         <div> {{ $capacite }}  {{ __('content.pax') }} </div>
                  

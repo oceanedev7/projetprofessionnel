@@ -8,10 +8,10 @@
     @vite(['resources/css/app.css','resources/js/app.js'])
     <title>Tout Là-Haut</title>
 </head>
-<body>
+<body >
     
 
-    <div class="w-full bg-custom-vert p-12"> 
+    <div class="w-full bg-custom-vert p-12 space-y-8"> 
         <div class="flex space-x-2 hover:underline underline-white text-white absolute top-8 left-8"> 
             <i class="fa-solid fa-arrow-left mt-1 "></i>
                 <a href="{{ route('admin-reservation') }}" class="font-bold ">Voir toutes les réservations</a>
@@ -19,7 +19,7 @@
         
     <div class="text-center uppercase text-3xl font-black text-white mb-8"> Détails de la réservation n°{{ $reservation->id }} </div>
     
-        <div class="mx-72 items-center flex flex-col bg-white rounded-lg shadow-md p-6 space-y-8 ">
+        <div class="mx-72 items-center flex flex-col bg-white rounded-lg shadow-md p-6 space-y-8">
 
             <div> 
                 <img class="rounded-lg" src="{{ Storage::url('images/caroussel1.jpg') }}" alt="Chambre">
@@ -113,18 +113,61 @@
 
         <p class="font-bold uppercase text-xl"><span class="font-bold uppercase">Prix total :</span> {{ $reservation->prix }}€</p>
 
+
+
     <a href="{{ route('supprimerReservation', $reservation->id) }}" class="hover:bg-red-500 w-full text-center uppercase bg-red-600 text-white font-bold p-2 rounded">Annuler la réservation</a>
     
     
     </div>
     
-
+     <div class="mx-72 justify-center flex rounded-lg text-white relative transition-all duration-300">
+        <div class="relative">
+            <input type="checkbox" id="dropdownToggle" class="hidden peer">
+            <label 
+                for="dropdownToggle" 
+                class="text-white bg-custom-marron font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer">
+                Consulter le détail du paiement
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </label>
     
-
-
+            @if (isset($reservation->paiement))
+            <div class="mt-2 hidden divide-y divide-gray-100 rounded-lg peer-checked:block z-10">
+                <ul class="py-2 text-sm">
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Moyen de paiement :</span>
+                            {{ $reservation->paiement->moyenPaiement }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Statut du paiement :</span>
+                            @if ($reservation->paiement->statutPaiement === 1)
+                            Paiement validée
+                            @endif
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Description :</span>
+                            <p>{{ $reservation->paiement->description }}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Date du paiement :</span>
+                            {{ \Carbon\Carbon::parse($reservation->paiement->created_at)->setTimezone('GMT-4')->format('d/m/Y - H:i') }}
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            @endif
+        </div>
+    </div>
     
-   
-  
+    
     
    
     

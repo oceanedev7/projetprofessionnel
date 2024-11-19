@@ -32,13 +32,13 @@ class NewsletterController extends Controller
     $email = Newsletter::where('email', $request->email)->exists();
 
     if ($email) {
-        return redirect()->route('accueil')->with('error', 'Vous êtes déjà inscrit(e).');
+        return redirect('/')->with('error', 'Vous êtes déjà inscrit(e).');
     }
 
     Newsletter::create($request->all());
 
-    return redirect()->route('accueil')->with('success', 'Merci pour votre inscription !');
-    }
+    return redirect('/')->with('success', 'Merci pour votre inscription !');
+}
 
     
 
@@ -83,6 +83,6 @@ class NewsletterController extends Controller
         $delete  = Newsletter::findOrFail($id);
         $delete->delete();
 
-        return redirect("/newsletter");
+        return redirect("/admin/newsletter");
     }
 }

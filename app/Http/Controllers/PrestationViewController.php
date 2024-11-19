@@ -27,13 +27,4 @@ class PrestationViewController extends Controller
     }
 
 
-
-//     public function showPrestationMassage()
-// {
-//     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
-//     // dd($massages);
-//     return view('pages.prestations', [
-//         'massages' => $massages,
-//     ]);
-// }
 }

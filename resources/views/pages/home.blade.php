@@ -44,17 +44,17 @@
         </x-dropdown>
     </div>
 @else
-    <a href="{{ route('login') }}" class="absolute top-8 right-52 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+    <a href="{{ route('login') }}" class="absolute top-8 md:right-52 right-60 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
         <i class="fa-solid fa-user"></i>
     </a>
 @endif
 
         <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
-        class="absolute top-8 right-36 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
+        class="absolute top-8 md:right-36 right-44 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
          {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
         </a>
      
-    <a href="{{ route('reserver') }}" class="absolute top-8 right-6 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }}  </a>  
+    <a href="{{ route('reserver') }}" class="absolute top-8 md:right-6 right-16 bg-custom-vert bg-opacity-90 tracking-widest text-white py-3 px-3 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }}  </a>  
 </div>
 @endsection
 
@@ -62,8 +62,8 @@
 @section('main')
 
 
-<div class="w-full md:h-screen bg-black"> 
-    <video autoplay muted loop class="w-full h-screen object-cover opacity-50">
+<div class="md:w-full md:h-screen bg-black"> 
+    <video autoplay muted loop class="md:w-full h-screen object-cover opacity-50">
         <source src="{{ Storage::url('videos/videoaccueil.mp4') }}" type="video/mp4"  alt="Vidéo drone Martinique">
     </video>
 
@@ -86,7 +86,7 @@
 </div>                      
 </div>
 
-<div style="background-color:#F9F4EE" class="w-full md:h-[500px] ">
+<div style="background-color:#F9F4EE" class="md:w-full md:h-[500px] ">
 
     <div class="flex flex-col justify-center items-center">
         <span class="font-bold text-custom-marron text-[40px] mt-8 uppercase">{{ __('content.domaine') }} </span>
@@ -109,11 +109,11 @@
 
 </div>
  
-<div class=" w-full h-screen bg-fixed bg-center bg-cover" alt="Cabane en bois" style="background-image: url('{{ Storage::url('images/imageparallax.png') }}');"></div>
+<div class="md:w-full md:h-screen bg-fixed bg-center bg-cover" alt="Cabane en bois" style="background-image: url('{{ Storage::url('images/imageparallax.png') }}');"></div>
 
 
 
-<div class="bg-custom-vert md:h-screen w-full"> 
+<div class="bg-custom-vert md:h-screen md:w-full"> 
 
     <div class="flex flex-col items-center md:justify-center md:items-center">
         <span class="font-bold text-white text-center text-[40px] mt-8 uppercase"> {{ __('content.decouvrir') }} </span>
@@ -169,7 +169,7 @@
       
 </div>
 
-<div style="background-color:#F9F4EE" class="w-full h-screen"> 
+<div style="background-color:#F9F4EE" class="md:w-full md:h-screen"> 
 
     <div class="flex flex-col items-center justify-center">
         <span class="font-bold text-custom-marron text-[40px] relative top-6 uppercase"> {{ __('content.plan') }} </span>

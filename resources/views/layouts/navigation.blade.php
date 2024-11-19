@@ -29,6 +29,9 @@
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
+
+                        @if (Auth::user() && Auth::user()->role === 'user') 
+
                         <button class="inline-flex items-center relative right-16 px-3 py-2 border border-transparent text-sm leading-4 font-semibold bg-white rounded-md text-custom-vert dark:text-gray-400 dark:bg-gray-800 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</div>
 
@@ -38,6 +41,20 @@
                                 </svg>
                             </div>
                         </button>
+
+                        @else 
+
+                        <button class="inline-flex items-center relative px-3 py-2 border border-transparent text-sm leading-4 font-semibold bg-white rounded-md text-custom-vert dark:text-gray-400 dark:bg-gray-800 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                            <div>{{ Auth::user()->prenom }} {{ Auth::user()->nom }}</div>
+
+                            <div class="ms-1">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+
+                        @endif
                         
                     </x-slot>
 
@@ -46,9 +63,13 @@
                             {{ __('content.profil') }}
                         </x-dropdown-link>
 
+                        @if (Auth::user() && Auth::user()->role === 'user')
+
                         <x-dropdown-link :href="route('user-reservation')">
                             {{ __('content.my_resa') }}
                         </x-dropdown-link>
+
+                        @endif
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -76,10 +97,12 @@
         </div>
     </div>
     
+    @if (Auth::user() && Auth::user()->role === 'user') 
     <a href="{{ route('lang.switch', ['lang' => App::getLocale() === 'en' ? 'fr' : 'en']) }}" 
         class="absolute top-4 right-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base">
          {{ App::getLocale() === 'en' ? 'FR' : 'EN' }}
      </a> 
+    @endif
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">

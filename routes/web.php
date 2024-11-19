@@ -89,6 +89,8 @@ Route::get('/moncompte/reservations', [UserReservationController::class, 'index'
 Route::get('/moncompte/reservation/details/{id}', [UserReservationController::class, 'show'])->name('user-reservation-details')->middleware(\App\Http\Middleware\Localisation::class);
 Route::get('/moncompte/reservation/delete/{id}', [UserReservationController::class, 'destroy'])->name('supprimer-user-reservation');
 
+Route::post('/newsletter/inscription', [NewsletterController::class, 'create'])->name('ajouterNewsletter');
+Route::post('/demandecontact', [ContactRequestController::class, 'store'])->name('contact-request');
 
 Route::get('lang/{lang}', [LanguageController::class, 'switchLang'])->name('lang.switch');
 
@@ -119,9 +121,6 @@ Route::prefix('admin')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/newsletter', [NewsletterController::class, 'index'])->name('afficherEmails');
     Route::get('/newsletter/delete/{id}', [NewsletterController::class, 'destroy'])->name('supprimerEmail');
-    Route::post('/newsletter/inscription', [NewsletterController::class, 'create'])->name('ajouterNewsletter');
-
-    Route::post('/demandecontact', [ContactRequestController::class, 'store'])->name('contact-request');
 
     Route::get('/dashboard', function () {
         return view('dashboard');
