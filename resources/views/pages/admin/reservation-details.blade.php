@@ -120,52 +120,54 @@
     
     </div>
     
-    <div class="mx-72 justify-center flex bg-white rounded-lg shadow-md p-24 ">
-
-        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-custom-marron font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Consulter le détail du paiement  <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-            </svg>
-            </button>
-            
-           @if (isset($reservation->paiement)) 
-            <div id="dropdown" class=" hidden  divide-y divide-gray-100 rounded-lg">
-                <ul class="py-2 text-sm" aria-labelledby="dropdownDefaultButton">
-                  <li>
-                    <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <span class="font-bold">Moyen de paiement :</span>
-                        {{ $reservation->paiement->moyenPaiement }}
-                    </div>
-                  </li>
-                  <li>
-                    <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <span class="font-bold">Statut du paiement :</span>
-                        @if ($reservation->paiement->statutPaiement === 1)
-                        Paiement validée
-                        @endif
-                    </div>          
-                </li>
-                  <li>
-                    <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <span class="font-bold">Description :</span>
-                       <p> {{ $reservation->paiement->description}} </p>
-                    </div>          
-                </li>
-                  <li>
-                    <div class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
-                        <span class="font-bold">Date du paiement :</span>
-                       {{ \Carbon\Carbon::parse( $reservation->paiement->created_at)->format('d/m/Y - H:i') }}
-                    </div>           
-                </li>
+     <div class="mx-72 justify-center flex rounded-lg text-white relative transition-all duration-300">
+        <div class="relative">
+            <input type="checkbox" id="dropdownToggle" class="hidden peer">
+            <label 
+                for="dropdownToggle" 
+                class="text-white bg-custom-marron font-bold rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer">
+                Consulter le détail du paiement
+                <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                </svg>
+            </label>
+    
+            @if (isset($reservation->paiement))
+            <div class="mt-2 hidden divide-y divide-gray-100 rounded-lg peer-checked:block z-10">
+                <ul class="py-2 text-sm">
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Moyen de paiement :</span>
+                            {{ $reservation->paiement->moyenPaiement }}
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Statut du paiement :</span>
+                            @if ($reservation->paiement->statutPaiement === 1)
+                            Paiement validée
+                            @endif
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Description :</span>
+                            <p>{{ $reservation->paiement->description }}</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="block px-4 py-2">
+                            <span class="font-bold">Date du paiement :</span>
+                            {{ \Carbon\Carbon::parse($reservation->paiement->created_at)->setTimezone('GMT-4')->format('d/m/Y - H:i') }}
+                        </div>
+                    </li>
                 </ul>
             </div>
             @endif
+        </div>
     </div>
     
-
-
     
-   
-  
     
    
     

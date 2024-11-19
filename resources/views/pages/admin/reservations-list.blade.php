@@ -15,7 +15,7 @@
             <a href="{{ route('dashboard') }}" class="font-bold ">Revenir au dashboard</a>
     </div> 
 
-    <div class="w-full bg-custom-vert p-12"> 
+    <div class="w-full bg-custom-vert p-12 min-h-screen"> 
         <div class="text-center uppercase text-3xl font-black text-white"> listes des réservations </div>
         
         
