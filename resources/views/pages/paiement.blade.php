@@ -32,7 +32,7 @@
                     <div class="uppercase text-custom-marron text-lg font-bold mb-4">{{ __('content.paiement') }} :</div>
     
                     <div class="mb-2">
-                        <strong>{{ __('content.cabane-n') }}  :</strong> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', session('nomCabane')))) }} - {{ session('capacite') }} {{ __('content.pax') }}
+                        <strong>{{ __('content.cabane-n') }}  :</strong> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', session('cabane')->nomCabane))) }} - {{ session('capacite') }} {{ __('content.pax') }}
                     </div>
     
                     <div class="mb-2">

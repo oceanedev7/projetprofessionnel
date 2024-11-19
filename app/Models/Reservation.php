@@ -13,7 +13,7 @@ class Reservation extends Model
         'user_id',
         'guest_id',
         'paiement_id',
-        'nomCabane',
+        'cabane_id',
        'nombreAdultes',
         'nombreEnfants',
        'dateArrivee',

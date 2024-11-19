@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cabane;
 use App\Models\Prestation;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class ExtrasController extends Controller
     public function index(Request $request)
     {
 
-        $nomCabane = $request->input('nomCabane');
+        $cabaneId = $request->input('cabane_id');
         $capacite = $request->input('capacite');
         $prixTotal = $request->input('prixTotal');
         $dateArrivee = $request->input('dateArrivee');
@@ -28,11 +29,11 @@ class ExtrasController extends Controller
         $restaurants = Prestation::with('categorie')->where('categorie_id', 1)->get();
         $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
     
+        $cabane = Cabane::findOrFail($cabaneId);
     
         return view('pages.extras', [
             'restaurants' => $restaurants,
             'massages' => $massages,
-            'nomCabane' => $nomCabane,
             'capacite' => $capacite,
             'prixTotal' => $prixTotal,
             'dateArrivee' => $dateArrivee,
@@ -40,6 +41,8 @@ class ExtrasController extends Controller
             'nombreNuitees' => $nombreNuitees,
             'nombreAdultes' => $nombreAdultes,
             'nombreEnfants' => $nombreEnfants,
+            'cabane' => $cabane, 
+
         ]);
     }
     

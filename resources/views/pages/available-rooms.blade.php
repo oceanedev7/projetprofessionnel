@@ -5,7 +5,6 @@
     @section('navbar')
     <div class="fixed z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-8 left-8 bg-gray-800 bg-opacity-65 text-white py-2.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
-        {{-- <a class="absolute top-8 right-24 bg-gray-400 bg-opacity-65 text-white py-2.5 px-3 font-bold border-none inline-block text-center rounded w-12 tracking-wide text-base"> <i class="fa-solid fa-user"></i> </a>  --}}
         @if(Auth::check())
         <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
             <x-dropdown align="right" width="48">
@@ -60,9 +59,8 @@
 
 @section('main')
 
-<a href="{{route('reserver')}}"> Modifier ma réservation</a>
     
-    @if($availableCabanes->isEmpty())
+@if($availableCabanes->isEmpty())
     <p>Aucune cabane disponible pour cette période.</p>
 @else
 
@@ -100,7 +98,6 @@
 
                         <form action="{{ route('extras') }}" method="POST">
                             @csrf
-                            <input type="hidden" name="nomCabane" value="{{ $cabane->nomCabane }}">
                             <input type="hidden" name="capacite" value="{{ $cabane->capacite }}">
                             <input type="hidden" name="prixTotal" value="{{ $cabane->prixTotal }}">
                             <input type="hidden" name="dateArrivee" value="{{ $dateArrivee}}"> 
@@ -108,6 +105,8 @@
                             <input type="hidden" name="nombreNuitees" value="{{ $nombreNuitees }}">
                             <input type="hidden" name="nombreAdultes" value="{{ $nombreAdultes }}">
                             <input type="hidden" name="nombreEnfants" value="{{ $nombreEnfants }}">
+                            <input type="hidden" name="cabane_id" value="{{ $cabane->id }}">
+
                         
                             <button class="bg-custom-marron text-white font-bold rounded py-2 px-4 text-center uppercase" type="submit">{{ __('content.reserver') }}</button>
                         </form>

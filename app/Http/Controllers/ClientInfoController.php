@@ -46,7 +46,6 @@ public function store(Request $request)
         'catering_children' => $validatedData['catering_child'] ?? [],
     ];
     
-    $nomCabane = $request->input('nomCabane');
     $capacite = $request->input('capacite');
     $prixTotal = $request->input('prixTotal');
     $dateArrivee = $request->input('dateArrivee');
@@ -54,6 +53,10 @@ public function store(Request $request)
     $nombreNuitees = $request->input('nombreNuitees');
     $nombreAdultes = $request->input('nombreAdultes');
     $nombreEnfants = $request->input('nombreEnfants');
+    $cabaneId = $request->input('cabane_id');
+
+    $cabane = Cabane::findOrFail($cabaneId);
+
 
     $restaurants = Prestation::with('categorie')->where('categorie_id', 1)->get();
     $massages = Prestation::with('categorie')->where('categorie_id', 2)->get();
@@ -97,11 +100,11 @@ $prestationsTypes = [];
     $prixFinal = $prixTotal + $totalExtra; 
 
     return view('pages.client-info', compact(
-        'extras', 'massages', 'restaurants', 'totalExtra', 'nomCabane', 
+        'extras', 'massages', 'restaurants', 'totalExtra', 
         'capacite', 'dateArrivee', 'dateDepart', 'nombreNuitees', 
         'nombreAdultes', 'nombreEnfants', 'prixTotal', 'prixFinal',
         'restaurationIds', 'restaurationQuantites', 'massageIds', 
-        'massageQuantites', 'prestationsTypes'
+        'massageQuantites', 'prestationsTypes',  'cabane',
     )); 
 }
 
