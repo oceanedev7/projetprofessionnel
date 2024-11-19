@@ -10,7 +10,7 @@
 </head>
 <body>
     
-    <div class="bg-custom-vert h-screen w-full">
+    <div class="bg-custom-vert h-screen w-full flex items-center justify-center md:block">
         <button id="retour" class="absolute top-6 left-8 bg-gray-400 bg-opacity-65 text-white py-2.5 px-4 font-bold border-none rounded w-12 tracking-wide text-base"> X </button>
         <a href="{{ route('reserver') }}" class="absolute top-6 right-8 bg-gray-400 bg-opacity-65  md:bg-custom-vert md:bg-opacity-90 tracking-widest text-white py-3 px-4 border-none rounded w-30 font-semibold text-sm uppercase"> {{ __('content.reserver') }} </a>
         

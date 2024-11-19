@@ -67,7 +67,7 @@
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/restauration.png') }}" alt="Panier repas">
     
-        <div class="flex flex-col justify-center p-12 md:p-0 px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-6 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4 uppercase">{{ __('content.restauration') }}  </h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     
@@ -75,7 +75,7 @@
                 {{ __('content.text-restauration') }}            
             </div>
 
-            <div class="relative top-6"> 
+            <div class="relative top-6 mb-8 md:mb-0 "> 
                 <a class="bg-white rounded text-custom-marron font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
                 </div>
         </div>
@@ -122,7 +122,7 @@
        
         <img class="w-[550px] h-full object-cover" src="{{ Storage::url('images/spa.jpg') }}" alt="Massage">
     
-        <div class="flex flex-col justify-center p-12 md:p-0 px-8 md:px-16 text-center md:text-left">
+        <div class="flex flex-col justify-center p-6 md:p-0 px-8 md:px-16 text-center md:text-left">
             <h1 class="text-4xl text-white font-bold mb-4">{{ __('content.spa') }}</h1>
             <hr class="border-t-4 border-custom-beige w-32 mx-auto md:mx-0 mb-6">
     
@@ -130,7 +130,7 @@
                 {{ __('content.text-spa') }}
             </div>
 
-            <div class="relative top-6"> 
+            <div class="relative top-6 mb-8 md:mb-0"> 
                 <a class="bg-white rounded text-custom-marron font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
                 </div>
         </div>

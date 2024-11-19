@@ -11,13 +11,13 @@
 
 @section('main')
 
-<div style="background-color:#F9F4EE" class="w-full h-screen">
+<div style="background-color:#F9F4EE" class="w-full md:h-screen">
     <div class="flex flex-col justify-center items-center">
         <span class="font-bold text-custom-marron text-[40px] mt-12 uppercase"> {{ __('content.contactez-nous') }} </span>
         <hr class="border-t-4 border-custom-beige w-24 mt-2 ">
     </div>
 
-        <div class="flex flex-col items-center p-6 min-h-screen">
+        <div class="flex flex-col items-center p-6 md:min-h-screen">
             
                 <form method="post" action="{{ route('contact-request') }}" class="w-full max-w-3xl">
                     @csrf

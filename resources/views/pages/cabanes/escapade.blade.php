@@ -61,12 +61,12 @@
 
 <div style="background-color:#F9F4EE" class="md:h-screen md:w-full md:flex md:flex-row flex flex-col space-y-4 md:space-y-0"> 
         
-    <img class="w-[500px] h-screen" src="{{ Storage::url('images/cabaneescapade.jpg') }}" alt="Cabane intérieur">
+    <img class="w-[500px] md:h-screen" src="{{ Storage::url('images/cabaneescapade.jpg') }}" alt="Cabane intérieur">
     
     <div class="flex flex-col justify-center px-8 md:px-16 text-center md:text-left">
         <div class="text-4xl text-custom-marron font-bold mb-4 uppercase">{{ __('content.' . $nomCabane) }}</div>
         <div class="text-justify text-custom-marron max-w-lg mx-auto md:mx-0">{{ __('content.' . $descriptionCabane) }}</div>
-        <div class="italic mt-12 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">{{ __('content.' . $prixCabane) }}</div>
+        <div class="italic md:mt-12 mt-6 text-justify text-2xl text-custom-marron font-bold max-w-lg mx-auto md:mx-0">{{ __('content.' . $prixCabane) }}</div>
         <div class="relative top-4"> 
             <a class="bg-custom-marron rounded text-white font-bold py-2 px-4 uppercase" href="{{ route('reserver') }}"> {{ __('content.reserver') }}</a>
         </div>
