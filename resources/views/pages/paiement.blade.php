@@ -48,9 +48,9 @@
                     <div class="mb-2">
                         <strong>{{ __('content.arrivee') }} :</strong> 
                         @if ( App::getLocale() === 'en')
-                        {{ \Carbon\Carbon::parse(session('dateDepart'))->format('m/d/Y') }}
+                        {{ \Carbon\Carbon::parse(session('dateArrivee'))->format('m/d/Y') }}
                     @else
-                        {{ \Carbon\Carbon::parse(session('dateDepart'))->format('d/m/Y') }}
+                        {{ \Carbon\Carbon::parse(session('dateArrivee'))->format('d/m/Y') }}
                     @endif
                     </div>
     

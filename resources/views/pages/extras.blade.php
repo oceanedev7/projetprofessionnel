@@ -6,7 +6,7 @@
     <div class="z-10 w-full"> 
         <a href="{{ route('menu') }}" class="absolute top-4 left-8 bg-gray-800 bg-opacity-65 text-white py-3.5 px-3 border-none rounded-md w-12 text-base inline-block text-center"><i class="fa-solid fa-bars"></i></a>    
         @if(Auth::check())
-        <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-9 right-24">
+        <div class="hidden sm:flex sm:items-center sm:ms-6 absolute top-6 right-24">
             <x-dropdown align="right" width="48">
                 <x-slot name="trigger">
                     <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-bold rounded-md bg-custom-marron bg-opacity-90 text-white focus:outline-none transition ease-in-out duration-150">

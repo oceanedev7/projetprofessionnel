@@ -81,8 +81,8 @@
 
     <div class="flex flex-col flex-grow justify-center"> 
        
-            <div class=" uppercase font-bold text-xl">{{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->nomCabane))) }}</div>
-        
+            <div class=" uppercase font-bold text-xl">{{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->cabane->nomCabane))) }}</div>
+
         <div class="flex space-x-2 font-semibold">
             <div> {{ __('content.de') }} </div>
             <div>  
