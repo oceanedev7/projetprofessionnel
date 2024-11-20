@@ -43,7 +43,7 @@
             <div class="font-bold uppercase mb-6"> Détails de la réservation </div>
             <div class="font-semibold ml-10 italic underline mb-2"> Hébergement </div>
     
-            <p><span class="font-medium">Hébergement :</span> {{ $reservation->nomCabane }}</p>
+            <p><span class="font-medium">Hébergement :</span> {{ $reservation->cabane->nomCabane }}</p>
             <p><span class="font-medium">Date d'arrivée :</span> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</p>
             <p><span class="font-medium">Date de départ :</span> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</p>
             <p><span class="font-medium">Nombre de nuitée(s) :</span> {{  $reservation->nombreNuitees }} nuit(s)</p>
