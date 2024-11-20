@@ -102,7 +102,9 @@
       </div>
       <input datepicker datepicker-format="dd-mm-yyyy" id="datepicker-range-end" name="dateDepart" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded focus:border-custom-marron focus:ring-custom-marron block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required placeholder="{{ __('content.depart') }}">
   </div>
+  
   </div>
+
   
   <select name="nombreAdultes" class="text-sm rounded mx-4 focus:border-custom-marron focus:ring-custom-marron" required>
     <option value=""  selected>0</option>
@@ -126,10 +128,15 @@
     <button type="submit" style="background-color: #C4AA84" class="text-white font-bold text-sm px-4 py-2 rounded-md relative bottom-2 right-8">{{ __('content.disponibilite') }}  </button>
 </div>
         </form>
+    @error('dateDepart')
+    <div class="error-message flex justify-center font-bold relative bottom-12 text-white">
+        {{ $message }}
     </div>
+@enderror</div>
 
     </div>
 
+    
        
     </div>
 
