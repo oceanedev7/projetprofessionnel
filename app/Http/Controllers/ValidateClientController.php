@@ -56,7 +56,7 @@ public function store(Request $request)
         'adresse_postale' => 'required|string',
         'code_postal' => 'required|string',
         'ville' => 'required|string',
-        'message' => 'required|string',
+        'message' => 'nullable|string',
         'nombreAdultes' => 'required|integer',
         'nombreEnfants' => 'nullable|integer',
         'dateArrivee' => 'required|date',

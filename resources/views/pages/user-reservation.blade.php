@@ -68,7 +68,7 @@
 
 
  
-<div class="w-full bg-custom-beige p-12 space-y-12"> 
+<div class="w-full bg-custom-beige p-12 space-y-12 min-h-screen"> 
 
     <div class="text-center uppercase text-white font-black text-3xl">{{ __('content.my_resa') }} </div>
 

@@ -95,7 +95,7 @@
 
             <div class="font-semibold ml-10 italic underline mb-2">{{ __('content.hebergement') }} </div>
     
-            <p><span class="font-medium">{{ __('content.hebergement') }} :</span> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->nomCabane))) }}</p>
+            <p><span class="font-medium">{{ __('content.hebergement') }} :</span> {{ __('content.nom_cabane_' . lcfirst(str_replace(' ', '', $reservation->cabane->nomCabane))) }}</p>
             <p><span class="font-medium">{{ __('content.arrivee') }}:</span> {{ \Carbon\Carbon::parse($reservation->dateArrivee)->format('d/m/Y') }}</p>
             <p><span class="font-medium">{{ __('content.depart') }} :</span> {{ \Carbon\Carbon::parse($reservation->dateDepart)->format('d/m/Y') }}</p>
             <p><span class="font-medium">{{ __('content.n-nuit') }} :</span> {{  $reservation->nombreNuitees }} {{ __('content.nuit') }}</p>
