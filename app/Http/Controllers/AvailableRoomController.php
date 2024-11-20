@@ -35,6 +35,10 @@ class AvailableRoomController extends Controller
         $dateArrivee = Carbon::createFromFormat('d-m-Y', $request->input('dateArrivee'));
         $dateDepart = Carbon::createFromFormat('d-m-Y', $request->input('dateDepart'));
         $nombreNuitees = $dateArrivee->diffInDays($dateDepart);
+
+        if ($dateDepart <= $dateArrivee) {
+            return redirect()->back()->withErrors(['dateDepart' => 'La date de départ doit être après la date d\'arrivée.']);
+        }
         
         $nombreAdultes = $request->input('nombreAdultes');
         $nombreEnfants = $request->input('nombreEnfants');
